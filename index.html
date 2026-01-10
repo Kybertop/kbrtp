@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBRTP.TOP</title>
+    <meta name="description" content="KBRTP - Big things coming soon.">
+    <meta name="author" content="KBRTP">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta property="og:title" content="KBRTP.TOP">
+    <meta property="og:description" content="Big things coming soon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kbrtp.top">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230A0A0A' width='100' height='100' rx='12'/><text x='50' y='68' font-family='Arial Black' font-size='48' font-weight='bold' fill='%23FF8000' text-anchor='middle'>K</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --papaya: #FF8000;
+            --papaya-dark: #E67300;
+            --carbon: #0A0A0A;
+            --carbon-light: #1A1A1A;
+            --silver: #C0C0C0;
+            --silver-dark: #8A8A8A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--carbon);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Intro Animation */
+        .intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        /* Logo */
+        .intro-logo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-logo .intro-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            letter-spacing: 0.15em;
+            color: var(--white);
+            display: block;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+        }
+
+        .intro-logo .intro-tld {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            letter-spacing: 0.15em;
+            color: var(--papaya);
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: tldReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
+        }
+
+        @keyframes textReveal {
+            0% { 
+                opacity: 0; 
+                transform: translateY(10px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes tldReveal {
+            0% { 
+                opacity: 0; 
+                transform: translateX(-20px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateX(0);
+            }
+        }
+
+        /* Main Content */
+        .main-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        /* Carbon fiber texture */
+        .main-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.01) 2px,
+                    rgba(255, 255, 255, 0.01) 4px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.01) 2px,
+                    rgba(255, 255, 255, 0.01) 4px
+                );
+            pointer-events: none;
+        }
+
+        /* Accent lines */
+        .accent-line {
+            position: fixed;
+            background: linear-gradient(90deg, transparent, var(--papaya), transparent);
+            height: 1px;
+            opacity: 0.3;
+        }
+
+        .accent-line-1 {
+            top: 15%;
+            left: 0;
+            width: 100%;
+        }
+
+        .accent-line-2 {
+            bottom: 15%;
+            left: 0;
+            width: 100%;
+        }
+
+        .accent-line-v {
+            position: fixed;
+            background: linear-gradient(180deg, transparent, var(--papaya), transparent);
+            width: 1px;
+            height: 100%;
+            opacity: 0.15;
+        }
+
+        .accent-line-v-1 {
+            left: 10%;
+            top: 0;
+        }
+
+        .accent-line-v-2 {
+            right: 10%;
+            top: 0;
+        }
+
+        /* Corner accents */
+        .corner-accent {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--papaya);
+            opacity: 0.4;
+        }
+
+        .corner-tl {
+            top: 2rem;
+            left: 2rem;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-tr {
+            top: 2rem;
+            right: 2rem;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-bl {
+            bottom: 2rem;
+            left: 2rem;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner-br {
+            bottom: 2rem;
+            right: 2rem;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Speed lines */
+        .speed-line {
+            position: fixed;
+            height: 2px;
+            background: linear-gradient(90deg, var(--papaya), transparent);
+            opacity: 0;
+            animation: speedLineMove 3s ease-in-out infinite;
+        }
+
+        .speed-line-1 {
+            top: 25%;
+            left: -200px;
+            width: 200px;
+            animation-delay: 3s;
+        }
+
+        .speed-line-2 {
+            top: 45%;
+            left: -150px;
+            width: 150px;
+            animation-delay: 4s;
+        }
+
+        .speed-line-3 {
+            top: 65%;
+            left: -180px;
+            width: 180px;
+            animation-delay: 5s;
+        }
+
+        @keyframes speedLineMove {
+            0% { left: -200px; opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { left: 110%; opacity: 0; }
+        }
+
+        /* Coming soon text */
+        .coming-soon {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50px);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: var(--silver-dark);
+            letter-spacing: 0.15em;
+            text-transform: lowercase;
+            opacity: 0;
+            animation: comingSoonFade 0.8s ease 1.4s forwards;
+        }
+
+        @keyframes comingSoonFade {
+            0% { opacity: 0; transform: translate(-50%, 60px); }
+            100% { opacity: 1; transform: translate(-50%, 50px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .corner-accent {
+                width: 40px;
+                height: 40px;
+            }
+
+            .corner-tl,
+            .corner-bl {
+                left: 1rem;
+            }
+
+            .corner-tr,
+            .corner-br {
+                right: 1rem;
+            }
+
+            .corner-tl,
+            .corner-tr {
+                top: 1rem;
+            }
+
+            .corner-bl,
+            .corner-br {
+                bottom: 4rem;
+            }
+
+            .footer {
+                bottom: 1rem;
+            }
+
+            .accent-line-v {
+                display: none;
+            }
+
+            .speed-line {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .corner-accent {
+                width: 30px;
+                height: 30px;
+            }
+
+            .tagline {
+                letter-spacing: 0.15em;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+
+            .intro-overlay {
+                display: none;
+            }
+
+            .content-container {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Intro Animation -->
+    <div class="intro-overlay">
+        <div class="intro-logo">
+            <span class="intro-text">KBRTP</span><span class="intro-tld">.TOP</span>
+        </div>
+        <p class="coming-soon">big things coming soon</p>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="accent-line accent-line-1"></div>
+    <div class="accent-line accent-line-2"></div>
+    <div class="accent-line-v accent-line-v-1"></div>
+    <div class="accent-line-v accent-line-v-2"></div>
+
+    <div class="corner-accent corner-tl"></div>
+    <div class="corner-accent corner-tr"></div>
+    <div class="corner-accent corner-bl"></div>
+    <div class="corner-accent corner-br"></div>
+
+    <div class="speed-line speed-line-1"></div>
+    <div class="speed-line speed-line-2"></div>
+    <div class="speed-line speed-line-3"></div>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+    </main>
+</body>
+</html>
