@@ -1,89 +1,64 @@
-# AI / LLM chat services (known)
+0.0.0.0 gemini.google.com
+0.0.0.0 aistudio.google.com
 
-# Google Gemini / AI Studio
-gemini.google.com
-aistudio.google.com
+0.0.0.0 z.ai
+0.0.0.0 chat.z.ai
 
-# Z.ai
-z.ai
-chat.z.ai
+0.0.0.0 grok.com
 
-# xAI Grok
-grok.com
+0.0.0.0 kimi.com
+0.0.0.0 www.kimi.com
 
-# Kimi (Moonshot)
-kimi.com
-www.kimi.com
+0.0.0.0 deepseek.com
+0.0.0.0 chat.deepseek.com
 
-# DeepSeek
-deepseek.com
-chat.deepseek.com
+0.0.0.0 copilot.microsoft.com
 
-# Microsoft Copilot
-copilot.microsoft.com
+0.0.0.0 openai.com
+0.0.0.0 chatgpt.com
+0.0.0.0 oaistatic.com
+0.0.0.0 oaiusercontent.com
 
-# OpenAI / ChatGPT
-openai.com
-chatgpt.com
-oaistatic.com
-oaiusercontent.com
+0.0.0.0 chat.qwen.ai
 
-# Alibaba Qwen
-chat.qwen.ai
+0.0.0.0 anthropic.com
+0.0.0.0 claude.ai
 
-# Anthropic Claude
-anthropic.com
-claude.ai
+0.0.0.0 ernie.baidu.com
+0.0.0.0 baidu.com
 
-# Baidu Ernie
-ernie.baidu.com
-baidu.com
+0.0.0.0 chat.mistral.ai
+0.0.0.0 mistral.ai
 
-# Mistral Le Chat
-chat.mistral.ai
-mistral.ai
+0.0.0.0 minimax.io
+0.0.0.0 agent.minimax.io
 
-# MiniMax
-minimax.io
-agent.minimax.io
+0.0.0.0 allenai.org
+0.0.0.0 playground.allenai.org
 
-# Ai2 (AllenAI) Playground
-allenai.org
-playground.allenai.org
+0.0.0.0 longcat.chat
 
-# LongCat
-longcat.chat
+0.0.0.0 cohere.com
+0.0.0.0 dashboard.cohere.com
 
-# Cohere
-cohere.com
-dashboard.cohere.com
+0.0.0.0 upstage.ai
+0.0.0.0 console.upstage.ai
 
-# Upstage Solar
-upstage.ai
-console.upstage.ai
+0.0.0.0 stepfun.ai
 
-# StepFun
-stepfun.ai
+0.0.0.0 publicai.co
+0.0.0.0 chat.publicai.co
 
-# Apertus / publicai
-publicai.co
-chat.publicai.co
+0.0.0.0 reka.ai
+0.0.0.0 www.reka.ai
 
-# Reka
-reka.ai
-www.reka.ai
+0.0.0.0 k2think.ai
+0.0.0.0 www.k2think.ai
 
-# K2Think
-k2think.ai
-www.k2think.ai
+0.0.0.0 xiaomimimo.com
+0.0.0.0 aistudio.xiaomimimo.com
 
-# MiMo Studio (Xiaomi MiMo)
-xiaomimimo.com
-aistudio.xiaomimimo.com
+0.0.0.0 dphn.ai
+0.0.0.0 chat.dphn.ai
 
-# Dolphin Chat
-dphn.ai
-chat.dphn.ai
-
-# Hugging Face Spaces (dots-demo) - pozor: blokne to všetky Spaces
-huggingface.co
+0.0.0.0 huggingface.co
