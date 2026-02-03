@@ -1,226 +1,316 @@
 ! ###########################################
-! BLOKOVANIE VŠEOBECNÝCH AI VYHĽADÁVAČOV
+! ĎALŠIE OFFICIAL / MULTI-MODEL AI CHATBOTY
 ! ###########################################
+
+aistudio.google.com
+z.ai
+grok.com
+gemini.google.com
+kimi.moonshot.cn
+deepseek.com
+copilot.microsoft.com
+chatgpt.com
+openai.com
+qwen.cloud
+claude.ai
+yiyan.baidu.com
+mistral.ai
+minimax.com
+allenai.org
+reka.ai
+mimo.studio
+cohere.com
+solar.ai
+stepfun.com
+k2think.com
+dolphin.com
+dots.chat
+
+arena.lmsys.org
+yupp.ai
+pollinations.ai
+ish.app
+khoj.dev
+cerebras.ai
+groq.com
+together.ai
+woozl.it
+duck.ai
+nim.nvidia.com
 
 perplexity.ai
-www.perplexity.ai
-labs.perplexity.ai
-api.perplexity.ai
-
-chatgpt.com
-www.chatgpt.com
-platform.openai.com
-api.openai.com
-openai.com
-www.openai.com
-
-claude.ai
-www.claude.ai
-api.anthropic.com
-anthropic.com
-www.anthropic.com
-
-gemini.google.com
-ai.google.dev
-makersuite.google.com
-labs.google
-labs.google.com
-
-grok.com
-x.ai
-api.x.ai
-
-copilot.microsoft.com
-copilot.azure.com
-bing.com
-www.bing.com
+notebooklm.google.com
+brave.com
+perplexica.com
+miro.com
+scispace.com
+iask.ai
+bohrium.bio
+scinito.com
+elicit.org
+privategpt.ai
+onyx.app
+docsgpt.cloud
+hyperspace.ai
 
 ! ###########################################
-! BLOKOVANIE AI ASISTENTOV & CHATBOTOV
+! LOKÁLNE / SELF-HOSTED FRONTENDY A NÁSTROJE
 ! ###########################################
 
-pi.ai
-heypi.com
-www.heypi.com
-
-you.com
-you.com/chat
-api.you.com
-
-character.ai
-www.character.ai
-beta.character.ai
-
-replika.ai
-my.replika.com
-
+sillytavernai.com
+openwebui.com
+gpt4free.io
+msty.ai
+cherry.ai
+lobechat.com
+chatbotui.com
+localai.io
+tgpt.io
+ch.at
 jan.ai
-www.jan.ai
-
-jasper.ai
-www.jasper.ai
-app.jasper.ai
-
-writesonic.com
-app.writesonic.com
-
-chatpdf.com
-www.chatpdf.com
-
-poe.com
-www.poe.com
-
-blackbox.ai
-www.blackbox.ai
-
-gamma.app
-www.gamma.app
+lmstudio.ai
+llama.cpp
+koboldcpp.com
+oobabooga.github.io
+aphrodite.engine
+petals.ml
+getleon.ai
+ollama.com
+chat.rtx.com
+lolllms.com
+anythingllm.com
+librechat.ai
+gpt4all.io
+llamafile.ai
+llm-api-key-proxy.com
 
 ! ###########################################
-! BLOKOVANIE TEXTOVÝCH GENERÁTOROV
+! ROLEPLAY / STORY AI CHATBOTY
 ! ###########################################
 
-quillbot.com
-www.quillbot.com
-
-copy.ai
-www.copy.ai
-
-copywriter.ai
-www.copywriter.ai
-
-rytr.me
-app.rytr.me
-
-wordtune.com
-www.wordtune.com
-
-grammarly.com
-www.grammarly.com
-app.grammarly.com
-
-sudowrite.com
-app.sudowrite.com
+perchance.org
+pygmalion.chat
+flowgpt.com
+chub.ai
+agnai.chat
+4thwall.ai
+wyvernchat.com
+fictionlab.ai
+aidungeon.io
+spellbound.ai
+tavernai.com
+koboldai.net
 
 ! ###########################################
-! BLOKOVANIE OBRÁZKOVÝCH GENERÁTOROV
+! CODING AI A NÁSTROJE
 ! ###########################################
 
-midjourney.com
-www.midjourney.com
-
-leonardo.ai
-app.leonardo.ai
-
-playgroundai.com
-www.playgroundai.com
-
-dalle3.openai.com
-labs.openai.com
-
-canva.com
-www.canva.com
-magicstudio.canva.com
-
-firefly.adobe.com
-adobe.firefly.com
-
-ideogram.ai
-www.ideogram.ai
-
-getimg.ai
-www.getimg.ai
+github.com
+aistudio.google.com
+devv.ai
+roo.dev
+cline.tools
+codewebchat.com
+windsurf.ai
+pieces.app
+supermaven.com
+openhands.ai
+cursor.sh
+gitwit.dev
+anycoder.ai
+aider.chat
+openinterpreter.com
+orchids.dev
+v0.dev
+deepsite.ai
+bolt.new
+fragments.ai
+rork.ai
+code2prompt.dev
+pr-agent.org
+gitingest.com
+repomix.com
 
 ! ###########################################
-! BLOKOVANIE VIDEO/HLASOVÝCH AI NÁSTROJOV
+! AI TOOLS / GUI / DOPLNKY
 ! ###########################################
 
-synthesia.io
-www.synthesia.io
+pricepertoken.com
+everychatgptgui.com
+tldraw.com
+keepchatgpt.com
+pageassist.com
+llmcli.dev
+lightsession.app
+chatgpt-exporter.com
+gpthemes.app
+screenpipe.com
 
-heygen.com
-www.heygen.com
+! ###########################################
+! PROMPTY / JAILBREAK / PROMPT TOOLS
+! ###########################################
 
-pictory.ai
-app.pictory.ai
+l1b3rt4s.ai
+blackfridaygpts.com
+promptengineering.org
+learnprompting.org
+gandalf.lakera.ai
+promptfoo.dev
 
-opus.pro
-www.opus.pro
+! ###########################################
+! AI INDEXY / KATALÓGY / LEADERBOARDY
+! ###########################################
+
+llm-explorer.com
+futuretools.io
+labs.google
+models.dev
+websim.ai
+ypforai.com
+llm-resources-hub.com
+itsbetterwithai.com
+gptdemo.net
+artificial.studio
+
+lmcouncil.com
+artificialanalysis.ai
+kaggle.com
+openrouter.ai
+seal-llm.com
+contextarena.com
+rankedagi.com
+llmstats.com
+openlm.ai
+wolframalpha.com
+
+openvlmleaderboard.com
+designarena.ai
+eq-bench.com
+iumb.ai
+matharena.ai
+vals.ai
+simple-bench.ai
+vpct.ai
+speechmap.ai
+ai-elo.com
+chessarena.ai
+voxelbench.com
+
+! ###########################################
+! AI WRITING TOOLS
+! ###########################################
+
+textfx.withgoogle.com
+toolbaz.com
+dreamily.ai
+quarkle.ai
+
+! ###########################################
+! VIDEO GENERATION AI
+! ###########################################
+
+vbench.ai
+grok.com
+sora.com
+bing.com
+wan.ai
+vheer.ai
+aifreevideo.com
+meta.ai
+klipy.ai
+modelscope.cn
+dreamina.ai
+pixverse.ai
+genmo.ai
+vivago.ai
+framepack.ai
+eggnog.ai
+
+! ###########################################
+! IMAGE GENERATION AI (ĎALŠIE)
+! ###########################################
+
+imagefx.google.com
+pigen.ai
+aigazou.com
+vheer.ai
+modelscope.cn
+coze.com
+theresanaiforthat.com
+mage.space
+tater.ai
+aifreeforever.com
+zonerai.com
+artgenie.ai
+aiimagetoimage.com
+imgsys.com
+illusiondiffusion.com
+civitai.com
+
+! ###########################################
+! AUDIO / TTS / HLAS / HUDBA AI
+! ###########################################
+
+suno.ai
+musicfx.google.com
+wolframtones.com
+stability.ai
+musicgen.com
+sonauto.ai
+soundraw.io
+mubert.com
+aiva.ai
+boomy.com
+musicgpt.ai
+aijukebox.com
 
 elevenlabs.io
-api.elevenlabs.io
-www.elevenlabs.io
+ttsopenai.com
+openai.fm
+fakeyou.com
+tortoise-tts.com
+bark.ai
+kyutai.tech
+kokoro.ai
+ondoku3.com
+speechma.com
+audio.z.ai
+anyvoicelab.com
+voicecraft.ai
+cartesia.ai
+fishaudio.ai
+naturalreaders.com
+aivocal.ai
+moetts.com
+lovO.ai
+soundoftext.com
+freetts.com
+hume.ai
 
-dall-e.com
-runwayml.com
-www.runwayml.com
+applio.com
+rvc.ai
+voicechanger.io
+allvoicelab.com
+zyphra.ai
 
-! ###########################################
-! BLOKOVANIE „ŠKOLSKÝCH CHEAT“ NÁSTROJOV
-! ###########################################
-
-brainly.com
-www.brainly.com
-brainly.in
-brainly.lat
-
-photomath.com
-www.photomath.com
-
-symbolab.com
-www.symbolab.com
-
-wolframalpha.com
-www.wolframalpha.com
-
-chegg.com
-www.chegg.com
-
-coursehero.com
-www.coursehero.com
-
-socratic.org
-www.socratic.org
-
-gotit.ai
-www.gotit.ai
+mvsep.com
+vocalremover.org
+ultimatevocalremover.com
+vocali.se
+ezstems.com
 
 ! ###########################################
-! BLOKOVANIE AI DOPLNKOV A INTEGRÁCIÍ
+! MACHINE LEARNING / LLM PLATFORMY
 ! ###########################################
 
-notion.so
-www.notion.so
-notion.site
-
-zoom.us
-www.zoom.us
-
-slack.com
-www.slack.com
-
-githubcopilot.com
-api.githubcopilot.com
-
-! ###########################################
-! BLOKOVANIE AI KATALÓGOV A „AI HUBOV“
-! ###########################################
-
-futuretools.io
-www.futuretools.io
-
-theresanaiforthat.com
-www.theresanaiforthat.com
-
-aitoolsdirectory.com
-www.aitoolsdirectory.com
-
-tooldirectory.ai
-www.tooldirectory.ai
-
-! ###########################################
-! REZERVA – VLASTNÉ DOMÉNY
-! ###########################################
-! sem si môžeš dopisovať ďalšie:
-! nejaka-domena-ktoru-chces-blokovat.sk
-! dalsia-ai-stranka.com
+huggingface.co
+modelscope.cn
+openml.org
+deepplayground.org
+aman.ai
+unsloth.ai
+deepspeed.ai
+netron.app
+mmdeploy.com
+chatgpt-next-web.com
+nixified.ai
