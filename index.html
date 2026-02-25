@@ -5,12 +5,10 @@
   <title>kbrtp.top - GTA PC Account Modding Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
   <meta name="description" content="GTA Online PC account modding service. Basic, Full, Garage and custom bundles. Safe options, low prices. PC-Only, GTA Online Enhanced.">
   <meta name="keywords" content="GTA modding, GTA Online, PC modding, GTA account, modded account, GTA Enhanced, Deluxo, Unlock All">
   <meta name="author" content="kbrtp.top">
 
-  <!-- Open Graph (Discord, Facebook, etc.) -->
   <meta property="og:title" content="kbrtp.top - GTA PC Account Modding Service">
   <meta property="og:description" content="GTA Online PC account modding service. Basic, Full, Garage and custom bundles. Safe options, low prices. PC-Only, GTA Online Enhanced.">
   <meta property="og:image" content="https://i.imgur.com/XXKAQva.png">
@@ -18,7 +16,6 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="kbrtp.top">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="kbrtp.top - GTA PC Account Modding Service">
   <meta name="twitter:description" content="GTA Online PC account modding service. Basic, Full, Garage and custom bundles. Safe options, low prices. PC-Only, GTA Online Enhanced.">
@@ -34,9 +31,7 @@
       padding: 0;
     }
 
-    html {
-      font-size: 16px;
-    }
+    html { font-size: 16px; }
 
     body {
       background-color: #000;
@@ -55,7 +50,7 @@
       border: 1px solid #555;
       padding: 2rem 2rem;
       width: 100%;
-      max-width: 960px;
+      max-width: 1100px;
     }
 
     h1 {
@@ -73,6 +68,13 @@
     }
 
     .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .cards-bottom {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
@@ -98,16 +100,16 @@
     .card-title {
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      font-size: clamp(0.7rem, 2vw, 0.9rem);
+      font-size: clamp(0.65rem, 1.8vw, 0.9rem);
       margin-bottom: 0.25rem;
       display: block;
-      padding-right: 3.5rem;
+      padding-right: 5.5rem;
     }
 
     .best-value {
       background: #fff;
       color: #000;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       padding: 0.1rem 0.35rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -116,48 +118,82 @@
     }
 
     .price {
-      font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+      font-size: clamp(0.8rem, 2vw, 1.05rem);
       font-weight: bold;
       position: absolute;
       right: 1rem;
       top: 0.85rem;
       white-space: nowrap;
+      text-align: right;
+    }
+
+    .price-old {
+      display: block;
+      font-size: 0.72rem;
+      color: #888;
+      text-decoration: line-through;
+      text-decoration-color: #c00;
+      text-decoration-thickness: 2px;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+
+    .price-new {
+      display: block;
+      font-size: clamp(0.8rem, 2vw, 1.05rem);
+      font-weight: bold;
+      line-height: 1.2;
     }
 
     .card ul {
       list-style: none;
-      font-size: clamp(0.65rem, 2vw, 0.8rem);
+      font-size: clamp(0.62rem, 1.8vw, 0.78rem);
       line-height: 1.6;
-      padding: 0.85rem 1rem;
+      padding: 0.85rem 1rem 0.5rem;
       flex-grow: 1;
     }
 
-    .card ul li::before {
-      content: "- ";
+    .card ul li { margin-bottom: 0.1rem; }
+    .card ul li::before { content: "- "; }
+
+    .note {
+      font-size: 0.62rem;
+      color: #999;
+      display: block;
+      padding-left: 1rem;
+      line-height: 1.3;
+      margin-top: 0.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .note::before { content: none; }
+
+    .card-tip {
+      font-size: 0.6rem;
+      color: #777;
+      border-top: 1px solid #333;
+      padding: 0.5rem 1rem 0.75rem;
+      line-height: 1.4;
+      margin-top: auto;
     }
 
     .footer {
       margin-top: 2rem;
       padding-top: 1rem;
       border-top: 1px solid #555;
-      font-size: clamp(0.65rem, 2vw, 0.75rem);
+      font-size: clamp(0.62rem, 2vw, 0.73rem);
       color: #aaa;
       line-height: 1.5;
       width: 100%;
     }
 
-    /* Tablet: 2 columns */
-    @media (max-width: 720px) {
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    @media (max-width: 860px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .cards-bottom { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* Mobile: 1 column */
     @media (max-width: 480px) {
-      body {
-        padding: 1rem 0.75rem;
-      }
+      body { padding: 1rem 0.75rem; }
 
       .wrapper {
         padding: 1.25rem 1rem;
@@ -166,13 +202,8 @@
         border-bottom: 1px solid #555;
       }
 
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .card-title {
-        padding-right: 3.5rem;
-      }
+      .cards,
+      .cards-bottom { grid-template-columns: 1fr; }
 
       .price {
         right: 0.85rem;
@@ -187,26 +218,77 @@
     <p class="subtitle">GTA PC Account Modding Service</p>
 
     <section class="cards" aria-label="GTA Modding Bundles">
+
+      <!-- BASIC -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Basic</span>
-          <div class="price">5€</div>
+          <div class="price">4.99€</div>
         </header>
         <ul>
           <li>Any player &amp; crew level</li>
           <li>Max stats, modded run</li>
           <li>Unlock All</li>
-          <li>5 Vehicles</li>
-          <li>2 Properties</li>
+          <li>5 Vehicles
+            <span class="note">vehicles of your choice</span>
+          </li>
+          <li>2 Properties
+            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
+          </li>
           <li>10 Deluxos</li>
           <li>10M $</li>
+          <li>5 Modded outfits</li>
         </ul>
+        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
       </article>
 
+      <!-- PRO (DECOY) -->
+      <article class="card">
+        <header class="card-header">
+          <span class="card-title">Pro</span>
+          <div class="price">8.99€</div>
+        </header>
+        <ul>
+          <li>Any player &amp; crew level</li>
+          <li>Max stats, modded run</li>
+          <li>Unlock All</li>
+          <li>10 Vehicles
+            <span class="note">vehicles of your choice</span>
+          </li>
+          <li>3 Properties
+            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
+          </li>
+          <li>15 Deluxos</li>
+          <li>10M $</li>
+          <li>5 Modded outfits</li>
+        </ul>
+        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
+      </article>
+
+      <!-- GARAGE -->
+      <article class="card">
+        <header class="card-header">
+          <span class="card-title">Garage</span>
+          <div class="price">9.99€</div>
+        </header>
+        <ul>
+          <li>20 Modded vehicles
+            <span class="note">vehicles of your choice</span>
+          </li>
+          <li>20 Deluxos</li>
+          <li>1 property with garage
+            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
+          </li>
+          <li>10M $</li>
+        </ul>
+        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
+      </article>
+
+      <!-- FULL -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Full</span>
-          <div class="price">10€</div>
+          <div class="price">12.99€</div>
         </header>
         <ul>
           <li>Any player &amp; crew level</li>
@@ -214,37 +296,51 @@
           <li>Unlock All</li>
           <li>All properties for business</li>
           <li>Unlock all heists</li>
-          <li>10 Vehicles</li>
+          <li>10 Vehicles
+            <span class="note">all of your choice</span>
+          </li>
+          <li>3 Properties
+            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
+          </li>
           <li>20 Deluxos</li>
           <li>20M $</li>
+          <li>LSC lvl 1000</li>
+          <li>Bunker reward unlocked</li>
+          <li>Custom KD</li>
+          <li>Resupply all businesses</li>
+          <li>10 Modded outfits</li>
         </ul>
+        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
       </article>
 
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">Garage</span>
-          <div class="price">8€</div>
-        </header>
-        <ul>
-          <li>20 Modded vehicles</li>
-          <li>20 Deluxos</li>
-          <li>1 property with garage</li>
-          <li>10M $</li>
-        </ul>
-      </article>
+    </section>
 
+    <section class="cards-bottom" aria-label="More options">
+
+      <!-- FULL + GARAGE -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Full + Garage</span>
-          <div class="price">15€</div>
+          <div class="price">
+            <span class="price-old">25.99€</span>
+            <span class="price-new">14.99€</span>
+          </div>
           <span class="best-value">Best Value</span>
         </header>
         <ul>
           <li>All Full features</li>
           <li>All Garage features</li>
+          <li>30 Deluxos
+            <span class="note">garage space included - you can choose</span>
+          </li>
+          <li>5 Properties
+            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
+          </li>
         </ul>
+        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
       </article>
 
+      <!-- CUSTOM ORDER -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Custom Order</span>
@@ -255,6 +351,7 @@
         </ul>
       </article>
 
+      <!-- CONTACT -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Contact</span>
@@ -266,6 +363,7 @@
           <li>Platform: PC-Only</li>
         </ul>
       </article>
+
     </section>
 
     <footer class="footer">
