@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>kbrtp.top</title>
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* Basic reset */
@@ -21,6 +22,7 @@
       color: #fff;
       font-family: "Courier New", monospace;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -38,6 +40,13 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       white-space: nowrap;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      color: #ccc;
+      letter-spacing: 0.08em;
       margin-bottom: 1.5rem;
     }
 
@@ -51,32 +60,58 @@
 
     .card {
       border: 1px solid #777;
-      padding: 1rem 1.25rem;
       width: 260px;
-      text-align: left;
       background: #000;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .card-header {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid #555;
     }
 
     .card-title {
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-size: 0.9rem;
-      margin-bottom: 0.75rem;
-      border-bottom: 1px solid #555;
-      padding-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
     }
 
     .price {
       font-size: 1.1rem;
       font-weight: bold;
-      margin: 0.75rem 0 0.5rem 0;
-      text-align: center;
+      float: right;
+    }
+
+    .best-value {
+      background: #fff;
+      color: #000;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      margin-left: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: bold;
+    }
+
+    .card-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+
+    .card-content.open {
+      max-height: 400px;
     }
 
     .card ul {
       list-style: none;
       font-size: 0.8rem;
       line-height: 1.5;
+      padding: 0.75rem 1.25rem 1rem;
     }
 
     .card ul li::before {
@@ -86,6 +121,17 @@
     .contact {
       width: 100%;
       max-width: 300px;
+      cursor: default;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #555;
+      font-size: 0.75rem;
+      color: #aaa;
+      line-height: 1.4;
+      max-width: 800px;
     }
 
     @media (max-width: 640px) {
@@ -108,67 +154,113 @@
 <body>
   <main class="wrapper">
     <h1>kbrtp.top</h1>
+    <p class="subtitle">GTA PC Account Modding Service</p>
 
     <section class="cards" aria-label="GTA Modding Bundles">
-      <article class="card">
-        <h2 class="card-title">Basic</h2>
-        <div class="price">5€</div>
-        <ul>
-          <li>Any player &amp; crew level</li>
-          <li>Max stats, modded run</li>
-          <li>Unlock All</li>
-          <li>5 Vehicles</li>
-          <li>2 Properties</li>
-          <li>10 Deluxos</li>
-          <li>10M $</li>
-        </ul>
+      <article class="card" tabindex="0">
+        <header class="card-header">
+          <span class="card-title">Basic</span>
+          <div class="price">5€</div>
+        </header>
+        <div class="card-content">
+          <ul>
+            <li>Any player &amp; crew level</li>
+            <li>Max stats, modded run</li>
+            <li>Unlock All</li>
+            <li>5 Vehicles</li>
+            <li>2 Properties</li>
+            <li>10 Deluxos</li>
+            <li>10M $</li>
+          </ul>
+        </div>
       </article>
 
-      <article class="card">
-        <h2 class="card-title">Full</h2>
-        <div class="price">10€</div>
-        <ul>
-          <li>Any player &amp; crew level</li>
-          <li>Max stats, modded run</li>
-          <li>Unlock All</li>
-          <li>All properties for business</li>
-          <li>Unlock all heists</li>
-          <li>10 Vehicles</li>
-          <li>20 Deluxos</li>
-          <li>20M $</li>
-        </ul>
+      <article class="card" tabindex="0">
+        <header class="card-header">
+          <span class="card-title">Full</span>
+          <div class="price">10€</div>
+        </header>
+        <div class="card-content">
+          <ul>
+            <li>Any player &amp; crew level</li>
+            <li>Max stats, modded run</li>
+            <li>Unlock All</li>
+            <li>All properties for business</li>
+            <li>Unlock all heists</li>
+            <li>10 Vehicles</li>
+            <li>20 Deluxos</li>
+            <li>20M $</li>
+          </ul>
+        </div>
       </article>
 
-      <article class="card">
-        <h2 class="card-title">Garage</h2>
-        <div class="price">8€</div>
-        <ul>
-          <li>20 Modded vehicles</li>
-          <li>20 Deluxos</li>
-          <li>1 property with garage</li>
-          <li>10M $</li>
-        </ul>
+      <article class="card" tabindex="0">
+        <header class="card-header">
+          <span class="card-title">Garage</span>
+          <div class="price">8€</div>
+        </header>
+        <div class="card-content">
+          <ul>
+            <li>20 Modded vehicles</li>
+            <li>20 Deluxos</li>
+            <li>1 property with garage</li>
+            <li>10M $</li>
+          </ul>
+        </div>
       </article>
 
-      <article class="card">
-        <h2 class="card-title">Full + Garage</h2>
-        <div class="price">15€</div>
-        <ul>
-          <li>All Full features</li>
-          <li>All Garage features</li>
-        </ul>
+      <article class="card" tabindex="0">
+        <header class="card-header">
+          <span class="card-title">Full + Garage <span class="best-value">Best Value</span></span>
+          <div class="price">15€</div>
+        </header>
+        <div class="card-content">
+          <ul>
+            <li>All Full features</li>
+            <li>All Garage features</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <header class="card-header">
+          <span class="card-title">Custom Order</span>
+          <div class="price">Contact</div>
+        </header>
+        <div class="card-content">
+          <ul>
+            <li>Contact me for custom requirements</li>
+            <li>Price based off your needs</li>
+          </ul>
+        </div>
       </article>
 
       <article class="card contact">
-        <h2 class="card-title">Contact</h2>
+        <header class="card-header">
+          <span class="card-title">Contact</span>
+        </header>
         <ul>
           <li>Discord: kybertop</li>
           <li>Payment: PayPal family &amp; friends only</li>
           <li>Version: GTA Online Enhanced</li>
-          <li>Platform: PC</li>
+          <li>Platform: PC-Only</li>
         </ul>
       </article>
     </section>
+
+    <footer class="footer">
+      All services use the safest modding options available. Low prices ensure minimal detection risk. 
+      Nothing is 100% safe - I am not responsible for any bans. You take full responsibility.
+    </footer>
   </main>
+
+  <script>
+    document.querySelectorAll('.card:not(.contact)').forEach(card => {
+      card.addEventListener('click', function() {
+        const content = this.querySelector('.card-content');
+        content.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
