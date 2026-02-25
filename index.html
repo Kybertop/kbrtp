@@ -34,8 +34,8 @@
       padding: 0;
     }
 
-    html, body {
-      height: 100%;
+    html {
+      font-size: 16px;
     }
 
     body {
@@ -44,6 +44,7 @@
       font-family: "Courier New", monospace;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -52,38 +53,34 @@
 
     .wrapper {
       border: 1px solid #555;
-      padding: 2rem 2.5rem;
-      max-width: 960px;
+      padding: 2rem 2rem;
       width: 100%;
+      max-width: 960px;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: clamp(1.2rem, 5vw, 2rem);
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      white-space: nowrap;
       margin-bottom: 0.25rem;
     }
 
     .subtitle {
-      font-size: 0.85rem;
+      font-size: clamp(0.7rem, 3vw, 0.85rem);
       color: #ccc;
       letter-spacing: 0.08em;
       margin-bottom: 1.5rem;
     }
 
     .cards {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      justify-content: center;
       margin-top: 1rem;
-      align-items: stretch;
     }
 
     .card {
       border: 1px solid #777;
-      width: 260px;
       background: #000;
       text-align: left;
       display: flex;
@@ -91,7 +88,7 @@
     }
 
     .card-header {
-      padding: 1rem 1.25rem;
+      padding: 0.85rem 1rem;
       border-bottom: 1px solid #555;
       position: relative;
       min-height: 3.5rem;
@@ -100,17 +97,18 @@
 
     .card-title {
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      font-size: clamp(0.7rem, 2vw, 0.9rem);
       margin-bottom: 0.25rem;
       display: block;
+      padding-right: 3.5rem;
     }
 
     .best-value {
       background: #fff;
       color: #000;
-      font-size: 0.7rem;
-      padding: 0.15rem 0.4rem;
+      font-size: 0.65rem;
+      padding: 0.1rem 0.35rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: bold;
@@ -118,18 +116,19 @@
     }
 
     .price {
-      font-size: 1.1rem;
+      font-size: clamp(0.85rem, 2.5vw, 1.1rem);
       font-weight: bold;
       position: absolute;
-      right: 1.25rem;
-      top: 1rem;
+      right: 1rem;
+      top: 0.85rem;
+      white-space: nowrap;
     }
 
     .card ul {
       list-style: none;
-      font-size: 0.8rem;
-      line-height: 1.5;
-      padding: 1rem 1.25rem;
+      font-size: clamp(0.65rem, 2vw, 0.8rem);
+      line-height: 1.6;
+      padding: 0.85rem 1rem;
       flex-grow: 1;
     }
 
@@ -141,31 +140,43 @@
       margin-top: 2rem;
       padding-top: 1rem;
       border-top: 1px solid #555;
-      font-size: 0.75rem;
+      font-size: clamp(0.65rem, 2vw, 0.75rem);
       color: #aaa;
-      line-height: 1.4;
-      max-width: 800px;
+      line-height: 1.5;
+      width: 100%;
     }
 
-    @media (max-width: 640px) {
+    /* Tablet: 2 columns */
+    @media (max-width: 720px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile: 1 column */
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+
       .wrapper {
-        padding: 1.5rem;
+        padding: 1.25rem 1rem;
+        border: none;
+        border-top: 1px solid #555;
+        border-bottom: 1px solid #555;
       }
 
-      h1 {
-        font-size: 1.6rem;
-        letter-spacing: 0.12em;
-        white-space: normal;
+      .cards {
+        grid-template-columns: 1fr;
       }
 
-      .card {
-        width: 100%;
+      .card-title {
+        padding-right: 3.5rem;
       }
 
       .price {
-        position: static;
-        margin-top: 0.5rem;
-        display: block;
+        right: 0.85rem;
+        top: 0.85rem;
       }
     }
   </style>
