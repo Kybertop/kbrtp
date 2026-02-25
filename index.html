@@ -64,21 +64,80 @@
       font-size: clamp(0.7rem, 3vw, 0.85rem);
       color: #ccc;
       letter-spacing: 0.08em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .notices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+      align-items: center;
+    }
+
+    .notice {
+      font-size: 0.72rem;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 0.4rem 1rem;
+      display: inline-block;
+      letter-spacing: 0.05em;
+    }
+
+    .notice-dim {
+      color: #aaa;
+      border-color: #444;
+      font-size: 0.68rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #666;
+      margin-top: 1.5rem;
+      margin-bottom: 0.25rem;
+      text-align: left;
+      border-top: 1px solid #333;
+      padding-top: 0.75rem;
+    }
+
+    .heist-catchline {
+      font-size: clamp(0.68rem, 2vw, 0.8rem);
+      color: #bbb;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.6rem;
+      text-align: left;
+      font-style: italic;
+      line-height: 1.5;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .cards-mid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .cards-heist {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
     }
 
     .cards-bottom {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
 
     .card {
@@ -106,15 +165,23 @@
       padding-right: 5.5rem;
     }
 
-    .best-value {
-      background: #fff;
-      color: #000;
+    .badge {
       font-size: 0.62rem;
       padding: 0.1rem 0.35rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: bold;
       display: inline-block;
+    }
+
+    .badge-white {
+      background: #fff;
+      color: #000;
+    }
+
+    .badge-outline {
+      border: 1px solid #fff;
+      color: #fff;
     }
 
     .price {
@@ -149,7 +216,7 @@
       list-style: none;
       font-size: clamp(0.62rem, 1.8vw, 0.78rem);
       line-height: 1.6;
-      padding: 0.85rem 1rem 0.5rem;
+      padding: 0.85rem 1rem 0.85rem;
       flex-grow: 1;
     }
 
@@ -168,13 +235,33 @@
 
     .note::before { content: none; }
 
-    .card-tip {
-      font-size: 0.6rem;
-      color: #777;
-      border-top: 1px solid #333;
-      padding: 0.5rem 1rem 0.75rem;
-      line-height: 1.4;
-      margin-top: auto;
+    .faq {
+      text-align: left;
+      padding: 0.5rem;
+    }
+
+    .faq-item {
+      border: 1px solid #444;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-q {
+      font-size: clamp(0.65rem, 1.8vw, 0.82rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.35rem;
+      color: #fff;
+    }
+
+    .faq-a {
+      font-size: clamp(0.6rem, 1.6vw, 0.75rem);
+      color: #aaa;
+      line-height: 1.5;
     }
 
     .footer {
@@ -189,7 +276,8 @@
 
     @media (max-width: 860px) {
       .cards { grid-template-columns: repeat(2, 1fr); }
-      .cards-bottom { grid-template-columns: repeat(2, 1fr); }
+      .cards-heist { grid-template-columns: repeat(2, 1fr); }
+      .cards-bottom { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
@@ -203,6 +291,8 @@
       }
 
       .cards,
+      .cards-mid,
+      .cards-heist,
       .cards-bottom { grid-template-columns: 1fr; }
 
       .price {
@@ -217,6 +307,8 @@
     <h1>kbrtp.top</h1>
     <p class="subtitle">GTA PC Account Modding Service</p>
 
+    <!-- ACCOUNT BUNDLES -->
+    <p class="section-label">Account Bundles</p>
     <section class="cards" aria-label="GTA Modding Bundles">
 
       <!-- BASIC -->
@@ -236,10 +328,9 @@
             <span class="note">properties of your choice (mansion, agency, office etc.)</span>
           </li>
           <li>10 Deluxos</li>
-          <li>10M $</li>
+          <li>5M $</li>
           <li>5 Modded outfits</li>
         </ul>
-        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
       </article>
 
       <!-- PRO (DECOY) -->
@@ -262,33 +353,16 @@
           <li>10M $</li>
           <li>5 Modded outfits</li>
         </ul>
-        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
-      </article>
-
-      <!-- GARAGE -->
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">Garage</span>
-          <div class="price">9.99€</div>
-        </header>
-        <ul>
-          <li>20 Modded vehicles
-            <span class="note">vehicles of your choice</span>
-          </li>
-          <li>20 Deluxos</li>
-          <li>1 property with garage
-            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
-          </li>
-          <li>10M $</li>
-        </ul>
-        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
       </article>
 
       <!-- FULL -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Full</span>
-          <div class="price">12.99€</div>
+          <div class="price">
+            <span class="price-old">19.99€</span>
+            <span class="price-new">13.99€</span>
+          </div>
         </header>
         <ul>
           <li>Any player &amp; crew level</li>
@@ -310,22 +384,39 @@
           <li>Resupply all businesses</li>
           <li>10 Modded outfits</li>
         </ul>
-        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
+      </article>
+
+      <!-- GARAGE SERVICE -->
+      <article class="card">
+        <header class="card-header">
+          <span class="card-title">Garage Service</span>
+          <div class="price">10.99€</div>
+        </header>
+        <ul>
+          <li>20 Modded vehicles
+            <span class="note">vehicles of your choice</span>
+          </li>
+          <li>20 Deluxos</li>
+          <li>1 property with garage
+            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
+          </li>
+          <li>5M $</li>
+        </ul>
       </article>
 
     </section>
 
-    <section class="cards-bottom" aria-label="More options">
+    <!-- FULL + GARAGE + CUSTOM -->
+    <section class="cards-mid" aria-label="Bundle and Custom">
 
-      <!-- FULL + GARAGE -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Full + Garage</span>
           <div class="price">
             <span class="price-old">25.99€</span>
-            <span class="price-new">14.99€</span>
+            <span class="price-new">15.99€</span>
           </div>
-          <span class="best-value">Best Value</span>
+          <span class="badge badge-outline">Limited Time Offer</span>
         </header>
         <ul>
           <li>All Full features</li>
@@ -337,10 +428,8 @@
             <span class="note">properties of your choice (mansion, agency, office etc.)</span>
           </li>
         </ul>
-        <div class="card-tip">* every Deluxo is 2M$ which you can sell every 24h for max profit</div>
       </article>
 
-      <!-- CUSTOM ORDER -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Custom Order</span>
@@ -351,7 +440,77 @@
         </ul>
       </article>
 
-      <!-- CONTACT -->
+    </section>
+
+    <!-- NOTICES moved here -->
+    <div class="notices">
+      <div class="notice">* every Deluxo is worth 2M$ in-game — sell one every 24h for maximum daily profit</div>
+      <div class="notice notice-dim">* some vehicles cannot be added to garage</div>
+    </div>
+
+    <!-- HEISTS SERVICE -->
+    <p class="section-label">Heists Service</p>
+    <p class="heist-catchline">Worried about sharing your account? No need — we run heists together in a session. Your account stays yours without using mods. No risk here.</p>
+    <section class="cards-heist" aria-label="Heists Service">
+
+      <article class="card">
+        <header class="card-header">
+          <span class="card-title">1 Heist</span>
+          <div class="price">2.99€</div>
+        </header>
+        <ul>
+          <li>1 heist completed
+            <span class="note">heist of your choice</span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          <span class="card-title">3 Heists</span>
+          <div class="price">4.99€</div>
+        </header>
+        <ul>
+          <li>3 heists completed
+            <span class="note">heists of your choice</span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          <span class="card-title">5 Heists</span>
+          <div class="price">6.99€</div>
+        </header>
+        <ul>
+          <li>5 heists completed
+            <span class="note">heists of your choice</span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          <span class="card-title">10 Heists</span>
+          <div class="price">
+            <span class="price-old">19.99€</span>
+            <span class="price-new">10.99€</span>
+          </div>
+          <span class="badge badge-white">Best Value</span>
+        </header>
+        <ul>
+          <li>10 heists completed
+            <span class="note">heists of your choice</span>
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+    <!-- CONTACT + FAQ -->
+    <p class="section-label">Contact &amp; FAQ</p>
+    <section class="cards-bottom" aria-label="Contact and FAQ">
+
       <article class="card">
         <header class="card-header">
           <span class="card-title">Contact</span>
@@ -362,6 +521,34 @@
           <li>Version: GTA Online Enhanced</li>
           <li>Platform: PC-Only</li>
         </ul>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          <span class="card-title">FAQ</span>
+        </header>
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">How does this work?</div>
+            <div class="faq-a">I log into your account and complete the service while we stay in contact through chat the entire time.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How can I pay?</div>
+            <div class="faq-a">PayPal — Family &amp; Friends only. No notes in the payment, please.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How do heists work?</div>
+            <div class="faq-a">I invite you to the heist, set your cut and instantly finish it — you get the money. No risk from your side. Max 30M$ per day and 150M$ per week.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Why do you need to log in to my account? I'm scared.</div>
+            <div class="faq-a">There is no other way to mod your account. If you only need money, you can choose the Heists Service instead — no login required.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Why don't you offer more money?</div>
+            <div class="faq-a">More money = bigger risk. I could care less if you get banned, but I don't want that for you — so I keep amounts low. That's why Deluxos are included: sell one for 2M$ every 24h and make it back yourself.</div>
+          </div>
+        </div>
       </article>
 
     </section>
