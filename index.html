@@ -20,15 +20,17 @@
       background-color: #000;
       color: #fff;
       font-family: "Courier New", monospace;
-      text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
 
-    main {
+    .wrapper {
       border: 1px solid #555;
-      padding: 2rem 3rem;
+      padding: 2rem 2.5rem;
+      max-width: 960px;
+      width: 100%;
     }
 
     h1 {
@@ -36,12 +38,103 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       white-space: nowrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .card {
+      border: 1px solid #777;
+      padding: 1rem 1.25rem;
+      width: 260px;
+      text-align: left;
+      background: #000;
+    }
+
+    .card-title {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid #555;
+      padding-bottom: 0.4rem;
+    }
+
+    .card ul {
+      list-style: none;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .card ul li::before {
+      content: "- ";
+    }
+
+    @media (max-width: 640px) {
+      .wrapper {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+        letter-spacing: 0.12em;
+        white-space: normal;
+      }
+
+      .card {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <main>
+  <main class="wrapper">
     <h1>kbrtp.top</h1>
+
+    <section class="cards" aria-label="GTA Modding Bundles">
+      <article class="card">
+        <h2 class="card-title">Basic</h2>
+        <ul>
+          <li>Any player &amp; crew level</li>
+          <li>Max stats, modded run</li>
+          <li>Unlock All</li>
+          <li>5 Vehicles</li>
+          <li>2 Properties</li>
+          <li>10 Deluxos</li>
+          <li>10M $</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="card-title">Full</h2>
+        <ul>
+          <li>Any player &amp; crew level</li>
+          <li>Max stats, modded run</li>
+          <li>Unlock All</li>
+          <li>All properties for business</li>
+          <li>Unlock all heists</li>
+          <li>10 Vehicles</li>
+          <li>20 Deluxos</li>
+          <li>20M $</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="card-title">Garage</h2>
+        <ul>
+          <li>20 Modded vehicles</li>
+          <li>20 Deluxos</li>
+          <li>1 property with garage</li>
+          <li>10M $</li>
+        </ul>
+      </article>
+    </section>
   </main>
 </body>
 </html>
