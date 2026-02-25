@@ -70,6 +70,7 @@
       padding: 1rem 1.25rem;
       text-align: left;
       border-bottom: 1px solid #555;
+      position: relative;
     }
 
     .card-title {
@@ -83,7 +84,9 @@
     .price {
       font-size: 1.1rem;
       font-weight: bold;
-      float: right;
+      position: absolute;
+      right: 1.25rem;
+      top: 1rem;
     }
 
     .best-value {
@@ -95,6 +98,9 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: bold;
+      position: absolute;
+      right: 1.25rem;
+      top: 2.2rem;
     }
 
     .card-content {
@@ -147,6 +153,19 @@
 
       .card {
         width: 100%;
+      }
+
+      .price, .best-value {
+        position: static;
+        right: auto;
+        top: auto;
+        margin-top: 0.5rem;
+        display: block;
+      }
+
+      .best-value {
+        margin-left: 0;
+        margin-top: 0.25rem;
       }
     }
   </style>
@@ -211,7 +230,8 @@
 
       <article class="card" tabindex="0">
         <header class="card-header">
-          <span class="card-title">Full + Garage <span class="best-value">Best Value</span></span>
+          <span class="card-title">Full + Garage</span>
+          <span class="best-value">Best Value</span>
           <div class="price">15€</div>
         </header>
         <div class="card-content">
@@ -249,7 +269,7 @@
     </section>
 
     <footer class="footer">
-      All services use the safest modding options available. Low prices ensure minimal detection risk. 
+      All services use the safest modding options available. Low money options ensure minimal detection risk. 
       Nothing is 100% safe - I am not responsible for any bans. You take full responsibility.
     </footer>
   </main>
