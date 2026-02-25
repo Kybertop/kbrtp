@@ -70,8 +70,8 @@
     .notices {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 1.25rem;
+      gap: 0.5rem;
+      margin: 1.25rem 0;
       align-items: center;
     }
 
@@ -79,7 +79,7 @@
       font-size: 0.72rem;
       color: #fff;
       border: 1px solid #555;
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1.25rem;
       display: inline-block;
       letter-spacing: 0.05em;
     }
@@ -133,11 +133,13 @@
       margin-top: 0.5rem;
     }
 
+    /* Contact + FAQ — align to top, not stretch */
     .cards-bottom {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
       margin-top: 0.5rem;
+      align-items: start;
     }
 
     .card {
@@ -246,9 +248,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .faq-item:last-child {
-      margin-bottom: 0;
-    }
+    .faq-item:last-child { margin-bottom: 0; }
 
     .faq-q {
       font-size: clamp(0.65rem, 1.8vw, 0.82rem);
@@ -311,7 +311,6 @@
     <p class="section-label">Account Bundles</p>
     <section class="cards" aria-label="GTA Modding Bundles">
 
-      <!-- BASIC -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Basic</span>
@@ -333,7 +332,6 @@
         </ul>
       </article>
 
-      <!-- PRO (DECOY) -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Pro</span>
@@ -355,7 +353,6 @@
         </ul>
       </article>
 
-      <!-- FULL -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Full</span>
@@ -386,7 +383,6 @@
         </ul>
       </article>
 
-      <!-- GARAGE SERVICE -->
       <article class="card">
         <header class="card-header">
           <span class="card-title">Garage Service</span>
@@ -442,7 +438,7 @@
 
     </section>
 
-    <!-- NOTICES moved here -->
+    <!-- NOTICES -->
     <div class="notices">
       <div class="notice">* every Deluxo is worth 2M$ in-game — sell one every 24h for maximum daily profit</div>
       <div class="notice notice-dim">* some vehicles cannot be added to garage</div>
