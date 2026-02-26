@@ -64,7 +64,67 @@
       font-size: clamp(0.7rem, 3vw, 0.85rem);
       color: #ccc;
       letter-spacing: 0.08em;
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .discord-soon {
+      font-size: 0.72rem;
+      color: #aaa;
+      border: 1px dashed #444;
+      padding: 0.4rem 1.25rem;
+      display: inline-block;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.35rem;
+    }
+
+    .big-things {
+      font-size: clamp(0.85rem, 3vw, 1.1rem);
+      color: #fff;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+
+    .order-flow {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: #aaa;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      line-height: 1.5;
+    }
+
+    .order-flow .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 180px;
+      text-align: center;
+    }
+
+    .order-flow .step-num {
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.75rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .order-flow .step-desc {
+      color: #888;
+      font-size: 0.65rem;
+      line-height: 1.4;
+    }
+
+    .order-flow .arrow {
+      color: #444;
+      font-size: 0.9rem;
+      padding-top: 0.1rem;
+      flex-shrink: 0;
     }
 
     .notices {
@@ -94,7 +154,7 @@
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: #666;
+      color: #999;
       margin-top: 1.5rem;
       margin-bottom: 0.25rem;
       text-align: left;
@@ -103,13 +163,14 @@
     }
 
     .heist-catchline {
-      font-size: clamp(0.68rem, 2vw, 0.8rem);
-      color: #bbb;
+      font-size: clamp(0.72rem, 2vw, 0.85rem);
+      color: #fff;
       letter-spacing: 0.04em;
       margin-bottom: 0.6rem;
       text-align: left;
-      font-style: italic;
       line-height: 1.5;
+      border-left: 2px solid #fff;
+      padding-left: 0.75rem;
     }
 
     .cards {
@@ -133,7 +194,6 @@
       margin-top: 0.5rem;
     }
 
-    /* Contact + FAQ — align to top, not stretch */
     .cards-bottom {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -150,12 +210,20 @@
       flex-direction: column;
     }
 
+    .card-featured {
+      border-color: #fff;
+    }
+
     .card-header {
       padding: 0.85rem 1rem;
       border-bottom: 1px solid #555;
       position: relative;
       min-height: 3.5rem;
       flex-shrink: 0;
+    }
+
+    .card-featured .card-header {
+      border-bottom-color: #777;
     }
 
     .card-title {
@@ -237,6 +305,14 @@
 
     .note::before { content: none; }
 
+    .delivery {
+      font-size: 0.62rem;
+      color: #666;
+      border-top: 1px solid #222;
+      padding: 0.4rem 1rem 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
     .faq {
       text-align: left;
       padding: 0.5rem;
@@ -299,6 +375,15 @@
         right: 0.85rem;
         top: 0.85rem;
       }
+
+      .order-flow {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .order-flow .arrow {
+        transform: rotate(90deg);
+      }
     }
   </style>
 </head>
@@ -306,6 +391,26 @@
   <main class="wrapper">
     <h1>kbrtp.top</h1>
     <p class="subtitle">GTA PC Account Modding Service</p>
+    <div class="discord-soon">⏳ Discord server coming soon!</div>
+    <span class="big-things">★ Big things coming soon! ★</span>
+
+    <!-- ORDER FLOW -->
+    <div class="order-flow">
+      <div class="step">
+        <span class="step-num">1. Contact me</span>
+        <span class="step-desc">reach out on Discord</span>
+      </div>
+      <span class="arrow">→</span>
+      <div class="step">
+        <span class="step-num">2. Tell me your bundle + details</span>
+        <span class="step-desc">which package &amp; your preferences</span>
+      </div>
+      <span class="arrow">→</span>
+      <div class="step">
+        <span class="step-num">3. I'll answer when ready</span>
+        <span class="step-desc">I confirm &amp; complete when I have time</span>
+      </div>
+    </div>
 
     <!-- ACCOUNT BUNDLES -->
     <p class="section-label">Account Bundles</p>
@@ -330,6 +435,7 @@
           <li>5M $</li>
           <li>5 Modded outfits</li>
         </ul>
+        <div class="delivery">⏱ delivery ~1–2h</div>
       </article>
 
       <article class="card">
@@ -351,15 +457,17 @@
           <li>10M $</li>
           <li>5 Modded outfits</li>
         </ul>
+        <div class="delivery">⏱ delivery ~1–2h</div>
       </article>
 
-      <article class="card">
+      <article class="card card-featured">
         <header class="card-header">
           <span class="card-title">Full</span>
           <div class="price">
             <span class="price-old">19.99€</span>
             <span class="price-new">13.99€</span>
           </div>
+          <span class="badge badge-white">Most Popular</span>
         </header>
         <ul>
           <li>Any player &amp; crew level</li>
@@ -381,6 +489,7 @@
           <li>Resupply all businesses</li>
           <li>10 Modded outfits</li>
         </ul>
+        <div class="delivery">⏱ delivery ~2–3h</div>
       </article>
 
       <article class="card">
@@ -398,11 +507,11 @@
           </li>
           <li>5M $</li>
         </ul>
+        <div class="delivery">⏱ delivery ~1–2h</div>
       </article>
 
     </section>
 
-    <!-- FULL + GARAGE + CUSTOM -->
     <section class="cards-mid" aria-label="Bundle and Custom">
 
       <article class="card">
@@ -424,6 +533,7 @@
             <span class="note">properties of your choice (mansion, agency, office etc.)</span>
           </li>
         </ul>
+        <div class="delivery">⏱ delivery ~3–4h</div>
       </article>
 
       <article class="card">
@@ -433,7 +543,9 @@
         <ul>
           <li>Contact me for custom requirements</li>
           <li>Price based off your needs</li>
+          <li>Examples: outfits from 1€, rank from 2€, 10M $ from 6€</li>
         </ul>
+        <div class="delivery">⏱ delivery time varies</div>
       </article>
 
     </section>
@@ -458,7 +570,9 @@
           <li>1 heist completed
             <span class="note">heist of your choice</span>
           </li>
+          <li>~3M $ reward</li>
         </ul>
+        <div class="delivery">⏱ ~30 min</div>
       </article>
 
       <article class="card">
@@ -470,7 +584,9 @@
           <li>3 heists completed
             <span class="note">heists of your choice</span>
           </li>
+          <li>~9M $ reward</li>
         </ul>
+        <div class="delivery">⏱ ~1h</div>
       </article>
 
       <article class="card">
@@ -482,7 +598,9 @@
           <li>5 heists completed
             <span class="note">heists of your choice</span>
           </li>
+          <li>~15M $ reward</li>
         </ul>
+        <div class="delivery">⏱ ~1.5h</div>
       </article>
 
       <article class="card">
@@ -498,7 +616,9 @@
           <li>10 heists completed
             <span class="note">heists of your choice</span>
           </li>
+          <li>~30M $ reward</li>
         </ul>
+        <div class="delivery">⏱ ~3h</div>
       </article>
 
     </section>
@@ -513,9 +633,11 @@
         </header>
         <ul>
           <li>Discord: kybertop</li>
+          <li>Discord server: coming soon</li>
           <li>Payment: PayPal family &amp; friends only</li>
           <li>Version: GTA Online Enhanced</li>
           <li>Platform: PC-Only</li>
+          <li>Message me before ordering</li>
         </ul>
       </article>
 
@@ -542,7 +664,7 @@
           </div>
           <div class="faq-item">
             <div class="faq-q">Why don't you offer more money?</div>
-            <div class="faq-a">More money = bigger risk. I could care less if you get banned, but I don't want that for you — so I keep amounts low. That's why Deluxos are included: sell one for 2M$ every 24h and make it back yourself.</div>
+            <div class="faq-a">More money = bigger risk. I couldn't care less if you get banned, but I don't want that for you — so I keep amounts low. That's why Deluxos are included: sell one for 2M$ every 24h and make it back yourself.</div>
           </div>
         </div>
       </article>
