@@ -4,677 +4,233 @@
   <meta charset="UTF-8">
   <title>kbrtp.top - GTA PC Account Modding Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description" content="GTA Online PC account modding service. Basic, Full, Garage and custom bundles. Safe options, low prices. PC-Only, GTA Online Enhanced.">
   <meta name="keywords" content="GTA modding, GTA Online, PC modding, GTA account, modded account, GTA Enhanced, Deluxo, Unlock All">
   <meta name="author" content="kbrtp.top">
-
   <meta property="og:title" content="kbrtp.top - GTA PC Account Modding Service">
   <meta property="og:description" content="GTA Online PC account modding service. Basic, Full, Garage and custom bundles. Safe options, low prices. PC-Only, GTA Online Enhanced.">
   <meta property="og:image" content="https://i.imgur.com/XXKAQva.png">
   <meta property="og:url" content="https://kbrtp.top">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="kbrtp.top">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="kbrtp.top - GTA PC Account Modding Service">
   <meta name="twitter:description" content="GTA Online PC account modding service. Basic, Full, Garage and custom bundles. Safe options, low prices. PC-Only, GTA Online Enhanced.">
   <meta name="twitter:image" content="https://i.imgur.com/XXKAQva.png">
-  <meta name="twitter:site" content="@kbrtp">
-
   <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/></svg>">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html { font-size: 16px; }
-
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: "Courier New", monospace;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .wrapper {
-      border: 1px solid #555;
-      padding: 2rem 2rem;
-      width: 100%;
-      max-width: 1100px;
-    }
-
-    h1 {
-      font-size: clamp(1.2rem, 5vw, 2rem);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-
-    .subtitle {
-      font-size: clamp(0.7rem, 3vw, 0.85rem);
-      color: #ccc;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.5rem;
-    }
-
-    .discord-soon {
-      font-size: 0.72rem;
-      color: #aaa;
-      border: 1px dashed #444;
-      padding: 0.4rem 1.25rem;
-      display: inline-block;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.35rem;
-    }
-
-    .big-things {
-      font-size: clamp(0.85rem, 3vw, 1.1rem);
-      color: #fff;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 0.85rem;
-      display: block;
-    }
-
-    .order-flow {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 0.3rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      color: #aaa;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-      line-height: 1.5;
-    }
-
-    .order-flow .step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 180px;
-      text-align: center;
-    }
-
-    .order-flow .step-num {
-      color: #fff;
-      font-weight: bold;
-      font-size: 0.75rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .order-flow .step-desc {
-      color: #888;
-      font-size: 0.65rem;
-      line-height: 1.4;
-    }
-
-    .order-flow .arrow {
-      color: #444;
-      font-size: 0.9rem;
-      padding-top: 0.1rem;
-      flex-shrink: 0;
-    }
-
-    .notices {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin: 1.25rem 0;
-      align-items: center;
-    }
-
-    .notice {
-      font-size: 0.72rem;
-      color: #fff;
-      border: 1px solid #555;
-      padding: 0.5rem 1.25rem;
-      display: inline-block;
-      letter-spacing: 0.05em;
-    }
-
-    .notice-dim {
-      color: #aaa;
-      border-color: #444;
-      font-size: 0.68rem;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: #999;
-      margin-top: 1.5rem;
-      margin-bottom: 0.25rem;
-      text-align: left;
-      border-top: 1px solid #333;
-      padding-top: 0.75rem;
-    }
-
-    .heist-catchline {
-      font-size: clamp(0.72rem, 2vw, 0.85rem);
-      color: #fff;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.6rem;
-      text-align: left;
-      line-height: 1.5;
-      border-left: 2px solid #fff;
-      padding-left: 0.75rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .cards-mid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .cards-heist {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .cards-bottom {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin-top: 0.5rem;
-      align-items: start;
-    }
-
-    .card {
-      border: 1px solid #777;
-      background: #000;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-featured {
-      border-color: #fff;
-    }
-
-    .card-header {
-      padding: 0.85rem 1rem;
-      border-bottom: 1px solid #555;
-      position: relative;
-      min-height: 3.5rem;
-      flex-shrink: 0;
-    }
-
-    .card-featured .card-header {
-      border-bottom-color: #777;
-    }
-
-    .card-title {
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: clamp(0.65rem, 1.8vw, 0.9rem);
-      margin-bottom: 0.25rem;
-      display: block;
-      padding-right: 5.5rem;
-    }
-
-    .badge {
-      font-size: 0.62rem;
-      padding: 0.1rem 0.35rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    .badge-white {
-      background: #fff;
-      color: #000;
-    }
-
-    .badge-outline {
-      border: 1px solid #fff;
-      color: #fff;
-    }
-
-    .price {
-      font-size: clamp(0.8rem, 2vw, 1.05rem);
-      font-weight: bold;
-      position: absolute;
-      right: 1rem;
-      top: 0.85rem;
-      white-space: nowrap;
-      text-align: right;
-    }
-
-    .price-old {
-      display: block;
-      font-size: 0.72rem;
-      color: #888;
-      text-decoration: line-through;
-      text-decoration-color: #c00;
-      text-decoration-thickness: 2px;
-      font-weight: normal;
-      line-height: 1.2;
-    }
-
-    .price-new {
-      display: block;
-      font-size: clamp(0.8rem, 2vw, 1.05rem);
-      font-weight: bold;
-      line-height: 1.2;
-    }
-
-    .card ul {
-      list-style: none;
-      font-size: clamp(0.62rem, 1.8vw, 0.78rem);
-      line-height: 1.6;
-      padding: 0.85rem 1rem 0.85rem;
-      flex-grow: 1;
-    }
-
-    .card ul li { margin-bottom: 0.1rem; }
-    .card ul li::before { content: "- "; }
-
-    .note {
-      font-size: 0.62rem;
-      color: #999;
-      display: block;
-      padding-left: 1rem;
-      line-height: 1.3;
-      margin-top: 0.1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .note::before { content: none; }
-
-    .delivery {
-      font-size: 0.62rem;
-      color: #666;
-      border-top: 1px solid #222;
-      padding: 0.4rem 1rem 0.5rem;
-      letter-spacing: 0.04em;
-    }
-
-    .faq {
-      text-align: left;
-      padding: 0.5rem;
-    }
-
-    .faq-item {
-      border: 1px solid #444;
-      padding: 0.75rem 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .faq-item:last-child { margin-bottom: 0; }
-
-    .faq-q {
-      font-size: clamp(0.65rem, 1.8vw, 0.82rem);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.35rem;
-      color: #fff;
-    }
-
-    .faq-a {
-      font-size: clamp(0.6rem, 1.6vw, 0.75rem);
-      color: #aaa;
-      line-height: 1.5;
-    }
-
-    .footer {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #555;
-      font-size: clamp(0.62rem, 2vw, 0.73rem);
-      color: #aaa;
-      line-height: 1.5;
-      width: 100%;
-    }
-
-    @media (max-width: 860px) {
-      .cards { grid-template-columns: repeat(2, 1fr); }
-      .cards-heist { grid-template-columns: repeat(2, 1fr); }
-      .cards-bottom { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 480px) {
-      body { padding: 1rem 0.75rem; }
-
-      .wrapper {
-        padding: 1.25rem 1rem;
-        border: none;
-        border-top: 1px solid #555;
-        border-bottom: 1px solid #555;
-      }
-
-      .cards,
-      .cards-mid,
-      .cards-heist,
-      .cards-bottom { grid-template-columns: 1fr; }
-
-      .price {
-        right: 0.85rem;
-        top: 0.85rem;
-      }
-
-      .order-flow {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .order-flow .arrow {
-        transform: rotate(90deg);
-      }
-    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:#030008;color:#fff;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    ::selection{background:rgba(192,132,252,.3);color:#fff}
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:transparent}
+    ::-webkit-scrollbar-thumb{background:rgba(192,132,252,.25);border-radius:3px}
+    a{color:inherit;text-decoration:none}
+    .mono{font-family:'JetBrains Mono',monospace}
+    #aurora-bg{position:fixed;inset:0;z-index:0;opacity:.45}
+    #aurora-bg canvas{position:absolute;inset:0;width:100%;height:100%}
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(3,0,8,.6);border-bottom:1px solid rgba(255,255,255,.06);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .site-nav .logo{font-weight:700;font-size:16px;letter-spacing:.08em}
+    .site-nav .logo .accent{color:#c084fc}
+    .site-nav .links{display:flex;gap:28px;font-size:13px;color:#aaa}
+    .site-nav .links a{transition:color .2s}
+    .site-nav .links a:hover{color:#fff}
+    .content{position:relative;z-index:1}
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px;max-width:900px;margin:0 auto}
+    .hero .tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#c084fc;margin-bottom:16px;padding:5px 14px;border:1px solid rgba(192,132,252,.25);border-radius:100px}
+    .hero h1{font-size:clamp(36px,7vw,64px);font-weight:700;line-height:1.1;letter-spacing:.04em;margin-bottom:16px}
+    .hero h1 .gradient{background:linear-gradient(135deg,#c084fc,#f472b6,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero .subtitle{font-size:clamp(16px,2.5vw,20px);font-weight:300;color:#999;margin-bottom:8px}
+    .hero .desc{font-size:14px;color:#666;line-height:1.7;max-width:440px;margin-bottom:44px}
+    .steps{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+    .step{display:flex;align-items:center;gap:12px}
+    .step-num{font-size:28px;font-weight:700;color:rgba(192,132,252,.2);line-height:1}
+    .step-title{font-size:14px;font-weight:600}
+    .step-desc{font-size:12px;color:#666}
+    .step-arrow{color:#333;margin-left:8px}
+    .section{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+    .section-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#c084fc}
+    .section h2{font-size:28px;font-weight:700;margin-top:8px;letter-spacing:-.01em}
+    .grid-4{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:16px}
+    .grid-bottom{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+    .bg-card{--edge-proximity:0;--cursor-angle:45deg;--edge-sensitivity:30;--color-sensitivity:calc(var(--edge-sensitivity) + 20);--border-radius:20px;--glow-padding:32px;--cone-spread:25;--card-bg:rgba(6,0,16,.82);--fill-opacity:0.5;position:relative;border-radius:var(--border-radius);isolation:isolate;transform:translate3d(0,0,.01px);display:grid;border:1px solid rgba(255,255,255,.1);background:var(--card-bg);overflow:visible;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:border-color .3s ease}
+    .bg-card:hover{border-color:rgba(255,255,255,.18)}
+    .bg-card.featured{border-color:rgba(192,132,252,.35)}
+    .bg-card::before,.bg-card::after,.bg-card>.edge-light{content:"";position:absolute;inset:0;border-radius:inherit;transition:opacity .25s ease-out;z-index:-1}
+    .bg-card:not(:hover):not(.sweep-active)::before,.bg-card:not(:hover):not(.sweep-active)::after,.bg-card:not(:hover):not(.sweep-active)>.edge-light{opacity:0;transition:opacity .75s ease-in-out}
+    .bg-card::before{border:1px solid transparent;background:linear-gradient(var(--card-bg) 0 100%) padding-box,linear-gradient(rgba(255,255,255,0) 0% 100%) border-box,var(--gradient-one) border-box,var(--gradient-two) border-box,var(--gradient-three) border-box,var(--gradient-four) border-box,var(--gradient-five) border-box,var(--gradient-six) border-box,var(--gradient-seven) border-box,var(--gradient-base) border-box;opacity:calc((var(--edge-proximity) - var(--color-sensitivity))/(100 - var(--color-sensitivity)));mask-image:conic-gradient(from var(--cursor-angle) at center,black calc(var(--cone-spread)*1%),transparent calc((var(--cone-spread)+15)*1%),transparent calc((100 - var(--cone-spread) - 15)*1%),black calc((100 - var(--cone-spread))*1%))}
+    .bg-card::after{border:1px solid transparent;background:var(--gradient-one) padding-box,var(--gradient-two) padding-box,var(--gradient-three) padding-box,var(--gradient-four) padding-box,var(--gradient-five) padding-box,var(--gradient-six) padding-box,var(--gradient-seven) padding-box,var(--gradient-base) padding-box;mask-image:linear-gradient(to bottom,black,black),radial-gradient(ellipse at 50% 50%,black 40%,transparent 65%),radial-gradient(ellipse at 66% 66%,black 5%,transparent 40%),radial-gradient(ellipse at 33% 33%,black 5%,transparent 40%),radial-gradient(ellipse at 66% 33%,black 5%,transparent 40%),radial-gradient(ellipse at 33% 66%,black 5%,transparent 40%),conic-gradient(from var(--cursor-angle) at center,transparent 5%,black 15%,black 85%,transparent 95%);mask-composite:subtract,add,add,add,add,add;opacity:calc(var(--fill-opacity)*(var(--edge-proximity) - var(--color-sensitivity))/(100 - var(--color-sensitivity)));mix-blend-mode:soft-light}
+    .bg-card>.edge-light{inset:calc(var(--glow-padding)*-1);pointer-events:none;z-index:1;mask-image:conic-gradient(from var(--cursor-angle) at center,black 2.5%,transparent 10%,transparent 90%,black 97.5%);opacity:calc((var(--edge-proximity) - var(--edge-sensitivity))/(100 - var(--edge-sensitivity)));mix-blend-mode:plus-lighter}
+    .bg-card>.edge-light::before{content:"";position:absolute;inset:var(--glow-padding);border-radius:inherit;box-shadow:inset 0 0 0 1px hsl(280 60% 70%/100%),inset 0 0 1px 0 hsl(280 60% 70%/60%),inset 0 0 3px 0 hsl(280 60% 70%/50%),inset 0 0 6px 0 hsl(280 60% 70%/40%),inset 0 0 15px 0 hsl(280 60% 70%/30%),inset 0 0 25px 2px hsl(280 60% 70%/20%),inset 0 0 50px 2px hsl(280 60% 70%/10%),0 0 1px 0 hsl(280 60% 70%/60%),0 0 3px 0 hsl(280 60% 70%/50%),0 0 6px 0 hsl(280 60% 70%/40%),0 0 15px 0 hsl(280 60% 70%/30%),0 0 25px 2px hsl(280 60% 70%/20%),0 0 50px 2px hsl(280 60% 70%/10%)}
+    .bg-inner{display:flex;flex-direction:column;position:relative;overflow:auto;z-index:1}
+    .card-head{padding:20px 22px 8px}
+    .card-row{display:flex;justify-content:space-between;align-items:flex-start}
+    .card-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#fff}
+    .card-price-wrap{text-align:right;flex-shrink:0;margin-left:16px}
+    .card-price-old{font-size:12px;color:#666;text-decoration:line-through;text-decoration-color:rgba(220,40,40,.6);display:block;line-height:1.2}
+    .card-price{font-size:20px;font-weight:700;color:#fff;letter-spacing:-.02em}
+    .card-price.has-old{font-size:18px}
+    .badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:3px 10px;border-radius:4px;margin-top:8px;margin-bottom:4px}
+    .badge-solid{background:#c084fc;color:#0a0014}
+    .badge-outline{border:1px solid rgba(192,132,252,.5);color:#c084fc}
+    .card-items{padding:4px 22px 16px;flex:1}
+    .card-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:6px}
+    .card-item svg{color:#c084fc;flex-shrink:0;margin-top:2px}
+    .card-item .text{font-size:13px;color:#ccc;line-height:1.5}
+    .card-item .note{display:block;font-size:11px;color:#666;line-height:1.4;margin-top:1px}
+    .card-delivery{border-top:1px solid rgba(255,255,255,.06);padding:10px 22px;display:flex;align-items:center;gap:6px;color:#666;font-size:12px}
+    .heist-notice{padding:16px 22px;display:flex;align-items:center;gap:10px}
+    .heist-notice svg{color:#38bdf8;flex-shrink:0}
+    .heist-notice p{font-size:13px;color:#bbb;line-height:1.6}
+    .notices{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;justify-content:center}
+    .notice{font-size:12px;padding:8px 16px;border-radius:8px}
+    .notice-primary{color:#666;border:1px solid rgba(255,255,255,.06)}
+    .notice-dim{color:#555;border:1px solid rgba(255,255,255,.04)}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer;padding:16px 0}
+    .faq-q{display:flex;justify-content:space-between;align-items:center}
+    .faq-q span:first-child{font-size:14px;font-weight:500;color:#e2e2e2;letter-spacing:.01em}
+    .faq-q .chevron{color:#888;flex-shrink:0;margin-left:12px;transition:transform .25s ease}
+    .faq-q .chevron.open{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,opacity .25s ease;opacity:0}
+    .faq-a.open{max-height:200px;opacity:1}
+    .faq-a p{font-size:13px;color:#999;line-height:1.6;margin-top:8px}
+    .contact-header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+    .contact-icon{width:40px;height:40px;border-radius:10px;background:rgba(192,132,252,.12);display:flex;align-items:center;justify-content:center;color:#c084fc}
+    .contact-name{font-size:14px;font-weight:600}
+    .contact-platform{font-size:12px;color:#666}
+    .contact-rows{display:flex;flex-direction:column;gap:10px}
+    .contact-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.04)}
+    .contact-row .label{font-size:12px;color:#888}
+    .contact-row .value{font-size:13px;color:#ccc}
+    .contact-soon{margin-top:20px;padding:12px 16px;background:rgba(192,132,252,.06);border-radius:10px;border:1px solid rgba(192,132,252,.12);text-align:center;font-size:12px;color:#999}
+    .site-footer{max-width:1120px;margin:0 auto;padding:24px 24px 48px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .site-footer .logo{font-weight:700;font-size:14px;color:#444}
+    .site-footer .logo .accent{color:rgba(192,132,252,.4)}
+    .site-footer .disclaimer{font-size:11px;color:#555;line-height:1.5;max-width:500px;text-align:right}
+    .fade-in{opacity:0;transform:translateY(16px);animation:fadeUp .6s ease forwards}
+    .fade-in-d1{animation-delay:.1s}.fade-in-d2{animation-delay:.2s}.fade-in-d25{animation-delay:.25s}.fade-in-d3{animation-delay:.3s}.fade-in-d4{animation-delay:.4s}
+    @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+    .glow-purple{--gradient-one:radial-gradient(at 80% 55%,#c084fc 0px,transparent 50%);--gradient-two:radial-gradient(at 69% 34%,#f472b6 0px,transparent 50%);--gradient-three:radial-gradient(at 8% 6%,#38bdf8 0px,transparent 50%);--gradient-four:radial-gradient(at 41% 38%,#c084fc 0px,transparent 50%);--gradient-five:radial-gradient(at 86% 85%,#f472b6 0px,transparent 50%);--gradient-six:radial-gradient(at 82% 18%,#38bdf8 0px,transparent 50%);--gradient-seven:radial-gradient(at 51% 4%,#f472b6 0px,transparent 50%);--gradient-base:linear-gradient(#c084fc 0 100%)}
+    .glow-blue{--gradient-one:radial-gradient(at 80% 55%,#38bdf8 0px,transparent 50%);--gradient-two:radial-gradient(at 69% 34%,#c084fc 0px,transparent 50%);--gradient-three:radial-gradient(at 8% 6%,#f472b6 0px,transparent 50%);--gradient-four:radial-gradient(at 41% 38%,#38bdf8 0px,transparent 50%);--gradient-five:radial-gradient(at 86% 85%,#c084fc 0px,transparent 50%);--gradient-six:radial-gradient(at 82% 18%,#f472b6 0px,transparent 50%);--gradient-seven:radial-gradient(at 51% 4%,#c084fc 0px,transparent 50%);--gradient-base:linear-gradient(#38bdf8 0 100%)}
+    @media(max-width:640px){.site-nav .links{gap:16px;font-size:12px}.hero{padding:100px 16px 60px}.section{padding:0 16px 60px}.steps{gap:20px}.step-arrow{display:none}}
   </style>
 </head>
 <body>
-  <main class="wrapper">
-    <h1>kbrtp.top</h1>
-    <p class="subtitle">GTA PC Account Modding Service</p>
-    <div class="discord-soon">⏳ Discord server coming soon!</div>
-    <span class="big-things">★ Big things coming soon! ★</span>
-
-    <!-- ORDER FLOW -->
-    <div class="order-flow">
-      <div class="step">
-        <span class="step-num">1. Contact me</span>
-        <span class="step-desc">reach out on Discord</span>
-      </div>
-      <span class="arrow">→</span>
-      <div class="step">
-        <span class="step-num">2. Tell me your bundle + details</span>
-        <span class="step-desc">which package &amp; your preferences</span>
-      </div>
-      <span class="arrow">→</span>
-      <div class="step">
-        <span class="step-num">3. I'll answer when ready</span>
-        <span class="step-desc">I confirm &amp; complete when I have time</span>
-      </div>
+<div id="aurora-bg"><canvas id="aurora-canvas"></canvas></div>
+<nav class="site-nav">
+  <span class="logo mono">kbrtp<span class="accent">.top</span></span>
+  <div class="links">
+    <a href="#bundles">Bundles</a>
+    <a href="#heists">Heists</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<div class="content">
+  <section class="hero">
+    <div class="fade-in fade-in-d1"><span class="tag mono">GTA Online Enhanced &middot; PC Only</span></div>
+    <h1 class="mono fade-in fade-in-d2">kbrtp<span class="gradient">.top</span></h1>
+    <p class="subtitle fade-in fade-in-d25">Account Modding Service</p>
+    <p class="desc fade-in fade-in-d3">Safe options, low prices. Bundles, garage builds, heist carries. Minimal detection risk, maximum value.</p>
+    <div class="steps fade-in fade-in-d4">
+      <div class="step"><span class="step-num mono">01</span><div><div class="step-title">Contact me</div><div class="step-desc">Reach out on Discord</div></div></div>
+      <span class="step-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      <div class="step"><span class="step-num mono">02</span><div><div class="step-title">Pick your bundle</div><div class="step-desc">Choose a package + details</div></div></div>
+      <span class="step-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      <div class="step"><span class="step-num mono">03</span><div><div class="step-title">I deliver</div><div class="step-desc">Completed when I'm ready</div></div></div>
     </div>
-
-    <!-- ACCOUNT BUNDLES -->
-    <p class="section-label">Account Bundles</p>
-    <section class="cards" aria-label="GTA Modding Bundles">
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">Basic</span>
-          <div class="price">4.99€</div>
-        </header>
-        <ul>
-          <li>Any player &amp; crew level</li>
-          <li>Max stats, modded run</li>
-          <li>Unlock All</li>
-          <li>5 Vehicles
-            <span class="note">vehicles of your choice</span>
-          </li>
-          <li>2 Properties
-            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
-          </li>
-          <li>10 Deluxos</li>
-          <li>5M $</li>
-          <li>5 Modded outfits</li>
-        </ul>
-        <div class="delivery">⏱ delivery ~1–2h</div>
-      </article>
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">Pro</span>
-          <div class="price">8.99€</div>
-        </header>
-        <ul>
-          <li>Any player &amp; crew level</li>
-          <li>Max stats, modded run</li>
-          <li>Unlock All</li>
-          <li>10 Vehicles
-            <span class="note">vehicles of your choice</span>
-          </li>
-          <li>3 Properties
-            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
-          </li>
-          <li>15 Deluxos</li>
-          <li>10M $</li>
-          <li>5 Modded outfits</li>
-        </ul>
-        <div class="delivery">⏱ delivery ~1–2h</div>
-      </article>
-
-      <article class="card card-featured">
-        <header class="card-header">
-          <span class="card-title">Full</span>
-          <div class="price">
-            <span class="price-old">19.99€</span>
-            <span class="price-new">13.99€</span>
-          </div>
-          <span class="badge badge-white">Most Popular</span>
-        </header>
-        <ul>
-          <li>Any player &amp; crew level</li>
-          <li>Max stats, modded run</li>
-          <li>Unlock All</li>
-          <li>All properties for business</li>
-          <li>Unlock all heists</li>
-          <li>10 Vehicles
-            <span class="note">all of your choice</span>
-          </li>
-          <li>3 Properties
-            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
-          </li>
-          <li>20 Deluxos</li>
-          <li>20M $</li>
-          <li>LSC lvl 1000</li>
-          <li>Bunker reward unlocked</li>
-          <li>Custom KD</li>
-          <li>Resupply all businesses</li>
-          <li>10 Modded outfits</li>
-        </ul>
-        <div class="delivery">⏱ delivery ~2–3h</div>
-      </article>
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">Garage Service</span>
-          <div class="price">10.99€</div>
-        </header>
-        <ul>
-          <li>20 Modded vehicles
-            <span class="note">vehicles of your choice</span>
-          </li>
-          <li>20 Deluxos</li>
-          <li>1 property with garage
-            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
-          </li>
-          <li>5M $</li>
-        </ul>
-        <div class="delivery">⏱ delivery ~1–2h</div>
-      </article>
-
-    </section>
-
-    <section class="cards-mid" aria-label="Bundle and Custom">
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">Full + Garage</span>
-          <div class="price">
-            <span class="price-old">25.99€</span>
-            <span class="price-new">15.99€</span>
-          </div>
-          <span class="badge badge-outline">Limited Time Offer</span>
-        </header>
-        <ul>
-          <li>All Full features</li>
-          <li>All Garage features</li>
-          <li>30 Deluxos
-            <span class="note">garage space included - you can choose</span>
-          </li>
-          <li>5 Properties
-            <span class="note">properties of your choice (mansion, agency, office etc.)</span>
-          </li>
-        </ul>
-        <div class="delivery">⏱ delivery ~3–4h</div>
-      </article>
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">Custom Order</span>
-        </header>
-        <ul>
-          <li>Contact me for custom requirements</li>
-          <li>Price based off your needs</li>
-          <li>Examples: outfits from 1€, rank from 2€, 10M $ from 6€</li>
-        </ul>
-        <div class="delivery">⏱ delivery time varies</div>
-      </article>
-
-    </section>
-
-    <!-- NOTICES -->
+  </section>
+  <section id="bundles" class="section">
+    <div style="margin-bottom:32px"><span class="section-label mono">Account Bundles</span><h2>Choose your package</h2></div>
+    <div class="grid-4" id="bundles-grid"></div>
+    <div class="grid-2" id="combos-grid"></div>
     <div class="notices">
-      <div class="notice">* every Deluxo is worth 2M$ in-game — sell one every 24h for maximum daily profit</div>
-      <div class="notice notice-dim">* some vehicles cannot be added to garage</div>
+      <span class="notice notice-primary">Every Deluxo is worth 2M$ in-game &mdash; sell one every 24h for max daily profit</span>
+      <span class="notice notice-dim">Some vehicles cannot be added to garage</span>
     </div>
-
-    <!-- HEISTS SERVICE -->
-    <p class="section-label">Heists Service</p>
-    <p class="heist-catchline">Worried about sharing your account? No need — we run heists together in a session. Your account stays yours without using mods. No risk here.</p>
-    <section class="cards-heist" aria-label="Heists Service">
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">1 Heist</span>
-          <div class="price">2.99€</div>
-        </header>
-        <ul>
-          <li>1 heist completed
-            <span class="note">heist of your choice</span>
-          </li>
-          <li>~3M $ reward</li>
-        </ul>
-        <div class="delivery">⏱ ~30 min</div>
-      </article>
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">3 Heists</span>
-          <div class="price">4.99€</div>
-        </header>
-        <ul>
-          <li>3 heists completed
-            <span class="note">heists of your choice</span>
-          </li>
-          <li>~9M $ reward</li>
-        </ul>
-        <div class="delivery">⏱ ~1h</div>
-      </article>
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">5 Heists</span>
-          <div class="price">6.99€</div>
-        </header>
-        <ul>
-          <li>5 heists completed
-            <span class="note">heists of your choice</span>
-          </li>
-          <li>~15M $ reward</li>
-        </ul>
-        <div class="delivery">⏱ ~1.5h</div>
-      </article>
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">10 Heists</span>
-          <div class="price">
-            <span class="price-old">19.99€</span>
-            <span class="price-new">10.99€</span>
-          </div>
-          <span class="badge badge-white">Best Value</span>
-        </header>
-        <ul>
-          <li>10 heists completed
-            <span class="note">heists of your choice</span>
-          </li>
-          <li>~30M $ reward</li>
-        </ul>
-        <div class="delivery">⏱ ~3h</div>
-      </article>
-
-    </section>
-
-    <!-- CONTACT + FAQ -->
-    <p class="section-label">Contact &amp; FAQ</p>
-    <section class="cards-bottom" aria-label="Contact and FAQ">
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">Contact</span>
-        </header>
-        <ul>
-          <li>Discord: kybertop</li>
-          <li>Discord server: coming soon</li>
-          <li>Payment: PayPal family &amp; friends only</li>
-          <li>Version: GTA Online Enhanced</li>
-          <li>Platform: PC-Only</li>
-          <li>Message me before ordering</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <header class="card-header">
-          <span class="card-title">FAQ</span>
-        </header>
-        <div class="faq">
-          <div class="faq-item">
-            <div class="faq-q">How does this work?</div>
-            <div class="faq-a">I log into your account and complete the service while we stay in contact through chat the entire time.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">How can I pay?</div>
-            <div class="faq-a">PayPal — Family &amp; Friends only. No notes in the payment, please.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">How do heists work?</div>
-            <div class="faq-a">I invite you to the heist, set your cut and instantly finish it — you get the money. No risk from your side. Max 30M$ per day and 150M$ per week.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">Why do you need to log in to my account? I'm scared.</div>
-            <div class="faq-a">There is no other way to mod your account. If you only need money, you can choose the Heists Service instead — no login required.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">Why don't you offer more money?</div>
-            <div class="faq-a">More money = bigger risk. I couldn't care less if you get banned, but I don't want that for you — so I keep amounts low. That's why Deluxos are included: sell one for 2M$ every 24h and make it back yourself.</div>
-          </div>
-        </div>
-      </article>
-
-    </section>
-
-    <footer class="footer">
-      All services use the safest modding options available. Low money options ensure minimal detection risk.
-      Nothing is 100% safe - I am not responsible for any bans. You take full responsibility.
-    </footer>
-  </main>
+  </section>
+  <section id="heists" class="section">
+    <div style="margin-bottom:16px"><span class="section-label mono">Heists Service</span><h2>No account access needed</h2></div>
+    <div class="bg-card glow-blue"><span class="edge-light"></span><div class="bg-inner"><div class="heist-notice"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><p>We run heists together in a session. Your account stays yours without using mods. No risk.</p></div></div></div>
+    <div class="grid-3" id="heists-grid"></div>
+  </section>
+  <section class="section">
+    <div class="grid-bottom">
+      <div id="faq"><span class="section-label mono">FAQ</span><h2 style="margin-top:8px;margin-bottom:16px;font-size:24px">Common questions</h2><div class="bg-card glow-purple"><span class="edge-light"></span><div class="bg-inner"><div style="padding:8px 22px 12px" id="faq-list"></div></div></div></div>
+      <div id="contact"><span class="section-label mono">Contact</span><h2 style="margin-top:8px;margin-bottom:16px;font-size:24px">Get in touch</h2><div class="bg-card glow-purple"><span class="edge-light"></span><div class="bg-inner"><div style="padding:24px 22px"><div class="contact-header"><div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 3.5c-1.74-.94-3.6-1.6-5.5-1.9-.24.43-.5.99-.69 1.43a19.4 19.4 0 0 0-5.62 0c-.19-.44-.46-1-.7-1.43A19 19 0 0 0 .5 3.51 20.2 20.2 0 0 0 .05 18.3a19.3 19.3 0 0 0 5.88 2.97c.47-.64.89-1.32 1.25-2.04a12.4 12.4 0 0 1-1.97-.95c.17-.12.33-.25.48-.38a13.7 13.7 0 0 0 11.62 0c.16.13.32.26.48.38-.63.37-1.29.69-1.97.95.36.72.78 1.4 1.25 2.04a19.3 19.3 0 0 0 5.88-2.97A20.2 20.2 0 0 0 18.5 3.5zM8.34 15.37c-1.1 0-2-.99-2-2.21s.88-2.22 2-2.22 2.02 1 2 2.22-.88 2.21-2 2.21zm5.32 0c-1.1 0-2-.99-2-2.21s.88-2.22 2-2.22 2.02 1 2 2.22-.88 2.21-2 2.21z"/></svg></div><div><div class="contact-name">kybertop</div><div class="contact-platform">Discord</div></div></div><div class="contact-rows"><div class="contact-row"><span class="label mono">Payment</span><span class="value">PayPal &mdash; Family &amp; Friends only</span></div><div class="contact-row"><span class="label mono">Version</span><span class="value">GTA Online Enhanced</span></div><div class="contact-row"><span class="label mono">Platform</span><span class="value">PC Only</span></div><div class="contact-row"><span class="label mono">Important</span><span class="value">Message me before ordering</span></div></div><div class="contact-soon">Discord server coming soon</div></div></div></div></div>
+    </div>
+  </section>
+  <footer class="site-footer"><span class="logo mono">kbrtp<span class="accent">.top</span></span><p class="disclaimer">All services use the safest modding options available. Low money options ensure minimal detection risk. Nothing is 100% safe &mdash; I am not responsible for any bans. You take full responsibility.</p></footer>
+</div>
+<script>
+(function(){
+var K='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+var C='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+var V='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+function bc(d,cc){var cl='bg-card '+(cc||'glow-purple')+(d.featured?' featured':'');var h='<div class="'+cl+'"><span class="edge-light"></span><div class="bg-inner"><div class="card-head"><div class="card-row"><div><h3 class="card-title mono">'+d.title+'</h3></div><div class="card-price-wrap mono">';if(d.oldPrice)h+='<span class="card-price-old">'+d.oldPrice+'</span>';h+='<span class="card-price'+(d.oldPrice?' has-old':'')+'">'+d.price+'</span></div></div>';if(d.badge)h+='<span class="badge '+(d.badgeStyle==='solid'?'badge-solid':'badge-outline')+'">'+d.badge+'</span>';h+='</div><div class="card-items">';d.items.forEach(function(it){h+='<div class="card-item">'+K+'<div><span class="text">'+it.text+'</span>';if(it.note)h+='<span class="note">'+it.note+'</span>';h+='</div></div>';});h+='</div>';if(d.delivery)h+='<div class="card-delivery mono">'+C+'<span>'+d.delivery+'</span></div>';h+='</div></div>';return h;}
+var bundles=[
+{title:"Basic",price:"4.99\u20AC",delivery:"~1\u20132h",items:[{text:"Any player & crew level"},{text:"Max stats, modded run"},{text:"Unlock All"},{text:"5 Vehicles",note:"vehicles of your choice"},{text:"2 Properties",note:"mansion, agency, office etc."},{text:"10 Deluxos"},{text:"5M $"},{text:"5 Modded outfits"}]},
+{title:"Pro",price:"8.99\u20AC",delivery:"~1\u20132h",items:[{text:"Any player & crew level"},{text:"Max stats, modded run"},{text:"Unlock All"},{text:"10 Vehicles",note:"vehicles of your choice"},{text:"3 Properties",note:"mansion, agency, office etc."},{text:"15 Deluxos"},{text:"10M $"},{text:"5 Modded outfits"}]},
+{title:"Full",price:"13.99\u20AC",oldPrice:"19.99\u20AC",badge:"Most Popular",badgeStyle:"solid",featured:true,delivery:"~2\u20133h",items:[{text:"Any player & crew level"},{text:"Max stats, modded run"},{text:"Unlock All"},{text:"All properties for business"},{text:"Unlock all heists"},{text:"10 Vehicles",note:"all of your choice"},{text:"3 Properties",note:"mansion, agency, office etc."},{text:"20 Deluxos"},{text:"20M $"},{text:"LSC lvl 1000"},{text:"Bunker reward unlocked"},{text:"Custom KD"},{text:"Resupply all businesses"},{text:"10 Modded outfits"}]},
+{title:"Garage Service",price:"10.99\u20AC",delivery:"~1\u20132h",items:[{text:"20 Modded vehicles",note:"vehicles of your choice"},{text:"20 Deluxos"},{text:"1 property with garage",note:"mansion, agency, office etc."},{text:"5M $"}]}
+];
+var combos=[
+{title:"Full + Garage",price:"15.99\u20AC",oldPrice:"25.99\u20AC",badge:"Limited Time",badgeStyle:"outline",delivery:"~3\u20134h",items:[{text:"All Full features"},{text:"All Garage features"},{text:"30 Deluxos",note:"garage space included"},{text:"5 Properties",note:"mansion, agency, office etc."}]},
+{title:"Custom Order",price:"varies",items:[{text:"Contact me for custom requirements"},{text:"Pricing based on your needs"},{text:"Examples: outfits from 1\u20AC, rank from 2\u20AC, 10M $ from 6\u20AC"}]}
+];
+var heists=[
+{title:"1 Heist",price:"3.99\u20AC",delivery:"~30 min",items:[{text:"1 heist completed",note:"heist of your choice"},{text:"~2M $ reward"}]},
+{title:"3 Heists",price:"7.99\u20AC",delivery:"~1h",items:[{text:"3 heists completed",note:"heists of your choice"},{text:"~7M $ reward"}]},
+{title:"6 Heists",price:"9.99\u20AC",oldPrice:"13.99\u20AC",badge:"Best Value",badgeStyle:"solid",featured:true,delivery:"~2h",items:[{text:"6 heists completed",note:"heists of your choice"},{text:"~12M $ reward"}]}
+];
+var faqs=[
+{q:"How does this work?",a:"I log into your account and complete the service while we stay in contact through chat the entire time."},
+{q:"How can I pay?",a:"PayPal \u2014 Family & Friends only. No notes in the payment, please."},
+{q:"How do heists work?",a:"I invite you to the heist, set your cut and instantly finish it \u2014 you get the money. No risk from your side. Max 30M$ per day and 150M$ per week."},
+{q:"Why do you need to log in to my account?",a:"There is no other way to mod your account. If you only need money, you can choose the Heists Service instead \u2014 no login required."},
+{q:"Why don\u2019t you offer more money?",a:"More money = bigger risk. I keep amounts low to minimize detection risk. That\u2019s why Deluxos are included: sell one for 2M$ every 24h and make it back yourself."}
+];
+document.getElementById('bundles-grid').innerHTML=bundles.map(function(b){return bc(b)}).join('');
+document.getElementById('combos-grid').innerHTML=combos.map(function(b){return bc(b)}).join('');
+document.getElementById('heists-grid').innerHTML=heists.map(function(h){return bc(h,'glow-blue')}).join('');
+var fh='';faqs.forEach(function(f,i){fh+='<div class="faq-item"><div class="faq-q"><span>'+f.q+'</span><span class="chevron">'+V+'</span></div><div class="faq-a"><p>'+f.a+'</p></div></div>';});
+document.getElementById('faq-list').innerHTML=fh;
+document.getElementById('faq-list').addEventListener('click',function(e){var item=e.target.closest('.faq-item');if(!item)return;item.querySelector('.faq-a').classList.toggle('open');item.querySelector('.chevron').classList.toggle('open');});
+document.querySelectorAll('.bg-card').forEach(function(card){card.addEventListener('pointermove',function(e){var rect=card.getBoundingClientRect();var x=e.clientX-rect.left,y=e.clientY-rect.top;var cx=rect.width/2,cy=rect.height/2;var dx=x-cx,dy=y-cy;var kx=Infinity,ky=Infinity;if(dx!==0)kx=cx/Math.abs(dx);if(dy!==0)ky=cy/Math.abs(dy);var edge=Math.min(Math.max(1/Math.min(kx,ky),0),1);var rad=Math.atan2(dy,dx);var deg=rad*(180/Math.PI)+90;if(deg<0)deg+=360;card.style.setProperty('--edge-proximity',(edge*100).toFixed(3));card.style.setProperty('--cursor-angle',deg.toFixed(3)+'deg');});});
+var canvas=document.getElementById('aurora-canvas');
+var gl=canvas.getContext('webgl',{alpha:true,premultipliedAlpha:false});
+if(gl){
+gl.clearColor(0,0,0,0);
+function ms(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s;}
+var vs=ms(gl.VERTEX_SHADER,'attribute vec2 uv;attribute vec2 position;varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position,0,1);}');
+var fs=ms(gl.FRAGMENT_SHADER,'precision highp float;uniform float uTime;uniform vec3 uResolution;uniform float uSpeed;uniform float uScale;uniform float uBrightness;uniform vec3 uColor1;uniform vec3 uColor2;uniform float uNoiseFreq;uniform float uNoiseAmp;uniform float uBandHeight;uniform float uBandSpread;uniform float uOctaveDecay;uniform float uLayerOffset;uniform float uColorSpeed;uniform vec2 uMouse;uniform float uMouseInfluence;uniform bool uEnableMouse;#define TAU 6.28318\nvec3 gradientHash(vec3 p){p=vec3(dot(p,vec3(127.1,311.7,234.6)),dot(p,vec3(269.5,183.3,198.3)),dot(p,vec3(169.5,283.3,156.9)));vec3 h=fract(sin(p)*43758.5453123);float phi=acos(2.0*h.x-1.0);float theta=TAU*h.y;return vec3(cos(theta)*sin(phi),sin(theta)*cos(phi),cos(phi));}float quinticSmooth(float t){float t2=t*t;float t3=t*t2;return 6.0*t3*t2-15.0*t2*t2+10.0*t3;}vec3 cosineGradient(float t,vec3 a,vec3 b,vec3 c,vec3 d){return a+b*cos(TAU*(c*t+d));}float perlin3D(float amplitude,float frequency,float px,float py,float pz){float x=px*frequency;float y=py*frequency;float fx=floor(x);float fy=floor(y);float fz=floor(pz);float cx=ceil(x);float cy=ceil(y);float cz=ceil(pz);vec3 g000=gradientHash(vec3(fx,fy,fz));vec3 g100=gradientHash(vec3(cx,fy,fz));vec3 g010=gradientHash(vec3(fx,cy,fz));vec3 g110=gradientHash(vec3(cx,cy,fz));vec3 g001=gradientHash(vec3(fx,fy,cz));vec3 g101=gradientHash(vec3(cx,fy,cz));vec3 g011=gradientHash(vec3(fx,cy,cz));vec3 g111=gradientHash(vec3(cx,cy,cz));float d000=dot(g000,vec3(x-fx,y-fy,pz-fz));float d100=dot(g100,vec3(x-cx,y-fy,pz-fz));float d010=dot(g010,vec3(x-fx,y-cy,pz-fz));float d110=dot(g110,vec3(x-cx,y-cy,pz-fz));float d001=dot(g001,vec3(x-fx,y-fy,pz-cz));float d101=dot(g101,vec3(x-cx,y-fy,pz-cz));float d011=dot(g011,vec3(x-fx,y-cy,pz-cz));float d111=dot(g111,vec3(x-cx,y-cy,pz-cz));float sx=quinticSmooth(x-fx);float sy=quinticSmooth(y-fy);float sz=quinticSmooth(pz-fz);float lx00=mix(d000,d100,sx);float lx10=mix(d010,d110,sx);float lx01=mix(d001,d101,sx);float lx11=mix(d011,d111,sx);float ly0=mix(lx00,lx10,sy);float ly1=mix(lx01,lx11,sy);return amplitude*mix(ly0,ly1,sz);}float auroraGlow(float t,vec2 shift){vec2 uv=gl_FragCoord.xy/uResolution.y;uv+=shift;float noiseVal=0.0;float freq=uNoiseFreq;float amp=uNoiseAmp;vec2 samplePos=uv*uScale;for(float i=0.0;i<3.0;i+=1.0){noiseVal+=perlin3D(amp,freq,samplePos.x,samplePos.y,t);amp*=uOctaveDecay;freq*=2.0;}float yBand=uv.y*10.0-uBandHeight*10.0;return 0.3*max(exp(uBandSpread*(1.0-1.1*abs(noiseVal+yBand))),0.0);}void main(){vec2 uv=gl_FragCoord.xy/uResolution.xy;float t=uSpeed*0.4*uTime;vec2 shift=vec2(0.0);if(uEnableMouse){shift=(uMouse-0.5)*uMouseInfluence;}vec3 col=vec3(0.0);col+=0.99*auroraGlow(t,shift)*cosineGradient(uv.x+uTime*uSpeed*0.2*uColorSpeed,vec3(0.5),vec3(0.5),vec3(1.0),vec3(0.3,0.20,0.20))*uColor1;col+=0.99*auroraGlow(t+uLayerOffset,shift)*cosineGradient(uv.x+uTime*uSpeed*0.1*uColorSpeed,vec3(0.5),vec3(0.5),vec3(2.0,1.0,0.0),vec3(0.5,0.20,0.25))*uColor2;col*=uBrightness;float alpha=clamp(length(col),0.0,1.0);gl_FragColor=vec4(col,alpha);}');
+var prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);gl.useProgram(prog);
+var verts=new Float32Array([-1,-1,0,0,3,-1,2,0,-1,3,0,2]);var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,verts,gl.STATIC_DRAW);
+var posLoc=gl.getAttribLocation(prog,'position');var uvLoc=gl.getAttribLocation(prog,'uv');
+gl.enableVertexAttribArray(posLoc);gl.vertexAttribPointer(posLoc,2,gl.FLOAT,false,16,0);
+gl.enableVertexAttribArray(uvLoc);gl.vertexAttribPointer(uvLoc,2,gl.FLOAT,false,16,8);
+function u(n){return gl.getUniformLocation(prog,n);}
+gl.uniform1f(u('uSpeed'),0.6);gl.uniform1f(u('uScale'),1.5);gl.uniform1f(u('uBrightness'),1.0);
+gl.uniform3f(u('uColor1'),0.969,0.969,0.969);gl.uniform3f(u('uColor2'),0.882,0.0,1.0);
+gl.uniform1f(u('uNoiseFreq'),2.5);gl.uniform1f(u('uNoiseAmp'),1.0);gl.uniform1f(u('uBandHeight'),0.5);
+gl.uniform1f(u('uBandSpread'),1.0);gl.uniform1f(u('uOctaveDecay'),0.1);gl.uniform1f(u('uLayerOffset'),0.0);
+gl.uniform1f(u('uColorSpeed'),1.0);gl.uniform2f(u('uMouse'),0.5,0.5);
+gl.uniform1f(u('uMouseInfluence'),0.25);gl.uniform1i(u('uEnableMouse'),1);
+var mouse=[0.5,0.5],target=[0.5,0.5];
+canvas.addEventListener('mousemove',function(e){var r=canvas.getBoundingClientRect();target=[(e.clientX-r.left)/r.width,1.0-(e.clientY-r.top)/r.height];});
+canvas.addEventListener('mouseleave',function(){target=[0.5,0.5];});
+function resize(){var dpr=Math.min(window.devicePixelRatio||1,2);var w=canvas.parentElement.offsetWidth;var h=canvas.parentElement.offsetHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';gl.viewport(0,0,canvas.width,canvas.height);gl.uniform3f(u('uResolution'),canvas.width,canvas.height,canvas.width/canvas.height);}
+window.addEventListener('resize',resize);resize();
+function loop(t){requestAnimationFrame(loop);mouse[0]+=0.05*(target[0]-mouse[0]);mouse[1]+=0.05*(target[1]-mouse[1]);gl.uniform1f(u('uTime'),t*0.001);gl.uniform2f(u('uMouse'),mouse[0],mouse[1]);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,3);}
+requestAnimationFrame(loop);
+}
+})();
+</script>
 </body>
 </html>
