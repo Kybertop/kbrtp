@@ -4,377 +4,273 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>kbrtp — Solar Voyage</title>
-  <meta name="description" content="A solar voyage from the Sun to Neptune. Observatory notes on the system we live in.">
-  <meta name="theme-color" content="#07080e">
+  <meta name="description" content="Walk the solar system in 3D. Distances from the Sun to Neptune, the Moon, and the galaxies around us.">
+  <meta name="theme-color" content="#07080c">
   <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://kbrtp.top/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="apple-touch.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="kbrtp">
+  <meta property="og:title" content="kbrtp — Solar Voyage">
+  <meta property="og:description" content="Walk the solar system in 3D. Distances from the Sun to Neptune, the Moon, and the galaxies around us.">
+  <meta property="og:url" content="https://kbrtp.top/">
+  <meta property="og:image" content="https://kbrtp.top/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="kbrtp — Solar Voyage">
+  <meta name="twitter:description" content="Walk the solar system in 3D. Distances from the Sun to Neptune, the Moon, and the galaxies around us.">
+  <meta name="twitter:image" content="https://kbrtp.top/og.jpg">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void: "#07080c",
+            paper: "#e6e0d2",
+            mute: "#8a8696",
+            ice: "#7ee7de",
+            sun: "#e0b66c"
+          },
+          fontFamily: {
+            sans: ["Archivo", "ui-sans-serif", "system-ui", "sans-serif"],
+            num: ["Oxanium", "ui-sans-serif", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-void text-paper font-sans antialiased">
   <a class="skip" href="#main">Skip to content</a>
-  <canvas id="starfield" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="frame" aria-hidden="true">
-    <span class="frame-c tl"></span>
-    <span class="frame-c tr"></span>
-    <span class="frame-c bl"></span>
-    <span class="frame-c br"></span>
-  </div>
+  <div id="boot" data-boot><i></i></div>
 
   <header class="nav" data-nav>
     <a class="mark" href="#top">
-      <span class="mark-ring" aria-hidden="true"></span>
+      <svg class="mark-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="0.7" opacity=".5"/></svg>
       kbrtp
     </a>
     <nav class="nav-links" data-menu>
-      <a href="#voyage">Voyage</a>
+      <a href="#voyage">System</a>
       <a href="#atlas">Atlas</a>
-      <a href="#galaxy">Galaxy</a>
+      <a href="#worlds">Worlds</a>
+      <a href="#galaxies">Galaxies</a>
     </nav>
-    <p class="nav-live"><span class="pulse"></span>Live</p>
-    <button class="nav-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
+    <button class="nav-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
   </header>
 
   <div class="sheet" id="menu" data-sheet hidden>
-    <a href="#voyage">Voyage</a>
+    <a href="#voyage">System</a>
     <a href="#atlas">Atlas</a>
-    <a href="#galaxy">Galaxy</a>
+    <a href="#worlds">Worlds</a>
+    <a href="#galaxies">Galaxies</a>
   </div>
 
   <main id="main">
     <section class="hero" id="top">
-      <canvas id="hero-galaxy" aria-hidden="true"></canvas>
-      <p class="hud hud-tl">
-        <span>MSG 04.17</span>
-        <span>ALT 408 KM</span>
-      </p>
-      <p class="hud hud-tr">
-        <span>VEL 7.66 KM/S</span>
-        <span>SOL III</span>
-      </p>
-
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="kicker">Observatory · Local group</p>
-          <h1>The solar<br><em>voyage</em></h1>
-          <p class="lede">Nine bodies. One path. Scroll through the system.</p>
-          <a class="cta" href="#voyage">
-            Begin
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="orrey" aria-hidden="true">
-          <div class="orrey-ring r1"></div>
-          <div class="orrey-ring r2"></div>
-          <div class="orrey-ring r3"></div>
-          <div class="orrey-sat"></div>
-          <div class="planet is-earth is-hero">
-            <div class="sphere">
-              <div class="surf"></div>
-              <div class="cloud"></div>
-              <div class="shade"></div>
-            </div>
-            <div class="atm"></div>
-          </div>
-        </div>
+      <canvas id="hero-gl" aria-hidden="true"></canvas>
+      <div class="hero-copy">
+        <p class="eyebrow">Sol · 8 planets · 1 moon you can see</p>
+        <h1>Solar voyage</h1>
+        <p class="lede">Scroll through real globes, lit from the Sun. Distances are true. Sizes are not.</p>
+        <a class="cta" href="#voyage">Enter the path
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M10 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        </a>
       </div>
-
-      <div class="hero-foot">
-        <p>Sun to Neptune</p>
-        <span class="scroll-hint">
-          <span class="scroll-line"></span>
-          Scroll
-        </span>
-        <p>4.5 billion years</p>
-      </div>
+      <p class="hero-hint">Drag the globe · scroll to leave</p>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Sun</span><span>Mercury</span><span>Venus</span><span>Earth</span><span>Mars</span><span>Jupiter</span><span>Saturn</span><span>Uranus</span><span>Neptune</span>
-        <span>Sun</span><span>Mercury</span><span>Venus</span><span>Earth</span><span>Mars</span><span>Jupiter</span><span>Saturn</span><span>Uranus</span><span>Neptune</span>
-      </div>
-    </div>
-
-    <section class="strip">
-      <article>
-        <p class="n">13.8</p>
-        <p>Billion years<br>since the first light</p>
-      </article>
-      <article>
-        <p class="n">100<sup>+</sup></p>
-        <p>Billion stars<br>in the Milky Way</p>
-      </article>
-      <article>
-        <p class="n">93</p>
-        <p>Billion light-years<br>across the observable</p>
-      </article>
-      <article>
-        <p class="n">1</p>
-        <p>Known living world<br>in 10<sup>24</sup> stars</p>
-      </article>
+    <section class="facts-row" id="system">
+      <article><b class="font-num">4.6 Gyr</b><span>Age of the system</span></article>
+      <article><b class="font-num">99.86%</b><span>Mass locked in the Sun</span></article>
+      <article><b class="font-num">149.6 M km</b><span>Earth to Sun · 1 AU</span></article>
+      <article><b class="font-num">384,400 km</b><span>Earth to Moon</span></article>
     </section>
 
     <section class="voyage" id="voyage" data-voyage>
       <div class="voyage-sticky">
-        <p class="voyage-kicker">The path</p>
-        <ol class="ticks" data-ticks></ol>
-
-        <div class="voyage-stage">
-          <div class="voyage-rail"></div>
-          <div class="voyage-track" data-track>
-            <article class="body" data-id="sun">
-              <div class="body-visual">
-                <div class="planet is-sun">
-                  <div class="sphere"><div class="surf"></div></div>
-                  <div class="corona"></div>
-                </div>
-              </div>
-              <p class="body-name">Sun</p>
-            </article>
-            <article class="body" data-id="mercury">
-              <div class="body-visual">
-                <div class="planet is-mercury">
-                  <div class="sphere"><div class="surf"></div><div class="shade"></div></div>
-                </div>
-              </div>
-              <p class="body-name">Mercury</p>
-            </article>
-            <article class="body" data-id="venus">
-              <div class="body-visual">
-                <div class="planet is-venus">
-                  <div class="sphere"><div class="surf"></div><div class="shade"></div></div>
-                  <div class="atm"></div>
-                </div>
-              </div>
-              <p class="body-name">Venus</p>
-            </article>
-            <article class="body" data-id="earth">
-              <div class="body-visual">
-                <div class="planet is-earth">
-                  <div class="sphere">
-                    <div class="surf"></div>
-                    <div class="cloud"></div>
-                    <div class="shade"></div>
-                  </div>
-                  <div class="atm"></div>
-                  <div class="moon"></div>
-                </div>
-              </div>
-              <p class="body-name">Earth</p>
-            </article>
-            <article class="body" data-id="mars">
-              <div class="body-visual">
-                <div class="planet is-mars">
-                  <div class="sphere"><div class="surf"></div><div class="shade"></div></div>
-                </div>
-              </div>
-              <p class="body-name">Mars</p>
-            </article>
-            <article class="body" data-id="jupiter">
-              <div class="body-visual">
-                <div class="planet is-jupiter">
-                  <div class="sphere"><div class="surf"></div><div class="spot"></div><div class="shade"></div></div>
-                </div>
-              </div>
-              <p class="body-name">Jupiter</p>
-            </article>
-            <article class="body" data-id="saturn">
-              <div class="body-visual">
-                <div class="planet is-saturn">
-                  <div class="saturn-rings"></div>
-                  <div class="sphere"><div class="surf"></div><div class="shade"></div></div>
-                </div>
-              </div>
-              <p class="body-name">Saturn</p>
-            </article>
-            <article class="body" data-id="uranus">
-              <div class="body-visual">
-                <div class="planet is-uranus">
-                  <div class="uranus-rings"></div>
-                  <div class="sphere"><div class="surf"></div><div class="shade"></div></div>
-                  <div class="atm"></div>
-                </div>
-              </div>
-              <p class="body-name">Uranus</p>
-            </article>
-            <article class="body" data-id="neptune">
-              <div class="body-visual">
-                <div class="planet is-neptune">
-                  <div class="sphere"><div class="surf"></div><div class="shade"></div></div>
-                  <div class="atm"></div>
-                </div>
-              </div>
-              <p class="body-name">Neptune</p>
-            </article>
+        <canvas id="voyage-gl" aria-hidden="true"></canvas>
+        <div class="voyage-ui">
+          <ol class="ticks" data-ticks></ol>
+          <p class="v-kicker">The path</p>
+          <div class="v-now">
+            <p class="v-name" data-name>Sun</p>
+            <p class="v-au" data-au>0 AU from the Sun</p>
           </div>
-        </div>
-
-        <div class="intel" data-intel>
-          <article class="card" data-card="sun">
-            <p class="idx">00 · Sol</p>
-            <h2>Sun</h2>
-            <div class="stats">
-              <div><span>Type</span><b>G2V star</b></div>
-              <div><span>Mass</span><b>99.8% of the system</b></div>
-              <div><span>Core</span><b>15,000,000 °C</b></div>
-              <div><span>Age</span><b>4.6 billion years</b></div>
+          <div class="v-gaps">
+            <div>
+              <span data-prev-label>Heliosphere</span>
+              <b class="font-num" data-prev-val>—</b>
             </div>
-            <p class="note">Every 1.2 seconds it radiates more energy than humanity has used.</p>
-          </article>
-          <article class="card" data-card="mercury">
-            <p class="idx">01 · 0.39 AU</p>
-            <h2>Mercury</h2>
-            <div class="stats">
-              <div><span>Day</span><b>176 Earth days</b></div>
-              <div><span>Temp</span><b>−180 °C to 430 °C</b></div>
-              <div><span>Moons</span><b>None</b></div>
-              <div><span>Core</span><b>Iron, 85% of radius</b></div>
+            <div>
+              <span data-next-label>Mercury</span>
+              <b class="font-num" data-next-val>57.9 million km</b>
             </div>
-            <p class="note">Ice holds in polar craters that never see daylight.</p>
-          </article>
-          <article class="card" data-card="venus">
-            <p class="idx">02 · 0.72 AU</p>
-            <h2>Venus</h2>
-            <div class="stats">
-              <div><span>Day</span><b>Longer than its year</b></div>
-              <div><span>Temp</span><b>465 °C, hottest</b></div>
-              <div><span>Air</span><b>96% CO<sub>2</sub></b></div>
-              <div><span>Spin</span><b>Retrograde</b></div>
-            </div>
-            <p class="note">A runaway greenhouse. Rain, when it falls, is sulfuric acid.</p>
-          </article>
-          <article class="card is-on" data-card="earth">
-            <p class="idx">03 · 1.00 AU</p>
-            <h2>Earth</h2>
-            <div class="stats">
-              <div><span>Water</span><b>71% of the surface</b></div>
-              <div><span>Moon</span><b>Luna, 384,400 km</b></div>
-              <div><span>Life</span><b>The only confirmed</b></div>
-              <div><span>Age</span><b>4.54 billion years</b></div>
-            </div>
-            <p class="note">Home. A thin blue film on a black sea.</p>
-          </article>
-          <article class="card" data-card="mars">
-            <p class="idx">04 · 1.52 AU</p>
-            <h2>Mars</h2>
-            <div class="stats">
-              <div><span>Olympus</span><b>21.9 km, tallest volcano</b></div>
-              <div><span>Day</span><b>24h 37m</b></div>
-              <div><span>Moons</span><b>Phobos, Deimos</b></div>
-              <div><span>Ice</span><b>Poles, and under dust</b></div>
-            </div>
-            <p class="note">Once ran with rivers. The rust is oxidized iron.</p>
-          </article>
-          <article class="card" data-card="jupiter">
-            <p class="idx">05 · 5.20 AU</p>
-            <h2>Jupiter</h2>
-            <div class="stats">
-              <div><span>Mass</span><b>2.5× all other planets</b></div>
-              <div><span>Spot</span><b>Storm older than 1830</b></div>
-              <div><span>Moons</span><b>95 confirmed</b></div>
-              <div><span>Day</span><b>9h 56m</b></div>
-            </div>
-            <p class="note">A ball of hydrogen that never quite became a star.</p>
-          </article>
-          <article class="card" data-card="saturn">
-            <p class="idx">06 · 9.58 AU</p>
-            <h2>Saturn</h2>
-            <div class="stats">
-              <div><span>Rings</span><b>Ice, tens of metres thick</b></div>
-              <div><span>Density</span><b>0.69 g/cm³ — it would float</b></div>
-              <div><span>Moons</span><b>146</b></div>
-              <div><span>Titan</span><b>Lakes of methane</b></div>
-            </div>
-            <p class="note">The rings are young. Perhaps only 100 million years.</p>
-          </article>
-          <article class="card" data-card="uranus">
-            <p class="idx">07 · 19.2 AU</p>
-            <h2>Uranus</h2>
-            <div class="stats">
-              <div><span>Tilt</span><b>98° — it rolls on its side</b></div>
-              <div><span>Temp</span><b>−224 °C, coldest atmosphere</b></div>
-              <div><span>Moons</span><b>28</b></div>
-              <div><span>Year</span><b>84 Earth years</b></div>
-            </div>
-            <p class="note">Methane in the haze turns sunlight teal.</p>
-          </article>
-          <article class="card" data-card="neptune">
-            <p class="idx">08 · 30.1 AU</p>
-            <h2>Neptune</h2>
-            <div class="stats">
-              <div><span>Wind</span><b>2,000 km/h</b></div>
-              <div><span>Found</span><b>By maths, 1846</b></div>
-              <div><span>Moons</span><b>16 · Triton orbits backward</b></div>
-              <div><span>Sunlight</span><b>0.1% of Earth’s</b></div>
-            </div>
-            <p class="note">The last planet. Dark, fast, and still unnamed for forty years after its discovery would have been possible.</p>
-          </article>
+          </div>
+          <article class="intel" data-intel></article>
         </div>
       </div>
     </section>
 
     <section class="atlas" id="atlas">
-      <header class="sec-head">
-        <p class="kicker">Atlas</p>
-        <h2>Notes from the dark</h2>
+      <header class="sec">
+        <p class="eyebrow">Atlas</p>
+        <h2>The system we live in</h2>
       </header>
-      <div class="bento">
-        <article class="wide">
-          <p class="tag">Local group</p>
-          <h3>Andromeda is already on the way</h3>
-          <p>M31, 2.5 million light-years out, closes at 110 km/s. In 4.5 billion years the two spirals meet. The Sun may survive. The night sky will not.</p>
+      <div class="atlas-grid">
+        <article class="atlas-lead">
+          <h3>A thin disc of leftover starlight</h3>
+          <p>Eight planets, more than two hundred moons, a belt of rubble between Mars and Jupiter, ice beyond Neptune. Light needs four hours to reach Neptune and 8 minutes 20 seconds to reach you. The heliopause, where the solar wind gives up, sits near 120 AU. Voyager 1 is already past it.</p>
         </article>
-        <article>
-          <p class="tag">Light</p>
-          <h3>299,792,458 m/s</h3>
-          <p>A constant. Eight minutes from the Sun to your skin. 4.2 years to Proxima.</p>
-        </article>
-        <article>
-          <p class="tag">Scale</p>
-          <h3>More stars than Earth has grains of sand</h3>
-          <p>About 10<sup>24</sup> suns in the observable volume. Most have worlds.</p>
-        </article>
-        <article>
-          <p class="tag">Voyager 1</p>
-          <h3>24+ billion km</h3>
-          <p>In interstellar space since 2012. A radio whisper 22 hours out.</p>
-        </article>
-        <article>
-          <p class="tag">Neutron star</p>
-          <h3>A teaspoon, a mountain</h3>
-          <p>A billion tonnes in a spoon. Collapse so complete that atoms give up.</p>
-        </article>
-        <article class="wide dim">
-          <p class="tag">Pale blue</p>
-          <h3>Look again at that dot</h3>
-          <p>On a photograph from 6 billion kilometres, Earth is 0.12 pixels. Every launch, famine, and symphony happened there. The atmosphere that keeps it habitable is thinner, relatively, than a coat of varnish on a globe.</p>
-        </article>
+        <ul class="atlas-list">
+          <li><span>Inner rocky</span>Mercury, Venus, Earth, Mars</li>
+          <li><span>Asteroid belt</span>2.2–3.2 AU</li>
+          <li><span>Gas giants</span>Jupiter, Saturn</li>
+          <li><span>Ice giants</span>Uranus, Neptune</li>
+          <li><span>Kuiper belt</span>30–50 AU · Pluto, Arrokoth</li>
+          <li><span>Oort cloud</span>~2,000–100,000 AU</li>
+        </ul>
+      </div>
+      <div class="table-wrap">
+        <table class="dist">
+          <thead>
+            <tr><th>Leg</th><th>Distance</th><th>AU</th><th>Light</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sun → Mercury</td><td>57.9 million km</td><td>0.39</td><td>3.2 min</td></tr>
+            <tr><td>Mercury → Venus</td><td>50.3 million km</td><td>0.34</td><td>2.8 min</td></tr>
+            <tr><td>Venus → Earth</td><td>41.4 million km</td><td>0.28</td><td>2.3 min</td></tr>
+            <tr><td>Earth → Moon</td><td>384,400 km</td><td>0.0026</td><td>1.3 sec</td></tr>
+            <tr><td>Earth → Mars</td><td>78.3 million km</td><td>0.52</td><td>4.3 min</td></tr>
+            <tr><td>Mars → Jupiter</td><td>550 million km</td><td>3.68</td><td>30.6 min</td></tr>
+            <tr><td>Jupiter → Saturn</td><td>655 million km</td><td>4.38</td><td>36.4 min</td></tr>
+            <tr><td>Saturn → Uranus</td><td>1.44 billion km</td><td>9.62</td><td>1.3 hr</td></tr>
+            <tr><td>Uranus → Neptune</td><td>1.63 billion km</td><td>10.9</td><td>1.5 hr</td></tr>
+            <tr><td>Sun → Neptune</td><td>4.50 billion km</td><td>30.1</td><td>4.1 hr</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="galaxy" id="galaxy">
-      <div class="galaxy-bg" aria-hidden="true">
-        <canvas id="mw-canvas"></canvas>
+    <section class="worlds" id="worlds">
+      <header class="sec">
+        <p class="eyebrow">Habitable</p>
+        <h2>Worlds we could try to live on</h2>
+      </header>
+      <p class="worlds-lead">None of these is Earth. A few are close in size and sit in the zone where liquid water can exist. Mars is the only one a ship can reach in a human lifetime. The rest are light-years out.</p>
+      <div class="world-grid">
+        <article>
+          <p class="tag">Sol · rocky</p>
+          <h3>Mars</h3>
+          <dl>
+            <div><span>From Earth</span><b>54.6–401 million km</b></div>
+            <div><span>Light</span><b>3 to 22 min</b></div>
+            <div><span>Size</span><b>0.53 × Earth</b></div>
+            <div><span>Gravity</span><b>0.38 g</b></div>
+          </dl>
+          <p>Day is 24h 37m. Ice at the poles. Thin CO<sub>2</sub> air, no magnetic shield. Closest world we can actually land on and build under.</p>
+        </article>
+        <article>
+          <p class="tag">Alpha Centauri · HZ</p>
+          <h3>Proxima b</h3>
+          <dl>
+            <div><span>From Earth</span><b>4.24 ly · 40.1 trillion km</b></div>
+            <div><span>Light</span><b>4.24 years</b></div>
+            <div><span>Size</span><b>~1.17 × Earth mass</b></div>
+            <div><span>Orbit</span><b>11.2 days</b></div>
+          </dl>
+          <p>Nearest exoplanet in a habitable zone. Likely tidally locked. The red dwarf flares. Still the shortest jump off our Sun.</p>
+        </article>
+        <article>
+          <p class="tag">TRAPPIST-1 · HZ</p>
+          <h3>TRAPPIST-1e</h3>
+          <dl>
+            <div><span>From Earth</span><b>40.5 ly · 383 trillion km</b></div>
+            <div><span>Light</span><b>40.5 years</b></div>
+            <div><span>Size</span><b>0.91 × Earth</b></div>
+            <div><span>Orbit</span><b>6.1 days</b></div>
+          </dl>
+          <p>Earth-sized, rocky, in the liquid-water belt of a cool dwarf. Six other worlds in the same system. Density looks like rock, not gas.</p>
+        </article>
+        <article>
+          <p class="tag">Kepler-186 · HZ</p>
+          <h3>Kepler-186f</h3>
+          <dl>
+            <div><span>From Earth</span><b>579 ly · 5.48 quadrillion km</b></div>
+            <div><span>Light</span><b>579 years</b></div>
+            <div><span>Size</span><b>1.17 × Earth</b></div>
+            <div><span>Orbit</span><b>130 days</b></div>
+          </dl>
+          <p>First Earth-size planet found in a habitable zone. Red-dwarf host. Could hold surface water if it kept an atmosphere.</p>
+        </article>
+        <article>
+          <p class="tag">TOI-700 · HZ</p>
+          <h3>TOI-700 d</h3>
+          <dl>
+            <div><span>From Earth</span><b>101 ly · 956 trillion km</b></div>
+            <div><span>Light</span><b>101 years</b></div>
+            <div><span>Size</span><b>1.19 × Earth</b></div>
+            <div><span>Orbit</span><b>37.4 days</b></div>
+          </dl>
+          <p>TESS find, later confirmed. Receives about 86% of the starlight Earth gets. Quiet M dwarf, so an atmosphere might survive.</p>
+        </article>
+        <article>
+          <p class="tag">Kepler-442 · HZ</p>
+          <h3>Kepler-442b</h3>
+          <dl>
+            <div><span>From Earth</span><b>1,206 ly · 11.4 quadrillion km</b></div>
+            <div><span>Light</span><b>1,206 years</b></div>
+            <div><span>Size</span><b>1.34 × Earth</b></div>
+            <div><span>Orbit</span><b>112 days</b></div>
+          </dl>
+          <p>One of the highest Earth-similarity scores in the catalog. K-star light, cooler than the Sun. Super-Earth, still in the water belt.</p>
+        </article>
       </div>
-      <div class="galaxy-copy">
-        <p class="kicker">Milky Way</p>
-        <h2>A barred spiral.<br><em>We live in a quiet arm.</em></h2>
-        <ul>
-          <li><span>Diameter</span> 100,000 light-years</li>
-          <li><span>Thickness</span> 1,000 light-years at the Sun</li>
-          <li><span>Black hole</span> Sagittarius A* · 4.3 million Suns</li>
-          <li><span>Orbit</span> 230 million years for one galactic year</li>
-          <li><span>Neighbors</span> Magellanic Clouds, 50+ dwarfs</li>
-        </ul>
+      <div class="table-wrap">
+        <table class="dist">
+          <thead>
+            <tr><th>World</th><th>From Earth</th><th>Light</th><th>Vs Earth</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mars</td><td>54.6 million km at closest</td><td>3 min</td><td>0.53 radius</td></tr>
+            <tr><td>Proxima b</td><td>4.24 ly</td><td>4.24 yr</td><td>~1.17 mass</td></tr>
+            <tr><td>TRAPPIST-1e</td><td>40.5 ly</td><td>40.5 yr</td><td>0.91 radius</td></tr>
+            <tr><td>TOI-700 d</td><td>101 ly</td><td>101 yr</td><td>1.19 radius</td></tr>
+            <tr><td>Kepler-186f</td><td>579 ly</td><td>579 yr</td><td>1.17 radius</td></tr>
+            <tr><td>Kepler-442b</td><td>1,206 ly</td><td>1,206 yr</td><td>1.34 radius</td></tr>
+            <tr><td>Kepler-452b</td><td>1,400 ly</td><td>1,400 yr</td><td>1.6 radius · Sun-like star</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="galaxies" id="galaxies">
+      <canvas id="galaxies-gl" aria-hidden="true"></canvas>
+      <div class="gal-ui">
+        <header class="sec">
+          <p class="eyebrow">Local group</p>
+          <h2>Galaxies around the Sun</h2>
+        </header>
+        <div class="gal-cards">
+          <article>
+            <p class="font-num">00</p>
+            <h3>Milky Way</h3>
+            <p>Barred spiral. We sit in the Orion arm, 26,000 light-years from Sagittarius A*, a black hole of 4.3 million Suns. One galactic year is 230 million Earth years. About 100–400 billion stars. 100,000 light-years across.</p>
+          </article>
+          <article>
+            <p class="font-num">01</p>
+            <h3>Andromeda</h3>
+            <p>M31. 2.47 million light-years. Closes at 110 km/s. In 4.5 billion years the two discs merge. Larger than us. A trillion stars. Already spans three degrees of sky — wider than six full moons.</p>
+          </article>
+          <article>
+            <p class="font-num">02</p>
+            <h3>Triangulum</h3>
+            <p>M33. The third spiral of the Local Group, 2.73 million light-years out. 40 billion stars. A satellite of Andromeda, and likely coming with her.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -382,9 +278,17 @@
   <footer class="foot">
     <a class="mark" href="#top">kbrtp</a>
     <p>kbrtp.top</p>
-    <p>Local group, Orion arm</p>
+    <p>Maps: NASA / Solar System Scope</p>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="toast" data-toast hidden>Craft logged · 12.4 km/s</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
