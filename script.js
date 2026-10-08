@@ -110,8 +110,8 @@
         const x = cx + Math.cos(th) * p.r * scale;
         const y = cy + Math.sin(th) * p.r * scale * 0.46;
         const a = (1 - p.r) * (0.25 + p.z * 0.55);
-        ctx.fillStyle = p.tint > 0.72 ? `rgba(255,214,160,${a})` : `rgba(176,168,255,${a})`;
-        ctx.fillRect(x, y, p.size, p.size);
+        ctx.fillStyle = p.tint > 0.72 ? `rgba(255,214,160,${Math.min(1, a + 0.08)})` : `rgba(176,168,255,${Math.min(1, a + 0.06)})`;
+        ctx.fillRect(x, y, p.size + 0.15, p.size + 0.15);
       }
       ctx.restore();
     };
@@ -135,6 +135,7 @@
       sheet.hidden = true;
       toggle?.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "";
+      document.body.classList.remove("menu-open");
     };
 
     toggle?.addEventListener("click", () => {
@@ -142,6 +143,7 @@
       sheet.hidden = !open;
       toggle.setAttribute("aria-expanded", String(open));
       document.body.style.overflow = open ? "hidden" : "";
+      document.body.classList.toggle("menu-open", open);
     });
 
     sheet?.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
@@ -240,16 +242,16 @@
 
   const stars = starfield();
   const heroGal = spiral(document.getElementById("hero-galaxy"), {
-    count: 1600,
-    cx: 0.7,
-    cy: 0.48,
-    scale: 1.05,
+    count: 2200,
+    cx: 0.68,
+    cy: 0.5,
+    scale: 1.2,
   });
   const mw = spiral(document.getElementById("mw-canvas"), {
-    count: 1800,
-    cx: 0.58,
-    cy: 0.5,
-    scale: 1.35,
+    count: 2400,
+    cx: 0.62,
+    cy: 0.52,
+    scale: 1.45,
     rotate: 0.00003,
   });
   nav();
