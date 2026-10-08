@@ -216,7 +216,10 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 .dist td { padding: 0.7rem 0.8rem 0.7rem 0; border-bottom: 1px solid var(--line); }
 .dist td:nth-child(2), .dist td:nth-child(3), .dist td:nth-child(4) { font-family: Oxanium, sans-serif; }
 
-.worlds { padding: clamp(3.2rem, 8vh, 6.5rem) var(--pad); }
+.worlds {
+  padding: clamp(3.2rem, 8vh, 6.5rem) var(--pad);
+  scroll-margin-top: calc(var(--nav) + 0.4rem);
+}
 .worlds-lead { color: var(--mute); max-width: 62ch; margin: -0.6rem 0 1.8rem; }
 .world-grid {
   display: grid;
