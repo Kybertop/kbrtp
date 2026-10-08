@@ -206,24 +206,64 @@ function tex(url, srgb = true) {
   return t;
 }
 
+const RING_INNER = 1.22;
+const RING_OUTER = 2.32;
+
+function ringHash(n) {
+  const s = Math.sin(n * 127.1) * 43758.5453;
+  return s - Math.floor(s);
+}
+
+function ringOptical(rs) {
+  if (rs < 1.24 || rs > 2.27) return 0;
+  if (rs > 1.95 && rs < 2.023) return 0.015 * ringHash(rs * 90);
+  if (rs > 2.214 && rs < 2.226) return 0.03;
+  if (rs > 2.263 && rs < 2.268) return 0.04;
+  let od;
+  if (rs < 1.525) {
+    od = 0.16 + 0.1 * Math.sin((rs - 1.24) * 58);
+  } else if (rs < 1.95) {
+    const t = (rs - 1.525) / 0.425;
+    od = 0.78 + 0.22 * (1 - Math.abs(t - 0.42));
+  } else {
+    od = 0.4 + 0.14 * Math.sin(rs * 68);
+  }
+  od *= 0.74 + 0.26 * ringHash(Math.floor(rs * 980));
+  od += 0.07 * Math.sin(rs * 431.4) * Math.sin(rs * 79.2);
+  return Math.max(0, Math.min(1, od));
+}
+
 function ringTexture() {
+  const size = 1024;
   const c = document.createElement("canvas");
-  c.width = 64;
-  c.height = 1024;
-  const g = c.getContext("2d");
-  const grd = g.createLinearGradient(0, 0, 0, 1024);
-  grd.addColorStop(0, "rgba(0,0,0,0)");
-  grd.addColorStop(0.12, "rgba(210,190,150,0.15)");
-  grd.addColorStop(0.28, "rgba(226,210,170,0.85)");
-  grd.addColorStop(0.42, "rgba(0,0,0,0)");
-  grd.addColorStop(0.48, "rgba(0,0,0,0)");
-  grd.addColorStop(0.55, "rgba(176,156,120,0.7)");
-  grd.addColorStop(0.78, "rgba(210,190,150,0.35)");
-  grd.addColorStop(1, "rgba(0,0,0,0)");
-  g.fillStyle = grd;
-  g.fillRect(0, 0, 64, 1024);
+  c.width = c.height = size;
+  const ctx = c.getContext("2d");
+  const img = ctx.createImageData(size, size);
+  const d = img.data;
+  const cx = (size - 1) * 0.5;
+  for (let y = 0; y < size; y++) {
+    const ny = (y - cx) / cx;
+    for (let x = 0; x < size; x++) {
+      const nx = (x - cx) / cx;
+      const rho = Math.hypot(nx, ny);
+      const i = (y * size + x) * 4;
+      if (rho < RING_INNER / RING_OUTER || rho > 1) continue;
+      const rs = rho * RING_OUTER;
+      const od = ringOptical(rs);
+      if (od <= 0.01) continue;
+      const warm = rs < 1.95 ? 1 : 0.92;
+      d[i] = 228 * warm;
+      d[i + 1] = 218 * warm;
+      d[i + 2] = 198;
+      d[i + 3] = Math.min(255, od * 255);
+    }
+  }
+  ctx.putImageData(img, 0, 0);
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 8;
+  t.minFilter = THREE.LinearMipmapLinearFilter;
+  t.needsUpdate = true;
   return t;
 }
 
@@ -592,21 +632,31 @@ function voyageScene() {
         new THREE.MeshStandardMaterial({ map, roughness: 0.72, metalness: 0.04 })
       );
     }
-    mesh.rotation.z = THREE.MathUtils.degToRad(b.tilt);
     mesh.userData.spin = b.spin;
-    g.add(mesh);
     if (b.rings) {
+      const equator = new THREE.Group();
+      equator.rotation.z = THREE.MathUtils.degToRad(b.tilt);
+      equator.add(mesh);
       const rings = new THREE.Mesh(
-        new THREE.RingGeometry(b.r * 1.25, b.r * 2.25, 96),
-        new THREE.MeshBasicMaterial({
+        new THREE.RingGeometry(b.r * RING_INNER, b.r * RING_OUTER, 192, 2),
+        new THREE.MeshStandardMaterial({
           map: ringTexture(),
-          side: THREE.DoubleSide,
           transparent: true,
-          depthWrite: false
+          side: THREE.DoubleSide,
+          depthWrite: false,
+          roughness: 0.62,
+          metalness: 0.04,
+          emissive: 0x1c1a14,
+          emissiveIntensity: 0.22,
+          alphaTest: 0.04
         })
       );
-      rings.rotation.x = Math.PI / 2.35;
-      g.add(rings);
+      rings.rotation.x = Math.PI / 2;
+      equator.add(rings);
+      g.add(equator);
+    } else {
+      mesh.rotation.z = THREE.MathUtils.degToRad(b.tilt);
+      g.add(mesh);
     }
     if (b.id === "venus") g.add(atmosphere(new THREE.Vector3(0.9, 0.75, 0.4), b.r * 1.06));
     if (b.id === "neptune" || b.id === "uranus") g.add(atmosphere(new THREE.Vector3(0.4, 0.65, 0.9), b.r * 1.07));
