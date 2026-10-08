@@ -742,41 +742,124 @@ function voyageScene() {
   return { update, setProgress };
 }
 
+function galaxyBody({ url, w, h, pos, tilt, roll, spin, bulge, pcount, thick, hue }) {
+  const g = new THREE.Group();
+  g.position.copy(pos);
+  g.rotation.x = tilt;
+  g.rotation.z = roll;
+  g.userData.spin = spin;
+
+  const map = tex(url);
+  const disc = new THREE.Mesh(
+    new THREE.PlaneGeometry(w, h),
+    new THREE.MeshBasicMaterial({
+      map,
+      transparent: true,
+      depthWrite: false,
+      side: THREE.DoubleSide
+    })
+  );
+  g.add(disc);
+
+  const core = new THREE.Mesh(
+    new THREE.SphereGeometry(bulge, 28, 18),
+    new THREE.MeshBasicMaterial({
+      color: hue,
+      transparent: true,
+      opacity: 0.5,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    })
+  );
+  core.scale.set(1.15, 1.15, 0.38);
+  g.add(core);
+
+  const n = mobile ? Math.floor(pcount * 0.45) : pcount;
+  const posA = new Float32Array(n * 3);
+  const colA = new Float32Array(n * 3);
+  const rx = w * 0.46;
+  const ry = h * 0.46;
+  for (let i = 0; i < n; i++) {
+    const t = Math.pow(Math.random(), 0.58);
+    const a = Math.random() * Math.PI * 2;
+    posA[i * 3] = Math.cos(a) * t * rx;
+    posA[i * 3 + 1] = Math.sin(a) * t * ry;
+    posA[i * 3 + 2] = (Math.random() - 0.5) * thick * (1 - t * 0.85);
+    const warm = Math.random() > 0.5;
+    colA[i * 3] = warm ? 1 : 0.62;
+    colA[i * 3 + 1] = warm ? 0.86 : 0.74;
+    colA[i * 3 + 2] = warm ? 0.68 : 1;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.BufferAttribute(posA, 3));
+  geo.setAttribute("color", new THREE.BufferAttribute(colA, 3));
+  g.add(
+    new THREE.Points(
+      geo,
+      new THREE.PointsMaterial({
+        size: 0.016,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.7,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      })
+    )
+  );
+  return g;
+}
+
 function galaxyScene() {
   const canvas = document.getElementById("galaxies-gl");
   if (!canvas) return { update() {} };
   const renderer = makeRenderer(canvas);
-  renderer.toneMappingExposure = 1.28;
+  renderer.toneMappingExposure = 1.12;
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 80);
-  camera.position.set(0, 0.55, 5.35);
-  camera.lookAt(0.1, 0.35, 0);
+  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 80);
+  camera.position.set(0, 1.85, 5.6);
+  camera.lookAt(0.05, 0.05, 0);
 
-  const sprite = (url, w, h, pos, spin) => {
-    const map = tex(url);
-    const mesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(w, h),
-      new THREE.MeshBasicMaterial({
-        map,
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-        side: THREE.DoubleSide
-      })
-    );
-    mesh.position.copy(pos);
-    mesh.userData.spin = spin;
-    return mesh;
-  };
-
-  const mw = sprite("textures/galaxy_mw.jpg", 3.15, 3.15, new THREE.Vector3(-1.45, 0.62, 0), 0.018);
-  const and = sprite("textures/galaxy_and.jpg", 3.35, 2.2, new THREE.Vector3(1.55, 0.78, -0.25), 0.004);
-  const tri = sprite("textures/galaxy_m33.jpg", 1.85, 1.16, new THREE.Vector3(0.15, -0.22, 0.55), 0.022);
-  mw.rotation.z = 0.18;
-  and.rotation.z = -0.22;
-  tri.rotation.z = 0.4;
+  const mw = galaxyBody({
+    url: "textures/galaxy_mw.png",
+    w: 2.7,
+    h: 2.7,
+    pos: new THREE.Vector3(-1.55, 0.05, 0),
+    tilt: 0.72,
+    roll: 0.22,
+    spin: 0.045,
+    bulge: 0.28,
+    pcount: 2200,
+    thick: 0.22,
+    hue: 0xffe2b0
+  });
+  const and = galaxyBody({
+    url: "textures/galaxy_and.png",
+    w: 3.05,
+    h: 1.55,
+    pos: new THREE.Vector3(1.7, 0.22, -0.35),
+    tilt: 0.38,
+    roll: -0.18,
+    spin: 0.012,
+    bulge: 0.16,
+    pcount: 1600,
+    thick: 0.14,
+    hue: 0xffd9a8
+  });
+  const tri = galaxyBody({
+    url: "textures/galaxy_m33.png",
+    w: 1.55,
+    h: 0.88,
+    pos: new THREE.Vector3(0.15, -0.55, 0.7),
+    tilt: 0.58,
+    roll: 0.3,
+    spin: 0.06,
+    bulge: 0.1,
+    pcount: 900,
+    thick: 0.1,
+    hue: 0xc8dcff
+  });
   scene.add(mw, and, tri);
-  starfield(scene, mobile ? 800 : 1800, 42);
+  starfield(scene, mobile ? 700 : 1600, 44);
 
   const clock = new THREE.Clock();
   const update = () => {
