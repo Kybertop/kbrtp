@@ -1062,21 +1062,7 @@ function initMoon() {
   return { update };
 }
 
-function saucerEgg() {
-  const ping = () => {
-    const toast = document.querySelector("[data-toast]");
-    if (!toast) return;
-    toast.hidden = false;
-    clearTimeout(ping._t);
-    ping._t = setTimeout(() => {
-      toast.hidden = true;
-    }, 2600);
-  };
-  document.querySelector("[data-saucer]")?.addEventListener("click", ping);
-}
-
 nav();
-saucerEgg();
 
 const hero = heroScene();
 const voyage = voyageScene();
