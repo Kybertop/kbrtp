@@ -214,7 +214,7 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
   font-weight: 500; padding: 0.55rem 0.8rem 0.55rem 0; border-bottom: 1px solid var(--line);
 }
 .dist td { padding: 0.7rem 0.8rem 0.7rem 0; border-bottom: 1px solid var(--line); }
-.dist td:nth-child(2), .dist td:nth-child(3), .dist td:nth-child(4) { font-family: Oxanium, sans-serif; }
+.dist td:nth-child(n+2) { font-family: Oxanium, sans-serif; }
 
 .worlds {
   padding: clamp(3.2rem, 8vh, 6.5rem) var(--pad);
@@ -232,6 +232,21 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
   border: 1px solid var(--line);
   border-radius: 12px;
 }
+.world-globe {
+  width: min(100%, 11rem);
+  height: auto;
+  aspect-ratio: 1;
+  display: block;
+  margin: 0 auto 0.85rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #2a3144, #07080c 72%);
+}
+.ly {
+  color: var(--sun);
+  font-size: 1.15rem;
+  margin: 0 0 0.7rem;
+  letter-spacing: 0.02em;
+}
 .world-grid .tag {
   font-family: Oxanium, sans-serif;
   font-size: 0.62rem;
@@ -239,7 +254,7 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
   text-transform: uppercase;
   color: var(--ice);
 }
-.world-grid h3 { font-size: clamp(1.35rem, 2vw, 1.7rem); margin: 0.35rem 0 0.85rem; }
+.world-grid h3 { font-size: clamp(1.35rem, 2vw, 1.7rem); margin: 0.3rem 0 0.15rem; }
 .world-grid dl {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -258,12 +273,25 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 .world-grid article > p { color: var(--mute); font-size: 0.92rem; }
 
 .galaxies {
-  position: relative; min-height: 100svh;
-  display: grid; align-items: end;
-  padding: clamp(3rem, 7vh, 5rem) var(--pad) calc(2rem + var(--safe-b));
+  position: relative;
+  padding: 0 0 calc(2rem + var(--safe-b));
 }
-#galaxies-gl { position: absolute; inset: 0; width: 100%; height: 100%; }
-.gal-ui { position: relative; }
+#galaxies-gl {
+  position: relative;
+  width: 100%;
+  height: min(78svh, 54rem);
+  background: #05060a;
+}
+.gal-ui { position: relative; padding: 1.6rem var(--pad) 0; }
+.gal-lead { margin: -0.3rem 0 1.2rem; }
+.gal-facts {
+  margin: 0 0 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(7, 8, 12, 0.35);
+}
+.gal-facts article { padding: 1rem 1.1rem; }
 .gal-cards {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 1.5rem;
 }
@@ -274,6 +302,104 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 .gal-cards .font-num { color: var(--sun); font-size: 0.75rem; }
 .gal-cards h3 { margin: 0.3rem 0 0.55rem; font-size: 1.35rem; }
 .gal-cards p { color: var(--mute); font-size: 0.92rem; }
+.gal-cards dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem 0.8rem;
+  margin: 0.7rem 0 0.8rem;
+}
+.gal-cards span {
+  display: block;
+  font-family: Oxanium, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.gal-cards b { font-weight: 500; font-size: 0.88rem; }
+
+.sky {
+  padding: clamp(3.2rem, 8vh, 6.5rem) var(--pad);
+  scroll-margin-top: calc(var(--nav) + 0.4rem);
+}
+.moon-row {
+  display: grid;
+  grid-template-columns: minmax(12rem, 18rem) 1fr;
+  gap: clamp(1.2rem, 4vw, 3rem);
+  align-items: center;
+  margin-bottom: 2.4rem;
+}
+#moon-phase {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 28%, #1a1c24, #07080c 70%);
+}
+.moon-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1rem;
+  margin: 0.8rem 0 1rem;
+}
+.moon-stats span {
+  display: block;
+  font-family: Oxanium, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.phase-list {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+.phase-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.4rem;
+  font-size: 0.92rem;
+}
+.phase-list span { color: var(--mute); font-family: Oxanium, sans-serif; font-size: 0.8rem; }
+.sky-sub { font-size: 1.2rem; margin: 0 0 1rem; }
+.const-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+.const-grid figure {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem 0.95rem;
+}
+.const-map { width: 100%; height: auto; background: radial-gradient(circle at 50% 40%, #12141c, #07080c); border-radius: 8px; }
+.const-grid figcaption { margin-top: 0.55rem; font-size: 0.95rem; }
+.const-grid figcaption span { display: block; color: var(--mute); font-size: 0.8rem; margin-top: 0.15rem; }
+
+.saucer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 28;
+  width: 7.4rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  filter: drop-shadow(0 0 16px rgba(126, 231, 222, 0.95)) drop-shadow(0 0 5px #fff);
+  animation: saucer 16s linear infinite;
+}
+.saucer svg { width: 100%; height: auto; display: block; }
+@keyframes saucer {
+  0% { transform: translate(8vw, 22vh) rotate(-8deg); }
+  25% { transform: translate(38vw, 12vh) rotate(10deg); }
+  50% { transform: translate(72vw, 24vh) rotate(-4deg); }
+  75% { transform: translate(42vw, 34vh) rotate(8deg); }
+  100% { transform: translate(8vw, 22vh) rotate(-8deg); }
+}
 
 .foot {
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.7rem;
@@ -293,15 +419,17 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
-  .facts-row, .atlas-grid, .gal-cards, .world-grid, .intel { grid-template-columns: 1fr 1fr; }
+  .facts-row, .atlas-grid, .gal-cards, .world-grid, .intel, .const-grid { grid-template-columns: 1fr 1fr; }
+  .moon-row { grid-template-columns: 1fr; }
   .hero-hint { display: none; }
   .intel { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .facts-row, .atlas-grid, .gal-cards, .world-grid { grid-template-columns: 1fr; }
+  .facts-row, .atlas-grid, .gal-cards, .world-grid, .const-grid { grid-template-columns: 1fr; }
   .facts-row article { border-right: 0; border-bottom: 1px solid var(--line); }
   .v-gaps { grid-template-columns: 1fr; }
   .hero-copy { max-width: 100%; }
+  #galaxies-gl { height: 56svh; }
 }
 @media (min-width: 1920px) { html { font-size: 17px; } }
 @media (min-width: 2560px) { html { font-size: 20px; } :root { --pad: 4.5rem; } }
@@ -317,4 +445,5 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   #boot { display: none; }
+  .saucer { left: auto; right: var(--pad); top: calc(var(--nav) + 1rem); width: 5.2rem; }
 }
