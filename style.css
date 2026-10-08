@@ -216,6 +216,44 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 .dist td { padding: 0.7rem 0.8rem 0.7rem 0; border-bottom: 1px solid var(--line); }
 .dist td:nth-child(2), .dist td:nth-child(3), .dist td:nth-child(4) { font-family: Oxanium, sans-serif; }
 
+.worlds { padding: clamp(3.2rem, 8vh, 6.5rem) var(--pad); }
+.worlds-lead { color: var(--mute); max-width: 62ch; margin: -0.6rem 0 1.8rem; }
+.world-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 2.2rem;
+}
+.world-grid article {
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.world-grid .tag {
+  font-family: Oxanium, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ice);
+}
+.world-grid h3 { font-size: clamp(1.35rem, 2vw, 1.7rem); margin: 0.35rem 0 0.85rem; }
+.world-grid dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 0.9rem;
+  margin-bottom: 0.85rem;
+}
+.world-grid span {
+  display: block;
+  font-family: Oxanium, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.world-grid b { font-weight: 500; font-size: 0.9rem; }
+.world-grid article > p { color: var(--mute); font-size: 0.92rem; }
+
 .galaxies {
   position: relative; min-height: 100svh;
   display: grid; align-items: end;
@@ -252,12 +290,12 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
-  .facts-row, .atlas-grid, .gal-cards, .intel { grid-template-columns: 1fr 1fr; }
+  .facts-row, .atlas-grid, .gal-cards, .world-grid, .intel { grid-template-columns: 1fr 1fr; }
   .hero-hint { display: none; }
   .intel { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .facts-row, .atlas-grid, .gal-cards { grid-template-columns: 1fr; }
+  .facts-row, .atlas-grid, .gal-cards, .world-grid { grid-template-columns: 1fr; }
   .facts-row article { border-right: 0; border-bottom: 1px solid var(--line); }
   .v-gaps { grid-template-columns: 1fr; }
   .hero-copy { max-width: 100%; }

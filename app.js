@@ -713,56 +713,225 @@ function galaxyScene() {
   const canvas = document.getElementById("galaxies-gl");
   if (!canvas) return { update() {} };
   const renderer = makeRenderer(canvas);
-  renderer.toneMappingExposure = 0.9;
+  renderer.toneMappingExposure = 0.72;
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 80);
-  camera.position.set(0, 3.2, 7.4);
-  camera.lookAt(0, 0, 0);
+  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 80);
+  camera.position.set(-1.15, 2.05, 5.4);
+  camera.lookAt(0.35, 0.05, -0.2);
 
-  const makeGalaxy = (arms, count, spread, core, armCol, pos, scale) => {
-    const geo = new THREE.BufferGeometry();
-    const posA = new Float32Array(count * 3);
-    const colA = new Float32Array(count * 3);
-    const coreC = new THREE.Color(core);
-    const armC = new THREE.Color(armCol);
-    for (let i = 0; i < count; i++) {
-      const arm = i % arms;
-      const t = Math.pow(Math.random(), 0.55);
-      const theta = t * 6.2 + (arm * Math.PI * 2) / arms + (Math.random() - 0.5) * spread;
-      const r = t * 2.8;
-      const x = Math.cos(theta) * r;
-      const z = Math.sin(theta) * r;
-      const y = (Math.random() - 0.5) * 0.18 * (1 - t);
-      posA.set([x, y, z], i * 3);
-      const c = coreC.clone().lerp(armC, t);
-      colA.set([c.r, c.g, c.b], i * 3);
-    }
-    geo.setAttribute("position", new THREE.BufferAttribute(posA, 3));
-    geo.setAttribute("color", new THREE.BufferAttribute(colA, 3));
-    const pts = new THREE.Points(
-      geo,
-      new THREE.PointsMaterial({ size: 0.018 * scale, vertexColors: true, transparent: true, opacity: 0.9, depthWrite: false })
-    );
-    pts.position.copy(pos);
-    pts.scale.setScalar(scale);
-    pts.rotation.x = -0.55;
-    return pts;
+  const sprite = (() => {
+    const c = document.createElement("canvas");
+    c.width = c.height = 64;
+    const g = c.getContext("2d");
+    const grd = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grd.addColorStop(0, "rgba(255,255,255,1)");
+    grd.addColorStop(0.18, "rgba(255,236,210,0.75)");
+    grd.addColorStop(0.45, "rgba(180,170,255,0.22)");
+    grd.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = grd;
+    g.fillRect(0, 0, 64, 64);
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  })();
+
+  const randn = () => {
+    let u = 0;
+    let v = 0;
+    while (!u) u = Math.random();
+    while (!v) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(Math.PI * 2 * v);
   };
 
-  const n = mobile ? 4500 : 9000;
-  const mw = makeGalaxy(2, n, 0.55, "#ffe6b0", "#a8b4ff", new THREE.Vector3(-0.8, 0.2, 0), 1.15);
-  const and = makeGalaxy(2, Math.floor(n * 0.45), 0.4, "#ffd7c0", "#c9b8ff", new THREE.Vector3(3.4, 0.9, -1.4), 0.55);
-  const tri = makeGalaxy(3, Math.floor(n * 0.22), 0.5, "#f0e0c0", "#9ad", new THREE.Vector3(2.2, -0.6, 1.6), 0.32);
+  const starMat = new THREE.ShaderMaterial({
+    uniforms: { uMap: { value: sprite }, uScale: { value: canvas.clientHeight || 800 } },
+    vertexShader: `
+      attribute float aSize;
+      attribute vec3 color;
+      varying vec3 vColor;
+      uniform float uScale;
+      void main(){
+        vColor = color;
+        vec4 mv = modelViewMatrix * vec4(position, 1.0);
+        gl_PointSize = aSize * (uScale / 900.0) / max(0.55, -mv.z);
+        gl_Position = projectionMatrix * mv;
+      }`,
+    fragmentShader: `
+      uniform sampler2D uMap;
+      varying vec3 vColor;
+      void main(){
+        vec4 t = texture2D(uMap, gl_PointCoord);
+        if (t.a < 0.06) discard;
+        gl_FragColor = vec4(vColor * t.a, t.a);
+      }`,
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending
+  });
+
+  const makeGalaxy = (opts) => {
+    const {
+      count, arms, radius, barred, bulge, pos, scale, tiltX, tiltZ, yaw,
+      core, arm, disk
+    } = opts;
+    const posA = new Float32Array(count * 3);
+    const colA = new Float32Array(count * 3);
+    const szA = new Float32Array(count);
+    const coreC = new THREE.Color(core);
+    const armC = new THREE.Color(arm);
+    const diskC = new THREE.Color(disk);
+    const nBulge = Math.floor(count * 0.2);
+    const nHalo = Math.floor(count * 0.1);
+    const nDisk = Math.floor(count * 0.28);
+    const nArms = count - nBulge - nHalo - nDisk;
+
+    const put = (i, x, y, z, col, size) => {
+      posA.set([x, y, z], i * 3);
+      colA.set([col.r, col.g, col.b], i * 3);
+      szA[i] = size;
+    };
+
+    for (let i = 0; i < nBulge; i++) {
+      const r = Math.abs(randn()) * bulge;
+      const th = Math.random() * Math.PI * 2;
+      const ph = Math.acos(2 * Math.random() - 1);
+      const x = r * Math.sin(ph) * Math.cos(th);
+      const y = r * Math.cos(ph) * 0.72;
+      const z = r * Math.sin(ph) * Math.sin(th);
+      const col = coreC.clone().lerp(diskC, Math.random() * 0.25);
+      col.multiplyScalar(0.85 + Math.random() * 0.5);
+      put(i, x, y, z, col, 2.4 + Math.random() * 3.2);
+    }
+    for (let i = 0; i < nDisk; i++) {
+      const t = Math.min(0.98, -Math.log(1 - Math.random()) * 0.42);
+      const r = t * radius;
+      const th = Math.random() * Math.PI * 2;
+      const y = randn() * 0.055 * (1 - t);
+      const col = diskC.clone().lerp(armC, t * 0.55);
+      col.multiplyScalar(0.35 + Math.random() * 0.4);
+      put(nBulge + i, Math.cos(th) * r, y, Math.sin(th) * r, col, 1.1 + Math.random() * 1.4);
+    }
+    for (let i = 0; i < nArms; i++) {
+      const armI = i % arms;
+      const t = Math.pow(Math.random(), 0.62);
+      let r = 0.18 * radius + t * radius * 0.92;
+      let th = t * 5.6 + (armI * Math.PI * 2) / arms;
+      if (barred && t < 0.22) {
+        const bx = (Math.random() * 2 - 1) * radius * 0.42;
+        const bz = randn() * 0.08 * radius;
+        const y = randn() * 0.04;
+        const col = coreC.clone().lerp(diskC, 0.4);
+        put(nBulge + nDisk + i, bx, y, bz, col, 1.3 + Math.random() * 1.6);
+        continue;
+      }
+      const n1 = randn() * (0.07 + t * 0.2) * radius;
+      const n2 = randn() * (0.04 + t * 0.1) * radius;
+      const x = Math.cos(th) * r + Math.cos(th + 1.2) * n1;
+      const z = Math.sin(th) * r + Math.sin(th + 1.2) * n1;
+      const y = randn() * 0.05 * (1 - t) + n2 * 0.08;
+      const dust = Math.abs(y) < 0.018 && Math.sin(th * 2.0 + r) > 0.35;
+      const col = dust ? diskC.clone().multiplyScalar(0.12) : armC.clone().lerp(coreC, 1 - t);
+      col.multiplyScalar(dust ? 1 : 0.55 + Math.random() * 0.7);
+      put(nBulge + nDisk + i, x, y, z, col, dust ? 0.9 : 1.2 + Math.random() * 2.1);
+    }
+    for (let i = 0; i < nHalo; i++) {
+      const r = (0.7 + Math.random()) * radius * 1.15;
+      const th = Math.random() * Math.PI * 2;
+      const ph = Math.acos(2 * Math.random() - 1);
+      const col = new THREE.Color().setHSL(0.6, 0.15, 0.55 + Math.random() * 0.3);
+      put(
+        nBulge + nDisk + nArms + i,
+        r * Math.sin(ph) * Math.cos(th),
+        r * Math.cos(ph) * 0.85,
+        r * Math.sin(ph) * Math.sin(th),
+        col,
+        0.7 + Math.random() * 0.8
+      );
+    }
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(posA, 3));
+    geo.setAttribute("color", new THREE.BufferAttribute(colA, 3));
+    geo.setAttribute("aSize", new THREE.BufferAttribute(szA, 1));
+    const pts = new THREE.Points(geo, starMat);
+    const g = new THREE.Group();
+    g.add(pts);
+    const glow = new THREE.Mesh(
+      new THREE.SphereGeometry(bulge * 1.6, 24, 16),
+      new THREE.MeshBasicMaterial({
+        color: core,
+        transparent: true,
+        opacity: 0.09,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      })
+    );
+    glow.scale.set(1, 0.55, 1);
+    g.add(glow);
+    g.position.copy(pos);
+    g.scale.setScalar(scale);
+    g.rotation.set(tiltX, yaw, tiltZ);
+    return g;
+  };
+
+  const n = mobile ? 14000 : 32000;
+  const mw = makeGalaxy({
+    count: n,
+    arms: 2,
+    radius: 2.7,
+    barred: true,
+    bulge: 0.42,
+    pos: new THREE.Vector3(-0.55, 0.12, 0),
+    scale: 1,
+    tiltX: -1.05,
+    tiltZ: 0.12,
+    yaw: 0.35,
+    core: "#ffd7a0",
+    arm: "#9eb6ff",
+    disk: "#c9b08a"
+  });
+  const and = makeGalaxy({
+    count: Math.floor(n * 0.55),
+    arms: 2,
+    radius: 2.9,
+    barred: false,
+    bulge: 0.5,
+    pos: new THREE.Vector3(2.85, 0.55, -1.6),
+    scale: 0.62,
+    tiltX: -1.22,
+    tiltZ: -0.18,
+    yaw: -0.5,
+    core: "#ffc9a0",
+    arm: "#c3b4ff",
+    disk: "#d4b896"
+  });
+  const tri = makeGalaxy({
+    count: Math.floor(n * 0.22),
+    arms: 3,
+    radius: 2.2,
+    barred: false,
+    bulge: 0.22,
+    pos: new THREE.Vector3(2.05, -0.35, 1.45),
+    scale: 0.34,
+    tiltX: -0.48,
+    tiltZ: 0.2,
+    yaw: 0.8,
+    core: "#ffe6c4",
+    arm: "#8ec8ff",
+    disk: "#b9c4d4"
+  });
   scene.add(mw, and, tri);
+  starfield(scene, mobile ? 500 : 1100, 50);
 
   const clock = new THREE.Clock();
   const update = () => {
     if (!inView(canvas)) return;
     const dt = Math.min(clock.getDelta(), 0.05);
+    starMat.uniforms.uScale.value = canvas.clientHeight;
     if (!reduce) {
-      mw.rotation.y += dt * 0.02;
-      and.rotation.y += dt * 0.028;
-      tri.rotation.y += dt * 0.04;
+      mw.rotation.y += dt * 0.012;
+      and.rotation.y += dt * 0.018;
+      tri.rotation.y += dt * 0.03;
     }
     resize(renderer, camera, canvas);
     renderer.render(scene, camera);
