@@ -215,6 +215,7 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 }
 .dist td { padding: 0.7rem 0.8rem 0.7rem 0; border-bottom: 1px solid var(--line); }
 .dist td:nth-child(n+2) { font-family: Oxanium, sans-serif; }
+.dist td:last-child { text-align: right; }
 
 .worlds {
   padding: clamp(3.2rem, 8vh, 6.5rem) var(--pad);
@@ -380,6 +381,45 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 .const-grid figcaption { margin-top: 0.55rem; font-size: 0.95rem; }
 .const-grid figcaption span { display: block; color: var(--mute); font-size: 0.8rem; margin-top: 0.15rem; }
 
+.shop {
+  padding: clamp(3.2rem, 8vh, 6.5rem) var(--pad);
+  scroll-margin-top: calc(var(--nav) + 0.4rem);
+}
+.pack-grid, .heist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 2.2rem;
+}
+.heist-grid { grid-template-columns: repeat(4, 1fr); }
+.pack-grid article, .heist-grid article {
+  padding: 1.2rem 1.25rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.pack-grid .tag, .heist-grid .tag {
+  font-family: Oxanium, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ice);
+}
+.pack-grid h3, .heist-grid h3 { font-size: clamp(1.35rem, 2vw, 1.7rem); margin: 0.35rem 0 0.2rem; }
+.price { margin: 0.15rem 0 0.85rem; }
+.price b { font-size: 1.7rem; font-weight: 500; color: var(--sun); }
+.price s { margin-left: 0.45rem; color: var(--mute); font-size: 0.95rem; }
+.pack-grid ul { list-style: none; display: grid; gap: 0.38rem; margin-bottom: 1.1rem; color: var(--mute); flex: 1; }
+.pack-grid ul li { padding-bottom: 0.38rem; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.pack-grid .cta, .heist-grid .cta { justify-content: center; width: 100%; }
+.pack-grid article.is-best {
+  border-color: var(--ice);
+  background: rgba(126, 231, 222, 0.05);
+}
+.dist a { color: var(--ice); }
+.dist a:hover, .dist a:focus-visible { color: var(--paper); }
+
 .foot {
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.7rem;
   padding: 1.2rem var(--pad) calc(1.2rem + var(--safe-b));
@@ -398,13 +438,13 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
-  .facts-row, .atlas-grid, .gal-cards, .world-grid, .intel, .const-grid { grid-template-columns: 1fr 1fr; }
+  .facts-row, .atlas-grid, .gal-cards, .world-grid, .intel, .const-grid, .pack-grid, .heist-grid { grid-template-columns: 1fr 1fr; }
   .moon-row { grid-template-columns: 1fr; }
   .hero-hint { display: none; }
   .intel { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .facts-row, .atlas-grid, .gal-cards, .world-grid, .const-grid { grid-template-columns: 1fr; }
+  .facts-row, .atlas-grid, .gal-cards, .world-grid, .const-grid, .pack-grid, .heist-grid { grid-template-columns: 1fr; }
   .facts-row article { border-right: 0; border-bottom: 1px solid var(--line); }
   .v-gaps { grid-template-columns: 1fr; }
   .hero-copy { max-width: 100%; }
