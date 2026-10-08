@@ -437,7 +437,13 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
   text-transform: uppercase;
   color: var(--mute);
 }
-.hud b { font-weight: 500; font-size: 0.92rem; letter-spacing: 0.02em; }
+.hud b {
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
 .hud-bar {
   display: block;
   height: 3px;
@@ -534,6 +540,30 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 .shop-contact a { color: var(--ice); }
 .shop-contact a:hover, .shop-contact a:focus-visible { color: var(--paper); }
 .shop-contact p + p { color: var(--mute); margin-top: 0.25rem; font-size: 0.95rem; }
+.order-note { display: grid; gap: 0.4rem; margin-top: 0.85rem; }
+.order-note span {
+  font-family: Oxanium, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.order-note textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 4.2rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(7, 8, 12, 0.55);
+  color: var(--paper);
+  font: inherit;
+  line-height: 1.4;
+}
+.order-note textarea:focus {
+  outline: none;
+  border-color: var(--ice);
+}
 .shop-notes {
   display: grid;
   gap: 0.7rem;
@@ -617,6 +647,9 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
   .v-gaps { grid-template-columns: 1fr; }
   .hero-copy { max-width: 100%; }
   #galaxies-gl { height: 56svh; }
+  .hud { grid-template-columns: 1fr 1fr 1fr; }
+  .solo-list li { grid-template-columns: 1fr auto; }
+  .solo-list a { grid-column: 2; }
 }
 @media (min-width: 1920px) { html { font-size: 17px; } }
 @media (min-width: 2560px) { html { font-size: 20px; } :root { --pad: 4.5rem; } }

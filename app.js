@@ -1146,6 +1146,17 @@ function initMoon() {
 }
 
 const PAYPAL_BUSINESS = "kybertop505@gmail.com";
+// Discord Server Settings → Integrations → Webhooks → copy URL here.
+const DISCORD_WEBHOOK =
+  "https://discord.com/api/webhooks/1425480000000000000/kbrtp-replace-this-webhook";
+
+function orderNote() {
+  return (document.querySelector("[data-order-note]")?.value || "").trim().slice(0, 280);
+}
+
+function discordField(v) {
+  return String(v || "—").replace(/```/g, "`").slice(0, 1024);
+}
 
 function paypalHref(name, eur) {
   const u = new URL("https://www.paypal.com/cgi-bin/webscr");
@@ -1155,7 +1166,45 @@ function paypalHref(name, eur) {
   u.searchParams.set("amount", Number(eur).toFixed(2));
   u.searchParams.set("currency_code", "EUR");
   u.searchParams.set("no_shipping", "1");
+  const note = orderNote();
+  if (note) {
+    u.searchParams.set("on0", "Note");
+    u.searchParams.set("os0", note);
+  }
   return u.href;
+}
+
+function pingDiscord(item, eur) {
+  if (!DISCORD_WEBHOOK || DISCORD_WEBHOOK.includes("replace-this")) return;
+  const payload = JSON.stringify({
+    username: "kbrtp.top",
+    content: "New PayPal order",
+    embeds: [
+      {
+        title: "New order",
+        color: 8251358,
+        timestamp: new Date().toISOString(),
+        fields: [
+          { name: "Item", value: discordField(item), inline: false },
+          { name: "PayPal", value: discordField(`€${moneyLabel(eur)}`), inline: true },
+          { name: "Note", value: discordField(orderNote()), inline: false }
+        ]
+      }
+    ]
+  });
+  const form = document.createElement("form");
+  form.method = "POST";
+  form.action = DISCORD_WEBHOOK;
+  form.target = "discord-order";
+  form.enctype = "multipart/form-data";
+  form.style.display = "none";
+  const input = document.createElement("input");
+  input.name = "payload_json";
+  input.value = payload;
+  form.appendChild(input);
+  document.body.appendChild(form);
+  form.submit();
+  setTimeout(() => form.remove(), 4000);
 }
 
 function moneyLabel(eur) {
@@ -1178,6 +1227,15 @@ function shopPay() {
     bindPay(a, a.dataset.pay, a.dataset.eur);
     if (!a.classList.contains("cta")) a.textContent = "PayPal";
   });
+  document.getElementById("shop")?.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-pay]");
+    if (!a) return;
+    e.preventDefault();
+    pingDiscord(a.dataset.pay, a.dataset.eur);
+    const href = paypalHref(a.dataset.pay, a.dataset.eur);
+    const win = window.open(href, "_blank", "noopener,noreferrer");
+    if (!win) location.href = href;
+  });
 }
 
 function roundHalf(n) {
@@ -1192,6 +1250,11 @@ function levelPrice(lvl) {
 function carPrice(n) {
   n = Number(n);
   return Math.max(3, Math.round(2.6 * Math.pow(n, 0.55)));
+}
+
+function buyPrice(n) {
+  n = Number(n);
+  return Math.max(3, Math.round(2.8 * Math.pow(n, 0.72)));
 }
 
 function shopBuilds() {
@@ -1235,26 +1298,28 @@ function shopBuilds() {
 
   const buy = document.querySelector("[data-build='buy']");
   if (buy) {
-    const map = { 1: 3, 2: 5, 4: 8, 7: 12 };
-    const wasMap = { 1: 8, 2: 16, 4: 28, 7: 48 };
-    const update = (n) => {
-      const eur = map[n];
-      paint(buy, n === 1 ? "1 purchase" : `${n} purchases`, `${n} in-game purchase${n === 1 ? "" : "s"} — GTA Online Enhanced`, eur, wasMap[n]);
+    const range = buy.querySelector("input[type='range']");
+    const update = () => {
+      const n = Number(range.value);
+      const eur = buyPrice(n);
+      const was = n === 1 ? 8 : Math.round(eur * 2.4);
+      paint(
+        buy,
+        n === 1 ? "1 purchase" : `${n} purchases`,
+        `${n} in-game purchase${n === 1 ? "" : "s"} — GTA Online Enhanced`,
+        eur,
+        was
+      );
     };
-    buy.querySelectorAll("[data-n]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        buy.querySelectorAll("[data-n]").forEach((b) => b.classList.toggle("is-on", b === btn));
-        update(Number(btn.dataset.n));
-      });
-    });
-    update(1);
+    range?.addEventListener("input", update);
+    update();
   }
 }
 
 function shopHud() {
   const fmt = (kind, n) => {
+    if (kind === "hangar") return "$1B";
     if (kind === "cash") return "$" + Math.round(n).toLocaleString("en-US");
-    if (kind === "any" && n >= 7999) return "ANY";
     return String(Math.round(n));
   };
   const run = (el, to, kind, ms) => {
@@ -1289,7 +1354,7 @@ function shopHud() {
         });
       });
     },
-    { threshold: 0.4 }
+    { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
   );
   document.querySelectorAll(".pack").forEach((p) => io.observe(p));
 }

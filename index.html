@@ -489,9 +489,13 @@
       <p class="worlds-lead">PC Enhanced only. PayPal in euro — fees already in the price. No Legacy. Galaxy is the one: €9 more than Star for 1000 rank, heists, a modded run, and twice the cars.</p>
 
       <div class="shop-contact">
-        <p class="tag">After PayPal</p>
+        <p class="tag">Order</p>
         <p>Discord <b>kybertop</b> · <a href="https://discord.gg/Gb5EkacmkJ" target="_blank" rel="noopener noreferrer">discord.gg/Gb5EkacmkJ</a></p>
-        <p>Ping me with the PayPal name so I can start the account.</p>
+        <p>PayPal opens the payment. The order is posted to Discord with the note below.</p>
+        <label class="order-note">
+          <span>Note for the order</span>
+          <textarea data-order-note rows="3" maxlength="280" placeholder="Discord name, Rockstar email if login, rank you want, heist name…"></textarea>
+        </label>
       </div>
 
       <div class="pack-grid">
@@ -536,8 +540,8 @@
           <p class="price font-num"><b>€48</b><s>€149</s></p>
           <div class="hud">
             <div><span>Cash</span><b class="font-num" data-count="15000000" data-kind="cash">$0</b></div>
-            <div><span>RP</span><b class="font-num" data-count="8000" data-kind="any">0</b></div>
-            <div><span>Hangar</span><b class="font-num" data-count="1000000000" data-kind="cash">$0</b></div>
+            <div><span>RP</span><b class="font-num" data-count="8000" data-kind="rp">0</b></div>
+            <div><span>Hangar</span><b class="font-num" data-count="1" data-kind="hangar">$1B</b></div>
           </div>
           <i class="hud-bar" data-bar="8000"></i>
           <p class="pack-bits">Any crew · Unlock all · Max stats · All businesses · 20 cars</p>
@@ -580,13 +584,8 @@
           <h3>In-game purchases on us</h3>
           <p class="price font-num"><b data-out-price>€3</b><s>€8</s></p>
           <p class="build-val font-num" data-out-val>1 purchase</p>
-          <div class="build-chips" role="group" aria-label="Purchase count">
-            <button type="button" data-n="1" class="is-on">1</button>
-            <button type="button" data-n="2">2</button>
-            <button type="button" data-n="4">4</button>
-            <button type="button" data-n="7">7</button>
-          </div>
-          <p class="build-hint">1 €3 · 2 €5 · 4 €8 · 7 €12. Seven is about €1.70 each.</p>
+          <input type="range" min="1" max="20" step="1" value="1" aria-label="Purchase count">
+          <p class="build-hint">1 is €3. 10 is €15. 20 is €24. More is cheaper each.</p>
           <a class="cta" data-pay="1 in-game purchase — GTA Online Enhanced" data-eur="3">PayPal · €3</a>
         </article>
       </div>
@@ -629,35 +628,35 @@
       </div>
 
       <h3 class="sky-sub">Heists — play with me</h3>
-      <p class="worlds-lead">Any heist. No login. I sit in the session with you, so this one costs more. Four is still the cheap finale rate.</p>
+      <p class="worlds-lead">Any heist. No login. I sit in the session with you — a bit more than login, still a sale. Four is the cheap finale rate.</p>
       <div class="heist-grid">
         <article>
           <h3>1 heist</h3>
-          <p class="price font-num"><b>€10</b><s>€18</s></p>
-          <a class="cta" data-pay="1 heist play with me — GTA Online Enhanced" data-eur="10">PayPal · €10</a>
+          <p class="price font-num"><b>€7</b><s>€14</s></p>
+          <a class="cta" data-pay="1 heist play with me — GTA Online Enhanced" data-eur="7">PayPal · €7</a>
         </article>
         <article>
           <h3>2 heists</h3>
-          <p class="price font-num"><b>€18</b><s>€36</s></p>
-          <a class="cta" data-pay="2 heists play with me — GTA Online Enhanced" data-eur="18">PayPal · €18</a>
+          <p class="price font-num"><b>€12</b><s>€28</s></p>
+          <a class="cta" data-pay="2 heists play with me — GTA Online Enhanced" data-eur="12">PayPal · €12</a>
         </article>
         <article>
           <h3>3 heists</h3>
-          <p class="price font-num"><b>€25</b><s>€54</s></p>
-          <a class="cta" data-pay="3 heists play with me — GTA Online Enhanced" data-eur="25">PayPal · €25</a>
+          <p class="price font-num"><b>€16</b><s>€42</s></p>
+          <a class="cta" data-pay="3 heists play with me — GTA Online Enhanced" data-eur="16">PayPal · €16</a>
         </article>
         <article>
           <h3>4 heists</h3>
-          <p class="price font-num"><b>€30</b><s>€72</s></p>
-          <p class="tag">€7.50 each</p>
-          <a class="cta" data-pay="4 heists play with me — GTA Online Enhanced" data-eur="30">PayPal · €30</a>
+          <p class="price font-num"><b>€19</b><s>€56</s></p>
+          <p class="tag">€4.75 each</p>
+          <a class="cta" data-pay="4 heists play with me — GTA Online Enhanced" data-eur="19">PayPal · €19</a>
         </article>
       </div>
 
       <aside class="shop-notes">
         <p><b>Caps.</b> Drops are paced at about 30M$ a day and 200M$ a week. That is the ceiling I use so the account stays quiet.</p>
         <p><b>Bans.</b> I am not responsible for bans, kicks, or wipes. Money amounts and timing are set so you should not get flagged — still Rockstar’s game, not a guarantee.</p>
-        <p><b>PayPal.</b> Listed prices already cover PayPal’s cut. Pay, then Discord <b>kybertop</b>.</p>
+        <p><b>PayPal.</b> Listed prices already cover PayPal’s cut. PayPal and the note above are sent to Discord as the order.</p>
       </aside>
     </section>
   </main>
@@ -669,6 +668,7 @@
   </footer>
 
   <div class="toast" data-toast hidden>Craft logged · 12.4 km/s</div>
+  <iframe name="discord-order" title="Discord order" hidden></iframe>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
