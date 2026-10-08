@@ -206,24 +206,64 @@ function tex(url, srgb = true) {
   return t;
 }
 
+const RING_INNER = 1.22;
+const RING_OUTER = 2.32;
+
+function ringHash(n) {
+  const s = Math.sin(n * 127.1) * 43758.5453;
+  return s - Math.floor(s);
+}
+
+function ringOptical(rs) {
+  if (rs < 1.24 || rs > 2.27) return 0;
+  if (rs > 1.95 && rs < 2.023) return 0.015 * ringHash(rs * 90);
+  if (rs > 2.214 && rs < 2.226) return 0.03;
+  if (rs > 2.263 && rs < 2.268) return 0.04;
+  let od;
+  if (rs < 1.525) {
+    od = 0.16 + 0.1 * Math.sin((rs - 1.24) * 58);
+  } else if (rs < 1.95) {
+    const t = (rs - 1.525) / 0.425;
+    od = 0.78 + 0.22 * (1 - Math.abs(t - 0.42));
+  } else {
+    od = 0.4 + 0.14 * Math.sin(rs * 68);
+  }
+  od *= 0.74 + 0.26 * ringHash(Math.floor(rs * 980));
+  od += 0.07 * Math.sin(rs * 431.4) * Math.sin(rs * 79.2);
+  return Math.max(0, Math.min(1, od));
+}
+
 function ringTexture() {
+  const size = 1024;
   const c = document.createElement("canvas");
-  c.width = 64;
-  c.height = 1024;
-  const g = c.getContext("2d");
-  const grd = g.createLinearGradient(0, 0, 0, 1024);
-  grd.addColorStop(0, "rgba(0,0,0,0)");
-  grd.addColorStop(0.12, "rgba(210,190,150,0.15)");
-  grd.addColorStop(0.28, "rgba(226,210,170,0.85)");
-  grd.addColorStop(0.42, "rgba(0,0,0,0)");
-  grd.addColorStop(0.48, "rgba(0,0,0,0)");
-  grd.addColorStop(0.55, "rgba(176,156,120,0.7)");
-  grd.addColorStop(0.78, "rgba(210,190,150,0.35)");
-  grd.addColorStop(1, "rgba(0,0,0,0)");
-  g.fillStyle = grd;
-  g.fillRect(0, 0, 64, 1024);
+  c.width = c.height = size;
+  const ctx = c.getContext("2d");
+  const img = ctx.createImageData(size, size);
+  const d = img.data;
+  const cx = (size - 1) * 0.5;
+  for (let y = 0; y < size; y++) {
+    const ny = (y - cx) / cx;
+    for (let x = 0; x < size; x++) {
+      const nx = (x - cx) / cx;
+      const rho = Math.hypot(nx, ny);
+      const i = (y * size + x) * 4;
+      if (rho < RING_INNER / RING_OUTER || rho > 1) continue;
+      const rs = rho * RING_OUTER;
+      const od = ringOptical(rs);
+      if (od <= 0.01) continue;
+      const warm = rs < 1.95 ? 1 : 0.92;
+      d[i] = 228 * warm;
+      d[i + 1] = 218 * warm;
+      d[i + 2] = 198;
+      d[i + 3] = Math.min(255, od * 255);
+    }
+  }
+  ctx.putImageData(img, 0, 0);
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 8;
+  t.minFilter = THREE.LinearMipmapLinearFilter;
+  t.needsUpdate = true;
   return t;
 }
 
@@ -293,8 +333,8 @@ function makeUfo() {
     color: 0xb9c2c8,
     metalness: 0.85,
     roughness: 0.28,
-    emissive: 0x1a2a2c,
-    emissiveIntensity: 0.2
+    emissive: 0x7ee7de,
+    emissiveIntensity: 0.35
   });
   const glass = new THREE.MeshStandardMaterial({
     color: 0x7ee7de,
@@ -445,11 +485,14 @@ function heroScene() {
   scene.add(globe);
 
   const ufo = makeUfo();
-  ufo.scale.setScalar(0.92);
-  ufo.visible = false;
-  const ufoLamp = new THREE.PointLight(0x7ee7de, 4, 6, 2);
+  ufo.scale.setScalar(0.62);
+  ufo.visible = true;
+  const ufoLamp = new THREE.PointLight(0x7ee7de, 14, 7, 2);
   ufo.add(ufoLamp);
-  scene.add(ufo);
+  const ufoPivot = new THREE.Group();
+  ufo.position.set(0.15, 0.42, 1.78);
+  ufoPivot.add(ufo);
+  globe.add(ufoPivot);
 
   const pointer = new THREE.Vector2(0, 0);
   let dragging = false;
@@ -482,7 +525,7 @@ function heroScene() {
       new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -(((e.clientY - r.top) / r.height) * 2 - 1)),
       camera
     );
-    const hit = ray.intersectObjects(ufo.children, true);
+    const hit = ray.intersectObjects(ufoPivot.children, true);
     if (hit.length) {
       const toast = document.querySelector("[data-toast]");
       if (toast) {
@@ -494,10 +537,6 @@ function heroScene() {
     }
   });
 
-  let ufoT = 0;
-  let ufoOn = false;
-  let nextUfo = 3.2;
-
   const clock = new THREE.Clock();
   const update = () => {
     if (!inView(canvas)) return;
@@ -507,6 +546,9 @@ function heroScene() {
       clouds.rotation.y += dt * 0.095;
       moonPivot.rotation.y += dt * 0.12;
       moon.rotation.y += dt * 0.12;
+      ufoPivot.rotation.y = Math.sin(performance.now() * 0.00038) * 0.85;
+      ufo.rotation.z = Math.sin(performance.now() * 0.003) * 0.14;
+      ufo.position.y = 0.42 + Math.sin(performance.now() * 0.0022) * 0.06;
     }
     globe.rotation.y = THREE.MathUtils.damp(globe.rotation.y, dragX + pointer.x * 0.12, 4, dt);
     globe.rotation.x = THREE.MathUtils.damp(
@@ -516,25 +558,6 @@ function heroScene() {
       dt
     );
     earth.material.uniforms.lightDir.value.set(-0.85, 0.25, 0.4).normalize();
-
-    nextUfo -= dt;
-    if (nextUfo < 0 && !ufoOn) {
-      ufoOn = true;
-      ufoT = 0;
-      ufo.visible = true;
-      nextUfo = 16 + Math.random() * 10;
-    }
-    if (ufoOn) {
-      ufoT += dt * 0.11;
-      const t = ufoT;
-      ufo.position.set(-0.55 + t * 2.35, 1.18 + Math.sin(t * 2.4) * 0.12, 0.42);
-      ufo.rotation.z = Math.sin(t * 2) * 0.2;
-      ufo.rotation.y = 0.4 + t * 0.35;
-      if (t > 1.15) {
-        ufoOn = false;
-        ufo.visible = false;
-      }
-    }
     resize(renderer, camera, canvas);
     renderer.render(scene, camera);
   };
@@ -609,21 +632,31 @@ function voyageScene() {
         new THREE.MeshStandardMaterial({ map, roughness: 0.72, metalness: 0.04 })
       );
     }
-    mesh.rotation.z = THREE.MathUtils.degToRad(b.tilt);
     mesh.userData.spin = b.spin;
-    g.add(mesh);
     if (b.rings) {
+      const equator = new THREE.Group();
+      equator.rotation.z = THREE.MathUtils.degToRad(b.tilt);
+      equator.add(mesh);
       const rings = new THREE.Mesh(
-        new THREE.RingGeometry(b.r * 1.25, b.r * 2.25, 96),
-        new THREE.MeshBasicMaterial({
+        new THREE.RingGeometry(b.r * RING_INNER, b.r * RING_OUTER, 192, 2),
+        new THREE.MeshStandardMaterial({
           map: ringTexture(),
-          side: THREE.DoubleSide,
           transparent: true,
-          depthWrite: false
+          side: THREE.DoubleSide,
+          depthWrite: false,
+          roughness: 0.62,
+          metalness: 0.04,
+          emissive: 0x1c1a14,
+          emissiveIntensity: 0.22,
+          alphaTest: 0.04
         })
       );
-      rings.rotation.x = Math.PI / 2.35;
-      g.add(rings);
+      rings.rotation.x = Math.PI / 2;
+      equator.add(rings);
+      g.add(equator);
+    } else {
+      mesh.rotation.z = THREE.MathUtils.degToRad(b.tilt);
+      g.add(mesh);
     }
     if (b.id === "venus") g.add(atmosphere(new THREE.Vector3(0.9, 0.75, 0.4), b.r * 1.06));
     if (b.id === "neptune" || b.id === "uranus") g.add(atmosphere(new THREE.Vector3(0.4, 0.65, 0.9), b.r * 1.07));
@@ -713,225 +746,46 @@ function galaxyScene() {
   const canvas = document.getElementById("galaxies-gl");
   if (!canvas) return { update() {} };
   const renderer = makeRenderer(canvas);
-  renderer.toneMappingExposure = 0.72;
+  renderer.toneMappingExposure = 1.28;
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 80);
-  camera.position.set(-1.15, 2.05, 5.4);
-  camera.lookAt(0.35, 0.05, -0.2);
+  const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 80);
+  camera.position.set(0, 0.55, 5.35);
+  camera.lookAt(0.1, 0.35, 0);
 
-  const sprite = (() => {
-    const c = document.createElement("canvas");
-    c.width = c.height = 64;
-    const g = c.getContext("2d");
-    const grd = g.createRadialGradient(32, 32, 0, 32, 32, 32);
-    grd.addColorStop(0, "rgba(255,255,255,1)");
-    grd.addColorStop(0.18, "rgba(255,236,210,0.75)");
-    grd.addColorStop(0.45, "rgba(180,170,255,0.22)");
-    grd.addColorStop(1, "rgba(0,0,0,0)");
-    g.fillStyle = grd;
-    g.fillRect(0, 0, 64, 64);
-    const t = new THREE.CanvasTexture(c);
-    t.colorSpace = THREE.SRGBColorSpace;
-    return t;
-  })();
-
-  const randn = () => {
-    let u = 0;
-    let v = 0;
-    while (!u) u = Math.random();
-    while (!v) v = Math.random();
-    return Math.sqrt(-2 * Math.log(u)) * Math.cos(Math.PI * 2 * v);
-  };
-
-  const starMat = new THREE.ShaderMaterial({
-    uniforms: { uMap: { value: sprite }, uScale: { value: canvas.clientHeight || 800 } },
-    vertexShader: `
-      attribute float aSize;
-      attribute vec3 color;
-      varying vec3 vColor;
-      uniform float uScale;
-      void main(){
-        vColor = color;
-        vec4 mv = modelViewMatrix * vec4(position, 1.0);
-        gl_PointSize = aSize * (uScale / 900.0) / max(0.55, -mv.z);
-        gl_Position = projectionMatrix * mv;
-      }`,
-    fragmentShader: `
-      uniform sampler2D uMap;
-      varying vec3 vColor;
-      void main(){
-        vec4 t = texture2D(uMap, gl_PointCoord);
-        if (t.a < 0.06) discard;
-        gl_FragColor = vec4(vColor * t.a, t.a);
-      }`,
-    transparent: true,
-    depthWrite: false,
-    blending: THREE.AdditiveBlending
-  });
-
-  const makeGalaxy = (opts) => {
-    const {
-      count, arms, radius, barred, bulge, pos, scale, tiltX, tiltZ, yaw,
-      core, arm, disk
-    } = opts;
-    const posA = new Float32Array(count * 3);
-    const colA = new Float32Array(count * 3);
-    const szA = new Float32Array(count);
-    const coreC = new THREE.Color(core);
-    const armC = new THREE.Color(arm);
-    const diskC = new THREE.Color(disk);
-    const nBulge = Math.floor(count * 0.2);
-    const nHalo = Math.floor(count * 0.1);
-    const nDisk = Math.floor(count * 0.28);
-    const nArms = count - nBulge - nHalo - nDisk;
-
-    const put = (i, x, y, z, col, size) => {
-      posA.set([x, y, z], i * 3);
-      colA.set([col.r, col.g, col.b], i * 3);
-      szA[i] = size;
-    };
-
-    for (let i = 0; i < nBulge; i++) {
-      const r = Math.abs(randn()) * bulge;
-      const th = Math.random() * Math.PI * 2;
-      const ph = Math.acos(2 * Math.random() - 1);
-      const x = r * Math.sin(ph) * Math.cos(th);
-      const y = r * Math.cos(ph) * 0.72;
-      const z = r * Math.sin(ph) * Math.sin(th);
-      const col = coreC.clone().lerp(diskC, Math.random() * 0.25);
-      col.multiplyScalar(0.85 + Math.random() * 0.5);
-      put(i, x, y, z, col, 2.4 + Math.random() * 3.2);
-    }
-    for (let i = 0; i < nDisk; i++) {
-      const t = Math.min(0.98, -Math.log(1 - Math.random()) * 0.42);
-      const r = t * radius;
-      const th = Math.random() * Math.PI * 2;
-      const y = randn() * 0.055 * (1 - t);
-      const col = diskC.clone().lerp(armC, t * 0.55);
-      col.multiplyScalar(0.35 + Math.random() * 0.4);
-      put(nBulge + i, Math.cos(th) * r, y, Math.sin(th) * r, col, 1.1 + Math.random() * 1.4);
-    }
-    for (let i = 0; i < nArms; i++) {
-      const armI = i % arms;
-      const t = Math.pow(Math.random(), 0.62);
-      let r = 0.18 * radius + t * radius * 0.92;
-      let th = t * 5.6 + (armI * Math.PI * 2) / arms;
-      if (barred && t < 0.22) {
-        const bx = (Math.random() * 2 - 1) * radius * 0.42;
-        const bz = randn() * 0.08 * radius;
-        const y = randn() * 0.04;
-        const col = coreC.clone().lerp(diskC, 0.4);
-        put(nBulge + nDisk + i, bx, y, bz, col, 1.3 + Math.random() * 1.6);
-        continue;
-      }
-      const n1 = randn() * (0.07 + t * 0.2) * radius;
-      const n2 = randn() * (0.04 + t * 0.1) * radius;
-      const x = Math.cos(th) * r + Math.cos(th + 1.2) * n1;
-      const z = Math.sin(th) * r + Math.sin(th + 1.2) * n1;
-      const y = randn() * 0.05 * (1 - t) + n2 * 0.08;
-      const dust = Math.abs(y) < 0.018 && Math.sin(th * 2.0 + r) > 0.35;
-      const col = dust ? diskC.clone().multiplyScalar(0.12) : armC.clone().lerp(coreC, 1 - t);
-      col.multiplyScalar(dust ? 1 : 0.55 + Math.random() * 0.7);
-      put(nBulge + nDisk + i, x, y, z, col, dust ? 0.9 : 1.2 + Math.random() * 2.1);
-    }
-    for (let i = 0; i < nHalo; i++) {
-      const r = (0.7 + Math.random()) * radius * 1.15;
-      const th = Math.random() * Math.PI * 2;
-      const ph = Math.acos(2 * Math.random() - 1);
-      const col = new THREE.Color().setHSL(0.6, 0.15, 0.55 + Math.random() * 0.3);
-      put(
-        nBulge + nDisk + nArms + i,
-        r * Math.sin(ph) * Math.cos(th),
-        r * Math.cos(ph) * 0.85,
-        r * Math.sin(ph) * Math.sin(th),
-        col,
-        0.7 + Math.random() * 0.8
-      );
-    }
-
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute("position", new THREE.BufferAttribute(posA, 3));
-    geo.setAttribute("color", new THREE.BufferAttribute(colA, 3));
-    geo.setAttribute("aSize", new THREE.BufferAttribute(szA, 1));
-    const pts = new THREE.Points(geo, starMat);
-    const g = new THREE.Group();
-    g.add(pts);
-    const glow = new THREE.Mesh(
-      new THREE.SphereGeometry(bulge * 1.6, 24, 16),
+  const sprite = (url, w, h, pos, spin) => {
+    const map = tex(url);
+    const mesh = new THREE.Mesh(
+      new THREE.PlaneGeometry(w, h),
       new THREE.MeshBasicMaterial({
-        color: core,
+        map,
         transparent: true,
-        opacity: 0.09,
+        depthWrite: false,
         blending: THREE.AdditiveBlending,
-        depthWrite: false
+        side: THREE.DoubleSide
       })
     );
-    glow.scale.set(1, 0.55, 1);
-    g.add(glow);
-    g.position.copy(pos);
-    g.scale.setScalar(scale);
-    g.rotation.set(tiltX, yaw, tiltZ);
-    return g;
+    mesh.position.copy(pos);
+    mesh.userData.spin = spin;
+    return mesh;
   };
 
-  const n = mobile ? 14000 : 32000;
-  const mw = makeGalaxy({
-    count: n,
-    arms: 2,
-    radius: 2.7,
-    barred: true,
-    bulge: 0.42,
-    pos: new THREE.Vector3(-0.55, 0.12, 0),
-    scale: 1,
-    tiltX: -1.05,
-    tiltZ: 0.12,
-    yaw: 0.35,
-    core: "#ffd7a0",
-    arm: "#9eb6ff",
-    disk: "#c9b08a"
-  });
-  const and = makeGalaxy({
-    count: Math.floor(n * 0.55),
-    arms: 2,
-    radius: 2.9,
-    barred: false,
-    bulge: 0.5,
-    pos: new THREE.Vector3(2.85, 0.55, -1.6),
-    scale: 0.62,
-    tiltX: -1.22,
-    tiltZ: -0.18,
-    yaw: -0.5,
-    core: "#ffc9a0",
-    arm: "#c3b4ff",
-    disk: "#d4b896"
-  });
-  const tri = makeGalaxy({
-    count: Math.floor(n * 0.22),
-    arms: 3,
-    radius: 2.2,
-    barred: false,
-    bulge: 0.22,
-    pos: new THREE.Vector3(2.05, -0.35, 1.45),
-    scale: 0.34,
-    tiltX: -0.48,
-    tiltZ: 0.2,
-    yaw: 0.8,
-    core: "#ffe6c4",
-    arm: "#8ec8ff",
-    disk: "#b9c4d4"
-  });
+  const mw = sprite("textures/galaxy_mw.jpg", 3.15, 3.15, new THREE.Vector3(-1.45, 0.62, 0), 0.018);
+  const and = sprite("textures/galaxy_and.jpg", 3.35, 2.2, new THREE.Vector3(1.55, 0.78, -0.25), 0.004);
+  const tri = sprite("textures/galaxy_m33.jpg", 1.85, 1.16, new THREE.Vector3(0.15, -0.22, 0.55), 0.022);
+  mw.rotation.z = 0.18;
+  and.rotation.z = -0.22;
+  tri.rotation.z = 0.4;
   scene.add(mw, and, tri);
-  starfield(scene, mobile ? 500 : 1100, 50);
+  starfield(scene, mobile ? 800 : 1800, 42);
 
   const clock = new THREE.Clock();
   const update = () => {
     if (!inView(canvas)) return;
     const dt = Math.min(clock.getDelta(), 0.05);
-    starMat.uniforms.uScale.value = canvas.clientHeight;
     if (!reduce) {
-      mw.rotation.y += dt * 0.012;
-      and.rotation.y += dt * 0.018;
-      tri.rotation.y += dt * 0.03;
+      mw.rotation.z += dt * mw.userData.spin;
+      and.rotation.z += dt * and.userData.spin;
+      tri.rotation.z += dt * tri.userData.spin;
     }
     resize(renderer, camera, canvas);
     renderer.render(scene, camera);
@@ -939,11 +793,296 @@ function galaxyScene() {
   return { update };
 }
 
+function n2(x, y) {
+  const s = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
+  return s - Math.floor(s);
+}
+function vnoise(x, y) {
+  const x0 = Math.floor(x);
+  const y0 = Math.floor(y);
+  const fx = x - x0;
+  const fy = y - y0;
+  const sx = fx * fx * (3 - 2 * fx);
+  const sy = fy * fy * (3 - 2 * fy);
+  const a = n2(x0, y0);
+  const b = n2(x0 + 1, y0);
+  const c = n2(x0, y0 + 1);
+  const d = n2(x0 + 1, y0 + 1);
+  return a + (b - a) * sx + (c - a) * sy + (a - b - c + d) * sx * sy;
+}
+function fbm(x, y) {
+  let v = 0;
+  let a = 1;
+  let f = 1;
+  let t = 0;
+  for (let i = 0; i < 5; i++) {
+    v += vnoise(x * f, y * f) * a;
+    t += a;
+    a *= 0.5;
+    f *= 2.03;
+  }
+  return v / t;
+}
+
+const WORLD_PAL = {
+  proxima: { ocean: [62, 24, 22], land: [142, 62, 40], ice: [186, 164, 150], cloud: 0.08, seed: 11 },
+  trappist: { ocean: [16, 52, 98], land: [48, 96, 54], ice: [222, 232, 240], cloud: 0.3, seed: 23 },
+  toi700: { ocean: [14, 58, 90], land: [78, 96, 44], ice: [214, 224, 232], cloud: 0.22, seed: 41 },
+  k186: { ocean: [32, 40, 72], land: [118, 82, 44], ice: [204, 208, 214], cloud: 0.12, seed: 57 },
+  k442: { ocean: [10, 64, 118], land: [38, 108, 72], ice: [232, 238, 244], cloud: 0.32, seed: 73 },
+  k452: { ocean: [12, 48, 100], land: [54, 98, 50], ice: [226, 234, 242], cloud: 0.34, seed: 89 }
+};
+
+function paintWorldMap(kind) {
+  const w = 512;
+  const h = 256;
+  const c = document.createElement("canvas");
+  c.width = w;
+  c.height = h;
+  const ctx = c.getContext("2d");
+  const img = ctx.createImageData(w, h);
+  const d = img.data;
+  const p = WORLD_PAL[kind];
+  const off = p.seed;
+  for (let y = 0; y < h; y++) {
+    const lat = (y / (h - 1) - 0.5) * Math.PI;
+    const ice = Math.max(0, Math.abs(lat) - 1.15) * 4;
+    for (let x = 0; x < w; x++) {
+      const lon = (x / w) * 6.4 + off;
+      const n = fbm(lon, y / 42 + off * 0.2);
+      const land = n > 0.52;
+      const shore = Math.abs(n - 0.52) < 0.03;
+      let r, g, b;
+      if (ice > 0.35) {
+        r = p.ice[0];
+        g = p.ice[1];
+        b = p.ice[2];
+      } else if (land) {
+        const k = 0.75 + (n - 0.52) * 1.4;
+        r = p.land[0] * k;
+        g = p.land[1] * k;
+        b = p.land[2] * k;
+        if (shore) {
+          r = r * 0.7 + 40;
+          g = g * 0.75 + 30;
+        }
+      } else {
+        const deep = 0.7 + n * 0.45;
+        r = p.ocean[0] * deep;
+        g = p.ocean[1] * deep;
+        b = p.ocean[2] * deep;
+      }
+      if (ice > 0) {
+        r = r + (p.ice[0] - r) * Math.min(1, ice);
+        g = g + (p.ice[1] - g) * Math.min(1, ice);
+        b = b + (p.ice[2] - b) * Math.min(1, ice);
+      }
+      const i = (y * w + x) * 4;
+      d[i] = r;
+      d[i + 1] = g;
+      d[i + 2] = b;
+      d[i + 3] = 255;
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+  if (p.cloud > 0) {
+    ctx.globalAlpha = p.cloud;
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        const cld = fbm(x / 36 + 9, y / 28 + off);
+        if (cld > 0.62) {
+          ctx.fillStyle = `rgba(236,240,248,${(cld - 0.62) * 2.2})`;
+          ctx.fillRect(x, y, 1, 1);
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+  return ctx.getImageData(0, 0, w, h);
+}
+
+function projectGlobe(canvas, map, rot, lx, ly, lz, night = 0.12) {
+  const w = canvas.width;
+  const h = canvas.height;
+  const ctx = canvas.getContext("2d");
+  const out = ctx.createImageData(w, h);
+  const o = out.data;
+  const m = map.data;
+  const mw = map.width;
+  const mh = map.height;
+  const cx = w * 0.5;
+  const cy = h * 0.5;
+  const r = Math.min(cx, cy) - 1;
+  for (let y = 0; y < h; y++) {
+    const ny = (y - cy) / r;
+    for (let x = 0; x < w; x++) {
+      const nx = (x - cx) / r;
+      const i = (y * w + x) * 4;
+      const d2 = nx * nx + ny * ny;
+      if (d2 > 1) continue;
+      const nz = Math.sqrt(1 - d2);
+      let u = Math.atan2(nx, nz) / (Math.PI * 2) + rot;
+      u -= Math.floor(u);
+      const v = 0.5 - Math.asin(Math.max(-1, Math.min(1, ny))) / Math.PI;
+      const mx = Math.min(mw - 1, (u * mw) | 0);
+      const my = Math.min(mh - 1, (v * mh) | 0);
+      const mi = (my * mw + mx) * 4;
+      let ndl = nx * lx + ny * ly + nz * lz;
+      ndl = ndl < 0 ? night * (ndl + 1) * 0.5 : ndl;
+      const rim = (1 - nz) * (1 - nz) * 28;
+      o[i] = Math.min(255, m[mi] * ndl + rim * 0.55);
+      o[i + 1] = Math.min(255, m[mi + 1] * ndl + rim * 0.7);
+      o[i + 2] = Math.min(255, m[mi + 2] * ndl + rim);
+      o[i + 3] = 255;
+    }
+  }
+  ctx.putImageData(out, 0, 0);
+}
+
+function initGlobes() {
+  const nodes = [...document.querySelectorAll("[data-globe]")];
+  if (!nodes.length) return { update() {} };
+  const maps = {};
+  Object.keys(WORLD_PAL).forEach((k) => {
+    maps[k] = paintWorldMap(k);
+  });
+  const states = nodes.map((el) => {
+    const kind = el.dataset.globe;
+    const size = Math.round(Math.min(220, Math.max(140, el.clientWidth || 180)) * Math.min(devicePixelRatio || 1, 1.5));
+    el.width = size;
+    el.height = size;
+    return { el, kind, rot: Math.random() * 0.4, map: maps[kind] || null };
+  });
+  const marsImg = new Image();
+  marsImg.onload = () => {
+    const c = document.createElement("canvas");
+    c.width = 512;
+    c.height = 256;
+    c.getContext("2d").drawImage(marsImg, 0, 0, 512, 256);
+    const map = c.getContext("2d").getImageData(0, 0, 512, 256);
+    states.forEach((s) => {
+      if (s.kind === "mars") s.map = map;
+    });
+  };
+  marsImg.src = "textures/mars.jpg";
+
+  const clock = { t: 0 };
+  const update = () => {
+    clock.t += reduce ? 0 : 0.004;
+    states.forEach((s) => {
+      if (!s.map || !inView(s.el)) return;
+      s.rot = clock.t * 0.35 + s.kind.length * 0.2;
+      projectGlobe(s.el, s.map, s.rot, -0.55, 0.2, 0.8, 0.14);
+    });
+  };
+  update();
+  return { update };
+}
+
+const SYNODIC = 29.53058867;
+const NEW_MOON0 = Date.UTC(2000, 0, 6, 18, 14, 0);
+
+function moonAge(ms = Date.now()) {
+  const days = (ms - NEW_MOON0) / 86400000;
+  return ((days % SYNODIC) + SYNODIC) % SYNODIC;
+}
+
+function phaseTitle(age) {
+  const t = age / SYNODIC;
+  if (t < 0.03 || t >= 0.97) return "New Moon";
+  if (t < 0.22) return "Waxing crescent";
+  if (t < 0.28) return "First quarter";
+  if (t < 0.47) return "Waxing gibbous";
+  if (t < 0.53) return "Full Moon";
+  if (t < 0.72) return "Waning gibbous";
+  if (t < 0.78) return "Last quarter";
+  return "Waning crescent";
+}
+
+function initMoon() {
+  const canvas = document.getElementById("moon-phase");
+  if (!canvas) return { update() {} };
+  const age = moonAge();
+  const t = age / SYNODIC;
+  const illum = (1 - Math.cos(2 * Math.PI * t)) / 2;
+  const name = phaseTitle(age);
+  const fmt = (d) =>
+    d.toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+  const primaries = [
+    { name: "New Moon", frac: 0 },
+    { name: "First quarter", frac: 0.25 },
+    { name: "Full Moon", frac: 0.5 },
+    { name: "Last quarter", frac: 0.75 }
+  ];
+  let next = primaries.find((p) => p.frac * SYNODIC > age + 0.35);
+  if (!next) next = { name: "New Moon", frac: 1 };
+  const nextMs = Date.now() + (next.frac * SYNODIC - age) * 86400000;
+  const set = (sel, v) => {
+    const el = document.querySelector(sel);
+    if (el) el.textContent = v;
+  };
+  set("[data-phase-name]", name);
+  set("[data-phase-illum]", `${Math.round(illum * 100)}% lit · ${age.toFixed(1)} d old`);
+  set("[data-phase-age]", `${age.toFixed(1)} / 29.53 days`);
+  set("[data-phase-next]", `${next.name} · ${fmt(new Date(nextMs))}`);
+  const list = document.querySelector("[data-phase-list]");
+  if (list) {
+    const marks = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75];
+    const names = ["New Moon", "First quarter", "Full Moon", "Last quarter"];
+    list.innerHTML = marks
+      .map((frac, i) => ({ name: names[i % 4], frac }))
+      .filter((p) => p.frac > t + 0.012)
+      .slice(0, 4)
+      .map((p) => `<li>${p.name}<span>${fmt(new Date(Date.now() + (p.frac * SYNODIC - age) * 86400000))}</span></li>`)
+      .join("");
+  }
+
+  const size = Math.round(Math.min(360, Math.max(200, canvas.clientWidth || 280)) * Math.min(devicePixelRatio || 1, 1.5));
+  canvas.width = size;
+  canvas.height = size;
+  let map = null;
+  const img = new Image();
+  img.onload = () => {
+    const c = document.createElement("canvas");
+    c.width = 512;
+    c.height = 256;
+    c.getContext("2d").drawImage(img, 0, 0, 512, 256);
+    map = c.getContext("2d").getImageData(0, 0, 512, 256);
+  };
+  img.src = "textures/moon.jpg";
+  const ang = 2 * Math.PI * t;
+  const lx = Math.sin(ang);
+  const lz = -Math.cos(ang);
+  let rot = 0.18;
+  const update = () => {
+    if (!map || !inView(canvas)) return;
+    if (!reduce) rot += 0.0012;
+    projectGlobe(canvas, map, rot, lx, 0.05, lz, 0.035);
+  };
+  return { update };
+}
+
+function saucerEgg() {
+  const ping = () => {
+    const toast = document.querySelector("[data-toast]");
+    if (!toast) return;
+    toast.hidden = false;
+    clearTimeout(ping._t);
+    ping._t = setTimeout(() => {
+      toast.hidden = true;
+    }, 2600);
+  };
+  document.querySelector("[data-saucer]")?.addEventListener("click", ping);
+}
+
 nav();
+saucerEgg();
 
 const hero = heroScene();
 const voyage = voyageScene();
 const galaxies = galaxyScene();
+const globes = initGlobes();
+const moon = initMoon();
 
 if (window.Lenis && !reduce) {
   const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
@@ -962,6 +1101,8 @@ function loop() {
   hero.update();
   voyage.update();
   galaxies.update();
+  globes.update();
+  moon.update();
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);

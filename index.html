@@ -57,6 +57,7 @@
       <a href="#voyage">System</a>
       <a href="#atlas">Atlas</a>
       <a href="#worlds">Worlds</a>
+      <a href="#sky">Sky</a>
       <a href="#galaxies">Galaxies</a>
     </nav>
     <button class="nav-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
@@ -66,6 +67,7 @@
     <a href="#voyage">System</a>
     <a href="#atlas">Atlas</a>
     <a href="#worlds">Worlds</a>
+    <a href="#sky">Sky</a>
     <a href="#galaxies">Galaxies</a>
   </div>
 
@@ -163,21 +165,25 @@
       <p class="worlds-lead">None of these is Earth. A few are close in size and sit in the zone where liquid water can exist. Mars is the only one a ship can reach in a human lifetime. The rest are light-years out.</p>
       <div class="world-grid">
         <article>
+          <canvas class="world-globe" data-globe="mars" width="320" height="320"></canvas>
           <p class="tag">Sol · rocky</p>
           <h3>Mars</h3>
+          <p class="ly font-num">0.0000058 ly</p>
           <dl>
             <div><span>From Earth</span><b>54.6–401 million km</b></div>
-            <div><span>Light</span><b>3 to 22 min</b></div>
+            <div><span>Light</span><b>3 to 22 min · 5.8×10<sup>−6</sup> ly</b></div>
             <div><span>Size</span><b>0.53 × Earth</b></div>
             <div><span>Gravity</span><b>0.38 g</b></div>
           </dl>
           <p>Day is 24h 37m. Ice at the poles. Thin CO<sub>2</sub> air, no magnetic shield. Closest world we can actually land on and build under.</p>
         </article>
         <article>
+          <canvas class="world-globe" data-globe="proxima" width="320" height="320"></canvas>
           <p class="tag">Alpha Centauri · HZ</p>
           <h3>Proxima b</h3>
+          <p class="ly font-num">4.24 ly</p>
           <dl>
-            <div><span>From Earth</span><b>4.24 ly · 40.1 trillion km</b></div>
+            <div><span>From Earth</span><b>40.1 trillion km</b></div>
             <div><span>Light</span><b>4.24 years</b></div>
             <div><span>Size</span><b>~1.17 × Earth mass</b></div>
             <div><span>Orbit</span><b>11.2 days</b></div>
@@ -185,10 +191,12 @@
           <p>Nearest exoplanet in a habitable zone. Likely tidally locked. The red dwarf flares. Still the shortest jump off our Sun.</p>
         </article>
         <article>
+          <canvas class="world-globe" data-globe="trappist" width="320" height="320"></canvas>
           <p class="tag">TRAPPIST-1 · HZ</p>
           <h3>TRAPPIST-1e</h3>
+          <p class="ly font-num">40.5 ly</p>
           <dl>
-            <div><span>From Earth</span><b>40.5 ly · 383 trillion km</b></div>
+            <div><span>From Earth</span><b>383 trillion km</b></div>
             <div><span>Light</span><b>40.5 years</b></div>
             <div><span>Size</span><b>0.91 × Earth</b></div>
             <div><span>Orbit</span><b>6.1 days</b></div>
@@ -196,21 +204,12 @@
           <p>Earth-sized, rocky, in the liquid-water belt of a cool dwarf. Six other worlds in the same system. Density looks like rock, not gas.</p>
         </article>
         <article>
-          <p class="tag">Kepler-186 · HZ</p>
-          <h3>Kepler-186f</h3>
-          <dl>
-            <div><span>From Earth</span><b>579 ly · 5.48 quadrillion km</b></div>
-            <div><span>Light</span><b>579 years</b></div>
-            <div><span>Size</span><b>1.17 × Earth</b></div>
-            <div><span>Orbit</span><b>130 days</b></div>
-          </dl>
-          <p>First Earth-size planet found in a habitable zone. Red-dwarf host. Could hold surface water if it kept an atmosphere.</p>
-        </article>
-        <article>
+          <canvas class="world-globe" data-globe="toi700" width="320" height="320"></canvas>
           <p class="tag">TOI-700 · HZ</p>
           <h3>TOI-700 d</h3>
+          <p class="ly font-num">101 ly</p>
           <dl>
-            <div><span>From Earth</span><b>101 ly · 956 trillion km</b></div>
+            <div><span>From Earth</span><b>956 trillion km</b></div>
             <div><span>Light</span><b>101 years</b></div>
             <div><span>Size</span><b>1.19 × Earth</b></div>
             <div><span>Orbit</span><b>37.4 days</b></div>
@@ -218,30 +217,174 @@
           <p>TESS find, later confirmed. Receives about 86% of the starlight Earth gets. Quiet M dwarf, so an atmosphere might survive.</p>
         </article>
         <article>
+          <canvas class="world-globe" data-globe="k186" width="320" height="320"></canvas>
+          <p class="tag">Kepler-186 · HZ</p>
+          <h3>Kepler-186f</h3>
+          <p class="ly font-num">579 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>5.48 quadrillion km</b></div>
+            <div><span>Light</span><b>579 years</b></div>
+            <div><span>Size</span><b>1.17 × Earth</b></div>
+            <div><span>Orbit</span><b>130 days</b></div>
+          </dl>
+          <p>First Earth-size planet found in a habitable zone. Red-dwarf host. Could hold surface water if it kept an atmosphere.</p>
+        </article>
+        <article>
+          <canvas class="world-globe" data-globe="k442" width="320" height="320"></canvas>
           <p class="tag">Kepler-442 · HZ</p>
           <h3>Kepler-442b</h3>
+          <p class="ly font-num">1,206 ly</p>
           <dl>
-            <div><span>From Earth</span><b>1,206 ly · 11.4 quadrillion km</b></div>
+            <div><span>From Earth</span><b>11.4 quadrillion km</b></div>
             <div><span>Light</span><b>1,206 years</b></div>
             <div><span>Size</span><b>1.34 × Earth</b></div>
             <div><span>Orbit</span><b>112 days</b></div>
           </dl>
           <p>One of the highest Earth-similarity scores in the catalog. K-star light, cooler than the Sun. Super-Earth, still in the water belt.</p>
         </article>
+        <article>
+          <canvas class="world-globe" data-globe="k452" width="320" height="320"></canvas>
+          <p class="tag">Kepler-452 · HZ</p>
+          <h3>Kepler-452b</h3>
+          <p class="ly font-num">1,400 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>13.2 quadrillion km</b></div>
+            <div><span>Light</span><b>1,400 years</b></div>
+            <div><span>Size</span><b>1.6 × Earth</b></div>
+            <div><span>Orbit</span><b>385 days · G star</b></div>
+          </dl>
+          <p>Called Earth’s cousin. A year almost like ours, around a Sun-like star. Larger than Earth; it may be rocky or a water world.</p>
+        </article>
       </div>
       <div class="table-wrap">
         <table class="dist">
           <thead>
-            <tr><th>World</th><th>From Earth</th><th>Light</th><th>Vs Earth</th></tr>
+            <tr><th>World</th><th>km from Earth</th><th>Light-years</th><th>Light time</th><th>Vs Earth</th></tr>
           </thead>
           <tbody>
-            <tr><td>Mars</td><td>54.6 million km at closest</td><td>3 min</td><td>0.53 radius</td></tr>
-            <tr><td>Proxima b</td><td>4.24 ly</td><td>4.24 yr</td><td>~1.17 mass</td></tr>
-            <tr><td>TRAPPIST-1e</td><td>40.5 ly</td><td>40.5 yr</td><td>0.91 radius</td></tr>
-            <tr><td>TOI-700 d</td><td>101 ly</td><td>101 yr</td><td>1.19 radius</td></tr>
-            <tr><td>Kepler-186f</td><td>579 ly</td><td>579 yr</td><td>1.17 radius</td></tr>
-            <tr><td>Kepler-442b</td><td>1,206 ly</td><td>1,206 yr</td><td>1.34 radius</td></tr>
-            <tr><td>Kepler-452b</td><td>1,400 ly</td><td>1,400 yr</td><td>1.6 radius · Sun-like star</td></tr>
+            <tr><td>Mars</td><td>54.6 million at closest</td><td>0.0000058 ly</td><td>3 min</td><td>0.53 radius</td></tr>
+            <tr><td>Proxima b</td><td>40.1 trillion</td><td>4.24 ly</td><td>4.24 yr</td><td>~1.17 mass</td></tr>
+            <tr><td>TRAPPIST-1e</td><td>383 trillion</td><td>40.5 ly</td><td>40.5 yr</td><td>0.91 radius</td></tr>
+            <tr><td>TOI-700 d</td><td>956 trillion</td><td>101 ly</td><td>101 yr</td><td>1.19 radius</td></tr>
+            <tr><td>Kepler-186f</td><td>5.48 quadrillion</td><td>579 ly</td><td>579 yr</td><td>1.17 radius</td></tr>
+            <tr><td>Kepler-442b</td><td>11.4 quadrillion</td><td>1,206 ly</td><td>1,206 yr</td><td>1.34 radius</td></tr>
+            <tr><td>Kepler-452b</td><td>13.2 quadrillion</td><td>1,400 ly</td><td>1,400 yr</td><td>1.6 radius</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sky" id="sky">
+      <header class="sec">
+        <p class="eyebrow">From Earth</p>
+        <h2>Moon and the sky we actually see</h2>
+      </header>
+      <div class="moon-row">
+        <canvas id="moon-phase" width="360" height="360"></canvas>
+        <div>
+          <p class="eyebrow">Luna now</p>
+          <h3 data-phase-name>Moon</h3>
+          <p class="ly font-num" data-phase-illum></p>
+          <dl class="moon-stats">
+            <div><span>Age this cycle</span><b data-phase-age></b></div>
+            <div><span>Next phase</span><b data-phase-next></b></div>
+            <div><span>Distance</span><b>384,400 km · 1.3 s of light</b></div>
+            <div><span>Synodic month</span><b>29.53 days</b></div>
+          </dl>
+          <ol class="phase-list" data-phase-list></ol>
+        </div>
+      </div>
+      <h3 class="sky-sub">Súhvezdia · constellations we see from Earth</h3>
+      <p class="worlds-lead">The same sky every night: a handful of bright shapes our eyes lock onto, and the stars that actually sit in them. Distances are how far that light has already travelled.</p>
+      <div class="const-grid">
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M40 50 L70 42 L100 48 L130 40"/>
+              <path d="M70 42 L78 78 L70 108"/>
+              <path d="M100 48 L108 82 L118 118"/>
+              <path d="M40 50 L28 92"/><path d="M130 40 L155 100"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="40" cy="50" r="3.2"/><circle cx="70" cy="42" r="2.4"/><circle cx="100" cy="48" r="2.6"/><circle cx="130" cy="40" r="3.4"/><circle cx="78" cy="78" r="2.2"/><circle cx="108" cy="82" r="2.2"/><circle cx="70" cy="108" r="2.8"/><circle cx="118" cy="118" r="3.6"/><circle cx="28" cy="92" r="3"/><circle cx="155" cy="100" r="3.2"/></g>
+          </svg>
+          <figcaption>Orion <span>Betelgeuse 548 ly · Rigel 860 ly</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M30 90 L58 78 L88 70 L112 62 L138 50 L162 42 L180 30"/>
+              <path d="M30 90 L42 112"/><path d="M58 78 L70 108"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="30" cy="90" r="3"/><circle cx="58" cy="78" r="2.6"/><circle cx="88" cy="70" r="2.4"/><circle cx="112" cy="62" r="2.4"/><circle cx="138" cy="50" r="2.8"/><circle cx="162" cy="42" r="2.6"/><circle cx="180" cy="30" r="3"/><circle cx="42" cy="112" r="2.2"/><circle cx="70" cy="108" r="2.2"/></g>
+          </svg>
+          <figcaption>Ursa Major <span>Dubhe 123 ly · Alkaid 104 ly</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1"><path d="M36 88 L70 40 L100 78 L140 32 L170 86"/></g>
+            <g fill="#e6e0d2"><circle cx="36" cy="88" r="2.8"/><circle cx="70" cy="40" r="3"/><circle cx="100" cy="78" r="2.4"/><circle cx="140" cy="32" r="2.8"/><circle cx="170" cy="86" r="2.6"/></g>
+          </svg>
+          <figcaption>Cassiopeia <span>Schedar 228 ly · W of the north</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M50 30 L90 70 L130 30"/>
+              <path d="M90 70 L90 118"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="50" cy="30" r="2.8"/><circle cx="90" cy="70" r="3.2"/><circle cx="130" cy="30" r="2.6"/><circle cx="90" cy="118" r="2.4"/></g>
+          </svg>
+          <figcaption>Cygnus <span>Deneb 2,615 ly · Northern Cross</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1"><path d="M40 50 L80 62 L120 48 L150 70 L130 100 L90 112 L70 90 L40 50"/></g>
+            <g fill="#e6e0d2"><circle cx="40" cy="50" r="3.4"/><circle cx="80" cy="62" r="2.4"/><circle cx="120" cy="48" r="2.6"/><circle cx="150" cy="70" r="3"/><circle cx="130" cy="100" r="2.4"/><circle cx="90" cy="112" r="2.2"/><circle cx="70" cy="90" r="2.2"/></g>
+          </svg>
+          <figcaption>Scorpius <span>Antares 550 ly · sting of summer</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1"><path d="M70 30 L130 50 L110 110 L55 85 Z"/><path d="M70 30 L110 110"/></g>
+            <g fill="#e6e0d2"><circle cx="70" cy="30" r="3"/><circle cx="130" cy="50" r="2.6"/><circle cx="110" cy="110" r="2.8"/><circle cx="55" cy="85" r="2.4"/></g>
+          </svg>
+          <figcaption>Crux <span>Acrux 320 ly · Southern Cross</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M70 28 L100 70 L70 118"/>
+              <path d="M100 70 L148 62"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="70" cy="28" r="3.4"/><circle cx="100" cy="70" r="2.4"/><circle cx="70" cy="118" r="2.6"/><circle cx="148" cy="62" r="3"/></g>
+          </svg>
+          <figcaption>Lyra <span>Vega 25 ly · Summer Triangle</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M40 90 L88 70 L130 48 L158 32"/>
+              <path d="M88 70 L78 112"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="40" cy="90" r="2.4"/><circle cx="88" cy="70" r="4"/><circle cx="130" cy="48" r="2.4"/><circle cx="158" cy="32" r="2.2"/><circle cx="78" cy="112" r="2.2"/></g>
+          </svg>
+          <figcaption>Canis Major <span>Sirius 8.6 ly · brightest night star</span></figcaption>
+        </figure>
+      </div>
+      <div class="table-wrap">
+        <table class="dist">
+          <thead>
+            <tr><th>Star</th><th>Constellation</th><th>Light-years</th><th>Note</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sun</td><td>—</td><td>0.000016 ly</td><td>8 min 20 s</td></tr>
+            <tr><td>Proxima Centauri</td><td>Centaurus</td><td>4.24 ly</td><td>Nearest other star</td></tr>
+            <tr><td>Sirius</td><td>Canis Major</td><td>8.6 ly</td><td>Brightest in our night sky</td></tr>
+            <tr><td>Vega</td><td>Lyra</td><td>25 ly</td><td>Summer Triangle</td></tr>
+            <tr><td>Arcturus</td><td>Boötes</td><td>37 ly</td><td>Follow the Dipper’s arc</td></tr>
+            <tr><td>Polaris</td><td>Ursa Minor</td><td>430 ly</td><td>North Star</td></tr>
+            <tr><td>Betelgeuse</td><td>Orion</td><td>548 ly</td><td>Red supergiant</td></tr>
+            <tr><td>Deneb</td><td>Cygnus</td><td>2,615 ly</td><td>One of the farthest you can see by eye</td></tr>
           </tbody>
         </table>
       </div>
@@ -254,21 +397,83 @@
           <p class="eyebrow">Local group</p>
           <h2>Galaxies around the Sun</h2>
         </header>
+        <p class="worlds-lead gal-lead">We sit in a barred spiral 100,000 light-years wide. Two other spirals share the neighbourhood, plus dozens of dwarf galaxies. Photographs below: the Milky Way as seen from outside (ESO), Andromeda (M31), Triangulum (M33).</p>
+        <div class="facts-row gal-facts">
+          <article><b class="font-num">~2 trillion</b><span>Galaxies in the observable universe</span></article>
+          <article><b class="font-num">54+</b><span>Members of the Local Group</span></article>
+          <article><b class="font-num">2.47 Mly</b><span>Andromeda — nearest giant spiral</span></article>
+          <article><b class="font-num">54 Mly</b><span>Virgo cluster, nearest big pile</span></article>
+        </div>
         <div class="gal-cards">
           <article>
-            <p class="font-num">00</p>
+            <p class="font-num">00 · SBbc</p>
             <h3>Milky Way</h3>
-            <p>Barred spiral. We sit in the Orion arm, 26,000 light-years from Sagittarius A*, a black hole of 4.3 million Suns. One galactic year is 230 million Earth years. About 100–400 billion stars. 100,000 light-years across.</p>
+            <p class="ly font-num">Home · 0 ly</p>
+            <dl>
+              <div><span>Type</span><b>Barred spiral</b></div>
+              <div><span>Diameter</span><b>100,000 ly</b></div>
+              <div><span>Stars</span><b>100–400 billion</b></div>
+              <div><span>Centre</span><b>Sgr A* · 4.3 M Suns</b></div>
+              <div><span>Our arm</span><b>Orion · 26,000 ly out</b></div>
+              <div><span>Galactic year</span><b>230 million yr</b></div>
+            </dl>
+            <p>A thin disc 1,000 ly thick at the Sun. Two Magellanic Clouds orbit us. We see it edge-on as the pale band of the Milky Way. Most of its mass is dark.</p>
           </article>
           <article>
-            <p class="font-num">01</p>
+            <p class="font-num">01 · SA(s)b</p>
             <h3>Andromeda</h3>
-            <p>M31. 2.47 million light-years. Closes at 110 km/s. In 4.5 billion years the two discs merge. Larger than us. A trillion stars. Already spans three degrees of sky — wider than six full moons.</p>
+            <p class="ly font-num">2.47 million ly</p>
+            <dl>
+              <div><span>Type</span><b>Spiral, tilted 77°</b></div>
+              <div><span>Diameter</span><b>~220,000 ly</b></div>
+              <div><span>Stars</span><b>~1 trillion</b></div>
+              <div><span>Speed</span><b>110 km/s toward us</b></div>
+              <div><span>Sky</span><b>3° · six full moons</b></div>
+              <div><span>Merge</span><b>~4.5 billion yr</b></div>
+            </dl>
+            <p>M31. Larger than we are. Two main dust lanes. Visible as a faint oval on autumn nights under a dark sky. Its halo already touches ours.</p>
           </article>
           <article>
-            <p class="font-num">02</p>
+            <p class="font-num">02 · SA(s)cd</p>
             <h3>Triangulum</h3>
-            <p>M33. The third spiral of the Local Group, 2.73 million light-years out. 40 billion stars. A satellite of Andromeda, and likely coming with her.</p>
+            <p class="ly font-num">2.73 million ly</p>
+            <dl>
+              <div><span>Type</span><b>Face-on spiral</b></div>
+              <div><span>Diameter</span><b>60,000 ly</b></div>
+              <div><span>Stars</span><b>~40 billion</b></div>
+              <div><span>Also</span><b>M33 · NGC 598</b></div>
+              <div><span>Tie</span><b>Bound to Andromeda</b></div>
+              <div><span>H II</span><b>NGC 604, huge nebula</b></div>
+            </dl>
+            <p>The third spiral of the Local Group. Looser arms, lots of star-forming gas. Likely coming with Andromeda when the two discs meet.</p>
+          </article>
+          <article>
+            <p class="font-num">03 · SBm</p>
+            <h3>Large Magellanic Cloud</h3>
+            <p class="ly font-num">163,000 ly</p>
+            <dl>
+              <div><span>Type</span><b>Barred dwarf</b></div>
+              <div><span>Diameter</span><b>14,000 ly</b></div>
+              <div><span>Stars</span><b>~20 billion</b></div>
+              <div><span>Sky</span><b>South · naked eye</b></div>
+              <div><span>Tarantula</span><b>30 Doradus</b></div>
+              <div><span>SN 1987A</span><b>Closest modern supernova</b></div>
+            </dl>
+            <p>A satellite of the Milky Way. Full of young stars and gas. You can see it as a detached piece of the Milky Way from the southern hemisphere.</p>
+          </article>
+          <article>
+            <p class="font-num">04 · SB(s)m</p>
+            <h3>Small Magellanic Cloud</h3>
+            <p class="ly font-num">200,000 ly</p>
+            <dl>
+              <div><span>Type</span><b>Irregular dwarf</b></div>
+              <div><span>Diameter</span><b>7,000 ly</b></div>
+              <div><span>Stars</span><b>~3 billion</b></div>
+              <div><span>Tie</span><b>Paired with the LMC</b></div>
+              <div><span>Bridge</span><b>Gas stream to LMC</b></div>
+              <div><span>Orbit</span><b>~1.5 billion yr around us</b></div>
+            </dl>
+            <p>Smaller, older, being stripped. Together the Clouds are the nearest galaxies you can see without a telescope — if you are south of the equator.</p>
           </article>
         </div>
       </div>
@@ -278,9 +483,19 @@
   <footer class="foot">
     <a class="mark" href="#top">kbrtp</a>
     <p>kbrtp.top</p>
-    <p>Maps: NASA / Solar System Scope</p>
+    <p>Maps: NASA / Solar System Scope · Galaxies: ESO / Wikimedia</p>
   </footer>
 
+  <button class="saucer" type="button" data-saucer aria-label="Unidentified craft">
+    <svg viewBox="0 0 72 32" aria-hidden="true">
+      <ellipse cx="36" cy="20" rx="28" ry="7" fill="#9aa3aa"/>
+      <ellipse cx="36" cy="18" rx="22" ry="5" fill="#c5ced4"/>
+      <path d="M22 16 Q36 4 50 16" fill="#7ee7de"/>
+      <circle cx="20" cy="20" r="1.6" fill="#7ee7de"/>
+      <circle cx="36" cy="21" r="1.6" fill="#7ee7de"/>
+      <circle cx="52" cy="20" r="1.6" fill="#7ee7de"/>
+    </svg>
+  </button>
   <div class="toast" data-toast hidden>Craft logged · 12.4 km/s</div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
