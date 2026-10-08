@@ -527,7 +527,7 @@ function heroScene() {
     if (ufoOn) {
       ufoT += dt * 0.11;
       const t = ufoT;
-      ufo.position.set(-2.6 + t * 5.4, 0.95 + Math.sin(t * 2.2) * 0.22, 2.35);
+      ufo.position.set(-0.55 + t * 2.35, 1.18 + Math.sin(t * 2.4) * 0.12, 0.42);
       ufo.rotation.z = Math.sin(t * 2) * 0.2;
       ufo.rotation.y = 0.4 + t * 0.35;
       if (t > 1.15) {
