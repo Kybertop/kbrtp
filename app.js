@@ -1251,9 +1251,53 @@ function shopBuilds() {
   }
 }
 
+function shopHud() {
+  const fmt = (kind, n) => {
+    if (kind === "cash") return "$" + Math.round(n).toLocaleString("en-US");
+    if (kind === "any" && n >= 7999) return "ANY";
+    return String(Math.round(n));
+  };
+  const run = (el, to, kind, ms) => {
+    if (reduce) {
+      el.textContent = fmt(kind, to);
+      return;
+    }
+    const t0 = performance.now();
+    const tick = (now) => {
+      const t = Math.min(1, (now - t0) / ms);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = fmt(kind, to * eased);
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting || en.target.dataset.hud === "1") return;
+        en.target.dataset.hud = "1";
+        en.target.classList.add("is-on");
+        const bar = en.target.querySelector("[data-bar]");
+        if (bar) {
+          const max = 8000;
+          en.target.style.setProperty("--bar", `${Math.min(100, (Number(bar.dataset.bar) / max) * 100)}%`);
+        }
+        en.target.querySelectorAll("[data-count]").forEach((el) => {
+          const to = Number(el.dataset.count);
+          const kind = el.dataset.kind;
+          run(el, to, kind, kind === "cash" ? 1600 : 1200);
+        });
+      });
+    },
+    { threshold: 0.4 }
+  );
+  document.querySelectorAll(".pack").forEach((p) => io.observe(p));
+}
+
 nav();
 shopPay();
 shopBuilds();
+shopHud();
 
 const hero = heroScene();
 const voyage = voyageScene();
