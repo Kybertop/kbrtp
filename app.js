@@ -445,15 +445,34 @@ function heroScene() {
   scene.add(globe);
 
   const ufo = makeUfo();
-  ufo.scale.setScalar(0.28);
+  ufo.scale.setScalar(0.92);
   ufo.visible = false;
+  const ufoLamp = new THREE.PointLight(0x7ee7de, 4, 6, 2);
+  ufo.add(ufoLamp);
   scene.add(ufo);
 
   const pointer = new THREE.Vector2(0, 0);
+  let dragging = false;
+  let dragX = 0;
+  let dragY = 0;
+  canvas.style.cursor = "grab";
+  canvas.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    canvas.setPointerCapture(e.pointerId);
+    canvas.style.cursor = "grabbing";
+  });
+  canvas.addEventListener("pointerup", () => {
+    dragging = false;
+    canvas.style.cursor = "grab";
+  });
   canvas.addEventListener("pointermove", (e) => {
     const r = canvas.getBoundingClientRect();
     pointer.x = ((e.clientX - r.left) / r.width) * 2 - 1;
     pointer.y = -(((e.clientY - r.top) / r.height) * 2 - 1);
+    if (dragging) {
+      dragX += e.movementX * 0.005;
+      dragY += e.movementY * 0.003;
+    }
   });
 
   const ray = new THREE.Raycaster();
@@ -477,7 +496,7 @@ function heroScene() {
 
   let ufoT = 0;
   let ufoOn = false;
-  let nextUfo = 9;
+  let nextUfo = 3.2;
 
   const clock = new THREE.Clock();
   const update = () => {
@@ -489,8 +508,13 @@ function heroScene() {
       moonPivot.rotation.y += dt * 0.12;
       moon.rotation.y += dt * 0.12;
     }
-    globe.rotation.y = THREE.MathUtils.damp(globe.rotation.y, pointer.x * 0.35, 4, dt);
-    globe.rotation.x = THREE.MathUtils.damp(globe.rotation.x, pointer.y * 0.18, 4, dt);
+    globe.rotation.y = THREE.MathUtils.damp(globe.rotation.y, dragX + pointer.x * 0.12, 4, dt);
+    globe.rotation.x = THREE.MathUtils.damp(
+      globe.rotation.x,
+      THREE.MathUtils.clamp(dragY + pointer.y * 0.08, -0.4, 0.4),
+      4,
+      dt
+    );
     earth.material.uniforms.lightDir.value.set(-0.85, 0.25, 0.4).normalize();
 
     nextUfo -= dt;
@@ -498,15 +522,15 @@ function heroScene() {
       ufoOn = true;
       ufoT = 0;
       ufo.visible = true;
-      nextUfo = 28 + Math.random() * 18;
+      nextUfo = 16 + Math.random() * 10;
     }
     if (ufoOn) {
-      ufoT += dt * 0.22;
+      ufoT += dt * 0.11;
       const t = ufoT;
-      ufo.position.set(-3.4 + t * 6.5, 1.15 + Math.sin(t * 3) * 0.15, 1.2);
-      ufo.rotation.z = Math.sin(t * 2) * 0.15;
-      ufo.rotation.y = t * 0.4;
-      if (t > 1.2) {
+      ufo.position.set(-2.6 + t * 5.4, 0.95 + Math.sin(t * 2.2) * 0.22, 2.35);
+      ufo.rotation.z = Math.sin(t * 2) * 0.2;
+      ufo.rotation.y = 0.4 + t * 0.35;
+      if (t > 1.15) {
         ufoOn = false;
         ufo.visible = false;
       }
@@ -528,10 +552,11 @@ function voyageScene() {
   camera.position.set(0, 0.4, 9.5);
 
   starfield(scene, mobile ? 600 : 1400, 90);
-  scene.add(new THREE.AmbientLight(0x33415c, 0.22));
-  const key = new THREE.PointLight(0xffe6b8, 140, 80, 2);
+  scene.add(new THREE.AmbientLight(0x5a6a88, 0.42));
+  const key = new THREE.PointLight(0xffe6b8, 220, 140, 1.35);
   scene.add(key);
-  scene.add(new THREE.PointLight(0x223355, 8, 40, 2).translateY(-4));
+  const fill = new THREE.PointLight(0xc9d6ff, 55, 28, 1.7);
+  scene.add(fill);
 
   const groups = [];
   const moonPivot = new THREE.Group();
@@ -665,6 +690,7 @@ function voyageScene() {
     camera.position.z = 9.2 + (groups[i]?.b.r || 1) * 0.35;
     camera.lookAt(cam.x, 0, 0);
     key.position.set(0, 0.2, 0.4);
+    fill.position.set(cam.x - 3.2, 1.6, 6.2);
 
     groups.forEach(({ mesh, g, b }) => {
       if (!reduce) mesh.rotation.y += dt * mesh.userData.spin;
