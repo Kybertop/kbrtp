@@ -1145,7 +1145,25 @@ function initMoon() {
   return { update };
 }
 
+const PAYPAL_BUSINESS = "kybertop505@gmail.com";
+
+function shopPay() {
+  document.querySelectorAll("[data-pay]").forEach((a) => {
+    const u = new URL("https://www.paypal.com/cgi-bin/webscr");
+    u.searchParams.set("cmd", "_xclick");
+    u.searchParams.set("business", PAYPAL_BUSINESS);
+    u.searchParams.set("item_name", a.dataset.pay);
+    u.searchParams.set("amount", Number(a.dataset.eur).toFixed(2));
+    u.searchParams.set("currency_code", "EUR");
+    u.searchParams.set("no_shipping", "1");
+    a.href = u.href;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  });
+}
+
 nav();
+shopPay();
 
 const hero = heroScene();
 const voyage = voyageScene();
