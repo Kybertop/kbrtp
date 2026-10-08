@@ -4,45 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>404 — kbrtp</title>
-  <meta name="theme-color" content="#07080e">
+  <meta name="theme-color" content="#07080c">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .lost {
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: var(--pad);
-    }
-    .lost h1 {
-      font-family: var(--serif);
-      font-size: clamp(5rem, 16vw, 12rem);
-      font-weight: 400;
-      line-height: 0.85;
-      letter-spacing: -0.04em;
-    }
-    .lost p {
-      margin: 1rem 0 1.6rem;
-      color: var(--mute);
-    }
-  </style>
 </head>
-<body>
-  <canvas id="starfield" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
-  <main class="lost">
+<body class="bg-void text-paper">
+  <main class="hero" style="min-height:100svh;align-items:center;justify-items:center;text-align:center">
     <div>
-      <p class="kicker">Signal lost</p>
-      <h1>404</h1>
-      <p>This vector is empty.</p>
+      <p class="eyebrow">Signal lost</p>
+      <h1 style="font-size:clamp(4rem,16vw,10rem);margin:.4rem 0 1rem">404</h1>
+      <p class="lede" style="margin-left:auto;margin-right:auto">This vector is empty.</p>
       <a class="cta" href="/">Return</a>
     </div>
   </main>
-  <script src="script.js"></script>
 </body>
 </html>
