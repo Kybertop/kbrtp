@@ -1147,23 +1147,113 @@ function initMoon() {
 
 const PAYPAL_BUSINESS = "kybertop505@gmail.com";
 
+function paypalHref(name, eur) {
+  const u = new URL("https://www.paypal.com/cgi-bin/webscr");
+  u.searchParams.set("cmd", "_xclick");
+  u.searchParams.set("business", PAYPAL_BUSINESS);
+  u.searchParams.set("item_name", name);
+  u.searchParams.set("amount", Number(eur).toFixed(2));
+  u.searchParams.set("currency_code", "EUR");
+  u.searchParams.set("no_shipping", "1");
+  return u.href;
+}
+
+function moneyLabel(eur) {
+  const n = Number(eur);
+  return Number.isInteger(n) ? String(n) : n.toFixed(1).replace(/\.0$/, "");
+}
+
+function bindPay(a, name, eur) {
+  if (!a) return;
+  a.dataset.pay = name;
+  a.dataset.eur = String(eur);
+  a.href = paypalHref(name, eur);
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  if (a.classList.contains("cta")) a.textContent = `PayPal · €${moneyLabel(eur)}`;
+}
+
 function shopPay() {
   document.querySelectorAll("[data-pay]").forEach((a) => {
-    const u = new URL("https://www.paypal.com/cgi-bin/webscr");
-    u.searchParams.set("cmd", "_xclick");
-    u.searchParams.set("business", PAYPAL_BUSINESS);
-    u.searchParams.set("item_name", a.dataset.pay);
-    u.searchParams.set("amount", Number(a.dataset.eur).toFixed(2));
-    u.searchParams.set("currency_code", "EUR");
-    u.searchParams.set("no_shipping", "1");
-    a.href = u.href;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
+    bindPay(a, a.dataset.pay, a.dataset.eur);
+    if (!a.classList.contains("cta")) a.textContent = "PayPal";
   });
+}
+
+function roundHalf(n) {
+  return Math.round(n * 2) / 2;
+}
+
+function levelPrice(lvl) {
+  const t = Math.max(0, (Number(lvl) - 120) / 7880);
+  return roundHalf(3 + 7 * Math.pow(t, 0.72));
+}
+
+function carPrice(n) {
+  n = Number(n);
+  return Math.max(3, Math.round(2.6 * Math.pow(n, 0.55)));
+}
+
+function shopBuilds() {
+  const paint = (root, label, name, eur, was) => {
+    const price = root.querySelector("[data-out-price]");
+    const val = root.querySelector("[data-out-val]");
+    const strike = root.querySelector("s");
+    const pay = root.querySelector("[data-pay]");
+    if (price) price.textContent = `€${moneyLabel(eur)}`;
+    if (val) val.textContent = label;
+    if (strike) strike.textContent = `€${was}`;
+    bindPay(pay, name, eur);
+  };
+
+  document.querySelectorAll("[data-build='rank'], [data-build='crew']").forEach((root) => {
+    const range = root.querySelector("input[type='range']");
+    const kind = root.dataset.build;
+    const update = () => {
+      const lvl = Number(range.value);
+      const eur = levelPrice(lvl);
+      const was = Math.round(eur * 3.5);
+      if (kind === "rank") paint(root, `${lvl} RP`, `Rank ${lvl} RP — GTA Online Enhanced`, eur, was);
+      else paint(root, `${lvl} crew`, `Crew ${lvl} — GTA Online Enhanced`, eur, was);
+    };
+    range?.addEventListener("input", update);
+    update();
+  });
+
+  const cars = document.querySelector("[data-build='cars']");
+  if (cars) {
+    const range = cars.querySelector("input[type='range']");
+    const update = () => {
+      const n = Number(range.value);
+      const eur = carPrice(n);
+      const was = n === 1 ? 8 : Math.round(eur * 2.2);
+      paint(cars, n === 1 ? "1 car" : `${n} cars`, `${n} car${n === 1 ? "" : "s"} — GTA Online Enhanced`, eur, was);
+    };
+    range?.addEventListener("input", update);
+    update();
+  }
+
+  const buy = document.querySelector("[data-build='buy']");
+  if (buy) {
+    const map = { 1: 3, 2: 5, 4: 8, 7: 12 };
+    const wasMap = { 1: 8, 2: 16, 4: 28, 7: 48 };
+    const update = (n) => {
+      const eur = map[n];
+      paint(buy, n === 1 ? "1 purchase" : `${n} purchases`, `${n} in-game purchase${n === 1 ? "" : "s"} — GTA Online Enhanced`, eur, wasMap[n]);
+    };
+    buy.querySelectorAll("[data-n]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buy.querySelectorAll("[data-n]").forEach((b) => b.classList.toggle("is-on", b === btn));
+        update(Number(btn.dataset.n));
+      });
+    });
+    update(1);
+  }
 }
 
 nav();
 shopPay();
+shopBuilds();
 
 const hero = heroScene();
 const voyage = voyageScene();

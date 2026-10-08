@@ -399,7 +399,7 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
   display: flex;
   flex-direction: column;
 }
-.pack-grid .tag, .heist-grid .tag {
+.pack-grid .tag, .heist-grid .tag, .shop-contact .tag {
   font-family: Oxanium, sans-serif;
   font-size: 0.62rem;
   letter-spacing: 0.14em;
@@ -437,6 +437,47 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
   font-size: 0.92rem;
 }
 .shop-notes b { color: var(--paper); font-weight: 500; }
+.build-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 2.2rem;
+}
+.build-grid article {
+  padding: 1.2rem 1.25rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.build-grid h3 { font-size: clamp(1.25rem, 2vw, 1.55rem); margin: 0.35rem 0 0.2rem; }
+.build-grid .tag {
+  font-family: Oxanium, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ice);
+}
+.build-val { color: var(--sun); margin: 0 0 0.55rem; letter-spacing: 0.02em; }
+.build-hint { color: var(--mute); font-size: 0.85rem; margin: 0.55rem 0 1rem; flex: 1; }
+.build-grid .cta { justify-content: center; width: 100%; }
+.build-grid input[type="range"] {
+  width: 100%;
+  accent-color: var(--ice);
+  height: 1.4rem;
+}
+.build-chips { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.15rem 0 0.2rem; }
+.build-chips button {
+  min-width: 2.6rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: Oxanium, sans-serif;
+}
+.build-chips button.is-on {
+  border-color: var(--ice);
+  color: var(--ice);
+}
 .dist a { color: var(--ice); }
 .dist a:hover, .dist a:focus-visible { color: var(--paper); }
 
@@ -458,13 +499,13 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
-  .facts-row, .atlas-grid, .gal-cards, .world-grid, .intel, .const-grid, .pack-grid, .heist-grid { grid-template-columns: 1fr 1fr; }
+  .facts-row, .atlas-grid, .gal-cards, .world-grid, .intel, .const-grid, .pack-grid, .heist-grid, .build-grid { grid-template-columns: 1fr 1fr; }
   .moon-row { grid-template-columns: 1fr; }
   .hero-hint { display: none; }
   .intel { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .facts-row, .atlas-grid, .gal-cards, .world-grid, .const-grid, .pack-grid, .heist-grid { grid-template-columns: 1fr; }
+  .facts-row, .atlas-grid, .gal-cards, .world-grid, .const-grid, .pack-grid, .heist-grid, .build-grid { grid-template-columns: 1fr; }
   .facts-row article { border-right: 0; border-bottom: 1px solid var(--line); }
   .v-gaps { grid-template-columns: 1fr; }
   .hero-copy { max-width: 100%; }
@@ -479,7 +520,7 @@ h1, h2, h3 { font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; }
 }
 @media (min-width: 7680px) { html { font-size: 48px; } }
 @media (hover: none) and (pointer: coarse) {
-  .cta, .nav-toggle, .ticks button { min-height: 44px; }
+  .cta, .nav-toggle, .ticks button, .build-chips button { min-height: 44px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
