@@ -25,9 +25,9 @@ export function LoadingBlock() {
 export function HelmetMark() {
   return (
     <svg className="visor" viewBox="0 0 320 220" aria-hidden="true">
-      <path d="M46 150c0-62 38-104 114-104s114 42 114 104c0 28-18 46-52 46H98c-34 0-52-18-52-46z" fill="none" stroke="currentColor" strokeWidth="3" />
-      <path d="M78 132h164" stroke="var(--lime)" strokeWidth="8" strokeLinecap="round" />
-      <path d="M104 164c28 22 84 22 112 0" fill="none" stroke="currentColor" strokeWidth="3" />
+      <path d="M48 148c0-64 36-108 112-108s112 44 112 108c0 30-18 48-54 48H102c-36 0-54-18-54-48z" fill="var(--lime)" stroke="currentColor" strokeWidth="8" />
+      <path d="M78 128h164" stroke="currentColor" strokeWidth="14" strokeLinecap="round" />
+      <path d="M108 162c26 18 78 18 104 0" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
     </svg>
   );
 }

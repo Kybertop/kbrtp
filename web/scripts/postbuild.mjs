@@ -8,7 +8,7 @@ const dist = path.join(web, "dist");
 await copyFile(path.join(dist, "index.html"), path.join(dist, "404.html"));
 await cp(path.join(repo, "1"), path.join(dist, "1"), { recursive: true });
 
-const files = ["index.html", "404.html", "CNAME", "favicon.svg", "giscus.css", "og.svg"];
+const files = ["index.html", "404.html", "CNAME", "favicon.svg", "giscus.css", "og.svg", "pattern.svg", "pattern-night.svg"];
 for (const file of files) {
   await copyFile(path.join(dist, file), path.join(repo, file));
 }

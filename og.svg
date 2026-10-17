@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#070807"/>
-  <path d="M180 430c0-170 90-280 250-280s250 110 250 280c0 70-40 110-120 110H300c-80 0-120-40-120-110z" fill="none" stroke="#f4f5ef" stroke-width="8"/>
-  <path d="M240 360h340" stroke="#d6ff3f" stroke-width="16" stroke-linecap="round"/>
-  <text x="720" y="300" fill="#f4f5ef" font-family="Segoe UI, sans-serif" font-size="92" font-weight="650">KBRTP</text>
-  <text x="720" y="370" fill="#9aa193" font-family="Segoe UI, sans-serif" font-size="32">kbrtp.top</text>
+  <rect width="1200" height="630" fill="#d6ff00"/>
+  <path d="M90 430c0-150 80-250 230-250s230 100 230 250c0 62-36 100-110 100H200c-74 0-110-38-110-100z" fill="none" stroke="#0c0c0c" stroke-width="16"/>
+  <path d="M150 360h340" stroke="#0c0c0c" stroke-width="22" stroke-linecap="round"/>
+  <text x="640" y="300" fill="#0c0c0c" font-family="Segoe UI, sans-serif" font-size="96" font-weight="750">KBRTP</text>
+  <text x="640" y="370" fill="#243000" font-family="Segoe UI, sans-serif" font-size="32">kbrtp.top</text>
 </svg>
