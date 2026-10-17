@@ -17,12 +17,13 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/fetch-public-data.mjs
+        working-directory: web
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
       - name: Commit snapshots
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data
+          git add web/public/data
           git diff --staged --quiet || git commit -m "Refresh public gaming snapshots"
           git push

@@ -21,6 +21,7 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
     document.documentElement.dataset.density = prefs.density;
     const systemReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.documentElement.dataset.motion = prefs.reducedMotion || systemReduce ? "reduce" : "full";
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", prefs.theme === "amoled" ? "#050505" : "#d6ff00");
     if (i18n.language !== prefs.language) void i18n.changeLanguage(prefs.language);
   }, [prefs, i18n]);
 

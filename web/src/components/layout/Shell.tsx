@@ -50,8 +50,8 @@ export function Shell() {
       <header className="nav">
         <NavLink className="brand" to="/" onClick={() => setOpen(false)}>
           <svg viewBox="0 0 32 24" aria-hidden="true">
-            <path d="M2 16c0-7 4-12 10-12s10 5 10 12c0 3-2 5-5 5H7c-3 0-5-2-5-5z" fill="none" stroke="currentColor" strokeWidth="1.4" />
-            <path d="M6 14h12" stroke="var(--lime)" strokeWidth="1.8" strokeLinecap="round" />
+            <path d="M2 16c0-7 4-12 10-12s10 5 10 12c0 3-2 5-5 5H7c-3 0-5-2-5-5z" fill="var(--lime)" stroke="currentColor" strokeWidth="1.6" />
+            <path d="M6 14.5h12" stroke="#0c0c0c" strokeWidth="2" strokeLinecap="round" />
           </svg>
           {profile.siteName}
         </NavLink>

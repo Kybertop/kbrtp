@@ -5,6 +5,7 @@ Personal site for KyberTop at [kbrtp.top](https://kbrtp.top). The app is a stati
 ## Scripts
 
 ```bash
+cd web
 npm install
 npm test
 npm run dev
@@ -12,13 +13,13 @@ npm run build
 npm run preview
 ```
 
-`npm run build` refreshes public snapshots, typechecks, builds `dist/`, copies `index.html` to `404.html` so nested routes survive a refresh on GitHub Pages, and copies the archived site into `dist/1/`.
+`npm run build` refreshes public snapshots, typechecks, builds `web/dist/`, copies `index.html` to `404.html` so nested routes survive a refresh, and copies that production build to the repository root. This repository's GitHub Pages site publishes the `main` branch root, so the built files have to live there. The app source stays in `web/`.
 
 ## GitHub Pages
 
 1. In the repository settings, set Pages to **GitHub Actions**.
-2. The workflow `.github/workflows/pages.yml` builds and deploys on pushes to `main`, on demand, and once a day.
-3. `public/CNAME` contains `kbrtp.top`. After the first Actions deploy, confirm the custom domain in Pages settings.
+2. Pages is set to publish the `main` branch root. The production `index.html`, `404.html`, `assets/`, and `CNAME` are committed there. `CNAME` contains `kbrtp.top`.
+3. The workflow `.github/workflows/pages.yml` rebuilds that root on changes under `web/`, on demand, and once a day.
 4. DNS for the apex domain should point at GitHub Pages:
 
    - `185.199.108.153`
