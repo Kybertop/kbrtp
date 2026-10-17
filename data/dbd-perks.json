@@ -1,6 +1,6 @@
 {
   "version": "tricky.lol-2026-10-17",
-  "fetchedAt": "2026-10-17T18:40:47.367Z",
+  "fetchedAt": "2026-10-17T19:11:32.864Z",
   "source": "https://dbd.tricky.lol/api/perks",
   "characterSource": "https://dbd.tricky.lol/api/characters",
   "note": "Descriptions are cleaned from the community dataset and show the highest listed tunable tier. Icons use NightLight's public image paths when the slug matches.",
