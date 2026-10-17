@@ -1,0 +1,46 @@
+{
+  "fetchedAt": "2026-10-17T16:48:33.721Z",
+  "source": "https://api.nightlight.gg/v1/shrine",
+  "page": "https://nightlight.gg/shrine",
+  "start": "2026-10-13T15:00:00",
+  "end": "2026-10-20T14:59:59",
+  "week": 625,
+  "perks": [
+    {
+      "id": 142,
+      "name": "Gearhead",
+      "character": "The Deathslinger",
+      "image": "https://cdn.nightlight.gg/img/perks/gearhead.png",
+      "shards": 2000,
+      "bloodpoints": 100000,
+      "role": "killer"
+    },
+    {
+      "id": 40,
+      "name": "Brutal Strength",
+      "character": "The Trapper",
+      "image": "https://cdn.nightlight.gg/img/perks/brutal-strength.png",
+      "shards": 2000,
+      "bloodpoints": 100000,
+      "role": "killer"
+    },
+    {
+      "id": 216,
+      "name": "Quick Gambit",
+      "character": "Vittorio Toscano",
+      "image": "https://cdn.nightlight.gg/img/perks/quick-gambit.png",
+      "shards": 2000,
+      "bloodpoints": 100000,
+      "role": "survivor"
+    },
+    {
+      "id": 101,
+      "name": "Windows of Opportunity",
+      "character": "Kate Denson",
+      "image": "https://cdn.nightlight.gg/img/perks/windows-of-opportunity.png",
+      "shards": 2000,
+      "bloodpoints": 100000,
+      "role": "survivor"
+    }
+  ]
+}
