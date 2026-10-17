@@ -1,0 +1,4144 @@
+{
+  "version": "tricky.lol-2026-10-17",
+  "fetchedAt": "2026-10-17T16:48:35.312Z",
+  "source": "https://dbd.tricky.lol/api/perks",
+  "characterSource": "https://dbd.tricky.lol/api/characters",
+  "note": "Descriptions are cleaned from the community dataset and show the highest listed tunable tier. Icons use NightLight's public image paths when the slug matches.",
+  "characters": [
+    {
+      "id": "Ace",
+      "name": "Ace Visconti",
+      "role": "survivor"
+    },
+    {
+      "id": "S32",
+      "name": "Ada Wong",
+      "role": "survivor"
+    },
+    {
+      "id": "Adam",
+      "name": "Adam Francis",
+      "role": "survivor"
+    },
+    {
+      "id": "S42",
+      "name": "Aestri Yazar",
+      "role": "survivor"
+    },
+    {
+      "id": "S40",
+      "name": "Alan Wake",
+      "role": "survivor"
+    },
+    {
+      "id": "Ash",
+      "name": "Ashley J. Williams",
+      "role": "survivor"
+    },
+    {
+      "id": "S54",
+      "name": "Aurora Stardotter",
+      "role": "survivor"
+    },
+    {
+      "id": "S22",
+      "name": "Cheryl Mason",
+      "role": "survivor"
+    },
+    {
+      "id": "Claudette",
+      "name": "Claudette Morel",
+      "role": "survivor"
+    },
+    {
+      "id": "Smoke",
+      "name": "David King",
+      "role": "survivor"
+    },
+    {
+      "id": "Eric",
+      "name": "Detective Tapp",
+      "role": "survivor"
+    },
+    {
+      "id": "S50",
+      "name": "Dustin Henderson",
+      "role": "survivor"
+    },
+    {
+      "id": "Dwight",
+      "name": "Dwight Fairfield",
+      "role": "survivor"
+    },
+    {
+      "id": "S51",
+      "name": "Eleven",
+      "role": "survivor"
+    },
+    {
+      "id": "S39",
+      "name": "Ellen Ripley",
+      "role": "survivor"
+    },
+    {
+      "id": "S24",
+      "name": "Élodie Rakoto",
+      "role": "survivor"
+    },
+    {
+      "id": "S23",
+      "name": "Felix Richter",
+      "role": "survivor"
+    },
+    {
+      "id": "Feng",
+      "name": "Feng Min",
+      "role": "survivor"
+    },
+    {
+      "id": "S37",
+      "name": "Gabriel Soma",
+      "role": "survivor"
+    },
+    {
+      "id": "S31",
+      "name": "Haddie Kaur",
+      "role": "survivor"
+    },
+    {
+      "id": "Jake",
+      "name": "Jake Park",
+      "role": "survivor"
+    },
+    {
+      "id": "Jane",
+      "name": "Jane Romero",
+      "role": "survivor"
+    },
+    {
+      "id": "Jeff",
+      "name": "Jeff Johansen",
+      "role": "survivor"
+    },
+    {
+      "id": "S26",
+      "name": "Jill Valentine",
+      "role": "survivor"
+    },
+    {
+      "id": "S29",
+      "name": "Jonah Vasquez",
+      "role": "survivor"
+    },
+    {
+      "id": "Kate",
+      "name": "Kate Denson",
+      "role": "survivor"
+    },
+    {
+      "id": "S52",
+      "name": "Kwon Tae-young",
+      "role": "survivor"
+    },
+    {
+      "id": "S43",
+      "name": "Lara Croft",
+      "role": "survivor"
+    },
+    {
+      "id": "Laurie",
+      "name": "Laurie Strode",
+      "role": "survivor"
+    },
+    {
+      "id": "S25",
+      "name": "Lee Yun-jin",
+      "role": "survivor"
+    },
+    {
+      "id": "S27",
+      "name": "Leon S. Kennedy",
+      "role": "survivor"
+    },
+    {
+      "id": "Meg",
+      "name": "Meg Thomas",
+      "role": "survivor"
+    },
+    {
+      "id": "S48",
+      "name": "Michonne Grimes",
+      "role": "survivor"
+    },
+    {
+      "id": "S28",
+      "name": "Mikaela Reid",
+      "role": "survivor"
+    },
+    {
+      "id": "Nancy",
+      "name": "Nancy Wheeler",
+      "role": "survivor"
+    },
+    {
+      "id": "Nea",
+      "name": "Nea Karlsson",
+      "role": "survivor"
+    },
+    {
+      "id": "S38",
+      "name": "Nicolas Cage",
+      "role": "survivor"
+    },
+    {
+      "id": "S46",
+      "name": "Orela Rose",
+      "role": "survivor"
+    },
+    {
+      "id": "Quentin",
+      "name": "Quentin Smith",
+      "role": "survivor"
+    },
+    {
+      "id": "S33",
+      "name": "Rebecca Chambers",
+      "role": "survivor"
+    },
+    {
+      "id": "S36",
+      "name": "Renato Lyra",
+      "role": "survivor"
+    },
+    {
+      "id": "S47",
+      "name": "Rick Grimes",
+      "role": "survivor"
+    },
+    {
+      "id": "S41",
+      "name": "Sable Ward",
+      "role": "survivor"
+    },
+    {
+      "id": "S53",
+      "name": "Shane Wiigwaas",
+      "role": "survivor"
+    },
+    {
+      "id": "Steve",
+      "name": "Steve Harrington",
+      "role": "survivor"
+    },
+    {
+      "id": "S45",
+      "name": "Taurie Cain",
+      "role": "survivor"
+    },
+    {
+      "id": "S35",
+      "name": "Thalita Lyra",
+      "role": "survivor"
+    },
+    {
+      "id": "K40",
+      "name": "The Animatronic",
+      "role": "killer"
+    },
+    {
+      "id": "K26",
+      "name": "The Artist",
+      "role": "killer"
+    },
+    {
+      "id": "K21",
+      "name": "The Blight",
+      "role": "killer"
+    },
+    {
+      "id": "Cannibal",
+      "name": "The Cannibal",
+      "role": "killer"
+    },
+    {
+      "id": "K25",
+      "name": "The Cenobite",
+      "role": "killer"
+    },
+    {
+      "id": "Clown",
+      "name": "The Clown",
+      "role": "killer"
+    },
+    {
+      "id": "K37",
+      "name": "The Dark Lord",
+      "role": "killer"
+    },
+    {
+      "id": "Gunslinger",
+      "name": "The Deathslinger",
+      "role": "killer"
+    },
+    {
+      "id": "Demogorgon",
+      "name": "The Demogorgon",
+      "role": "killer"
+    },
+    {
+      "id": "Killer07",
+      "name": "The Doctor",
+      "role": "killer"
+    },
+    {
+      "id": "K28",
+      "name": "The Dredge",
+      "role": "killer"
+    },
+    {
+      "id": "K20",
+      "name": "The Executioner",
+      "role": "killer"
+    },
+    {
+      "id": "K42",
+      "name": "The First",
+      "role": "killer"
+    },
+    {
+      "id": "Ghostface",
+      "name": "The Ghost Face",
+      "role": "killer"
+    },
+    {
+      "id": "K39",
+      "name": "The Ghoul",
+      "role": "killer"
+    },
+    {
+      "id": "K34",
+      "name": "The Good Guy",
+      "role": "killer"
+    },
+    {
+      "id": "Witch",
+      "name": "The Hag",
+      "role": "killer"
+    },
+    {
+      "id": "HillBilly",
+      "name": "The Hillbilly",
+      "role": "killer"
+    },
+    {
+      "id": "K38",
+      "name": "The Houndmaster",
+      "role": "killer"
+    },
+    {
+      "id": "Bear",
+      "name": "The Huntress",
+      "role": "killer"
+    },
+    {
+      "id": "K44",
+      "name": "The Judgment",
+      "role": "killer"
+    },
+    {
+      "id": "K30",
+      "name": "The Knight",
+      "role": "killer"
+    },
+    {
+      "id": "K41",
+      "name": "The Krasue",
+      "role": "killer"
+    },
+    {
+      "id": "Legion",
+      "name": "The Legion",
+      "role": "killer"
+    },
+    {
+      "id": "K36",
+      "name": "The Lich",
+      "role": "killer"
+    },
+    {
+      "id": "K29",
+      "name": "The Mastermind",
+      "role": "killer"
+    },
+    {
+      "id": "K24",
+      "name": "The Nemesis",
+      "role": "killer"
+    },
+    {
+      "id": "Nightmare",
+      "name": "The Nightmare",
+      "role": "killer"
+    },
+    {
+      "id": "Nurse",
+      "name": "The Nurse",
+      "role": "killer"
+    },
+    {
+      "id": "Oni",
+      "name": "The Oni",
+      "role": "killer"
+    },
+    {
+      "id": "K27",
+      "name": "The Onryō",
+      "role": "killer"
+    },
+    {
+      "id": "Pig",
+      "name": "The Pig",
+      "role": "killer"
+    },
+    {
+      "id": "Plague",
+      "name": "The Plague",
+      "role": "killer"
+    },
+    {
+      "id": "Shape",
+      "name": "The Shape",
+      "role": "killer"
+    },
+    {
+      "id": "K32",
+      "name": "The Singularity",
+      "role": "killer"
+    },
+    {
+      "id": "K31",
+      "name": "The Skull Merchant",
+      "role": "killer"
+    },
+    {
+      "id": "K43",
+      "name": "The Slasher",
+      "role": "killer"
+    },
+    {
+      "id": "Spirit",
+      "name": "The Spirit",
+      "role": "killer"
+    },
+    {
+      "id": "Chuckles",
+      "name": "The Trapper",
+      "role": "killer"
+    },
+    {
+      "id": "K23",
+      "name": "The Trickster",
+      "role": "killer"
+    },
+    {
+      "id": "K22",
+      "name": "The Twins",
+      "role": "killer"
+    },
+    {
+      "id": "K35",
+      "name": "The Unknown",
+      "role": "killer"
+    },
+    {
+      "id": "Bob",
+      "name": "The Wraith",
+      "role": "killer"
+    },
+    {
+      "id": "K33",
+      "name": "The Xenomorph",
+      "role": "killer"
+    },
+    {
+      "id": "S44",
+      "name": "Trevor Belmont",
+      "role": "survivor"
+    },
+    {
+      "id": "S49",
+      "name": "Vee Boonyasak",
+      "role": "survivor"
+    },
+    {
+      "id": "S34",
+      "name": "Vittorio Toscano",
+      "role": "survivor"
+    },
+    {
+      "id": "Bill",
+      "name": "William \"Bill\" Overbeck",
+      "role": "survivor"
+    },
+    {
+      "id": "S30",
+      "name": "Yoichi Asakawa",
+      "role": "survivor"
+    },
+    {
+      "id": "Yui",
+      "name": "Yui Kimura",
+      "role": "survivor"
+    },
+    {
+      "id": "Zarina",
+      "name": "Zarina Kassir",
+      "role": "survivor"
+    }
+  ],
+  "perks": [
+    {
+      "id": "NurseCalling",
+      "name": "A Nurse's Calling",
+      "role": "killer",
+      "characterId": "Nurse",
+      "characterName": "The Nurse",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Within 32m of Survivors who are healing or being healed, you see their Auras.",
+      "image": "https://cdn.nightlight.gg/img/perks/a-nurses-calling.png"
+    },
+    {
+      "id": "S52P02",
+      "name": "A Place For Us",
+      "role": "survivor",
+      "characterId": "S52",
+      "characterName": "Kwon Tae-young",
+      "categories": [],
+      "description": "While healing another Survivor, you both gain. Whenever you finish healing the Obsession, you both gain for 30s. When the trial starts, you are less likely to be the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/a-place-for-us.png"
+    },
+    {
+      "id": "Ace_In_The_Hole",
+      "name": "Ace in the Hole",
+      "role": "survivor",
+      "characterId": "Ace",
+      "characterName": "Ace Visconti",
+      "categories": [
+        "support"
+      ],
+      "description": "Whenever you loot an item from a Chest, it will have: A Visceral or lower rarity add-on.. 100% chance for an Uncommon or lower rarity add-on.. When you escape, you keep your add-ons.",
+      "image": "https://cdn.nightlight.gg/img/perks/ace-in-the-hole.png"
+    },
+    {
+      "id": "Adrenaline",
+      "name": "Adrenaline",
+      "role": "survivor",
+      "characterId": "Meg",
+      "characterName": "Meg Thomas",
+      "categories": [
+        "navigation",
+        "adaptation"
+      ],
+      "description": "When all Generators are completed, if you are downed or injured, heal instantly. Then, ignoring : You gain 50% for 4s.. You gain for 40s..",
+      "image": "https://cdn.nightlight.gg/img/perks/adrenaline.png"
+    },
+    {
+      "id": "Aftercare",
+      "name": "Aftercare",
+      "role": "survivor",
+      "characterId": "Jeff",
+      "characterName": "Jeff Johansen",
+      "categories": [
+        "perception"
+      ],
+      "description": "You and up to 3 Survivors see each other's Auras whenever: You unhook them, or they unhook you.. You finish healing them, or they finish healing you.. This effect lasts until you are hooked.",
+      "image": "https://cdn.nightlight.gg/img/perks/aftercare.png"
+    },
+    {
+      "id": "Agitation",
+      "name": "Agitation",
+      "role": "killer",
+      "characterId": "Chuckles",
+      "characterName": "The Trapper",
+      "categories": [
+        "enhancement"
+      ],
+      "description": "While carrying a Survivor: You gain 18%.. Your Terror Radius is 12m larger..",
+      "image": "https://cdn.nightlight.gg/img/perks/agitation.png"
+    },
+    {
+      "id": "Alert",
+      "name": "Alert",
+      "role": "survivor",
+      "characterId": "Feng",
+      "characterName": "Feng Min",
+      "categories": [
+        "perception"
+      ],
+      "description": "Whenever the Killer breaks a Pallet or Breakable Wall, or damages a Generator: You hear a sound cue.. You see their Aura for 5s..",
+      "image": "https://cdn.nightlight.gg/img/perks/alert.png"
+    },
+    {
+      "id": "K33P03",
+      "name": "Alien Instinct",
+      "role": "killer",
+      "characterId": "K33",
+      "characterName": "The Xenomorph",
+      "categories": [],
+      "description": "Whenever you hook a Survivor, the farthest injured Survivor: Gains for 60s.. You see their Aura for 8s..",
+      "image": "https://cdn.nightlight.gg/img/perks/alien-instinct.png"
+    },
+    {
+      "id": "K38P01",
+      "name": "All-Shaking Thunder",
+      "role": "killer",
+      "characterId": "K38",
+      "characterName": "The Houndmaster",
+      "categories": [],
+      "description": "Whenever you fall from at least 1.25m, your lunge-attacks are 75% longer for 25s. Cooldown: 5s.",
+      "image": "https://cdn.nightlight.gg/img/perks/all-shaking-thunder.png"
+    },
+    {
+      "id": "AnyMeansNecessary",
+      "name": "Any Means Necessary",
+      "role": "survivor",
+      "characterId": "Yui",
+      "characterName": "Yui Kimura",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While next to a Dropped Pallet, use for 3s to reset it. You see the Auras of Dropped Pallets.",
+      "image": "https://cdn.nightlight.gg/img/perks/any-means-necessary.png"
+    },
+    {
+      "id": "S47P01",
+      "name": "Apocalyptic Ingenuity",
+      "role": "survivor",
+      "characterId": "S47",
+      "characterName": "Rick Grimes",
+      "categories": [],
+      "description": "After you rummage or unlock 1 Chest, while next to a Broken Pallet, use for 3s to create a Fragile Pallet. Within 32m, you see the Auras of Broken Pallets.",
+      "image": "https://cdn.nightlight.gg/img/perks/apocalyptic-ingenuity.png"
+    },
+    {
+      "id": "S24P01",
+      "name": "Appraisal",
+      "role": "survivor",
+      "characterId": "S24",
+      "characterName": "Élodie Rakoto",
+      "categories": [
+        "support"
+      ],
+      "description": "When the trial starts, you earn 4 Tokens. Spend 1 Token to rummage an empty Chest, up to 2 times per Chest. You rummage Chests 80% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/appraisal.png"
+    },
+    {
+      "id": "Autodidact",
+      "name": "Autodidact",
+      "role": "survivor",
+      "characterId": "Adam",
+      "characterName": "Adam Francis",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "You start the trial with 0 Tokens, up to 5, and your good basic healing Skill Checks give 15% less progress. While healing another Survivor without a Med-Kit: Whenever you hit a basic Skill Check, you earn 1 token.. Whenever you hit a basic Skill Check, for each Token, you gain 15% more progress.. You cannot get great basic Skill Checks..",
+      "image": "https://cdn.nightlight.gg/img/perks/autodidact.png"
+    },
+    {
+      "id": "K29P02",
+      "name": "Awakened Awareness",
+      "role": "killer",
+      "characterId": "K29",
+      "characterName": "The Mastermind",
+      "categories": [],
+      "description": "While carrying a Survivor, within 20m of you, you see the Auras of other Survivors.",
+      "image": "https://cdn.nightlight.gg/img/perks/awakened-awareness.png"
+    },
+    {
+      "id": "Babysitter",
+      "name": "Babysitter",
+      "role": "survivor",
+      "characterId": "Steve",
+      "characterName": "Steve Harrington",
+      "categories": [
+        "safeguard",
+        "concealment"
+      ],
+      "description": "Whenever you unhook a Survivor: They gain 10% for 30s.. They leave no Pools of Blood for 30s.. They leave no Scratch Marks for 30s.. You see the Killer's Aura for 8s..",
+      "image": "https://cdn.nightlight.gg/img/perks/babysitter.png"
+    },
+    {
+      "id": "S36P01",
+      "name": "Background Player",
+      "role": "survivor",
+      "characterId": "S36",
+      "characterName": "Renato Lyra",
+      "categories": [
+        "navigation"
+      ],
+      "description": "Whenever the Killer picks-up another Survivor, for the next 10s, when you start running: Gain 50% for 5s.. Gain for 20s..",
+      "image": "https://cdn.nightlight.gg/img/perks/background-player.png"
+    },
+    {
+      "id": "S50P01",
+      "name": "Bada Bada Boom",
+      "role": "survivor",
+      "characterId": "S50",
+      "characterName": "Dustin Henderson",
+      "categories": [],
+      "description": "After repairing 20% of Generators, while next to a Window, use to trap it for 60s. All Survivors see that Window's Aura for that time. When the Killer vaults that Window, the trap explodes and they gain 50% for 4s.",
+      "image": "https://cdn.nightlight.gg/img/perks/bada-bada-boom.png"
+    },
+    {
+      "id": "Balanced_Landing",
+      "name": "Balanced Landing",
+      "role": "survivor",
+      "characterId": "Nea",
+      "characterName": "Nea Karlsson",
+      "categories": [
+        "navigation"
+      ],
+      "description": "Whenever you fall from at least 1.25m: You gain 50% for 3s.. You gain for 40s.. Your stagger is 75% shorter.. Your Grunts from falling are 100% quieter..",
+      "image": "https://cdn.nightlight.gg/img/perks/balanced-landing.png"
+    },
+    {
+      "id": "Bamboozle",
+      "name": "Bamboozle",
+      "role": "killer",
+      "characterId": "Clown",
+      "characterName": "The Clown",
+      "categories": [
+        "chasing",
+        "trickery"
+      ],
+      "description": "Whenever you vault a Window, it is blocked for Survivors for 16s. You basic-vault Windows 15% faster. Only 1 Window can be blocked at a time.",
+      "image": "https://cdn.nightlight.gg/img/perks/bamboozle.png"
+    },
+    {
+      "id": "BBQAndChilli",
+      "name": "Barbecue & Chili",
+      "role": "killer",
+      "characterId": "Cannibal",
+      "characterName": "The Cannibal",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever you hook a Survivor, for 5s, you see the Auras of all Survivors who are at least 40m away from the hooked Survivor.",
+      "image": "https://cdn.nightlight.gg/img/perks/barbecue-chili.png"
+    },
+    {
+      "id": "S42P02",
+      "name": "Bardic Inspiration",
+      "role": "survivor",
+      "characterId": "S42",
+      "characterName": "Aestri Yazar",
+      "categories": [],
+      "description": "While idle, use to perform, empowering all Survivors within 16m for up to 15s. While you are performing, other Survivors will see your Aura. Roll a d20: 1 | You scream, but nothing happens.. 2-10 | Basic Skill Checks give +1% progress.. 11-19 | Basic Skill Checks give +2% progress.. 20 | Basic Skill Checks give +3% progress.. If you complete the performance, this effect ends after 90s. Cooldown: 90s.",
+      "image": "https://cdn.nightlight.gg/img/perks/bardic-inspiration.png"
+    },
+    {
+      "id": "K34P03",
+      "name": "Batteries Included",
+      "role": "killer",
+      "characterId": "K34",
+      "characterName": "The Good Guy",
+      "categories": [
+        "enhancement"
+      ],
+      "description": "Within 16m of a completed Generator, you gain 5%. When you leave the range, this ends after 5s.",
+      "image": "https://cdn.nightlight.gg/img/perks/batteries-included.png"
+    },
+    {
+      "id": "BeastOfPrey",
+      "name": "Beast of Prey",
+      "role": "killer",
+      "characterId": "Bear",
+      "characterName": "The Huntress",
+      "categories": [
+        "chasing"
+      ],
+      "description": "Whenever you gain Bloodlust, gain for 40s.",
+      "image": "https://cdn.nightlight.gg/img/perks/beast-of-prey.png"
+    },
+    {
+      "id": "S33P01",
+      "name": "Better Than New",
+      "role": "survivor",
+      "characterId": "S33",
+      "characterName": "Rebecca Chambers",
+      "categories": [],
+      "description": "Whenever you finish healing another Survivor, until they take damage: They bless and cleanse Totems 50% faster.. They heal 50% faster.. They unlock Chests 50% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/better-than-new.png"
+    },
+    {
+      "id": "BetterTogether",
+      "name": "Better Together",
+      "role": "survivor",
+      "characterId": "Nancy",
+      "characterName": "Nancy Wheeler",
+      "categories": [
+        "perception"
+      ],
+      "description": "While you are repairing a Generator: Other Survivors see that Generator's Aura.. Whenever the Killer downs a Survivor, you see the Auras of all Survivors for 30s..",
+      "image": "https://cdn.nightlight.gg/img/perks/better-together.png"
+    },
+    {
+      "id": "S27P01",
+      "name": "Bite the Bullet",
+      "role": "survivor",
+      "characterId": "S27",
+      "characterName": "Leon S. Kennedy",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "While healing, you and the healed Survivor make no noises or Grunts of Pain. Whenever you miss a basic Skill Check: You lose only 1% progress.. The Killer is not alerted..",
+      "image": "https://cdn.nightlight.gg/img/perks/bite-the-bullet.png"
+    },
+    {
+      "id": "Bitter_Murmur",
+      "name": "Bitter Murmur",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever a Generator is completed, you see the Auras of Survivors within 20m of it for 10s. When all Generators are completed, you see the Auras of all Survivors for 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/bitter-murmur.png"
+    },
+    {
+      "id": "S26P03",
+      "name": "Blast Mine",
+      "role": "survivor",
+      "characterId": "S26",
+      "characterName": "Jill Valentine",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "After repairing 40% of Generators, while next to a Generator, use to trap it for 120s. All Survivors see that Generator's Aura for that time. When the Killer damages that Generator, the trap explodes, then: They are stunned for 4s.. Everyone nearby looking at the detonation is blinded..",
+      "image": "https://cdn.nightlight.gg/img/perks/blast-mine.png"
+    },
+    {
+      "id": "BloodEcho",
+      "name": "Blood Echo",
+      "role": "killer",
+      "characterId": "Oni",
+      "characterName": "The Oni",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Whenever you hook a Survivor, for 30s, all injured Survivors: Gain.. Gain..",
+      "image": "https://cdn.nightlight.gg/img/perks/blood-echo.png"
+    },
+    {
+      "id": "BloodPact",
+      "name": "Blood Pact",
+      "role": "survivor",
+      "characterId": "S22",
+      "characterName": "Cheryl Mason",
+      "categories": [
+        "perception",
+        "support"
+      ],
+      "description": "While you are not the Obsession: While you or the Obsession are injured, you see each other's Auras.. Whenever you finish healing the Obsession, or they finish healing you, while within 16m of each other, you both gain 7%.. While you are the Obsession, if you are hooked, another Survivor becomes the Obsession. When the trial starts, you are less likely to be the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/blood-pact.png"
+    },
+    {
+      "id": "S36P02",
+      "name": "Blood Rush",
+      "role": "survivor",
+      "characterId": "S36",
+      "characterName": "Renato Lyra",
+      "categories": [
+        "strategy"
+      ],
+      "description": "Until all Generators are completed, whenever you are unhooked, for the next 60s, while , use to lose instantly. This is disabled by conspicuous actions.",
+      "image": "https://cdn.nightlight.gg/img/perks/blood-rush.png"
+    },
+    {
+      "id": "BloodWarden",
+      "name": "Blood Warden",
+      "role": "killer",
+      "characterId": "Nightmare",
+      "characterName": "The Nightmare",
+      "categories": [
+        "trickery",
+        "obstruction"
+      ],
+      "description": "When an Exit Gate is opened, once per trial, when you hook a Survivor, both Exits are blocked for 60s. You see the Auras of Survivors within Exit Thresholds.",
+      "image": "https://cdn.nightlight.gg/img/perks/blood-warden.png"
+    },
+    {
+      "id": "BloodHound",
+      "name": "Bloodhound",
+      "role": "killer",
+      "characterId": "Bob",
+      "characterName": "The Wraith",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Pools of Blood are brighter and last 4s longer.",
+      "image": "https://cdn.nightlight.gg/img/perks/bloodhound.png"
+    },
+    {
+      "id": "BoilOver",
+      "name": "Boil Over",
+      "role": "survivor",
+      "characterId": "Kate",
+      "characterName": "Kate Denson",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While carried by the Killer: Whenever the Killer falls from at least m, you gain 33% of your current wiggle progress.. Your wiggle is 80% stronger.. Within 16m, the Killer cannot see Hook Auras..",
+      "image": "https://cdn.nightlight.gg/img/perks/boil-over.png"
+    },
+    {
+      "id": "Bond",
+      "name": "Bond",
+      "role": "survivor",
+      "characterId": "Dwight",
+      "characterName": "Dwight Fairfield",
+      "categories": [
+        "perception"
+      ],
+      "description": "Within 36m, you see other Survivors' Auras.",
+      "image": "https://cdn.nightlight.gg/img/perks/bond.png"
+    },
+    {
+      "id": "S28P02",
+      "name": "Boon: Circle of Healing",
+      "role": "survivor",
+      "characterId": "S28",
+      "characterName": "Mikaela Reid",
+      "categories": [],
+      "description": "While next to a Totem, use to bless it, creating a unique Boon Totem that combines all your Boons. Survivors within the Boon's range: While healing without a Med-Kit, they heal others 100% faster.. While injured, other Survivors see their Aura..",
+      "image": "https://cdn.nightlight.gg/img/perks/boon-circle-of-healing.png"
+    },
+    {
+      "id": "S30P03",
+      "name": "Boon: Dark Theory",
+      "role": "survivor",
+      "characterId": "S30",
+      "characterName": "Yoichi Asakawa",
+      "categories": [],
+      "description": "While next to a Totem, use to bless it, creating a unique Boon Totem that combines all your Boons. Survivors within the Boon's range gain 3%. When leaving the range, this ends after 4s.",
+      "image": "https://cdn.nightlight.gg/img/perks/boon-dark-theory.png"
+    },
+    {
+      "id": "S29P03",
+      "name": "Boon: Exponential",
+      "role": "survivor",
+      "characterId": "S29",
+      "characterName": "Jonah Vasquez",
+      "categories": [],
+      "description": "While next to a Totem, use to bless it, creating a unique Boon Totem that combines all your Boons. Downed Survivors within the Boon's range: Recover 100% faster.. Can fully recover..",
+      "image": "https://cdn.nightlight.gg/img/perks/boon-exponential.png"
+    },
+    {
+      "id": "S40P02",
+      "name": "Boon: Illumination",
+      "role": "survivor",
+      "characterId": "S40",
+      "characterName": "Alan Wake",
+      "categories": [
+        "strategy"
+      ],
+      "description": "While next to a Totem, use to bless it, creating a unique Boon Totem that combines all your Boons. Survivors within the Boon's range: See the Auras of Chests.. See the Auras of Generators.. While you have a Boon Totem, you bless 200% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/boon-illumination.png"
+    },
+    {
+      "id": "S28P03",
+      "name": "Boon: Shadow Step",
+      "role": "survivor",
+      "characterId": "S28",
+      "characterName": "Mikaela Reid",
+      "categories": [],
+      "description": "While next to a Totem, use to bless it, creating a unique Boon Totem that combines all your Boons. Survivors within the Boon's range: Leave no Scratch Marks.. Their Auras cannot be seen by the Killer.. When leaving the range, this ends after 4s.",
+      "image": "https://cdn.nightlight.gg/img/perks/boon-shadow-step.png"
+    },
+    {
+      "id": "S54P03",
+      "name": "Boon: Steadfast",
+      "role": "survivor",
+      "characterId": "S54",
+      "characterName": "Aurora Stardotter",
+      "categories": [],
+      "description": "While next to a Totem, use to bless it, creating a unique Boon Totem that combines all your Boons. Generators within the Boon's range: Regress 50% slower.. Survivors repair them 10% faster.. Survivors within the Boon's range see the Auras of affected Generators.",
+      "image": "https://cdn.nightlight.gg/img/perks/boon-steadfast.png"
+    },
+    {
+      "id": "BorrowedTime",
+      "name": "Borrowed Time",
+      "role": "survivor",
+      "characterId": "Bill",
+      "characterName": "William \"Bill\" Overbeck",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "Whenever you unhook a Survivor: They retain their unhook for 10s longer.. They retain their unhook for 10s longer..",
+      "image": "https://cdn.nightlight.gg/img/perks/borrowed-time.png"
+    },
+    {
+      "id": "Botany_Knowledge",
+      "name": "Botany Knowledge",
+      "role": "survivor",
+      "characterId": "Claudette",
+      "characterName": "Claudette Morel",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "You heal 50% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/botany-knowledge.png"
+    },
+    {
+      "id": "Breakdown",
+      "name": "Breakdown",
+      "role": "survivor",
+      "characterId": "Jeff",
+      "characterName": "Jeff Johansen",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "Whenever you are unhooked: The Hook breaks, then is repaired after 180s.. You see the Killer's Aura for 6s..",
+      "image": "https://cdn.nightlight.gg/img/perks/breakdown.png"
+    },
+    {
+      "id": "Breakout",
+      "name": "Breakout",
+      "role": "survivor",
+      "characterId": "Yui",
+      "characterName": "Yui Kimura",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "Within 5m of a carried Survivor: You gain 10%.. The carried Survivor wiggles 25% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/breakout.png"
+    },
+    {
+      "id": "Brutal_Strength",
+      "name": "Brutal Strength",
+      "role": "killer",
+      "characterId": "Chuckles",
+      "characterName": "The Trapper",
+      "categories": [
+        "enhancement"
+      ],
+      "description": "You basic-break Pallets and Breakable Walls, and damage Generators 20% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/brutal-strength.png"
+    },
+    {
+      "id": "BuckleUp",
+      "name": "Buckle Up",
+      "role": "survivor",
+      "characterId": "Ash",
+      "characterName": "Ashley J. Williams",
+      "categories": [
+        "perception"
+      ],
+      "description": "While healing a downed Survivor, you both see the Killer's Aura. Whenever you finish healing a downed Survivor or fully recover: The Survivor gains 50% for 5s.. The Survivor leaves no Scratch Marks for 5s..",
+      "image": "https://cdn.nightlight.gg/img/perks/buckle-up.png"
+    },
+    {
+      "id": "BuiltToLast",
+      "name": "Built to Last",
+      "role": "survivor",
+      "characterId": "S23",
+      "characterName": "Felix Richter",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While holding a depleted item, after hiding in a Locker for 10s, it is recharged to 99%. Each time you recharge an item this way, it recharges 33% fewer Charges.",
+      "image": "https://cdn.nightlight.gg/img/perks/built-to-last.png"
+    },
+    {
+      "id": "K27P02",
+      "name": "Call of Brine",
+      "role": "killer",
+      "characterId": "K27",
+      "characterName": "The Onryō",
+      "categories": [],
+      "description": "Whenever you damage a Generator, it regresses 50% faster for 90s. For that time, whenever a Survivor hits a good basic Skill Check while repairing that Generator, you are alerted.",
+      "image": "https://cdn.nightlight.gg/img/perks/call-of-brine.png"
+    },
+    {
+      "id": "Calm_Spirit",
+      "name": "Calm Spirit",
+      "role": "survivor",
+      "characterId": "Jake",
+      "characterName": "Jake Park",
+      "categories": [
+        "concealment"
+      ],
+      "description": "You do not scare Crows or scream. You bless and cleanse Totems, and unlock Chests silently, and 10% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/calm-spirit.png"
+    },
+    {
+      "id": "Camaraderie",
+      "name": "Camaraderie",
+      "role": "survivor",
+      "characterId": "Steve",
+      "characterName": "Steve Harrington",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While you are struggling on Hook, when another Survivor gets within 16m, the timer is paused for 34s.",
+      "image": "https://cdn.nightlight.gg/img/perks/camaraderie.png"
+    },
+    {
+      "id": "K44P01",
+      "name": "Celestial Witness",
+      "role": "killer",
+      "characterId": "K44",
+      "characterName": "The Judgment",
+      "categories": [],
+      "description": "Every 30s, if the Obsession is at least 40m away from you, you see their Aura for 3s. Otherwise, the farthest Survivor becomes the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/celestial-witness.png"
+    },
+    {
+      "id": "S40P01",
+      "name": "Champion of Light",
+      "role": "survivor",
+      "characterId": "S40",
+      "characterName": "Alan Wake",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "While you are using a Flashlight, you gain 50%. Whenever you blind the Killer, they gain 20% for 6s. Cooldown: 40s.",
+      "image": "https://cdn.nightlight.gg/img/perks/champion-of-light.png"
+    },
+    {
+      "id": "S50P02",
+      "name": "Change of Plan",
+      "role": "survivor",
+      "characterId": "S50",
+      "characterName": "Dustin Henderson",
+      "categories": [],
+      "description": "When the trial starts, you earn 2 Tokens. While hiding in a Locker and holding a non-event Toolbox, use and spend 1 Token to transform your Toolbox and add-ons into a Med-Kit of the same rarity with 100% Charges and random add-ons of the same rarity.",
+      "image": "https://cdn.nightlight.gg/img/perks/change-of-plan.png"
+    },
+    {
+      "id": "S39P02",
+      "name": "Chemical Trap",
+      "role": "survivor",
+      "characterId": "S39",
+      "characterName": "Ellen Ripley",
+      "categories": [],
+      "description": "After repairing 20% of Generators, while next to a Dropped Pallet, use to trap it for 60s. All Survivors see that Pallet's Aura for that time. When the Killer breaks that Pallet, the trap explodes and they gain 50% for 4s.",
+      "image": "https://cdn.nightlight.gg/img/perks/chemical-trap.png"
+    },
+    {
+      "id": "S28P01",
+      "name": "Clairvoyance",
+      "role": "survivor",
+      "characterId": "S28",
+      "characterName": "Mikaela Reid",
+      "categories": [],
+      "description": "Whenever you bless or cleanse a Totem, while not holding an item, use to, for up to 12s and within 64m: See the Auras of Chests.. See the Auras of Exit Gate Switches.. See the Auras of Generators.. See the Aura of the Hatch.. See the Auras of Hooks..",
+      "image": "https://cdn.nightlight.gg/img/perks/clairvoyance.png"
+    },
+    {
+      "id": "S45P02",
+      "name": "Clean Break",
+      "role": "survivor",
+      "characterId": "S45",
+      "characterName": "Taurie Cain",
+      "categories": [],
+      "description": "Whenever you finish healing another Survivor, while being healed by another Survivor, use to gain. After 45s, if you are not downed, you are instantly healed.",
+      "image": "https://cdn.nightlight.gg/img/perks/clean-break.png"
+    },
+    {
+      "id": "S47P02",
+      "name": "Come and Get Me!",
+      "role": "survivor",
+      "characterId": "S47",
+      "characterName": "Rick Grimes",
+      "categories": [],
+      "description": "Whenever you unhook a Survivor, while crouched and idle, use to have injured and downed Survivors within 24m: Make no Grunts of Pain for 15s.. Leave no Pools of Blood for 15s.. Leave no Scratch Marks for 15s.. You scream, then the Killer sees your Aura for 5s.",
+      "image": "https://cdn.nightlight.gg/img/perks/come-and-get-me.png"
+    },
+    {
+      "id": "S48P01",
+      "name": "Conviction",
+      "role": "survivor",
+      "characterId": "S48",
+      "characterName": "Michonne Grimes",
+      "categories": [],
+      "description": "After you finish healing 1 other Survivor, while downed with at least 25% recovery, use to recover instantly. You gain , then, after 30s, you are downed instantly.",
+      "image": "https://cdn.nightlight.gg/img/perks/conviction.png"
+    },
+    {
+      "id": "S29P02",
+      "name": "Corrective Action",
+      "role": "survivor",
+      "characterId": "S29",
+      "characterName": "Jonah Vasquez",
+      "categories": [],
+      "description": "When the trial starts, you earn 3 Tokens, up to 5. Whenever you hit a great basic Skill Check, earn 1 Token. Whenever another Survivor misses a basic Skill Check, spend 1 Token: The missed Skill Check becomes a good Skill Check.. You see that Survivor's Aura for 6s..",
+      "image": "https://cdn.nightlight.gg/img/perks/corrective-action.png"
+    },
+    {
+      "id": "CorruptIntervention",
+      "name": "Corrupt Intervention",
+      "role": "killer",
+      "characterId": "Plague",
+      "characterName": "The Plague",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "When the trial starts, the 3 farthest Generators from you are blocked for 120s, or until you down a Survivor.",
+      "image": "https://cdn.nightlight.gg/img/perks/corrupt-intervention.png"
+    },
+    {
+      "id": "Coulrophobia",
+      "name": "Coulrophobia",
+      "role": "killer",
+      "characterId": "Clown",
+      "characterName": "The Clown",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Survivors within your Terror Radius: Heal 30% slower.. While healing, basic Skill Checks spin 50% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/coulrophobia.png"
+    },
+    {
+      "id": "S26P01",
+      "name": "Counterforce",
+      "role": "survivor",
+      "characterId": "S26",
+      "characterName": "Jill Valentine",
+      "categories": [
+        "perception"
+      ],
+      "description": "When the trial starts, you earn 1 Token. Whenever you cleanse a Totem, earn 1 Token, then, you see the Aura of the farthest Totem for 14s. For each Token, you cleanse Totems 25% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/counterforce.png"
+    },
+    {
+      "id": "K22P03",
+      "name": "Coup de Grâce",
+      "role": "killer",
+      "characterId": "K22",
+      "characterName": "The Twins",
+      "categories": [
+        "cruelty"
+      ],
+      "description": "Whenever a Generator is completed, you earn 2 Tokens, up to 5. Whenever you lunge-attack, spend 1 Token to make it 80% longer.",
+      "image": "https://cdn.nightlight.gg/img/perks/coup-de-gr-ce.png"
+    },
+    {
+      "id": "S53P03",
+      "name": "Cross-Examination",
+      "role": "survivor",
+      "characterId": "S53",
+      "characterName": "Shane Wiigwaas",
+      "categories": [],
+      "description": "While in the Killer's Terror Radius and not being chased by the Killer, they leave Light Marks that last for 10s that you can see. While on the Killer's Light Marks, you gain. This ends after 5s.",
+      "image": "https://cdn.nightlight.gg/img/perks/cross-examination.png"
+    },
+    {
+      "id": "CruelConfinement",
+      "name": "Cruel Limits",
+      "role": "killer",
+      "characterId": "Demogorgon",
+      "characterName": "The Demogorgon",
+      "categories": [
+        "trickery"
+      ],
+      "description": "Whenever a Generator is completed: You see the Auras of all Windows for 30s.. All Windows are blocked for Survivors for 30s..",
+      "image": "https://cdn.nightlight.gg/img/perks/cruel-limits.png"
+    },
+    {
+      "id": "S35P01",
+      "name": "Cut Loose",
+      "role": "survivor",
+      "characterId": "S35",
+      "characterName": "Thalita Lyra",
+      "categories": [
+        "concealment"
+      ],
+      "description": "While chased by the Killer, whenever you medium or fast-vault: For up to 6s, your medium and fast vaults are silent.. During that time, whenever you medium or fast-vault, the timer is reset.. Cooldown: 45s.",
+      "image": "https://cdn.nightlight.gg/img/perks/cut-loose.png"
+    },
+    {
+      "id": "Dance_with_me",
+      "name": "Dance With Me",
+      "role": "survivor",
+      "characterId": "Kate",
+      "characterName": "Kate Denson",
+      "categories": [
+        "concealment"
+      ],
+      "description": "Whenever you fast-exit a Locker, medium-vault, or fast-vault, you leave no Scratch Marks for 5s. Cooldown: 15s.",
+      "image": "https://cdn.nightlight.gg/img/perks/dance-with-me.png"
+    },
+    {
+      "id": "K36P03",
+      "name": "Dark Arrogance",
+      "role": "killer",
+      "characterId": "K36",
+      "characterName": "The Lich",
+      "categories": [],
+      "description": "You basic-vault Windows 25% faster. Your missed basic-attack cooldown is 25% shorter. Whenever you are blinded or Pallet-stunned, the duration is 25% longer.",
+      "image": "https://cdn.nightlight.gg/img/perks/dark-arrogance.png"
+    },
+    {
+      "id": "DarkDevotion",
+      "name": "Dark Devotion",
+      "role": "killer",
+      "characterId": "Plague",
+      "characterName": "The Plague",
+      "categories": [
+        "trickery"
+      ],
+      "description": "Whenever the Obsession takes damage, for 45s: Your Terror Radius is set to 40m.. The Obsession has your Terror Radius.. You gain..",
+      "image": "https://cdn.nightlight.gg/img/perks/dark-devotion.png"
+    },
+    {
+      "id": "Dark_Sense",
+      "name": "Dark Sense",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "perception"
+      ],
+      "description": "Whenever a Generator is completed, when the Killer gets within 20m of you, for 15s: You see the Auras of Pallets and Windows within 32m.. You see the Auras of other Survivors.. You see the Killer's Aura..",
+      "image": "https://cdn.nightlight.gg/img/perks/dark-sense.png"
+    },
+    {
+      "id": "K28P02",
+      "name": "Darkness Revealed",
+      "role": "killer",
+      "characterId": "K28",
+      "characterName": "The Dredge",
+      "categories": [],
+      "description": "Whenever you search a Locker, you see the Auras of Survivors within 8m of Lockers for 8s. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/darkness-revealed.png"
+    },
+    {
+      "id": "DeadHard",
+      "name": "Dead Hard",
+      "role": "survivor",
+      "characterId": "Smoke",
+      "characterName": "David King",
+      "categories": [
+        "navigation",
+        "adaptation"
+      ],
+      "description": "Whenever you are unhooked, while injured and running, use : You gain for 0.5s.. You gain for 40s..",
+      "image": "https://cdn.nightlight.gg/img/perks/dead-hard.png"
+    },
+    {
+      "id": "DeadMansSwitch",
+      "name": "Dead Man’s Switch",
+      "role": "killer",
+      "characterId": "Gunslinger",
+      "characterName": "The Deathslinger",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Whenever you hook a Survivor, the next time any Survivor stops repairing a Generator for more than 2s, it is blocked for 40s. Cooldown: 40s.",
+      "image": "https://cdn.nightlight.gg/img/perks/dead-mans-switch.png"
+    },
+    {
+      "id": "S40P03",
+      "name": "Deadline",
+      "role": "survivor",
+      "characterId": "S40",
+      "characterName": "Alan Wake",
+      "categories": [
+        "concealment"
+      ],
+      "description": "While injured, basic Skill Checks: Are 10% more likely to appear.. Appear in random places.. Whenever you miss a basic Skill Check, you lose 50% less progress.",
+      "image": "https://cdn.nightlight.gg/img/perks/deadline.png"
+    },
+    {
+      "id": "K25P01",
+      "name": "Deadlock",
+      "role": "killer",
+      "characterId": "K25",
+      "characterName": "The Cenobite",
+      "categories": [],
+      "description": "Whenever a Generator is completed, the Generator with the most progress is blocked for 25s.",
+      "image": "https://cdn.nightlight.gg/img/perks/deadlock.png"
+    },
+    {
+      "id": "Deathbound",
+      "name": "Deathbound",
+      "role": "killer",
+      "characterId": "K20",
+      "characterName": "The Executioner",
+      "categories": [
+        "trickery",
+        "tracking"
+      ],
+      "description": "Whenever a Survivor finishes healing another, the healer screams. Then, until the healer takes damage, while they are at least 4m away from the healed Survivor: The healer gains.. The healer sees the healed Survivor's Aura.. This can only apply to one Survivor at a time.",
+      "image": "https://cdn.nightlight.gg/img/perks/deathbound.png"
+    },
+    {
+      "id": "S24P02",
+      "name": "Deception",
+      "role": "survivor",
+      "characterId": "S24",
+      "characterName": "Élodie Rakoto",
+      "categories": [
+        "concealment"
+      ],
+      "description": "Whenever you attempt to fast-enter a Locker: You do not enter the Locker.. The Killer is alerted.. You leave no Pools of Blood for 5s.. You leave no Scratch Marks for 5s.. Cooldown: 15s.",
+      "image": "https://cdn.nightlight.gg/img/perks/deception.png"
+    },
+    {
+      "id": "DecisiveStrike",
+      "name": "Decisive Strike",
+      "role": "survivor",
+      "characterId": "Laurie",
+      "characterName": "Laurie Strode",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "Until all Generators are completed, whenever you are unhooked, for the next 60s: when the Killer picks you up, once per trial, hit a Special Skill check: Stun the Killer for 4s.. Become the Obsession.. This is disabled by conspicuous actions. At the start of the trial, you are more likely to be the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/decisive-strike.png"
+    },
+    {
+      "id": "Deerstalker",
+      "name": "Deerstalker",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "tracking"
+      ],
+      "description": "Every 30s, the Survivor with the least time in chase sees your Aura for 4s. While a Survivor sees your Aura, you see their Aura.",
+      "image": "https://cdn.nightlight.gg/img/perks/deerstalker.png"
+    },
+    {
+      "id": "Deja_Vu",
+      "name": "Deja Vu",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "perception"
+      ],
+      "description": "You see the Auras of the 3 Generators closest to each other and repair them 6% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/deja-vu.png"
+    },
+    {
+      "id": "Deliverance",
+      "name": "Deliverance",
+      "role": "survivor",
+      "characterId": "Adam",
+      "characterName": "Adam Francis",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "Once per trial, when you safely unhook another Survivor, you can unhook yourself. When you unhook yourself this way, you gain for 120s.",
+      "image": "https://cdn.nightlight.gg/img/perks/deliverance.png"
+    },
+    {
+      "id": "DesperateMeasures",
+      "name": "Desperate Measures",
+      "role": "survivor",
+      "characterId": "S23",
+      "characterName": "Felix Richter",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "For each injured, downed, or hooked Survivor: You heal 20% faster.. You unhook 20% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/desperate-measures.png"
+    },
+    {
+      "id": "DetectivesHunch",
+      "name": "Detective's Hunch",
+      "role": "survivor",
+      "characterId": "Eric",
+      "characterName": "Detective Tapp",
+      "categories": [
+        "perception"
+      ],
+      "description": "Whenever a Generator is completed, for 20s, within 64m of you: You see the Auras of Chests.. You see the Auras of Generators.. You see the Auras of Totems..",
+      "image": "https://cdn.nightlight.gg/img/perks/detectives-hunch.png"
+    },
+    {
+      "id": "Discordance",
+      "name": "Discordance",
+      "role": "killer",
+      "characterId": "Legion",
+      "characterName": "The Legion",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Within 128m of you, whenever a Generator is being repaired by at least 2 Survivors, you are alerted. While that Generator is being repaired by at least 2 Survivors, you see its Aura. When it is no longer being repaired by at least 2 Survivors, this ends after 4s.",
+      "image": "https://cdn.nightlight.gg/img/perks/discordance.png"
+    },
+    {
+      "id": "K28P01",
+      "name": "Dissolution",
+      "role": "killer",
+      "characterId": "K28",
+      "characterName": "The Dredge",
+      "categories": [],
+      "description": "3s after a Survivor takes damage from a basic-attack, for 15s, the next time a Survivor fast-vaults a Pallet while within your Terror Radius, it is destroyed.",
+      "image": "https://cdn.nightlight.gg/img/perks/dissolution.png"
+    },
+    {
+      "id": "Distortion",
+      "name": "Distortion",
+      "role": "survivor",
+      "characterId": "Jeff",
+      "characterName": "Jeff Johansen",
+      "categories": [
+        "concealment"
+      ],
+      "description": "When the trial starts, and after being chased for 15s, you earn 1 Token, up to 2. While not downed, whenever the Killer attempts to see your Aura, spend 1 Token. Then, for the next 12s: The Killer cannot see your Aura.. You leave no Scratch Marks..",
+      "image": "https://cdn.nightlight.gg/img/perks/distortion.png"
+    },
+    {
+      "id": "Distressing",
+      "name": "Distressing",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "trickery"
+      ],
+      "description": "Survivors within your Terror Radius repair 8% slower. Your Terror Radius is 30% larger.",
+      "image": "https://cdn.nightlight.gg/img/perks/distressing.png"
+    },
+    {
+      "id": "Diversion",
+      "name": "Diversion",
+      "role": "survivor",
+      "characterId": "Adam",
+      "characterName": "Adam Francis",
+      "categories": [
+        "concealment"
+      ],
+      "description": "After hiding for 20s within the Killer's Terror Radius, while crouched and idle, use to throw a pebble 20m away: The Killer is alerted.. The pebble leaves Scratch Marks..",
+      "image": "https://cdn.nightlight.gg/img/perks/diversion.png"
+    },
+    {
+      "id": "S46P01",
+      "name": "Do No Harm",
+      "role": "survivor",
+      "characterId": "S46",
+      "characterName": "Orela Rose",
+      "categories": [],
+      "description": "While healing another Survivor, for each Hook State they have: You heal 40% faster.. Great basic Skill Checks, grant 3% more progress.. Basic Skill Checks are 5% more likely to appear..",
+      "image": "https://cdn.nightlight.gg/img/perks/do-no-harm.png"
+    },
+    {
+      "id": "K37P03",
+      "name": "Dominance",
+      "role": "killer",
+      "characterId": "K37",
+      "characterName": "The Dark Lord",
+      "categories": [],
+      "description": "The first time each Totem is being blessed or cleansed by a Survivor: It is blocked for 25s.. They scream.. You see their Aura for 5s..",
+      "image": "https://cdn.nightlight.gg/img/perks/dominance.png"
+    },
+    {
+      "id": "DragonsGrip",
+      "name": "Dragon’s Grip",
+      "role": "killer",
+      "characterId": "K21",
+      "characterName": "The Blight",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Whenever you damage a Generator, for the next 30s, the first Survivor that repairs that Generator: They scream, then you are alerted to their position for 4s.. They gain for 60s.. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/dragons-grip.png"
+    },
+    {
+      "id": "S38P01",
+      "name": "Dramaturgy",
+      "role": "survivor",
+      "characterId": "S38",
+      "characterName": "Nicolas Cage",
+      "categories": [],
+      "description": "While healthy and running, use : You gain 25% for 2s.. You gain for 40s.. Then, one happens at random: You gain 25% for 2s.. You gain for 12s.. You gain a random rare item with random add-ons.. You scream, but nothing happens.. The same effect cannot happen twice in a row.",
+      "image": "https://cdn.nightlight.gg/img/perks/dramaturgy.png"
+    },
+    {
+      "id": "S46P02",
+      "name": "Duty of Care",
+      "role": "survivor",
+      "characterId": "S46",
+      "characterName": "Orela Rose",
+      "categories": [],
+      "description": "While healthy, whenever you take a protection hit, other Survivors within 12m gain 25% for 6s.",
+      "image": "https://cdn.nightlight.gg/img/perks/duty-of-care.png"
+    },
+    {
+      "id": "Dying_Light",
+      "name": "Dying Light",
+      "role": "killer",
+      "characterId": "Shape",
+      "characterName": "The Shape",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Whenever you hook a Survivor that is not the Obsession, earn 1 token. While the Obsession is alive, for each Token: Other Survivors heal 3% slower.. Other Survivors repair 3% slower.. Other Survivors sabotage Hooks 3% slower.. The Obsession: Heals other Survivors 33% faster.. Unhooks other Survivors 33% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/dying-light.png"
+    },
+    {
+      "id": "S30P02",
+      "name": "Empathic Connection",
+      "role": "survivor",
+      "characterId": "S30",
+      "characterName": "Yoichi Asakawa",
+      "categories": [],
+      "description": "You heal other Survivors 40% faster. Injured Survivors see your Aura.",
+      "image": "https://cdn.nightlight.gg/img/perks/empathic-connection.png"
+    },
+    {
+      "id": "Empathy",
+      "name": "Empathy",
+      "role": "survivor",
+      "characterId": "Claudette",
+      "characterName": "Claudette Morel",
+      "categories": [
+        "perception"
+      ],
+      "description": "Within 128m, you see the Auras of injured Survivors.",
+      "image": "https://cdn.nightlight.gg/img/perks/empathy.png"
+    },
+    {
+      "id": "Enduring",
+      "name": "Enduring",
+      "role": "killer",
+      "characterId": "HillBilly",
+      "characterName": "The Hillbilly",
+      "categories": [
+        "enhancement"
+      ],
+      "description": "While not carrying a Survivor, Pallet-stuns are 50% shorter.",
+      "image": "https://cdn.nightlight.gg/img/perks/enduring.png"
+    },
+    {
+      "id": "K24P03",
+      "name": "Eruption",
+      "role": "killer",
+      "characterId": "K24",
+      "characterName": "The Nemesis",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Whenever you damage a Generator, when you down a Survivor, all Generators damaged this way: Explode, lose 10% progress and start regressing.. Survivors repairing them scream, then you see their Auras for 12s.. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/eruption.png"
+    },
+    {
+      "id": "S51P01",
+      "name": "Extrasensory Perception",
+      "role": "survivor",
+      "characterId": "S51",
+      "characterName": "Eleven",
+      "categories": [],
+      "description": "After crouching for 4s: You see Auras in an expanding radius up to 44m.. You gain.. You gain.. When you stop crouching, or after 11s, cooldown: 40s.",
+      "image": "https://cdn.nightlight.gg/img/perks/extrasensory-perception.png"
+    },
+    {
+      "id": "S44P02",
+      "name": "Exultation",
+      "role": "survivor",
+      "characterId": "S44",
+      "characterName": "Trevor Belmont",
+      "categories": [],
+      "description": "Whenever you Pallet-stun the Killer: Your item rarity is upgraded to the next tier, if possible.. If the item was upgraded, it recharges 75% Charges.. Cooldown: 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/exultation.png"
+    },
+    {
+      "id": "S44P01",
+      "name": "Eyes of Belmont",
+      "role": "survivor",
+      "characterId": "S44",
+      "characterName": "Trevor Belmont",
+      "categories": [],
+      "description": "Whenever a Generator is completed, you see the Killer's Aura for 3s. Whenever you see the Killer's Aura for a duration, it is 2s longer.",
+      "image": "https://cdn.nightlight.gg/img/perks/eyes-of-belmont.png"
+    },
+    {
+      "id": "S25P01",
+      "name": "Fast Track",
+      "role": "survivor",
+      "characterId": "S25",
+      "characterName": "Lee Yun-jin",
+      "categories": [
+        "strategy"
+      ],
+      "description": "Whenever you unhook another Survivor, you earn 1 Token, up to 3. While repairing, whenever you hit a great basic Skill Check, spend all Tokens. For each Token spent, the Generator gains 5% permanent progress.",
+      "image": "https://cdn.nightlight.gg/img/perks/fast-track.png"
+    },
+    {
+      "id": "S43P01",
+      "name": "Finesse",
+      "role": "survivor",
+      "characterId": "S43",
+      "characterName": "Lara Croft",
+      "categories": [],
+      "description": "While healthy, you fast-vault 20% faster. Whenever you fast-vault, cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/finesse.png"
+    },
+    {
+      "id": "FireUp",
+      "name": "Fire Up",
+      "role": "killer",
+      "characterId": "Nightmare",
+      "characterName": "The Nightmare",
+      "categories": [
+        "enhancement"
+      ],
+      "description": "Whenever a Generator is completed, earn 1 Token, up to 5. For each Token: You basic-break Pallets and Breakable Walls 8% faster.. You damage Generators 8% faster.. You pick-up and drop Survivors 8% faster.. You basic-vault Windows 8% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/fire-up.png"
+    },
+    {
+      "id": "S52P03",
+      "name": "Five Moves Ahead",
+      "role": "survivor",
+      "characterId": "S52",
+      "characterName": "Kwon Tae-young",
+      "categories": [],
+      "description": "While you are in the Killer's Terror Radius or chased by the Killer: You see the Auras of the 5 closest Pallets.. After you drop a Pallet, you start moving 50% earlier.. Whenever you drop a Pallet, cooldown: 30s..",
+      "image": "https://cdn.nightlight.gg/img/perks/five-moves-ahead.png"
+    },
+    {
+      "id": "Fixated",
+      "name": "Fixated",
+      "role": "survivor",
+      "characterId": "Nancy",
+      "characterName": "Nancy Wheeler",
+      "categories": [
+        "navigation"
+      ],
+      "description": "While walking, you gain 20%. You see your own Scratch Marks.",
+      "image": "https://cdn.nightlight.gg/img/perks/fixated.png"
+    },
+    {
+      "id": "S27P02",
+      "name": "Flashbang",
+      "role": "survivor",
+      "characterId": "S27",
+      "characterName": "Leon S. Kennedy",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "After repairing 40% of Generators, while hiding in a Locker, use to craft a Flashbang. When you use the Flashbang: Everyone nearby looking at the detonation is blinded.. The Killer is alerted..",
+      "image": "https://cdn.nightlight.gg/img/perks/flashbang.png"
+    },
+    {
+      "id": "FlipFlop",
+      "name": "Flip-Flop",
+      "role": "survivor",
+      "characterId": "Ash",
+      "characterName": "Ashley J. Williams",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While downed, whenever the Killer picks you up, 50% of your recovery progress is added to your wiggle progress, up to 50%.",
+      "image": "https://cdn.nightlight.gg/img/perks/flip-flop.png"
+    },
+    {
+      "id": "S52P01",
+      "name": "Flow State",
+      "role": "survivor",
+      "characterId": "S52",
+      "characterName": "Kwon Tae-young",
+      "categories": [],
+      "description": "Whenever a Generator is completed, earn 1 Token, up to 5. For each Token: You bless and cleanse Totems 15% faster.. You heal 15% faster.. You unhook Survivors 15% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/flow-state.png"
+    },
+    {
+      "id": "S34P02",
+      "name": "Fogwise",
+      "role": "survivor",
+      "characterId": "S34",
+      "characterName": "Vittorio Toscano",
+      "categories": [],
+      "description": "While repairing, whenever you hit a great basic Skill Check, you see the Killer's Aura for 6s.",
+      "image": "https://cdn.nightlight.gg/img/perks/fogwise.png"
+    },
+    {
+      "id": "ForThePeople",
+      "name": "For the People",
+      "role": "survivor",
+      "characterId": "Zarina",
+      "characterName": "Zarina Kassir",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "While healthy and healing another Survivor without a Med-Kit, use to heal them instantly: You take damage.. You gain for 60s.. You become the Obsession.. When the trial starts, you are less likely to be the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/for-the-people.png"
+    },
+    {
+      "id": "K32P02",
+      "name": "Forced Hesitation",
+      "role": "killer",
+      "characterId": "K32",
+      "characterName": "The Singularity",
+      "categories": [
+        "cruelty",
+        "hinderance"
+      ],
+      "description": "Whenever you down a Survivor, other Survivors within 16m of the downed Survivor gain 20% for 10s. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/forced-hesitation.png"
+    },
+    {
+      "id": "ForcedPenance",
+      "name": "Forced Penance",
+      "role": "killer",
+      "characterId": "K20",
+      "characterName": "The Executioner",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Whenever a Survivor takes a protection hit, they gain for 80s.",
+      "image": "https://cdn.nightlight.gg/img/perks/forced-penance.png"
+    },
+    {
+      "id": "K39P02",
+      "name": "Forever Entwined",
+      "role": "killer",
+      "characterId": "K39",
+      "characterName": "The Ghoul",
+      "categories": [],
+      "description": "Whenever a Survivor takes damage, you earn 1 Token, up to 8. For each Token: You hook Survivors 4% faster.. You pick-up and drop Survivors 4% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/forever-entwined.png"
+    },
+    {
+      "id": "FranklinsLoss",
+      "name": "Franklin's Demise",
+      "role": "killer",
+      "characterId": "Cannibal",
+      "characterName": "The Cannibal",
+      "categories": [
+        "cruelty"
+      ],
+      "description": "Whenever you damage a Survivor with a basic-attack, they drop their item. Within 64m, you see the Auras of dropped items.",
+      "image": "https://cdn.nightlight.gg/img/perks/franklins-demise.png"
+    },
+    {
+      "id": "S35P02",
+      "name": "Friendly Competition",
+      "role": "survivor",
+      "characterId": "S35",
+      "characterName": "Thalita Lyra",
+      "categories": [
+        "strategy"
+      ],
+      "description": "Whenever you finish repairing a Generator with at least 1 other Survivor, Survivors who finished repairing it repair 10% faster for 90s.",
+      "image": "https://cdn.nightlight.gg/img/perks/friendly-competition.png"
+    },
+    {
+      "id": "K34P02",
+      "name": "Friends ‘Til the End",
+      "role": "killer",
+      "characterId": "K34",
+      "characterName": "The Good Guy",
+      "categories": [
+        "trickery"
+      ],
+      "description": "Whenever you Hook a Survivor that is not the Obsession: The Obsession gains for 20s.. You see the Obsession's Aura for 10s.. Whenever you Hook the Obsession, another Survivor: Screams, then you are alerted.. Becomes the Obsession..",
+      "image": "https://cdn.nightlight.gg/img/perks/friends-til-the-end.png"
+    },
+    {
+      "id": "S54P01",
+      "name": "Fruits of Your Labor",
+      "role": "survivor",
+      "characterId": "S54",
+      "characterName": "Aurora Stardotter",
+      "categories": [],
+      "description": "Whenever a Generator is completed, you earn 1 Token. Whenever you finish repairing a Generator, for each Token: You gain 5% for 2s.. You gain 20% healing progress..",
+      "image": "https://cdn.nightlight.gg/img/perks/fruits-of-your-labor.png"
+    },
+    {
+      "id": "FurtiveChase",
+      "name": "Furtive Chase",
+      "role": "killer",
+      "characterId": "Ghostface",
+      "characterName": "The Ghost Face",
+      "categories": [
+        "chasing",
+        "trickery"
+      ],
+      "description": "Whenever you hook the Obsession: You gain 10% for 18s.. You gain for 18s.. Whenever the Obsession is unhooked, the Survivor who unhooked them becomes the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/furtive-chase.png"
+    },
+    {
+      "id": "K31P01",
+      "name": "Game Afoot",
+      "role": "killer",
+      "characterId": "K31",
+      "characterName": "The Skull Merchant",
+      "categories": [
+        "enhancement",
+        "cruelty"
+      ],
+      "description": "While chasing the Obsession, whenever you basic-break Pallets or Breakable Walls, or damage Generators, you gain 10% for 10s. Whenever you damage the Survivor with the most chase time with a basic-attack, they become the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/game-afoot.png"
+    },
+    {
+      "id": "Gearhead",
+      "name": "Gearhead",
+      "role": "killer",
+      "characterId": "Gunslinger",
+      "characterName": "The Deathslinger",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever a Survivor takes damage, for the next 30s, whenever a Survivor repairing a Generator hits a good basic Skill Check, you see their Aura for 8s.",
+      "image": "https://cdn.nightlight.gg/img/perks/gearhead.png"
+    },
+    {
+      "id": "K32P01",
+      "name": "Genetic Limits",
+      "role": "killer",
+      "characterId": "K32",
+      "characterName": "The Singularity",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Whenever a Survivor takes damage, they gain for 8s.",
+      "image": "https://cdn.nightlight.gg/img/perks/genetic-limits.png"
+    },
+    {
+      "id": "S49P03",
+      "name": "Ghost Notes",
+      "role": "survivor",
+      "characterId": "S49",
+      "characterName": "Vee Boonyasak",
+      "categories": [],
+      "description": "While you have , your Scratch Marks disappear 50% faster. You lose 10% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/ghost-notes.png"
+    },
+    {
+      "id": "K26P01",
+      "name": "Grim Embrace",
+      "role": "killer",
+      "characterId": "K26",
+      "characterName": "The Artist",
+      "categories": [],
+      "description": "Whenever you Hook a Survivor for the first time, earn 1 Token. When you move 16m away from the hooked Survivor, all Generators are blocked for 10s. When you have 4 Tokens, when you move 16m away from the hooked Survivor: All Generators are blocked for 40s.. You see the Obsession's Aura for 10s..",
+      "image": "https://cdn.nightlight.gg/img/perks/grim-embrace.png"
+    },
+    {
+      "id": "S43P02",
+      "name": "Hardened",
+      "role": "survivor",
+      "characterId": "S43",
+      "characterName": "Lara Croft",
+      "categories": [],
+      "description": "When you have blessed or cleansed a Totem and unlocked a Chest, whenever you would scream, you see the Killer's Aura for 5s instead.",
+      "image": "https://cdn.nightlight.gg/img/perks/hardened.png"
+    },
+    {
+      "id": "K40P03",
+      "name": "Haywire",
+      "role": "killer",
+      "characterId": "K40",
+      "characterName": "The Animatronic",
+      "categories": [],
+      "description": "Exit Gate Switches with at least 80% progress regress at 100% speed. While they are regressing, Survivors see the Exit Gate Lights flicker randomly.",
+      "image": "https://cdn.nightlight.gg/img/perks/haywire.png"
+    },
+    {
+      "id": "HeadOn",
+      "name": "Head On",
+      "role": "survivor",
+      "characterId": "Jane",
+      "characterName": "Jane Romero",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "After hiding in a Locker for 3s, fast-exit to stun the Killer for 3s if they are within 2.5m, then gain for 40s.",
+      "image": "https://cdn.nightlight.gg/img/perks/head-on.png"
+    },
+    {
+      "id": "K40P01",
+      "name": "Help Wanted",
+      "role": "killer",
+      "characterId": "K40",
+      "characterName": "The Animatronic",
+      "categories": [],
+      "description": "Whenever you damage a Generator, it is compromised. When any compromised Generator is completed by Survivors: Your successful basic-attack cooldowns are 25% shorter for 90s.. Generators not being repaired regress at 150% speed for 90s.. Other Generators lose compromised.. Up to 3 Generators can be compromised at a time.",
+      "image": "https://cdn.nightlight.gg/img/perks/help-wanted.png"
+    },
+    {
+      "id": "HexBloodFavor",
+      "name": "Hex: Blood Favor",
+      "role": "killer",
+      "characterId": "K21",
+      "characterName": "The Blight",
+      "categories": [
+        "chasing"
+      ],
+      "description": "When the trial starts, a Dull Totem ignites. Whenever a healthy Survivor becomes injured by your basic-attack, Upright Pallets within 32m of them are blocked for 15s.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-blood-favor.png"
+    },
+    {
+      "id": "K23P02",
+      "name": "Hex: Crowd Control",
+      "role": "killer",
+      "characterId": "K23",
+      "characterName": "The Trickster",
+      "categories": [
+        "chasing"
+      ],
+      "description": "The first time a Survivor medium or fast-vaults a Window, a Dull Totem ignites. The last 6 Windows Survivors medium or fast-vault are blocked. You basic-vault blocked Windows 15% faster. You see the Auras of blocked Windows within 24m.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-crowd-control.png"
+    },
+    {
+      "id": "Hex_Devour_Hope",
+      "name": "Hex: Devour Hope",
+      "role": "killer",
+      "characterId": "Witch",
+      "characterName": "The Hag",
+      "categories": [
+        "trickery"
+      ],
+      "description": "When the trial starts, a Dull Totem ignites. Whenever a Survivor is unhooked while you are at least 24m away, earn 1 Token, up to 5: 2 Tokens | 10s after hooking a Survivor, gain 5% for 10s.. 3 Tokens | Survivors gain.. 5 Tokens | You can Kill downed Survivors..",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-devour-hope.png"
+    },
+    {
+      "id": "K30P02",
+      "name": "Hex: Face the Darkness",
+      "role": "killer",
+      "characterId": "K30",
+      "characterName": "The Knight",
+      "categories": [],
+      "description": "Whenever you damage a Survivor, they are hexed and a Dull Totem ignites. Every 25s, other Survivors not within your Terror Radius scream, then you see their Auras for 2s. When the hexed Survivor is downed or becomes healthy, the Hex Totem is extinguished.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-face-the-darkness.png"
+    },
+    {
+      "id": "Hex_HauntedGround",
+      "name": "Hex: Haunted Ground",
+      "role": "killer",
+      "characterId": "Spirit",
+      "characterName": "The Spirit",
+      "categories": [
+        "trickery"
+      ],
+      "description": "When the trial starts, 2 Dull Totems ignite. When either of those Hex Totems is blessed or cleansed: All Survivors gain for 60s.. The other Totem is extinguished..",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-haunted-ground.png"
+    },
+    {
+      "id": "K42P03",
+      "name": "Hex: Hive Mind",
+      "role": "killer",
+      "characterId": "K42",
+      "characterName": "The First",
+      "categories": [],
+      "description": "The first time you hook a Survivor, a Dull Totem ignites. The Auras of Generators show their progress. When 1 Generator remains: All Generators explode, lose 10% progress and start regressing.. The Hex Totem is extinguished..",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-hive-mind.png"
+    },
+    {
+      "id": "Hex_HuntressLullaby",
+      "name": "Hex: Huntress Lullaby",
+      "role": "killer",
+      "characterId": "Bear",
+      "characterName": "The Huntress",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "When the trial starts, a Dull Totem ignites. Whenever you hook a Survivor, earn 1 Token. For each Token, Basic Skill Check warnings appear later and good success zones are smaller. While you have 5 Tokens, Basic Skill Check warnings don't appear. Whenever a Survivor misses a basic Skill Check, they lose 6% more progress.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-huntress-lullaby.png"
+    },
+    {
+      "id": "No_One_Escapes_Death",
+      "name": "Hex: No One Escapes Death",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "cruelty",
+        "trickery"
+      ],
+      "description": "When all Generators are completed, a Dull Totem ignites: Survivors gain.. You gain 4%.. Within 4m, Survivors see the Hex Totem's Aura, expanding to 24m over 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-no-one-escapes-death.png"
+    },
+    {
+      "id": "K39P01",
+      "name": "Hex: Nothing But Misery",
+      "role": "killer",
+      "characterId": "K39",
+      "characterName": "The Ghoul",
+      "categories": [],
+      "description": "After you damage Survivors with a basic-attack 4 times, a Dull Totem ignites. Whenever you damage a Survivor with a basic-attack: They gain 5% for 15s.. They vault 10% slower for 15s..",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-nothing-but-misery.png"
+    },
+    {
+      "id": "K41P03",
+      "name": "Hex: Overture of Doom",
+      "role": "killer",
+      "characterId": "K41",
+      "characterName": "The Krasue",
+      "categories": [],
+      "description": "When the trial starts, a Dull Totem ignites and hexes the farthest Generator from it. After a Survivor repairs the hexed Generator for 5 seconds: You gain for 30s.. For that time, your Terror Radius is set to that Generator.. When the hexed Generator is repaired, the next farthest Generator is hexed.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-overture-of-doom.png"
+    },
+    {
+      "id": "K26P03",
+      "name": "Hex: Pentimento",
+      "role": "killer",
+      "characterId": "K26",
+      "characterName": "The Artist",
+      "categories": [],
+      "description": "You see the Auras of cleansed Totems, and can rekindle each once. Within 16m, Survivors see the Auras of Rekindled Totems. While a Totem is rekindled, Survivors heal and repair 20% slower, plus 3% for each additional Rekindled Totem. When all 5 Totems are rekindled at once, they are blocked.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-pentimento.png"
+    },
+    {
+      "id": "K25P02",
+      "name": "Hex: Plaything",
+      "role": "killer",
+      "characterId": "K25",
+      "characterName": "The Cenobite",
+      "categories": [],
+      "description": "The first time you hook each Survivor, they are hexed and a Dull Totem ignites. For 90s, the Hex Totem is blocked to other Survivors. The hexed Survivors: Gain.. Within 16m of the Hex Totem, they see its Aura..",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-plaything.png"
+    },
+    {
+      "id": "HexRetribution",
+      "name": "Hex: Retribution",
+      "role": "killer",
+      "characterId": "Gunslinger",
+      "characterName": "The Deathslinger",
+      "categories": [
+        "trickery",
+        "tracking"
+      ],
+      "description": "When the trial starts, a Dull Totem ignites. Whenever a Survivor starts blessing or cleansing a Totem, they gain for 60s. Whenever a Hex Totem is blessed or cleansed, you see the Auras of all Survivors for 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-retribution.png"
+    },
+    {
+      "id": "Hex_Ruin",
+      "name": "Hex: Ruin",
+      "role": "killer",
+      "characterId": "Witch",
+      "characterName": "The Hag",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "When the trial starts, a Dull Totem ignites. While a Generator is not being repaired, it regresses at 150% speed.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-ruin.png"
+    },
+    {
+      "id": "K43P01",
+      "name": "Hex: Scared to Death",
+      "role": "killer",
+      "characterId": "K43",
+      "characterName": "The Slasher",
+      "categories": [],
+      "description": "After you hook 3 different Survivors, a Dull Totem ignites. While chasing a Survivor, whenever you basic-break a Pallet, Survivors within 13m: Scream.. Gain 13% for 3s..",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-scared-to-death.png"
+    },
+    {
+      "id": "Hex_The_Third_Seal",
+      "name": "Hex: The Third Seal",
+      "role": "killer",
+      "characterId": "Witch",
+      "characterName": "The Hag",
+      "categories": [
+        "cruelty"
+      ],
+      "description": "When the trial starts, a Dull Totem ignites. Whenever you damage a Survivor with a basic or special-attack, they gain. This applies for up to 4 Survivors.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-the-third-seal.png"
+    },
+    {
+      "id": "Hex_Thrill_Of_The_Hunt",
+      "name": "Hex: Thrill of the Hunt",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "obstruction"
+      ],
+      "description": "The first time you hook a Survivor, a Dull Totem ignites. When you hook a Survivor, block all Hex Totems for 6s for each lit Hex Totem.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-thrill-of-the-hunt.png"
+    },
+    {
+      "id": "K34P01",
+      "name": "Hex: Two Can Play",
+      "role": "killer",
+      "characterId": "K34",
+      "characterName": "The Good Guy",
+      "categories": [
+        "trickery"
+      ],
+      "description": "While this Hex is dull, each time you are blinded or stunned by a Survivor 2 times, a Dull Totem ignites. Whenever you are blinded or stunned by a Survivor you are not carrying, they are blinded for 1.5s.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-two-can-play.png"
+    },
+    {
+      "id": "K44P02",
+      "name": "Hex: Under Your Thumb",
+      "role": "killer",
+      "characterId": "K44",
+      "characterName": "The Judgment",
+      "categories": [],
+      "description": "The first time a Survivor gains a Hook State, a Dull Totem ignites. Whenever a running Survivor gains within 32m of you, you are alerted. Running Survivors cannot gain more than 15% at a time.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-under-your-thumb.png"
+    },
+    {
+      "id": "HexUndying",
+      "name": "Hex: Undying",
+      "role": "killer",
+      "characterId": "K21",
+      "characterName": "The Blight",
+      "categories": [
+        "obstruction",
+        "tracking"
+      ],
+      "description": "When the trial starts, a Dull Totem ignites. When another Hex Totem is blessed or cleansed, it replaces this one and keeps any Tokens it had. You see the Auras of Survivors within 4m of Dull Totems.",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-undying.png"
+    },
+    {
+      "id": "K37P01",
+      "name": "Hex: Wretched Fate",
+      "role": "killer",
+      "characterId": "K37",
+      "characterName": "The Dark Lord",
+      "categories": [],
+      "description": "The first time a Generator is completed, a Dull Totem ignites. The Obsession: Repairs 33% slower.. Sees the Hex Totem's Aura within 12m..",
+      "image": "https://cdn.nightlight.gg/img/perks/hex-wretched-fate.png"
+    },
+    {
+      "id": "K22P01",
+      "name": "Hoarder",
+      "role": "killer",
+      "characterId": "K22",
+      "characterName": "The Twins",
+      "categories": [
+        "tracking"
+      ],
+      "description": "When the trial starts, 2 more Chests appear. Whenever a Survivor picks-up an Item or starts unlocking a Chest within 64m of you, you are alerted.",
+      "image": "https://cdn.nightlight.gg/img/perks/hoarder.png"
+    },
+    {
+      "id": "Hope",
+      "name": "Hope",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "navigation"
+      ],
+      "description": "When all Generators are completed, you gain 5%.",
+      "image": "https://cdn.nightlight.gg/img/perks/hope.png"
+    },
+    {
+      "id": "K30P03",
+      "name": "Hubris",
+      "role": "killer",
+      "characterId": "K30",
+      "characterName": "The Knight",
+      "categories": [],
+      "description": "Whenever you are stunned by a Survivor, they gain for 30s. Cooldown: 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/hubris.png"
+    },
+    {
+      "id": "K37P02",
+      "name": "Human Greed",
+      "role": "killer",
+      "characterId": "K37",
+      "characterName": "The Dark Lord",
+      "categories": [],
+      "description": "Whenever a Survivor gets within 8m of a locked Chest, you see their Aura for 5s. You can lock unlocked Chests. Cooldown: 10s. You see the Auras of locked Chests.",
+      "image": "https://cdn.nightlight.gg/img/perks/human-greed.png"
+    },
+    {
+      "id": "S33P03",
+      "name": "Hyperfocus",
+      "role": "survivor",
+      "characterId": "S33",
+      "characterName": "Rebecca Chambers",
+      "categories": [],
+      "description": "Whenever you hit a great basic Skill Check, you earn 1 Token, up to 6. For each Token, basic Skill Checks: Appear 4% more often.. Spin 4% faster.. Whenever you hit a great, give 30% more progress.. Whenever you miss a basic Skill Check, hit a good Skill Check, or stop healing or repairing, lose all Tokens.",
+      "image": "https://cdn.nightlight.gg/img/perks/hyperfocus.png"
+    },
+    {
+      "id": "K24P02",
+      "name": "Hysteria",
+      "role": "killer",
+      "characterId": "K24",
+      "characterName": "The Nemesis",
+      "categories": [
+        "trickery"
+      ],
+      "description": "Whenever a healthy Survivor becomes injured, all injured Survivors gain for 40s. Cooldown: 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/hysteria.png"
+    },
+    {
+      "id": "ImAllEars",
+      "name": "I'm All Ears",
+      "role": "killer",
+      "characterId": "Ghostface",
+      "characterName": "The Ghost Face",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever a Survivor fast-enters or fast-exits a Locker, or medium or fast-vaults within 48m of you, you see their Aura for 8s. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/im-all-ears.png"
+    },
+    {
+      "id": "InfectiousFright",
+      "name": "Infectious Fright",
+      "role": "killer",
+      "characterId": "Plague",
+      "characterName": "The Plague",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever a Survivor is downed, Survivors within your Terror Radius scream and you are alerted for 6s.",
+      "image": "https://cdn.nightlight.gg/img/perks/infectious-fright.png"
+    },
+    {
+      "id": "S31P01",
+      "name": "Inner Focus",
+      "role": "survivor",
+      "characterId": "S31",
+      "characterName": "Haddie Kaur",
+      "categories": [],
+      "description": "Whenever the Killer damages another Survivor, you see the Killer's Aura for 10s. You see other Survivors' Scratch Marks.",
+      "image": "https://cdn.nightlight.gg/img/perks/inner-focus.png"
+    },
+    {
+      "id": "InnerStrength",
+      "name": "Inner Strength",
+      "role": "survivor",
+      "characterId": "Nancy",
+      "characterName": "Nancy Wheeler",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "Whenever you cleanse a Totem, while injured and not , after hiding in a Locker for 8s, you become healthy instantly.",
+      "image": "https://cdn.nightlight.gg/img/perks/inner-strength.png"
+    },
+    {
+      "id": "Insidious",
+      "name": "Insidious",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "trickery"
+      ],
+      "description": "After being idle for 2s, gain. Whenever you act, this ends after 8s.",
+      "image": "https://cdn.nightlight.gg/img/perks/insidious.png"
+    },
+    {
+      "id": "S45P01",
+      "name": "Invocation: Treacherous Crows",
+      "role": "survivor",
+      "characterId": "S45",
+      "characterName": "Taurie Cain",
+      "categories": [],
+      "description": "While in the Basement next to the circle, use to invoke. While invoking, other Survivors see your Aura and can join your Invocation. When the Invocation is completed: Whenever the Killer scares a Crow while a Survivor is in their Terror Radius, all Survivors see the Killer's Aura for 2s.. You become injured.. You gain.. Each Invocation can only be completed once per trial.",
+      "image": "https://cdn.nightlight.gg/img/perks/invocation-treacherous-crows.png"
+    },
+    {
+      "id": "S41P01",
+      "name": "Invocation: Weaving Spiders",
+      "role": "survivor",
+      "characterId": "S41",
+      "characterName": "Sable Ward",
+      "categories": [],
+      "description": "While in the Basement next to the circle, use to invoke. While invoking, other Survivors see your Aura and can join your Invocation. When the Invocation is completed: All Generators gain 10 permanent charges.. You become injured.. You gain.. Each Invocation can only be completed once per trial.",
+      "image": "https://cdn.nightlight.gg/img/perks/invocation-weaving-spiders.png"
+    },
+    {
+      "id": "Iron_Grasp",
+      "name": "Iron Grasp",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "enhancement"
+      ],
+      "description": "While carrying a Survivor: They wiggle 12% slower.. Their wiggle is 75% weaker..",
+      "image": "https://cdn.nightlight.gg/img/perks/iron-grasp.png"
+    },
+    {
+      "id": "Ironmaiden",
+      "name": "Iron Maiden",
+      "role": "killer",
+      "characterId": "Legion",
+      "characterName": "The Legion",
+      "categories": [
+        "tracking",
+        "trickery"
+      ],
+      "description": "Whenever a Survivor exits a Locker: They gain for 30s.. They scream, then you are alerted to their location for 4s.. You open Lockers 50% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/iron-maiden.png"
+    },
+    {
+      "id": "Iron_Will",
+      "name": "Iron Will",
+      "role": "survivor",
+      "characterId": "Jake",
+      "characterName": "Jake Park",
+      "categories": [
+        "concealment"
+      ],
+      "description": "While injured and not , your Grunts of Pain are 100% quieter.",
+      "image": "https://cdn.nightlight.gg/img/perks/iron-will.png"
+    },
+    {
+      "id": "Kindred",
+      "name": "Kindred",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "perception"
+      ],
+      "description": "While you are hooked, all Survivors see each others' Auras. While the Killer is within 16m, all Survivors sees the Killer's Aura. While another Survivor is hooked, you see the Auras of other Survivors. While the Killer is within 16m of the hooked Survivor, you see the Killer's Aura.",
+      "image": "https://cdn.nightlight.gg/img/perks/kindred.png"
+    },
+    {
+      "id": "InTheDark",
+      "name": "Knock Out",
+      "role": "killer",
+      "characterId": "Cannibal",
+      "characterName": "The Cannibal",
+      "categories": [
+        "trickery"
+      ],
+      "description": "Whenever a Survivor drops a Pallet, for the next 6s, if they move 10m away from it, they gain 20% for 4s. This ends early if the Pallet is broken.",
+      "image": "https://cdn.nightlight.gg/img/perks/knock-out.png"
+    },
+    {
+      "id": "K36P02",
+      "name": "Languid Touch",
+      "role": "killer",
+      "characterId": "K36",
+      "characterName": "The Lich",
+      "categories": [],
+      "description": "Whenever a Survivor within 36m of you scares a Crow, they gain for 10s. Cooldown: 5s.",
+      "image": "https://cdn.nightlight.gg/img/perks/languid-touch.png"
+    },
+    {
+      "id": "S48P02",
+      "name": "Last Stand",
+      "role": "survivor",
+      "characterId": "S48",
+      "characterName": "Michonne Grimes",
+      "categories": [],
+      "description": "After hiding for 90s within the Killer's Terror Radius, when you fast-vault, once per trial, stun the Killer for 3s if they are within 2.5m.",
+      "image": "https://cdn.nightlight.gg/img/perks/last-stand.png"
+    },
+    {
+      "id": "K44P03",
+      "name": "Lay Waste",
+      "role": "killer",
+      "characterId": "K44",
+      "characterName": "The Judgment",
+      "categories": [],
+      "description": "Whenever you damage a Generator, for each Charge it has, it regresses 2% faster. Cooldown: 45s.",
+      "image": "https://cdn.nightlight.gg/img/perks/lay-waste.png"
+    },
+    {
+      "id": "Leader",
+      "name": "Leader",
+      "role": "survivor",
+      "characterId": "Dwight",
+      "characterName": "Dwight Fairfield",
+      "categories": [
+        "strategy",
+        "support"
+      ],
+      "description": "Within 10m of you, other Survivors: Cleanse Totems 30% faster.. Heal 30% faster.. Open Exit Gates 30% faster.. Sabotage Hooks 30% faster.. Unhook Survivors 30% faster.. Unlock Chests 30% faster.. After they leave your range, this ends after 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/leader.png"
+    },
+    {
+      "id": "LeftBehind",
+      "name": "Left Behind",
+      "role": "survivor",
+      "characterId": "Bill",
+      "characterName": "William \"Bill\" Overbeck",
+      "categories": [
+        "strategy",
+        "adaptation"
+      ],
+      "description": "When all other Survivors are dead, while within 32m of the Hatch, you see its Aura.",
+      "image": "https://cdn.nightlight.gg/img/perks/left-behind.png"
+    },
+    {
+      "id": "S53P02",
+      "name": "Lend a Hand",
+      "role": "survivor",
+      "characterId": "S53",
+      "characterName": "Shane Wiigwaas",
+      "categories": [],
+      "description": "Whenever you bless or cleanse 1 Totem, while healing another Survivor and only once per Survivor, use to give them 4 permanent healing charges.",
+      "image": "https://cdn.nightlight.gg/img/perks/lend-a-hand.png"
+    },
+    {
+      "id": "K24P01",
+      "name": "Lethal Pursuer",
+      "role": "killer",
+      "characterId": "K24",
+      "characterName": "The Nemesis",
+      "categories": [
+        "tracking"
+      ],
+      "description": "When the trial starts, you see the Auras of all Survivors for 9s. Whenever you see a Survivor's Aura for a duration, it is 2s longer.",
+      "image": "https://cdn.nightlight.gg/img/perks/lethal-pursuer.png"
+    },
+    {
+      "id": "K31P03",
+      "name": "Leverage",
+      "role": "killer",
+      "characterId": "K31",
+      "characterName": "The Skull Merchant",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Whenever a Survivor unhooks another or themselves, they heal 30% slower for 60s.",
+      "image": "https://cdn.nightlight.gg/img/perks/leverage.png"
+    },
+    {
+      "id": "S39P03",
+      "name": "Light-footed",
+      "role": "survivor",
+      "characterId": "S39",
+      "characterName": "Ellen Ripley",
+      "categories": [],
+      "description": "While healthy and running, your footsteps are silent to the Killer. Whenever you do a fast-action, cooldown: 10s.",
+      "image": "https://cdn.nightlight.gg/img/perks/light-footed.png"
+    },
+    {
+      "id": "Lightborn",
+      "name": "Lightborn",
+      "role": "killer",
+      "characterId": "HillBilly",
+      "characterName": "The Hillbilly",
+      "categories": [
+        "enhancement"
+      ],
+      "description": "Whenever a Survivor attempts to blind you, you see their Aura for 10s. You cannot be blinded.",
+      "image": "https://cdn.nightlight.gg/img/perks/lightborn.png"
+    },
+    {
+      "id": "Lightweight",
+      "name": "Lightweight",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "navigation"
+      ],
+      "description": "Your Scratch Marks disappear 5s faster and appear more spread out.",
+      "image": "https://cdn.nightlight.gg/img/perks/lightweight.png"
+    },
+    {
+      "id": "Lithe",
+      "name": "Lithe",
+      "role": "survivor",
+      "characterId": "Feng",
+      "characterName": "Feng Min",
+      "categories": [
+        "navigation"
+      ],
+      "description": "Whenever you medium or fast-vault: You gain 50% for 3s.. You gain for 40s..",
+      "image": "https://cdn.nightlight.gg/img/perks/lithe.png"
+    },
+    {
+      "id": "S32P03",
+      "name": "Low Profile",
+      "role": "survivor",
+      "characterId": "S32",
+      "characterName": "Ada Wong",
+      "categories": [],
+      "description": "When all other Survivors are downed or hooked, for 90s: You make no Grunts of Pain.. You leave no Pools of Blood.. You leave no Scratch Marks..",
+      "image": "https://cdn.nightlight.gg/img/perks/low-profile.png"
+    },
+    {
+      "id": "LuckyBreak",
+      "name": "Lucky Break",
+      "role": "survivor",
+      "characterId": "Yui",
+      "characterName": "Yui Kimura",
+      "categories": [
+        "concealment"
+      ],
+      "description": "While injured, for up to 60s: You leave no Pools of Blood.. You leave no Scratch Marks.. For each second spent healing another Survivor, recharge the duration by 1s.",
+      "image": "https://cdn.nightlight.gg/img/perks/lucky-break.png"
+    },
+    {
+      "id": "S39P01",
+      "name": "Lucky Star",
+      "role": "survivor",
+      "characterId": "S39",
+      "characterName": "Ellen Ripley",
+      "categories": [],
+      "description": "While hiding in a Locker, you make no Grunts of Pain. Whenever you exit a Locker, for 30s: You see the Aura of the closest Generator.. You see the Auras of other Survivors.. You make no Grunts of Pain.. You leave no Pools of Blood.. Cooldown: 25s.",
+      "image": "https://cdn.nightlight.gg/img/perks/lucky-star.png"
+    },
+    {
+      "id": "K32P03",
+      "name": "Machine Learning",
+      "role": "killer",
+      "characterId": "K32",
+      "characterName": "The Singularity",
+      "categories": [
+        "enhancement",
+        "chasing"
+      ],
+      "description": "Whenever you damage a Generator, it becomes compromised. When any compromised Generator is completed by Survivors: You gain 8% for 60s.. You gain for 60s.. Other Generators lose compromised.. Up to 3 Generators can be compromised at a time.",
+      "image": "https://cdn.nightlight.gg/img/perks/machine-learning.png"
+    },
+    {
+      "id": "MadGrit",
+      "name": "Mad Grit",
+      "role": "killer",
+      "characterId": "Legion",
+      "characterName": "The Legion",
+      "categories": [
+        "cruelty"
+      ],
+      "description": "While carrying a Survivor: Whenever you miss a basic-attack, your cooldown is 100% shorter.. Whenever you damage a Survivor with a basic attack, the carried Survivor gains no wiggle progress for 4s..",
+      "image": "https://cdn.nightlight.gg/img/perks/mad-grit.png"
+    },
+    {
+      "id": "S37P02",
+      "name": "Made for This",
+      "role": "survivor",
+      "characterId": "S37",
+      "characterName": "Gabriel Soma",
+      "categories": [
+        "safeguard"
+      ],
+      "description": "While injured, whenever you finish healing another Survivor, you gain for 10s. While you are running and have , you gain 3%.",
+      "image": "https://cdn.nightlight.gg/img/perks/made-for-this.png"
+    },
+    {
+      "id": "MakeYourChoice",
+      "name": "Make your Choice",
+      "role": "killer",
+      "characterId": "Pig",
+      "characterName": "The Pig",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Whenever a Survivor unhooks another or themselves while you are at least 32m away: They scream.. They gain for 60s.. Cooldown: 60s.",
+      "image": "https://cdn.nightlight.gg/img/perks/make-your-choice.png"
+    },
+    {
+      "id": "K27P03",
+      "name": "Merciless Storm",
+      "role": "killer",
+      "characterId": "K27",
+      "characterName": "The Onryō",
+      "categories": [],
+      "description": "The first time each Generator has 90% progress: Survivors repairing it get special Skill Checks. If they miss one of these or stop repairing, that Generator is blocked for 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/merciless-storm.png"
+    },
+    {
+      "id": "TheMettleOfMan",
+      "name": "Mettle of Man",
+      "role": "survivor",
+      "characterId": "Ash",
+      "characterName": "Ashley J. Williams",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "After taking 3 protection hits, while injured and until you go down, the next time you would be downed by the Killer, take no damage instead. When you become healthy, while you are at least 16m from the Killer, they see your Aura. When the trial starts, you are more likely to be the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/mettle-of-man.png"
+    },
+    {
+      "id": "Mindbreaker",
+      "name": "Mindbreaker",
+      "role": "killer",
+      "characterId": "Demogorgon",
+      "characterName": "The Demogorgon",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "While Survivors are repairing a Generator: They gain.. They gain.. When they stop repairing a Generator, this ends after 5s.",
+      "image": "https://cdn.nightlight.gg/img/perks/mindbreaker.png"
+    },
+    {
+      "id": "S42P01",
+      "name": "Mirrored Illusion",
+      "role": "survivor",
+      "characterId": "S42",
+      "characterName": "Aestri Yazar",
+      "categories": [],
+      "description": "After repairing 20% of Generators, while next to a Chest, Exit Gate Switch, Generator, or Totem, use to create a static illusion for 60s.",
+      "image": "https://cdn.nightlight.gg/img/perks/mirrored-illusion.png"
+    },
+    {
+      "id": "S44P03",
+      "name": "Moment of Glory",
+      "role": "survivor",
+      "characterId": "S44",
+      "characterName": "Trevor Belmont",
+      "categories": [],
+      "description": "After you rummage or unlock 1 Chest, while not , when you become injured, gain. After 60s, if you are not downed, you are instantly healed.",
+      "image": "https://cdn.nightlight.gg/img/perks/moment-of-glory.png"
+    },
+    {
+      "id": "MonitorAndAbuse",
+      "name": "Monitor & Abuse",
+      "role": "killer",
+      "characterId": "Killer07",
+      "characterName": "The Doctor",
+      "categories": [
+        "tracking",
+        "trickery"
+      ],
+      "description": "While chasing a Survivor, your Terror Radius is 15% bigger. While not chasing a Survivor, your Terror Radius is 25% smaller.",
+      "image": "https://cdn.nightlight.gg/img/perks/monitor-abuse.png"
+    },
+    {
+      "id": "Nemesis",
+      "name": "Nemesis",
+      "role": "killer",
+      "characterId": "Oni",
+      "characterName": "The Oni",
+      "categories": [
+        "trickery",
+        "tracking"
+      ],
+      "description": "Whenever a Survivor blinds you, Locker-stuns or Pallet-stuns you, they become the Obsession. Whenever a Survivor becomes the Obsession: They gain for 60s.. You see their Aura for 8s..",
+      "image": "https://cdn.nightlight.gg/img/perks/nemesis.png"
+    },
+    {
+      "id": "NoMither",
+      "name": "No Mither",
+      "role": "survivor",
+      "characterId": "Smoke",
+      "characterName": "David King",
+      "categories": [
+        "adaptation",
+        "concealment"
+      ],
+      "description": "When the trial starts, you become injured, then: You gain.. Your Grunts of Pain are 100% quieter.. You leave no Pools of Blood.. You recover 25% faster.. You can fully recover..",
+      "image": "https://cdn.nightlight.gg/img/perks/no-mither.png"
+    },
+    {
+      "id": "No_One_Left_Behind",
+      "name": "No One Left Behind",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "safeguard"
+      ],
+      "description": "When all Generators are completed: You heal other Survivors 100% faster.. You unhook other Survivors 100% faster.. Whenever you unhook a Survivor, they gain 10% more.. You see the Auras of other Survivors..",
+      "image": "https://cdn.nightlight.gg/img/perks/no-one-left-behind.png"
+    },
+    {
+      "id": "K38P03",
+      "name": "No Quarter",
+      "role": "killer",
+      "characterId": "K38",
+      "characterName": "The Houndmaster",
+      "categories": [],
+      "description": "While self-healing, whenever a Survivor has 75% progress, they get special Skill Checks. If they miss one of these or stop healing, they gain for 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/no-quarter.png"
+    },
+    {
+      "id": "K23P03",
+      "name": "No Way Out",
+      "role": "killer",
+      "characterId": "K23",
+      "characterName": "The Trickster",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "The first time you Hook each Survivor, you earn 1 Token. When all Generators are completed, when a Survivor starts opening an Exit Gate: It is blocked 12s, plus 12s for each Token.. You are alerted..",
+      "image": "https://cdn.nightlight.gg/img/perks/no-way-out.png"
+    },
+    {
+      "id": "K39P03",
+      "name": "None Are Free",
+      "role": "killer",
+      "characterId": "K39",
+      "characterName": "The Ghoul",
+      "categories": [],
+      "description": "The first time you hook each Survivor, earn 1 Token. When all Generators are completed, for each Token: Upright Pallets are blocked for 16s.. Windows are blocked for 16s..",
+      "image": "https://cdn.nightlight.gg/img/perks/none-are-free.png"
+    },
+    {
+      "id": "K30P01",
+      "name": "Nowhere to Hide",
+      "role": "killer",
+      "characterId": "K30",
+      "characterName": "The Knight",
+      "categories": [],
+      "description": "Whenever you damage a Generator, for 5s, you see the Auras of Survivors within 24m of it.",
+      "image": "https://cdn.nightlight.gg/img/perks/nowhere-to-hide.png"
+    },
+    {
+      "id": "ObjectOfObsession",
+      "name": "Object of Obsession",
+      "role": "survivor",
+      "characterId": "Laurie",
+      "characterName": "Laurie Strode",
+      "categories": [
+        "perception"
+      ],
+      "description": "While you are the Obsession, every 30s, the Killer sees your Aura for 4s. While the Killer sees your Aura: You see their Aura.. You bless and cleanse Totems 10% faster.. You heal 10% faster.. You repair 10% faster.. When the trial starts, you are more likely to be the Obsession.",
+      "image": "https://cdn.nightlight.gg/img/perks/object-of-obsession.png"
+    },
+    {
+      "id": "OffTheRecord",
+      "name": "Off the Record",
+      "role": "survivor",
+      "characterId": "Zarina",
+      "characterName": "Zarina Kassir",
+      "categories": [
+        "concealment"
+      ],
+      "description": "Until all Generators are completed, whenever you are unhooked, for the next 40s: You gain.. Your Grunts of Pain are 100% quieter.. The Killer cannot see your Aura..",
+      "image": "https://cdn.nightlight.gg/img/perks/off-the-record.png"
+    },
+    {
+      "id": "S49P02",
+      "name": "ONE-TWO-THREE-FOUR!",
+      "role": "survivor",
+      "characterId": "S49",
+      "characterName": "Vee Boonyasak",
+      "categories": [],
+      "description": "While idle, use to perform, empowering all Survivors within 16m for up to 15s. While you are performing, other Survivors will see your Aura. You get special Skill Checks during that time: while healing or repairing, basic Skill Checks are 20% more likely to appear. If you complete the performance, the effect ends after 90s. Cooldown: 90s.",
+      "image": "https://cdn.nightlight.gg/img/perks/one-two-three-four.png"
+    },
+    {
+      "id": "Open_Handed",
+      "name": "Open-Handed",
+      "role": "survivor",
+      "characterId": "Ace",
+      "characterName": "Ace Visconti",
+      "categories": [
+        "support",
+        "navigation"
+      ],
+      "description": "All Survivors see Auras that have a range from 16m farther.",
+      "image": "https://cdn.nightlight.gg/img/perks/open-handed.png"
+    },
+    {
+      "id": "K22P02",
+      "name": "Oppression",
+      "role": "killer",
+      "characterId": "K22",
+      "characterName": "The Twins",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Whenever you damage a Generator, up to 4 other Generators start regressing. Survivors repairing them get a special Skill Check. Cooldown: 35s.",
+      "image": "https://cdn.nightlight.gg/img/perks/oppression.png"
+    },
+    {
+      "id": "GeneratorOvercharge",
+      "name": "Overcharge",
+      "role": "killer",
+      "characterId": "Killer07",
+      "characterName": "The Doctor",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Whenever you damage a Generator: Its regression speed will go from 85% to 130% over the next 30s.. The next Survivor who starts repairing it gets a special Skill Check. If they miss it, they lose 4% more progress..",
+      "image": "https://cdn.nightlight.gg/img/perks/overcharge.png"
+    },
+    {
+      "id": "S29P01",
+      "name": "Overcome",
+      "role": "survivor",
+      "characterId": "S29",
+      "characterName": "Jonah Vasquez",
+      "categories": [],
+      "description": "Whenever you take damage: You retain your speed boost for 2s longer.. You gain for 40s..",
+      "image": "https://cdn.nightlight.gg/img/perks/overcome.png"
+    },
+    {
+      "id": "OverwhelmingPresence",
+      "name": "Overwhelming Presence",
+      "role": "killer",
+      "characterId": "Killer07",
+      "characterName": "The Doctor",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Whenever a Survivor uses an item within 32m of you, they gain for 15s. Whenever a Survivor within 32m of you gains , you see the closest Survivor's Aura for 4s. Cooldown: 25s.",
+      "image": "https://cdn.nightlight.gg/img/perks/overwhelming-presence.png"
+    },
+    {
+      "id": "S31P03",
+      "name": "Overzealous",
+      "role": "survivor",
+      "characterId": "S31",
+      "characterName": "Haddie Kaur",
+      "categories": [],
+      "description": "Whenever you bless or cleanse a Totem, until you take damage, you repair 10% faster. If that Totem was a Hex Totem, the effect is doubled.",
+      "image": "https://cdn.nightlight.gg/img/perks/overzealous.png"
+    },
+    {
+      "id": "S30P01",
+      "name": "Parental Guidance",
+      "role": "survivor",
+      "characterId": "S30",
+      "characterName": "Yoichi Asakawa",
+      "categories": [],
+      "description": "Whenever you stun the Killer, for 7s: You make no Grunts of Pain.. You leave no Pools of Blood.. You leave no Scratch Marks..",
+      "image": "https://cdn.nightlight.gg/img/perks/parental-guidance.png"
+    },
+    {
+      "id": "K40P02",
+      "name": "Phantom Fear",
+      "role": "killer",
+      "characterId": "K40",
+      "characterName": "The Animatronic",
+      "categories": [],
+      "description": "Whenever a Survivor within your Terror Radius looks at you, they scream, then you see their Aura for 2s. Cooldown: 60s.",
+      "image": "https://cdn.nightlight.gg/img/perks/phantom-fear.png"
+    },
+    {
+      "id": "Pharmacy",
+      "name": "Pharmacy",
+      "role": "survivor",
+      "characterId": "Quentin",
+      "characterName": "Quentin Smith",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "Whenever you unlock a Chest, it will contain a rare Med-Kit. You unlock and rummage Chests 125% faster. You can rummage each Chest 1 time. The range at which the Killer hears you unlocking Chests is 12m shorter.",
+      "image": "https://cdn.nightlight.gg/img/perks/pharmacy.png"
+    },
+    {
+      "id": "Play_With_Your_Food",
+      "name": "Play With Your Food",
+      "role": "killer",
+      "characterId": "Shape",
+      "characterName": "The Shape",
+      "categories": [
+        "chasing"
+      ],
+      "description": "Whenever you stop chasing the Obsession, you earn 1 Token, up to 3. Cooldown: 10s. For each Token, gain 5%. Whenever you attack, lose 1 Token.",
+      "image": "https://cdn.nightlight.gg/img/perks/play-with-your-food.png"
+    },
+    {
+      "id": "S38P03",
+      "name": "Plot Twist",
+      "role": "survivor",
+      "characterId": "S38",
+      "characterName": "Nicolas Cage",
+      "categories": [],
+      "description": "While injured, crouched and idle, use to be downed silently. While downed this way, once per trial: You make no Grunts of Pain.. You leave no Pools of Blood.. You recover 25% faster.. You can fully recover.. Whenever you recover this way: You gain 50% for 4s.. You are healed instantly.. When all Generators are completed, you can use this ability once again.",
+      "image": "https://cdn.nightlight.gg/img/perks/plot-twist.png"
+    },
+    {
+      "id": "Plunderers_Instinct",
+      "name": "Plunderer's Instinct",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "perception"
+      ],
+      "description": "You see the Aura of Chests and items. You unlock Chests 200% faster. Whenever you unlock a Chest you are 50% more likely to find an Item of higher rarity.",
+      "image": "https://cdn.nightlight.gg/img/perks/plunderers-instinct.png"
+    },
+    {
+      "id": "Poised",
+      "name": "Poised",
+      "role": "survivor",
+      "characterId": "Jane",
+      "characterName": "Jane Romero",
+      "categories": [
+        "concealment"
+      ],
+      "description": "The first time you start repairing each Generator, you see the Killer's Aura for 8s. Whenever a Generator is completed, you leave no Scratch Marks for 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/poised.png"
+    },
+    {
+      "id": "pop_goes_the_weasel",
+      "name": "Pop Goes the Weasel",
+      "role": "killer",
+      "characterId": "Clown",
+      "characterName": "The Clown",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Whenever you hook a Survivor, for the next 45s, when you damage a Generator, it explodes and loses 15% more progress.",
+      "image": "https://cdn.nightlight.gg/img/perks/pop-goes-the-weasel.png"
+    },
+    {
+      "id": "S34P01",
+      "name": "Potential Energy",
+      "role": "survivor",
+      "characterId": "S34",
+      "characterName": "Vittorio Toscano",
+      "categories": [],
+      "description": "While repairing, use to earn Tokens instead of progress, up to 20 Tokens. While you have at least 1 Token, to spend all Tokens and gain 1% progress for each Token spent. Whenever you take damage, lose all Tokens.",
+      "image": "https://cdn.nightlight.gg/img/perks/potential-energy.png"
+    },
+    {
+      "id": "S24P03",
+      "name": "Power Struggle",
+      "role": "survivor",
+      "characterId": "S24",
+      "characterName": "Élodie Rakoto",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While carried by the Killer, while you have at least 15% wiggle and next to an Upright Pallet, you can drop it to stun the Killer. While downed, you see the Auras of Upright Pallets.",
+      "image": "https://cdn.nightlight.gg/img/perks/power-struggle.png"
+    },
+    {
+      "id": "Predator",
+      "name": "Predator",
+      "role": "killer",
+      "characterId": "Bob",
+      "characterName": "The Wraith",
+      "categories": [
+        "tracking"
+      ],
+      "description": "When you stop chasing a Survivor, you see their Aura for 4s. Cooldown: 40s.",
+      "image": "https://cdn.nightlight.gg/img/perks/predator.png"
+    },
+    {
+      "id": "Premonition",
+      "name": "Premonition",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "perception"
+      ],
+      "description": "While not chased by the Killer, whenever you look in the Killer’s direction within 32m: You are notified.. You see the Killer's Aura for 3s.. Cooldown: 45s.",
+      "image": "https://cdn.nightlight.gg/img/perks/premonition.png"
+    },
+    {
+      "id": "Prove_Thyself",
+      "name": "Prove Thyself",
+      "role": "survivor",
+      "characterId": "Dwight",
+      "characterName": "Dwight Fairfield",
+      "categories": [
+        "strategy",
+        "support"
+      ],
+      "description": "For each other Survivor within 4m of you, all Survivors repair 10% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/prove-thyself.png"
+    },
+    {
+      "id": "QuickQuiet",
+      "name": "Quick & Quiet",
+      "role": "survivor",
+      "characterId": "Meg",
+      "characterName": "Meg Thomas",
+      "categories": [
+        "navigation",
+        "concealment"
+      ],
+      "description": "You hide in Lockers and vault silently. The Killer is not alerted. Cooldown: 15s.",
+      "image": "https://cdn.nightlight.gg/img/perks/quick-quiet.png"
+    },
+    {
+      "id": "S34P03",
+      "name": "Quick Gambit",
+      "role": "survivor",
+      "characterId": "S34",
+      "characterName": "Vittorio Toscano",
+      "categories": [],
+      "description": "While chased by the Killer: You see the Auras of other Survivors.. Other Survivors repair 5% faster.. Whenever you take damage, cooldown: 40s.",
+      "image": "https://cdn.nightlight.gg/img/perks/quick-gambit.png"
+    },
+    {
+      "id": "K43P03",
+      "name": "Rampage",
+      "role": "killer",
+      "characterId": "K43",
+      "characterName": "The Slasher",
+      "categories": [],
+      "description": "Whenever you basic-break a Pallet or Breakable Wall, you earn 1 Token, up to 13. Whenever you are blinded or Pallet-stunned, for the next 13s you gain 1% for each Token. Cooldown: 20.",
+      "image": "https://cdn.nightlight.gg/img/perks/rampage.png"
+    },
+    {
+      "id": "Rancor",
+      "name": "Rancor",
+      "role": "killer",
+      "characterId": "Spirit",
+      "characterName": "The Spirit",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever a Generator is completed: You are alerted to the position of all Survivors for 3s.. The Obsession sees your Aura for 3s.. When all Generators are completed: The Obsession gains.. You can Kill the Obsession..",
+      "image": "https://cdn.nightlight.gg/img/perks/rancor.png"
+    },
+    {
+      "id": "K33P02",
+      "name": "Rapid Brutality",
+      "role": "killer",
+      "characterId": "K33",
+      "characterName": "The Xenomorph",
+      "categories": [],
+      "description": "Whenever you damage a Survivor with a basic-attack, you gain 5% for 10s. While chasing a Survivor, you cannot gain Bloodlust.",
+      "image": "https://cdn.nightlight.gg/img/perks/rapid-brutality.png"
+    },
+    {
+      "id": "S46P03",
+      "name": "Rapid Response",
+      "role": "survivor",
+      "characterId": "S46",
+      "characterName": "Orela Rose",
+      "categories": [],
+      "description": "Whenever you fast-exit a Locker, you gain for 20s. Whenever you gain , you see the Killer's Aura for 2s.",
+      "image": "https://cdn.nightlight.gg/img/perks/rapid-response.png"
+    },
+    {
+      "id": "K41P01",
+      "name": "Ravenous",
+      "role": "killer",
+      "characterId": "K41",
+      "characterName": "The Krasue",
+      "categories": [],
+      "description": "The first time you hook each Survivor, you earn 1 Token. For each Token: Gain 4% while carrying a Survivor.. Hook Survivors 4% faster.. When you have 4 Tokens, all Survivors: Scream.. Gain for 90s..",
+      "image": "https://cdn.nightlight.gg/img/perks/ravenous.png"
+    },
+    {
+      "id": "S32P02",
+      "name": "Reactive Healing",
+      "role": "survivor",
+      "characterId": "S32",
+      "characterName": "Ada Wong",
+      "categories": [],
+      "description": "While injured, whenever another Survivor within 32m of you takes damage, you gain 50% missing healing progress.",
+      "image": "https://cdn.nightlight.gg/img/perks/reactive-healing.png"
+    },
+    {
+      "id": "S33P02",
+      "name": "Reassurance",
+      "role": "survivor",
+      "characterId": "S33",
+      "characterName": "Rebecca Chambers",
+      "categories": [],
+      "description": "Once per Hook State, while within 6m of a hooked Survivor, use to stop the sacrifice progress for 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/reassurance.png"
+    },
+    {
+      "id": "RedHerring",
+      "name": "Red Herring",
+      "role": "survivor",
+      "characterId": "Zarina",
+      "characterName": "Zarina Kassir",
+      "categories": [
+        "concealment"
+      ],
+      "description": "After you repair a Generator for at least 1s, you see its Aura. When you hide in a Locker, the Killer is alerted to the Generator. Cooldown: 15s.",
+      "image": "https://cdn.nightlight.gg/img/perks/red-herring.png"
+    },
+    {
+      "id": "RememberMe",
+      "name": "Remember Me",
+      "role": "killer",
+      "characterId": "Nightmare",
+      "characterName": "The Nightmare",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Whenever the Obsession takes damage, you earn 1 Token, up to 5. For each Token, Survivors who are not the Obsession open Exit Gates 30% slower.",
+      "image": "https://cdn.nightlight.gg/img/perks/remember-me.png"
+    },
+    {
+      "id": "RepressedAlliance",
+      "name": "Repressed Alliance ",
+      "role": "survivor",
+      "characterId": "S22",
+      "characterName": "Cheryl Mason",
+      "categories": [
+        "strategy"
+      ],
+      "description": "After repairing Generators for 30s, while repairing a Generator alone, use to block that generator for 15s.",
+      "image": "https://cdn.nightlight.gg/img/perks/repressed-alliance.png"
+    },
+    {
+      "id": "S31P02",
+      "name": "Residual Manifest",
+      "role": "survivor",
+      "characterId": "S31",
+      "characterName": "Haddie Kaur",
+      "categories": [],
+      "description": "Whenever you blind the Killer, they gain for 30s. You can rummage Chests 1 time. The first time you rummage a Chest, it will contain an uncommon Flashlight.",
+      "image": "https://cdn.nightlight.gg/img/perks/residual-manifest.png"
+    },
+    {
+      "id": "Resilience",
+      "name": "Resilience",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "navigation",
+        "safeguard",
+        "strategy"
+      ],
+      "description": "While injured: You bless and cleanse Totems 9% faster.. You heal 9% faster.. You open Exit Gates 9% faster.. You repair 9% faster.. You sabotage Hooks 9% faster.. You unhook Survivors 9% faster.. You unlock chests 9% faster.. You vault 9% faster..",
+      "image": "https://cdn.nightlight.gg/img/perks/resilience.png"
+    },
+    {
+      "id": "S26P02",
+      "name": "Resurgence",
+      "role": "survivor",
+      "characterId": "S26",
+      "characterName": "Jill Valentine",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "Whenever you are unhooked, you gain 70% healing progress.",
+      "image": "https://cdn.nightlight.gg/img/perks/resurgence.png"
+    },
+    {
+      "id": "S49P01",
+      "name": "Road Life",
+      "role": "survivor",
+      "characterId": "S49",
+      "characterName": "Vee Boonyasak",
+      "categories": [],
+      "description": "While injured and repairing a Generator: Whenever you hit a great basic Skill Check, you earn 1 Token.. Whenever you miss a basic Skill Check, you lose 1 token.. When you have 4 Tokens, you can heal yourself. Spend all Tokens to heal yourself 10% faster. When you stop healing, this ends after 4s.",
+      "image": "https://cdn.nightlight.gg/img/perks/road-life.png"
+    },
+    {
+      "id": "S27P03",
+      "name": "Rookie Spirit",
+      "role": "survivor",
+      "characterId": "S27",
+      "characterName": "Leon S. Kennedy",
+      "categories": [
+        "perception"
+      ],
+      "description": "After you hit 3 basic repair Skill Checks, while a Generator is regressing, you see its Aura.",
+      "image": "https://cdn.nightlight.gg/img/perks/rookie-spirit.png"
+    },
+    {
+      "id": "Saboteur",
+      "name": "Saboteur",
+      "role": "survivor",
+      "characterId": "Jake",
+      "characterName": "Jake Park",
+      "categories": [
+        "strategy"
+      ],
+      "description": "Within 56m of where another Survivor was picked-up by the Killer and is being carried, you see the Auras of Hooks and Scourge Hooks. You can sabotage Hooks. Cooldown: 60s.",
+      "image": "https://cdn.nightlight.gg/img/perks/saboteur.png"
+    },
+    {
+      "id": "S54P02",
+      "name": "Salvation's Cry",
+      "role": "survivor",
+      "characterId": "S54",
+      "characterName": "Aurora Stardotter",
+      "categories": [],
+      "description": "Whenever the Killer starts chasing you: You see the Auras of other Survivors for 3s.. Survivors not being chased see your Aura for 5s.. Survivors not being chased see the Killer's Aura for 5s..",
+      "image": "https://cdn.nightlight.gg/img/perks/salvations-cry.png"
+    },
+    {
+      "id": "Save_The_Best_For_Last",
+      "name": "Save the best for last",
+      "role": "killer",
+      "characterId": "Shape",
+      "characterName": "The Shape",
+      "categories": [
+        "cruelty"
+      ],
+      "description": "Whenever you damage a Survivor who is not the Obsession with a basic-attack, you earn 1 Token, up to 8. For each Token, your successful basic-attack cooldown is 5% shorter. Whenever the Obsession takes damage, lose 2 Tokens. While the Obsession is dead, you cannot earn Tokens.",
+      "image": "https://cdn.nightlight.gg/img/perks/save-the-best-for-last.png"
+    },
+    {
+      "id": "S37P03",
+      "name": "Scavenger",
+      "role": "survivor",
+      "characterId": "S37",
+      "characterName": "Gabriel Soma",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While repairing and while your Toolbox is empty, whenever you hit a great basic Skill Check, you earn 1 Token. When you have 5 Tokens, spend them all: Your Toolbox is recharged instantly.. You repair 50% slower for 30s.. You can rummage Chests 1 time. The first time you rummage a Chest, it will contain an uncommon Toolbox.",
+      "image": "https://cdn.nightlight.gg/img/perks/scavenger.png"
+    },
+    {
+      "id": "S38P02",
+      "name": "Scene Partner",
+      "role": "survivor",
+      "characterId": "S38",
+      "characterName": "Nicolas Cage",
+      "categories": [],
+      "description": "While you are within the Killer's Terror Radius, whenever you look at them: Scream, then see the Killer's Aura for 6s.. There is a 50% chance you will scream again. If you do, you see the Killer's Aura for 2s more.. Cooldown: 40s.",
+      "image": "https://cdn.nightlight.gg/img/perks/scene-partner.png"
+    },
+    {
+      "id": "K27P01",
+      "name": "Scourge Hook: Floods of Rage",
+      "role": "killer",
+      "characterId": "K27",
+      "characterName": "The Onryō",
+      "categories": [],
+      "description": "When the trial starts, 4 random Hooks become Scourge Hooks. Whenever a Survivor is unhooked from a Scourge Hook, you see the Auras of other Survivors for 7s.",
+      "image": "https://cdn.nightlight.gg/img/perks/scourge-hook-floods-of-rage.png"
+    },
+    {
+      "id": "K25P03",
+      "name": "Scourge Hook: Gift of Pain",
+      "role": "killer",
+      "characterId": "K25",
+      "characterName": "The Cenobite",
+      "categories": [],
+      "description": "When the trial starts, 4 random Hooks become Scourge Hooks. Whenever a Survivor is unhooked from a Scourge Hook: They gain for 90s.. They gain for 90s.. When they are healed, until they take damage, they heal and repair 16% slower..",
+      "image": "https://cdn.nightlight.gg/img/perks/scourge-hook-gift-of-pain.png"
+    },
+    {
+      "id": "HangmansTrick",
+      "name": "Scourge Hook: Hangman's Trick",
+      "role": "killer",
+      "characterId": "Pig",
+      "characterName": "The Pig",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "When the trial starts, 4 random Hooks become Scourge Hooks. While carrying a Survivor, you see the Auras of Survivors within 16m of Scourge Hooks. Whenever a Survivor starts sabotaging a Hook, you are alerted.",
+      "image": "https://cdn.nightlight.gg/img/perks/scourge-hook-hangmans-trick.png"
+    },
+    {
+      "id": "K38P02",
+      "name": "Scourge Hook: Jagged Compass",
+      "role": "killer",
+      "characterId": "K38",
+      "characterName": "The Houndmaster",
+      "categories": [],
+      "description": "When the trial starts, 4 random Hooks become Scourge Hooks. Whenever a Survivor is unhooked, the Hook becomes a Scourge Hook. Whenever you hook a Survivor on a Scourge Hook, for 10s, you see the Aura of the Generator with the most progress.",
+      "image": "https://cdn.nightlight.gg/img/perks/scourge-hook-jagged-compass.png"
+    },
+    {
+      "id": "Monstrous_Shrine",
+      "name": "Scourge Hook: Monstrous Shrine",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "hinderance"
+      ],
+      "description": "When the Trial starts: 4 random Hooks become Scourge Hooks.. The Basement Hooks become Scourge Hooks.. While you are at least 24m away from a Survivor on a Scourge Hook, any Generator that isn't being repaired regresses at 200% speed.",
+      "image": "https://cdn.nightlight.gg/img/perks/scourge-hook-monstrous-shrine.png"
+    },
+    {
+      "id": "K26P02",
+      "name": "Scourge Hook: Pain Resonance",
+      "role": "killer",
+      "characterId": "K26",
+      "characterName": "The Artist",
+      "categories": [],
+      "description": "When the trial starts: 4 random Hooks become Scourge Hooks.. You earn 4 Tokens.. The first time each Survivor is hooked on a Scourge Hook, spend 1 Token, then the Generator with the most progress: Explodes, loses 20% progress and starts regressing.. Survivors repairing it scream..",
+      "image": "https://cdn.nightlight.gg/img/perks/scourge-hook-pain-resonance.png"
+    },
+    {
+      "id": "SecondWind",
+      "name": "Second Wind",
+      "role": "survivor",
+      "characterId": "Steve",
+      "characterName": "Steve Harrington",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "After you heal 1 Survivor, while not , when you are unhooked, you gain. After 20s, if you are not downed, you are instantly healed.",
+      "image": "https://cdn.nightlight.gg/img/perks/second-wind.png"
+    },
+    {
+      "id": "K42P02",
+      "name": "Secret Project",
+      "role": "killer",
+      "characterId": "K42",
+      "characterName": "The First",
+      "categories": [],
+      "description": "Whenever a Totem is blessed or cleansed, a random unblocked Generator is blocked for 30s. Whenever 1 or more Generators are blocked, you gain for 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/secret-project.png"
+    },
+    {
+      "id": "Self_Care",
+      "name": "Self-Care",
+      "role": "survivor",
+      "characterId": "Claudette",
+      "characterName": "Claudette Morel",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "You can heal yourself, but 65% slower.",
+      "image": "https://cdn.nightlight.gg/img/perks/self-care.png"
+    },
+    {
+      "id": "S25P03",
+      "name": "Self-Preservation",
+      "role": "survivor",
+      "characterId": "S25",
+      "characterName": "Lee Yun-jin",
+      "categories": [
+        "concealment"
+      ],
+      "description": "Whenever another Survivor is hooked, you gain for 15s.",
+      "image": "https://cdn.nightlight.gg/img/perks/self-preservation.png"
+    },
+    {
+      "id": "K28P03",
+      "name": "Septic Touch",
+      "role": "killer",
+      "characterId": "K28",
+      "characterName": "The Dredge",
+      "categories": [],
+      "description": "While a Survivor within your Terror Radius is healing: They gain.. They gain.. When they stop healing, this ends after 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/septic-touch.png"
+    },
+    {
+      "id": "Shadowborn",
+      "name": "Shadowborn",
+      "role": "killer",
+      "characterId": "Bob",
+      "characterName": "The Wraith",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever you are blinded, gain 10% for 10s.",
+      "image": "https://cdn.nightlight.gg/img/perks/shadowborn.png"
+    },
+    {
+      "id": "BoonDestroyer",
+      "name": "Shattered Hope",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [],
+      "description": "Whenever you snuff a Boon Totem, it is destroyed. Whenever a Totem is blessed, cleansed or destroyed: Dull Totems are blocked for 20s.. Hex Totems are blocked for 20s.. See Boon Totems' Auras for 20s..",
+      "image": "https://cdn.nightlight.gg/img/perks/shattered-hope.png"
+    },
+    {
+      "id": "S45P03",
+      "name": "Shoulder the Burden",
+      "role": "survivor",
+      "characterId": "S45",
+      "characterName": "Taurie Cain",
+      "categories": [],
+      "description": "Once per trial, if you have less than 2 Hook States while you are next to a hooked Survivor, use to unhook them: They lose 1 Hook State.. You gain 1 Hook State.. You scream.. You become Injured.. You gain for 120s..",
+      "image": "https://cdn.nightlight.gg/img/perks/shoulder-the-burden.png"
+    },
+    {
+      "id": "K43P02",
+      "name": "Silent Shadow",
+      "role": "killer",
+      "characterId": "K43",
+      "characterName": "The Slasher",
+      "categories": [],
+      "description": "Whenever you hook a Survivor, you gain for 13s. When all Generators are completed, you gain.",
+      "image": "https://cdn.nightlight.gg/img/perks/silent-shadow.png"
+    },
+    {
+      "id": "Slippery_Meat",
+      "name": "Slippery Meat",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "adaptation"
+      ],
+      "description": "Other Survivors unhook you 100% faster. Whenever you are unhooked, you gain 5% more Haste.",
+      "image": "https://cdn.nightlight.gg/img/perks/slippery-meat.png"
+    },
+    {
+      "id": "Sloppy_Butcher",
+      "name": "Sloppy Butcher",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "cruelty"
+      ],
+      "description": "Whenever you damage a Survivor with a basic-attack: They gain for s.. They gain for s.. Survivors with lose healing progress % faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/sloppy-butcher.png"
+    },
+    {
+      "id": "Small_Game",
+      "name": "Small Game",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "perception"
+      ],
+      "description": "Within 12m of a Totem, you see its Aura.",
+      "image": "https://cdn.nightlight.gg/img/perks/small-game.png"
+    },
+    {
+      "id": "S25P02",
+      "name": "Smash Hit",
+      "role": "survivor",
+      "characterId": "S25",
+      "characterName": "Lee Yun-jin",
+      "categories": [
+        "navigation"
+      ],
+      "description": "Whenever you Pallet-stun the Killer: You gain 50% for 4s.. You gain for 20s..",
+      "image": "https://cdn.nightlight.gg/img/perks/smash-hit.png"
+    },
+    {
+      "id": "SoleSurvivor",
+      "name": "Sole Survivor",
+      "role": "survivor",
+      "characterId": "Laurie",
+      "characterName": "Laurie Strode",
+      "categories": [
+        "concealment"
+      ],
+      "description": "Whenever you are hooked or complete a Generator, you earn 1 Token, up to 6. For each Token, other Survivors open Exit Gates 10% faster. When you are the last Survivor, if you have at least 3 Tokens: You can unlock the Hatch.. For each Token, the Killer cannot see your Aura for 10s..",
+      "image": "https://cdn.nightlight.gg/img/perks/sole-survivor.png"
+    },
+    {
+      "id": "Solidarity",
+      "name": "Solidarity",
+      "role": "survivor",
+      "characterId": "Jane",
+      "characterName": "Jane Romero",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While injured and healing another Survivor, you also gain healing progress at 75% speed.",
+      "image": "https://cdn.nightlight.gg/img/perks/solidarity.png"
+    },
+    {
+      "id": "SoulGuard",
+      "name": "Soul Guard",
+      "role": "survivor",
+      "characterId": "S22",
+      "characterName": "Cheryl Mason",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While hexed, you can fully recover. Whenever you fully recover, you gain for 8s. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/soul-guard.png"
+    },
+    {
+      "id": "S43P03",
+      "name": "Specialist",
+      "role": "survivor",
+      "characterId": "S43",
+      "characterName": "Lara Croft",
+      "categories": [],
+      "description": "Whenever you rummage or unlock a Chest, you earn 1 Token, up to 6. While repairing a Generator, whenever you hit a great basic Skill Check, spend all Tokens. For each Token spent, the Generator gains 4% permanent progress.",
+      "image": "https://cdn.nightlight.gg/img/perks/specialist.png"
+    },
+    {
+      "id": "Spies_From_The_Shadows",
+      "name": "Spies from the Shadows",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever a Survivor scares a Crow within 40m of you, you are alerted. Cooldown: 3s.",
+      "image": "https://cdn.nightlight.gg/img/perks/spies-from-the-shadows.png"
+    },
+    {
+      "id": "Spine_Chill",
+      "name": "Spine Chill",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "navigation",
+        "strategy"
+      ],
+      "description": "Whenever the Killer looks at you within 40m: You are notified.. You cannot scream for 12s.. You vault 10% faster for 12s.. Cooldown: 30s",
+      "image": "https://cdn.nightlight.gg/img/perks/spine-chill.png"
+    },
+    {
+      "id": "SpiritFury",
+      "name": "Spirit Fury",
+      "role": "killer",
+      "characterId": "Spirit",
+      "characterName": "The Spirit",
+      "categories": [
+        "chasing"
+      ],
+      "description": "After you break 2 Pallets, when you are Pallet-stunned, the Pallet is destroyed.",
+      "image": "https://cdn.nightlight.gg/img/perks/spirit-fury.png"
+    },
+    {
+      "id": "Sprint_Burst",
+      "name": "Sprint Burst",
+      "role": "survivor",
+      "characterId": "Meg",
+      "characterName": "Meg Thomas",
+      "categories": [
+        "navigation"
+      ],
+      "description": "Whenever you start running: You gain 50% for 2s.. You gain for 40s..",
+      "image": "https://cdn.nightlight.gg/img/perks/sprint-burst.png"
+    },
+    {
+      "id": "StakeOut",
+      "name": "Stake Out",
+      "role": "survivor",
+      "characterId": "Eric",
+      "characterName": "Detective Tapp",
+      "categories": [
+        "strategy"
+      ],
+      "description": "After hiding for 15s within 24m of the Killer, while in their Terror Radius, you earn 1 Token, up to 4. While you have at least 1 Token, basic Skill Checks are replaced by special Skill Checks. Special Skill Checks grant +4% more progress. Whenever you hit or miss a special Skill Check, spend 1 Token.",
+      "image": "https://cdn.nightlight.gg/img/perks/stake-out.png"
+    },
+    {
+      "id": "K23P01",
+      "name": "Starstruck",
+      "role": "killer",
+      "characterId": "K23",
+      "characterName": "The Trickster",
+      "categories": [
+        "cruelty"
+      ],
+      "description": "While carrying a Survivor, Survivors within your Terror Radius gain. This ends 30s after: They leave your Terror Radius.. You drop or Hook the carried Survivor.. Cooldown: 60s.",
+      "image": "https://cdn.nightlight.gg/img/perks/starstruck.png"
+    },
+    {
+      "id": "S42P03",
+      "name": "Still Sight",
+      "role": "survivor",
+      "characterId": "S42",
+      "characterName": "Aestri Yazar",
+      "categories": [],
+      "description": "After being idle for 2s, within 24m, until you start moving: You see the Killer's Aura.. You see the Auras of Chests.. You see the Auras of Generators..",
+      "image": "https://cdn.nightlight.gg/img/perks/still-sight.png"
+    },
+    {
+      "id": "Streetwise",
+      "name": "Streetwise",
+      "role": "survivor",
+      "characterId": "Nea",
+      "characterName": "Nea Karlsson",
+      "categories": [
+        "support"
+      ],
+      "description": "The first time you deplete an item's Charges, you see the Killer's Aura for 8s. Whenever you loot an item from a Chest, it has 80% more Charges.",
+      "image": "https://cdn.nightlight.gg/img/perks/streetwise.png"
+    },
+    {
+      "id": "S41P02",
+      "name": "Strength in Shadows",
+      "role": "survivor",
+      "characterId": "S41",
+      "characterName": "Sable Ward",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "While in the Basement: You can heal yourself, but 30% slower.. Whenever you finish healing, you see the Killer's Aura for 10s..",
+      "image": "https://cdn.nightlight.gg/img/perks/strength-in-shadows.png"
+    },
+    {
+      "id": "Stridor",
+      "name": "Stridor",
+      "role": "killer",
+      "characterId": "Nurse",
+      "characterName": "The Nurse",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Survivors' breathing noises are 25% louder and their Grunts of Pain are 50% louder.",
+      "image": "https://cdn.nightlight.gg/img/perks/stridor.png"
+    },
+    {
+      "id": "K29P01",
+      "name": "Superior Anatomy",
+      "role": "killer",
+      "characterId": "K29",
+      "characterName": "The Mastermind",
+      "categories": [],
+      "description": "Whenever a Survivor medium or fast-vaults within 12m of you, the next time you basic-vault a Window, you basic-vault Windows 40% faster for 10s. Cooldown: 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/superior-anatomy.png"
+    },
+    {
+      "id": "Surge",
+      "name": "Surge",
+      "role": "killer",
+      "characterId": "Demogorgon",
+      "characterName": "The Demogorgon",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Whenever you down a Survivor with a basic-attack, Generators within 32m: Explode, lose 8% progress and start regressing.. Survivor repairing them scream..",
+      "image": "https://cdn.nightlight.gg/img/perks/surge.png"
+    },
+    {
+      "id": "Surveillance",
+      "name": "Surveillance",
+      "role": "killer",
+      "characterId": "Pig",
+      "characterName": "The Pig",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "You see the Auras of regressing Generators. Whenever a Generator stops regressing, you see its Aura for 16s. Generator repair noises can be heard from 8m farther away.",
+      "image": "https://cdn.nightlight.gg/img/perks/surveillance.png"
+    },
+    {
+      "id": "S36P03",
+      "name": "Teamwork: Collective Stealth",
+      "role": "survivor",
+      "characterId": "S36",
+      "characterName": "Renato Lyra",
+      "categories": [
+        "support"
+      ],
+      "description": "Whenever another Survivor finishes healing you, while within 16m of each other, you both leave no Scratch Marks. When either of you leaves the range, this ends after 4s.",
+      "image": "https://cdn.nightlight.gg/img/perks/teamwork-collective-stealth.png"
+    },
+    {
+      "id": "S50P03",
+      "name": "Teamwork: Full Circuit",
+      "role": "survivor",
+      "characterId": "S50",
+      "characterName": "Dustin Henderson",
+      "categories": [],
+      "description": "For each other Survivor repairing a Generator with you, good basic Skill Check zones are 25% bigger. While repairing with at least 1 other Survivor, you repair 5% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/teamwork-full-circuit.png"
+    },
+    {
+      "id": "S35P03",
+      "name": "Teamwork: Power of Two",
+      "role": "survivor",
+      "characterId": "S35",
+      "characterName": "Thalita Lyra",
+      "categories": [
+        "support"
+      ],
+      "description": "Whenever you finish healing another Survivor, while you stay within 16m of each other, you both gain 5%. When either of you leaves the range, this ends after 4s.",
+      "image": "https://cdn.nightlight.gg/img/perks/teamwork-power-of-two.png"
+    },
+    {
+      "id": "S51P03",
+      "name": "Teamwork: Soft-Spoken",
+      "role": "survivor",
+      "characterId": "S51",
+      "characterName": "Eleven",
+      "categories": [],
+      "description": "For each other Survivor repairing a Generator with you, the range of Generator repair noises is 25% smaller. While repairing with at least 1 other Survivor, you repair 5% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/teamwork-soft-spoken.png"
+    },
+    {
+      "id": "S48P03",
+      "name": "Teamwork: Throw Down",
+      "role": "survivor",
+      "characterId": "S48",
+      "characterName": "Michonne Grimes",
+      "categories": [],
+      "description": "Whenever you blind or Pallet-stun the Killer, for 10s, other injured Survivors within 24m: Gain.. See the Killer's Aura..",
+      "image": "https://cdn.nightlight.gg/img/perks/teamwork-throw-down.png"
+    },
+    {
+      "id": "S47P03",
+      "name": "Teamwork: Toughen Up",
+      "role": "survivor",
+      "characterId": "S47",
+      "characterName": "Rick Grimes",
+      "categories": [],
+      "description": "While injured, whenever another Survivor within 24m of you blinds or Pallet-stuns the Killer, for 30s: You make no Grunts of Pain.. You leave no Pools of Blood.. You leave no Scratch Marks..",
+      "image": "https://cdn.nightlight.gg/img/perks/teamwork-toughen-up.png"
+    },
+    {
+      "id": "Technician",
+      "name": "Technician",
+      "role": "survivor",
+      "characterId": "Feng",
+      "characterName": "Feng Min",
+      "categories": [
+        "concealment",
+        "strategy"
+      ],
+      "description": "While repairing a Generator: The range of Generator repair noises is 16m shorter.. Whenever you miss a basic Skill Check, the Generator does not explode, but loses 2% more progress..",
+      "image": "https://cdn.nightlight.gg/img/perks/technician.png"
+    },
+    {
+      "id": "Tenacity",
+      "name": "Tenacity",
+      "role": "survivor",
+      "characterId": "Eric",
+      "characterName": "Detective Tapp",
+      "categories": [
+        "adaptation",
+        "navigation"
+      ],
+      "description": "While downed: You gain 50%.. You can crawl and recover at the same time.. Your Grunts of Pain are 75% quieter.. The Killer cannot see your Aura..",
+      "image": "https://cdn.nightlight.gg/img/perks/tenacity.png"
+    },
+    {
+      "id": "K29P03",
+      "name": "Terminus",
+      "role": "killer",
+      "characterId": "K29",
+      "characterName": "The Mastermind",
+      "categories": [],
+      "description": "When all Generators are completed: all injured, downed, and hooked Survivors gain. When an Exit Gate is opened, this ends after 45s.",
+      "image": "https://cdn.nightlight.gg/img/perks/terminus.png"
+    },
+    {
+      "id": "TerritorialImperative",
+      "name": "Territorial Imperative",
+      "role": "killer",
+      "characterId": "Bear",
+      "characterName": "The Huntress",
+      "categories": [
+        "tracking"
+      ],
+      "description": "Whenever a Survivor enters the Basement while you are 24m away from it, you see their Aura for 6s. Cooldown: 45s.",
+      "image": "https://cdn.nightlight.gg/img/perks/territorial-imperative.png"
+    },
+    {
+      "id": "Thanatophobia",
+      "name": "Thanatophobia",
+      "role": "killer",
+      "characterId": "Nurse",
+      "characterName": "The Nurse",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "For each injured, downed, or hooked Survivor, all Survivors: Cleanse Totems 2% slower.. Repair 2% slower.. Sabotage Hooks 2% slower.. While 4 Survivors are either injured, downed or hooked, all above actions are additionally 12% slower.",
+      "image": "https://cdn.nightlight.gg/img/perks/thanatophobia.png"
+    },
+    {
+      "id": "This_Is_Not_Happening",
+      "name": "This Is Not Happening",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "safeguard",
+        "strategy"
+      ],
+      "description": "Good basic Skill Check zones are 200% bigger.",
+      "image": "https://cdn.nightlight.gg/img/perks/this-is-not-happening.png"
+    },
+    {
+      "id": "ThrillingTremors",
+      "name": "Thrilling Tremors",
+      "role": "killer",
+      "characterId": "Ghostface",
+      "characterName": "The Ghost Face",
+      "categories": [
+        "obstruction"
+      ],
+      "description": "Whenever you pick-up a Survivor, all Generators not being repaired are blocked for 16s. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/thrilling-tremors.png"
+    },
+    {
+      "id": "K31P02",
+      "name": "THWACK!",
+      "role": "killer",
+      "characterId": "K31",
+      "characterName": "The Skull Merchant",
+      "categories": [
+        "tracking",
+        "trickery"
+      ],
+      "description": "When the trial starts, you earn 3 Tokens, up to 3. Whenever you hook a Survivor, you earn 1 Token. Whenever you break a Pallet or Breakable Wall, spend 1 Token. Then, all Survivors within 36m scream and you see their Auras for 6s.",
+      "image": "https://cdn.nightlight.gg/img/perks/thwack.png"
+    },
+    {
+      "id": "Tinkerer",
+      "name": "Tinkerer",
+      "role": "killer",
+      "characterId": "HillBilly",
+      "characterName": "The Hillbilly",
+      "categories": [
+        "trickery"
+      ],
+      "description": "The first time each Generator has 70% progress: You gain for 16s.. You are alerted..",
+      "image": "https://cdn.nightlight.gg/img/perks/tinkerer.png"
+    },
+    {
+      "id": "TrailofTorment",
+      "name": "Trail of Torment",
+      "role": "killer",
+      "characterId": "K20",
+      "characterName": "The Executioner",
+      "categories": [
+        "trickery"
+      ],
+      "description": "Whenever you damage a Generator, until it stops regressing: You gain.. Survivors see that Generator's Aura.. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/trail-of-torment.png"
+    },
+    {
+      "id": "S37P01",
+      "name": "Troubleshooter",
+      "role": "survivor",
+      "characterId": "S37",
+      "characterName": "Gabriel Soma",
+      "categories": [
+        "strategy"
+      ],
+      "description": "While chased by the Killer: You see the Aura of the Generator with the most progress.. Whenever you drop a Pallet, you see the Killer's Aura for 6s.. When the Killer stops chasing you, this ends after 10s.",
+      "image": "https://cdn.nightlight.gg/img/perks/troubleshooter.png"
+    },
+    {
+      "id": "K42P01",
+      "name": "Turn Back The Clock",
+      "role": "killer",
+      "characterId": "K42",
+      "characterName": "The First",
+      "categories": [],
+      "description": "After hooking a Survivor, for the next 60s, use to make target Generator you can see within 20m explode, lose 10% progress and start regressing.",
+      "image": "https://cdn.nightlight.gg/img/perks/turn-back-the-clock.png"
+    },
+    {
+      "id": "K33P01",
+      "name": "Ultimate Weapon",
+      "role": "killer",
+      "characterId": "K33",
+      "characterName": "The Xenomorph",
+      "categories": [],
+      "description": "Whenever you search a Locker, Survivors within 40m: Gain for 30s.. Scream.. Cooldown: 45s.",
+      "image": "https://cdn.nightlight.gg/img/perks/ultimate-weapon.png"
+    },
+    {
+      "id": "K35P01",
+      "name": "Unbound",
+      "role": "killer",
+      "characterId": "K35",
+      "characterName": "The Unknown",
+      "categories": [],
+      "description": "Whenever a healthy Survivor becomes injured, for the next 30s, whenever you basic-vault a window, gain 5% for 25s.",
+      "image": "https://cdn.nightlight.gg/img/perks/unbound.png"
+    },
+    {
+      "id": "SelfSufficient",
+      "name": "Unbreakable",
+      "role": "survivor",
+      "characterId": "Bill",
+      "characterName": "William \"Bill\" Overbeck",
+      "categories": [
+        "adaptation"
+      ],
+      "description": "Once per trial, while downed by the Killer, you can fully recover. While downed, you recover 35% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/unbreakable.png"
+    },
+    {
+      "id": "K35P03",
+      "name": "Undone",
+      "role": "killer",
+      "characterId": "K35",
+      "characterName": "The Unknown",
+      "categories": [],
+      "description": "Whenever you hook a Survivor, earn 1 Token, up to 3. Whenever you damage a Generator, spend all Tokens. For each Token spent: The Generator loses 10% more progress.. The Generator is blocked for 10s..",
+      "image": "https://cdn.nightlight.gg/img/perks/undone.png"
+    },
+    {
+      "id": "K35P02",
+      "name": "Unforeseen",
+      "role": "killer",
+      "characterId": "K35",
+      "characterName": "The Unknown",
+      "categories": [],
+      "description": "Whenever you damage a Generator: Your Terror Radius is set to that Generator for 30s and its radius is 32m.. You gain for that time.. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/unforeseen.png"
+    },
+    {
+      "id": "Unnerving_Presence",
+      "name": "Unnerving Presence",
+      "role": "killer",
+      "characterId": "Chuckles",
+      "characterName": "The Trapper",
+      "categories": [
+        "hinderance"
+      ],
+      "description": "Survivors within your Terror Radius get 10% more basic Skill Checks. The good zone of basic Skill Checks is 60% smaller.",
+      "image": "https://cdn.nightlight.gg/img/perks/unnerving-presence.png"
+    },
+    {
+      "id": "Unrelenting",
+      "name": "Unrelenting",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "cruelty"
+      ],
+      "description": "Your missed basic-attack cooldown is 40% shorter. Your successful basic-attack cooldown is 10% shorter.",
+      "image": "https://cdn.nightlight.gg/img/perks/unrelenting.png"
+    },
+    {
+      "id": "Up_The_Ante",
+      "name": "Up the Ante",
+      "role": "survivor",
+      "characterId": "Ace",
+      "characterName": "Ace Visconti",
+      "categories": [
+        "support"
+      ],
+      "description": "For each other Survivor alive, all Survivors are 3% luckier. All Survivors can attempt to unhook themselves.",
+      "image": "https://cdn.nightlight.gg/img/perks/up-the-ante.png"
+    },
+    {
+      "id": "Urban_Evasion",
+      "name": "Urban Evasion",
+      "role": "survivor",
+      "characterId": "Nea",
+      "characterName": "Nea Karlsson",
+      "categories": [
+        "navigation"
+      ],
+      "description": "While crouched, you gain 100%.",
+      "image": "https://cdn.nightlight.gg/img/perks/urban-evasion.png"
+    },
+    {
+      "id": "Vigil",
+      "name": "Vigil",
+      "role": "survivor",
+      "characterId": "Quentin",
+      "characterName": "Quentin Smith",
+      "categories": [
+        "support"
+      ],
+      "description": "All Survivors within 16m of you lose 30% faster. This effect ends 15s after they leave your range.",
+      "image": "https://cdn.nightlight.gg/img/perks/vigil.png"
+    },
+    {
+      "id": "Visionary",
+      "name": "Visionary",
+      "role": "survivor",
+      "characterId": "S23",
+      "characterName": "Felix Richter",
+      "categories": [
+        "perception"
+      ],
+      "description": "Within 32m of you, you see the Auras of Generators. Whenever a Generator is completed, cooldown: 16s.",
+      "image": "https://cdn.nightlight.gg/img/perks/visionary.png"
+    },
+    {
+      "id": "WakeUp",
+      "name": "Wake Up!",
+      "role": "survivor",
+      "characterId": "Quentin",
+      "characterName": "Quentin Smith",
+      "categories": [
+        "perception",
+        "strategy"
+      ],
+      "description": "When all Generators are completed: You see the Auras of Exit Gate Switches.. While opening an Exit Gate, other Survivors see your Aura.. You open Exit Gates 10% faster, and an additional 20% faster for each other Survivor alive..",
+      "image": "https://cdn.nightlight.gg/img/perks/wake-up.png"
+    },
+    {
+      "id": "K41P02",
+      "name": "Wandering Eye",
+      "role": "killer",
+      "characterId": "K41",
+      "characterName": "The Krasue",
+      "categories": [],
+      "description": "Whenever you start chasing a Survivor, for the next 5s, you see the Auras of all other injured Survivors within 20m. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/wandering-eye.png"
+    },
+    {
+      "id": "S51P02",
+      "name": "We See You",
+      "role": "survivor",
+      "characterId": "S51",
+      "characterName": "Eleven",
+      "categories": [],
+      "description": "Whenever the Killer sees your Aura, you earn 1 Token. Cooldown: 10s. When you have 4 Tokens, spend them all. Then, all Survivors see the Killer's Aura for 15s.",
+      "image": "https://cdn.nightlight.gg/img/perks/we-see-you.png"
+    },
+    {
+      "id": "WellMakeIt",
+      "name": "We'll make it",
+      "role": "survivor",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "safeguard"
+      ],
+      "description": "Whenever you unhook a Survivor, for 90s, you heal other Survivors 100% faster.",
+      "image": "https://cdn.nightlight.gg/img/perks/well-make-it.png"
+    },
+    {
+      "id": "WereGonnaLiveForever",
+      "name": "We're Gonna Live Forever",
+      "role": "survivor",
+      "characterId": "Smoke",
+      "characterName": "David King",
+      "categories": [
+        "support"
+      ],
+      "description": "You heal downed Survivors 100% faster. Whenever you finish healing a downed Survivor, they gain for 10s. Cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/were-gonna-live-forever.png"
+    },
+    {
+      "id": "K36P01",
+      "name": "Weave Attunement",
+      "role": "killer",
+      "characterId": "K36",
+      "characterName": "The Lich",
+      "categories": [],
+      "description": "The first time each item is depleted, it is dropped. While a Survivor is within 12m of a dropped item: You see their Aura.. They see the item's Aura.. Whenever a Survivor picks-up an item, they gain for 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/weave-attunement.png"
+    },
+    {
+      "id": "Whispers",
+      "name": "Whispers",
+      "role": "killer",
+      "characterId": null,
+      "characterName": null,
+      "categories": [
+        "tracking"
+      ],
+      "description": "While within 24m of a Survivor, you randomly hear whispers. While more than 24m away from a Survivor, gain 5%.",
+      "image": "https://cdn.nightlight.gg/img/perks/whispers.png"
+    },
+    {
+      "id": "S41P03",
+      "name": "Wicked",
+      "role": "survivor",
+      "characterId": "S41",
+      "characterName": "Sable Ward",
+      "categories": [],
+      "description": "While in the Basement, you can unhook yourself. Whenever you are unhooked, you see the Killer's Aura for 20s.",
+      "image": "https://cdn.nightlight.gg/img/perks/wicked.png"
+    },
+    {
+      "id": "S53P01",
+      "name": "Wide Open Throttle",
+      "role": "survivor",
+      "characterId": "S53",
+      "characterName": "Shane Wiigwaas",
+      "categories": [],
+      "description": "Whenever you fast-vault a Pallet: You gain 15% for 3s.. The Pallet is reset, blocked for 60s, and all Survivors see its Aura for that time.. Cooldown: 60s.",
+      "image": "https://cdn.nightlight.gg/img/perks/wide-open-throttle.png"
+    },
+    {
+      "id": "WindowsOfOpportunity",
+      "name": "Windows of Opportunity",
+      "role": "survivor",
+      "characterId": "Kate",
+      "characterName": "Kate Denson",
+      "categories": [
+        "perception"
+      ],
+      "description": "Within 24m of you see the Auras of Windows. You vault Windows % faster. Whenever you vault a Window, cooldown: 30s.",
+      "image": "https://cdn.nightlight.gg/img/perks/windows-of-opportunity.png"
+    },
+    {
+      "id": "S32P01",
+      "name": "Wiretap",
+      "role": "survivor",
+      "characterId": "S32",
+      "characterName": "Ada Wong",
+      "categories": [],
+      "description": "After repairing 40% of Generators, while next to a Generator, use to trap it for 120s or until the Killer damages that Generator. All Survivors see that Generator's Aura for that time. While the Killer is within 14m of that Generator, all Survivors see the Killer's Aura.",
+      "image": "https://cdn.nightlight.gg/img/perks/wiretap.png"
+    },
+    {
+      "id": "ZanshinTactics",
+      "name": "Zanshin Tactics",
+      "role": "killer",
+      "characterId": "Oni",
+      "characterName": "The Oni",
+      "categories": [
+        "chasing"
+      ],
+      "description": "Within 32m, you see the Auras of Pallets and windows. Whenever a Survivor drops a Pallet, you see their Aura for 5s.",
+      "image": "https://cdn.nightlight.gg/img/perks/zanshin-tactics.png"
+    }
+  ]
+}

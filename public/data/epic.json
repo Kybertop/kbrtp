@@ -1,0 +1,57 @@
+{
+  "fetchedAt": "2026-10-17T16:48:33.069Z",
+  "source": "https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions",
+  "promotions": [
+    {
+      "id": "6a846880836044a2adad614ac771f487",
+      "title": "Bad Cheese",
+      "image": "https://cdn1.epicgames.com/spt-assets/6cbb0e3805c4436bafd028cafff48307/bad-cheese-16hj0.png",
+      "url": "https://store.epicgames.com/en-US/p/bad-cheese-4256d9",
+      "seller": "FEARDEMIC sp. z o.o.",
+      "offerType": "BASE_GAME",
+      "originalPrice": "$12.99",
+      "kind": "promotion",
+      "start": "2026-10-15T15:00:00.000Z",
+      "end": "2026-10-22T15:00:00.000Z"
+    },
+    {
+      "id": "db1202a30c5541dd99cdf54c918a9348",
+      "title": "Agent A: A puzzle in disguise",
+      "image": "https://cdn1.epicgames.com/spt-assets/45db4fbe68fe43f4b025dec2014d42e7/agent-a-a-puzzle-in-disguise-3cppl.png",
+      "url": "https://store.epicgames.com/en-US/p/agent-a-a-puzzle-in-disguise-42fe5f",
+      "seller": "Yak & Co",
+      "offerType": "BASE_GAME",
+      "originalPrice": "$19.99",
+      "kind": "promotion",
+      "start": "2026-10-15T15:00:00.000Z",
+      "end": "2026-10-22T15:00:00.000Z"
+    }
+  ],
+  "upcoming": [
+    {
+      "id": "6aab3ddef4f84fbc9dd81c60f9d8549c",
+      "title": "Sker Ritual",
+      "image": "https://cdn1.epicgames.com/spt-assets/43d96f4437e34c87b7eff08831d1b1de/sker-ritual-1tuka.png",
+      "url": "https://store.epicgames.com/en-US/p/sker-ritual-aac702",
+      "seller": "Skybound Game Studios, Inc.",
+      "offerType": "BASE_GAME",
+      "originalPrice": "$24.99",
+      "kind": "upcoming",
+      "start": "2026-10-22T15:00:00.000Z",
+      "end": "2026-10-29T15:00:00.000Z"
+    },
+    {
+      "id": "06190191cede42afb633fe89ef08c27e",
+      "title": "Home - A Unique Horror Adventure",
+      "image": "https://cdn1.epicgames.com/spt-assets/46fc0cdb9f164a848e916249a8f68fc7/home-1f6qi.png",
+      "url": "https://store.epicgames.com/en-US/p/home-19212a",
+      "seller": "BancyCo",
+      "offerType": "BASE_GAME",
+      "originalPrice": "$4.99",
+      "kind": "upcoming",
+      "start": "2026-10-22T15:00:00.000Z",
+      "end": "2026-10-29T15:00:00.000Z"
+    }
+  ],
+  "freeToPlay": []
+}

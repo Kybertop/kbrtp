@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>kbrtp — Solar Voyage</title>
+  <meta name="description" content="Walk the solar system in 3D. Distances from the Sun to Neptune, the Moon, and the galaxies around us.">
+  <meta name="theme-color" content="#07080c">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://kbrtp.top/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="kbrtp">
+  <meta property="og:title" content="kbrtp — Solar Voyage">
+  <meta property="og:description" content="Walk the solar system in 3D. Distances from the Sun to Neptune, the Moon, and the galaxies around us.">
+  <meta property="og:url" content="https://kbrtp.top/">
+  <meta property="og:image" content="https://kbrtp.top/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="kbrtp — Solar Voyage">
+  <meta name="twitter:description" content="Walk the solar system in 3D. Distances from the Sun to Neptune, the Moon, and the galaxies around us.">
+  <meta name="twitter:image" content="https://kbrtp.top/og.jpg">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void: "#07080c",
+            paper: "#e6e0d2",
+            mute: "#8a8696",
+            ice: "#7ee7de",
+            sun: "#e0b66c"
+          },
+          fontFamily: {
+            sans: ["Archivo", "ui-sans-serif", "system-ui", "sans-serif"],
+            num: ["Oxanium", "ui-sans-serif", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-void text-paper font-sans antialiased">
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="boot" data-boot><i></i></div>
+
+  <header class="nav" data-nav>
+    <a class="mark" href="#top">
+      <svg class="mark-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="0.7" opacity=".5"/></svg>
+      kbrtp
+    </a>
+    <nav class="nav-links" data-menu>
+      <a href="#voyage">System</a>
+      <a href="#atlas">Atlas</a>
+      <a href="#worlds">Worlds</a>
+      <a href="#sky">Sky</a>
+      <a href="#galaxies">Galaxies</a>
+      <a href="#shop">Enhanced</a>
+    </nav>
+    <button class="nav-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
+  </header>
+
+  <div class="sheet" id="menu" data-sheet hidden>
+    <a href="#voyage">System</a>
+    <a href="#atlas">Atlas</a>
+    <a href="#worlds">Worlds</a>
+    <a href="#sky">Sky</a>
+    <a href="#galaxies">Galaxies</a>
+    <a href="#shop">Enhanced</a>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <canvas id="hero-gl" aria-hidden="true"></canvas>
+      <div class="hero-copy">
+        <p class="eyebrow">Sol · 8 planets · 1 moon you can see</p>
+        <h1>Solar voyage</h1>
+        <p class="lede">Scroll through real globes, lit from the Sun. Distances are true. Sizes are not.</p>
+        <a class="cta" href="#voyage">Enter the path
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M10 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        </a>
+      </div>
+      <p class="hero-hint">Drag the globe · scroll to leave</p>
+    </section>
+
+    <section class="facts-row" id="system">
+      <article><b class="font-num">4.6 Gyr</b><span>Age of the system</span></article>
+      <article><b class="font-num">99.86%</b><span>Mass locked in the Sun</span></article>
+      <article><b class="font-num">149.6 M km</b><span>Earth to Sun · 1 AU</span></article>
+      <article><b class="font-num">384,400 km</b><span>Earth to Moon</span></article>
+    </section>
+
+    <section class="voyage" id="voyage" data-voyage>
+      <div class="voyage-sticky">
+        <canvas id="voyage-gl" aria-hidden="true"></canvas>
+        <div class="voyage-ui">
+          <ol class="ticks" data-ticks></ol>
+          <p class="v-kicker">The path</p>
+          <div class="v-now">
+            <p class="v-name" data-name>Sun</p>
+            <p class="v-au" data-au>0 AU from the Sun</p>
+          </div>
+          <div class="v-gaps">
+            <div>
+              <span data-prev-label>Heliosphere</span>
+              <b class="font-num" data-prev-val>—</b>
+            </div>
+            <div>
+              <span data-next-label>Mercury</span>
+              <b class="font-num" data-next-val>57.9 million km</b>
+            </div>
+          </div>
+          <article class="intel" data-intel></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="atlas" id="atlas">
+      <header class="sec">
+        <p class="eyebrow">Atlas</p>
+        <h2>The system we live in</h2>
+      </header>
+      <div class="atlas-grid">
+        <article class="atlas-lead">
+          <h3>A thin disc of leftover starlight</h3>
+          <p>Eight planets, more than two hundred moons, a belt of rubble between Mars and Jupiter, ice beyond Neptune. Light needs four hours to reach Neptune and 8 minutes 20 seconds to reach you. The heliopause, where the solar wind gives up, sits near 120 AU. Voyager 1 is already past it.</p>
+        </article>
+        <ul class="atlas-list">
+          <li><span>Inner rocky</span>Mercury, Venus, Earth, Mars</li>
+          <li><span>Asteroid belt</span>2.2–3.2 AU</li>
+          <li><span>Gas giants</span>Jupiter, Saturn</li>
+          <li><span>Ice giants</span>Uranus, Neptune</li>
+          <li><span>Kuiper belt</span>30–50 AU · Pluto, Arrokoth</li>
+          <li><span>Oort cloud</span>~2,000–100,000 AU</li>
+        </ul>
+      </div>
+      <div class="table-wrap">
+        <table class="dist">
+          <thead>
+            <tr><th>Leg</th><th>Distance</th><th>AU</th><th>Light</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sun → Mercury</td><td>57.9 million km</td><td>0.39</td><td>3.2 min</td></tr>
+            <tr><td>Mercury → Venus</td><td>50.3 million km</td><td>0.34</td><td>2.8 min</td></tr>
+            <tr><td>Venus → Earth</td><td>41.4 million km</td><td>0.28</td><td>2.3 min</td></tr>
+            <tr><td>Earth → Moon</td><td>384,400 km</td><td>0.0026</td><td>1.3 sec</td></tr>
+            <tr><td>Earth → Mars</td><td>78.3 million km</td><td>0.52</td><td>4.3 min</td></tr>
+            <tr><td>Mars → Jupiter</td><td>550 million km</td><td>3.68</td><td>30.6 min</td></tr>
+            <tr><td>Jupiter → Saturn</td><td>655 million km</td><td>4.38</td><td>36.4 min</td></tr>
+            <tr><td>Saturn → Uranus</td><td>1.44 billion km</td><td>9.62</td><td>1.3 hr</td></tr>
+            <tr><td>Uranus → Neptune</td><td>1.63 billion km</td><td>10.9</td><td>1.5 hr</td></tr>
+            <tr><td>Sun → Neptune</td><td>4.50 billion km</td><td>30.1</td><td>4.1 hr</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="worlds" id="worlds">
+      <header class="sec">
+        <p class="eyebrow">Habitable</p>
+        <h2>Worlds we could try to live on</h2>
+      </header>
+      <p class="worlds-lead">None of these is Earth. A few are close in size and sit in the zone where liquid water can exist. Mars is the only one a ship can reach in a human lifetime. The rest are light-years out.</p>
+      <div class="world-grid">
+        <article>
+          <canvas class="world-globe" data-globe="mars" width="320" height="320"></canvas>
+          <p class="tag">Sol · rocky</p>
+          <h3>Mars</h3>
+          <p class="ly font-num">0.0000058 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>54.6–401 million km</b></div>
+            <div><span>Light</span><b>3 to 22 min · 5.8×10<sup>−6</sup> ly</b></div>
+            <div><span>Size</span><b>0.53 × Earth</b></div>
+            <div><span>Gravity</span><b>0.38 g</b></div>
+          </dl>
+          <p>Day is 24h 37m. Ice at the poles. Thin CO<sub>2</sub> air, no magnetic shield. Closest world we can actually land on and build under.</p>
+        </article>
+        <article>
+          <canvas class="world-globe" data-globe="proxima" width="320" height="320"></canvas>
+          <p class="tag">Alpha Centauri · HZ</p>
+          <h3>Proxima b</h3>
+          <p class="ly font-num">4.24 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>40.1 trillion km</b></div>
+            <div><span>Light</span><b>4.24 years</b></div>
+            <div><span>Size</span><b>~1.17 × Earth mass</b></div>
+            <div><span>Orbit</span><b>11.2 days</b></div>
+          </dl>
+          <p>Nearest exoplanet in a habitable zone. Likely tidally locked. The red dwarf flares. Still the shortest jump off our Sun.</p>
+        </article>
+        <article>
+          <canvas class="world-globe" data-globe="trappist" width="320" height="320"></canvas>
+          <p class="tag">TRAPPIST-1 · HZ</p>
+          <h3>TRAPPIST-1e</h3>
+          <p class="ly font-num">40.5 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>383 trillion km</b></div>
+            <div><span>Light</span><b>40.5 years</b></div>
+            <div><span>Size</span><b>0.91 × Earth</b></div>
+            <div><span>Orbit</span><b>6.1 days</b></div>
+          </dl>
+          <p>Earth-sized, rocky, in the liquid-water belt of a cool dwarf. Six other worlds in the same system. Density looks like rock, not gas.</p>
+        </article>
+        <article>
+          <canvas class="world-globe" data-globe="toi700" width="320" height="320"></canvas>
+          <p class="tag">TOI-700 · HZ</p>
+          <h3>TOI-700 d</h3>
+          <p class="ly font-num">101 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>956 trillion km</b></div>
+            <div><span>Light</span><b>101 years</b></div>
+            <div><span>Size</span><b>1.19 × Earth</b></div>
+            <div><span>Orbit</span><b>37.4 days</b></div>
+          </dl>
+          <p>TESS find, later confirmed. Receives about 86% of the starlight Earth gets. Quiet M dwarf, so an atmosphere might survive.</p>
+        </article>
+        <article>
+          <canvas class="world-globe" data-globe="k186" width="320" height="320"></canvas>
+          <p class="tag">Kepler-186 · HZ</p>
+          <h3>Kepler-186f</h3>
+          <p class="ly font-num">579 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>5.48 quadrillion km</b></div>
+            <div><span>Light</span><b>579 years</b></div>
+            <div><span>Size</span><b>1.17 × Earth</b></div>
+            <div><span>Orbit</span><b>130 days</b></div>
+          </dl>
+          <p>First Earth-size planet found in a habitable zone. Red-dwarf host. Could hold surface water if it kept an atmosphere.</p>
+        </article>
+        <article>
+          <canvas class="world-globe" data-globe="k442" width="320" height="320"></canvas>
+          <p class="tag">Kepler-442 · HZ</p>
+          <h3>Kepler-442b</h3>
+          <p class="ly font-num">1,206 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>11.4 quadrillion km</b></div>
+            <div><span>Light</span><b>1,206 years</b></div>
+            <div><span>Size</span><b>1.34 × Earth</b></div>
+            <div><span>Orbit</span><b>112 days</b></div>
+          </dl>
+          <p>One of the highest Earth-similarity scores in the catalog. K-star light, cooler than the Sun. Super-Earth, still in the water belt.</p>
+        </article>
+        <article>
+          <canvas class="world-globe" data-globe="k452" width="320" height="320"></canvas>
+          <p class="tag">Kepler-452 · HZ</p>
+          <h3>Kepler-452b</h3>
+          <p class="ly font-num">1,400 ly</p>
+          <dl>
+            <div><span>From Earth</span><b>13.2 quadrillion km</b></div>
+            <div><span>Light</span><b>1,400 years</b></div>
+            <div><span>Size</span><b>1.6 × Earth</b></div>
+            <div><span>Orbit</span><b>385 days · G star</b></div>
+          </dl>
+          <p>Called Earth’s cousin. A year almost like ours, around a Sun-like star. Larger than Earth; it may be rocky or a water world.</p>
+        </article>
+      </div>
+      <div class="table-wrap">
+        <table class="dist">
+          <thead>
+            <tr><th>World</th><th>km from Earth</th><th>Light-years</th><th>Light time</th><th>Vs Earth</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mars</td><td>54.6 million at closest</td><td>0.0000058 ly</td><td>3 min</td><td>0.53 radius</td></tr>
+            <tr><td>Proxima b</td><td>40.1 trillion</td><td>4.24 ly</td><td>4.24 yr</td><td>~1.17 mass</td></tr>
+            <tr><td>TRAPPIST-1e</td><td>383 trillion</td><td>40.5 ly</td><td>40.5 yr</td><td>0.91 radius</td></tr>
+            <tr><td>TOI-700 d</td><td>956 trillion</td><td>101 ly</td><td>101 yr</td><td>1.19 radius</td></tr>
+            <tr><td>Kepler-186f</td><td>5.48 quadrillion</td><td>579 ly</td><td>579 yr</td><td>1.17 radius</td></tr>
+            <tr><td>Kepler-442b</td><td>11.4 quadrillion</td><td>1,206 ly</td><td>1,206 yr</td><td>1.34 radius</td></tr>
+            <tr><td>Kepler-452b</td><td>13.2 quadrillion</td><td>1,400 ly</td><td>1,400 yr</td><td>1.6 radius</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sky" id="sky">
+      <header class="sec">
+        <p class="eyebrow">From Earth</p>
+        <h2>Moon and the sky we actually see</h2>
+      </header>
+      <div class="moon-row">
+        <canvas id="moon-phase" width="360" height="360"></canvas>
+        <div>
+          <p class="eyebrow">Luna now</p>
+          <h3 data-phase-name>Moon</h3>
+          <p class="ly font-num" data-phase-illum></p>
+          <dl class="moon-stats">
+            <div><span>Age this cycle</span><b data-phase-age></b></div>
+            <div><span>Next phase</span><b data-phase-next></b></div>
+            <div><span>Distance</span><b>384,400 km · 1.3 s of light</b></div>
+            <div><span>Synodic month</span><b>29.53 days</b></div>
+          </dl>
+          <ol class="phase-list" data-phase-list></ol>
+        </div>
+      </div>
+      <h3 class="sky-sub">Súhvezdia · constellations we see from Earth</h3>
+      <p class="worlds-lead">The same sky every night: a handful of bright shapes our eyes lock onto, and the stars that actually sit in them. Distances are how far that light has already travelled.</p>
+      <div class="const-grid">
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M40 50 L70 42 L100 48 L130 40"/>
+              <path d="M70 42 L78 78 L70 108"/>
+              <path d="M100 48 L108 82 L118 118"/>
+              <path d="M40 50 L28 92"/><path d="M130 40 L155 100"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="40" cy="50" r="3.2"/><circle cx="70" cy="42" r="2.4"/><circle cx="100" cy="48" r="2.6"/><circle cx="130" cy="40" r="3.4"/><circle cx="78" cy="78" r="2.2"/><circle cx="108" cy="82" r="2.2"/><circle cx="70" cy="108" r="2.8"/><circle cx="118" cy="118" r="3.6"/><circle cx="28" cy="92" r="3"/><circle cx="155" cy="100" r="3.2"/></g>
+          </svg>
+          <figcaption>Orion <span>Betelgeuse 548 ly · Rigel 860 ly</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M30 90 L58 78 L88 70 L112 62 L138 50 L162 42 L180 30"/>
+              <path d="M30 90 L42 112"/><path d="M58 78 L70 108"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="30" cy="90" r="3"/><circle cx="58" cy="78" r="2.6"/><circle cx="88" cy="70" r="2.4"/><circle cx="112" cy="62" r="2.4"/><circle cx="138" cy="50" r="2.8"/><circle cx="162" cy="42" r="2.6"/><circle cx="180" cy="30" r="3"/><circle cx="42" cy="112" r="2.2"/><circle cx="70" cy="108" r="2.2"/></g>
+          </svg>
+          <figcaption>Ursa Major <span>Dubhe 123 ly · Alkaid 104 ly</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1"><path d="M36 88 L70 40 L100 78 L140 32 L170 86"/></g>
+            <g fill="#e6e0d2"><circle cx="36" cy="88" r="2.8"/><circle cx="70" cy="40" r="3"/><circle cx="100" cy="78" r="2.4"/><circle cx="140" cy="32" r="2.8"/><circle cx="170" cy="86" r="2.6"/></g>
+          </svg>
+          <figcaption>Cassiopeia <span>Schedar 228 ly · W of the north</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M50 30 L90 70 L130 30"/>
+              <path d="M90 70 L90 118"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="50" cy="30" r="2.8"/><circle cx="90" cy="70" r="3.2"/><circle cx="130" cy="30" r="2.6"/><circle cx="90" cy="118" r="2.4"/></g>
+          </svg>
+          <figcaption>Cygnus <span>Deneb 2,615 ly · Northern Cross</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1"><path d="M40 50 L80 62 L120 48 L150 70 L130 100 L90 112 L70 90 L40 50"/></g>
+            <g fill="#e6e0d2"><circle cx="40" cy="50" r="3.4"/><circle cx="80" cy="62" r="2.4"/><circle cx="120" cy="48" r="2.6"/><circle cx="150" cy="70" r="3"/><circle cx="130" cy="100" r="2.4"/><circle cx="90" cy="112" r="2.2"/><circle cx="70" cy="90" r="2.2"/></g>
+          </svg>
+          <figcaption>Scorpius <span>Antares 550 ly · sting of summer</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1"><path d="M70 30 L130 50 L110 110 L55 85 Z"/><path d="M70 30 L110 110"/></g>
+            <g fill="#e6e0d2"><circle cx="70" cy="30" r="3"/><circle cx="130" cy="50" r="2.6"/><circle cx="110" cy="110" r="2.8"/><circle cx="55" cy="85" r="2.4"/></g>
+          </svg>
+          <figcaption>Crux <span>Acrux 320 ly · Southern Cross</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M70 28 L100 70 L70 118"/>
+              <path d="M100 70 L148 62"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="70" cy="28" r="3.4"/><circle cx="100" cy="70" r="2.4"/><circle cx="70" cy="118" r="2.6"/><circle cx="148" cy="62" r="3"/></g>
+          </svg>
+          <figcaption>Lyra <span>Vega 25 ly · Summer Triangle</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 140" class="const-map" aria-hidden="true">
+            <g fill="none" stroke="#cfc6ff" stroke-width="1">
+              <path d="M40 90 L88 70 L130 48 L158 32"/>
+              <path d="M88 70 L78 112"/>
+            </g>
+            <g fill="#e6e0d2"><circle cx="40" cy="90" r="2.4"/><circle cx="88" cy="70" r="4"/><circle cx="130" cy="48" r="2.4"/><circle cx="158" cy="32" r="2.2"/><circle cx="78" cy="112" r="2.2"/></g>
+          </svg>
+          <figcaption>Canis Major <span>Sirius 8.6 ly · brightest night star</span></figcaption>
+        </figure>
+      </div>
+      <div class="table-wrap">
+        <table class="dist">
+          <thead>
+            <tr><th>Star</th><th>Constellation</th><th>Light-years</th><th>Note</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sun</td><td>—</td><td>0.000016 ly</td><td>8 min 20 s</td></tr>
+            <tr><td>Proxima Centauri</td><td>Centaurus</td><td>4.24 ly</td><td>Nearest other star</td></tr>
+            <tr><td>Sirius</td><td>Canis Major</td><td>8.6 ly</td><td>Brightest in our night sky</td></tr>
+            <tr><td>Vega</td><td>Lyra</td><td>25 ly</td><td>Summer Triangle</td></tr>
+            <tr><td>Arcturus</td><td>Boötes</td><td>37 ly</td><td>Follow the Dipper’s arc</td></tr>
+            <tr><td>Polaris</td><td>Ursa Minor</td><td>430 ly</td><td>North Star</td></tr>
+            <tr><td>Betelgeuse</td><td>Orion</td><td>548 ly</td><td>Red supergiant</td></tr>
+            <tr><td>Deneb</td><td>Cygnus</td><td>2,615 ly</td><td>One of the farthest you can see by eye</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="galaxies" id="galaxies">
+      <canvas id="galaxies-gl" aria-hidden="true"></canvas>
+      <div class="gal-ui">
+        <header class="sec">
+          <p class="eyebrow">Local group</p>
+          <h2>Galaxies around the Sun</h2>
+        </header>
+        <p class="worlds-lead gal-lead">We sit in a barred spiral 100,000 light-years wide. Two other spirals share the neighbourhood, plus dozens of dwarf galaxies. Discs above: Milky Way from outside, Andromeda (M31), Triangulum (M33).</p>
+        <div class="facts-row gal-facts">
+          <article><b class="font-num">~2 trillion</b><span>Galaxies in the observable universe</span></article>
+          <article><b class="font-num">54+</b><span>Members of the Local Group</span></article>
+          <article><b class="font-num">2.47 Mly</b><span>Andromeda — nearest giant spiral</span></article>
+          <article><b class="font-num">54 Mly</b><span>Virgo cluster, nearest big pile</span></article>
+        </div>
+        <div class="gal-cards">
+          <article>
+            <p class="font-num">00 · SBbc</p>
+            <h3>Milky Way</h3>
+            <p class="ly font-num">Home · 0 ly</p>
+            <dl>
+              <div><span>Type</span><b>Barred spiral</b></div>
+              <div><span>Diameter</span><b>100,000 ly</b></div>
+              <div><span>Stars</span><b>100–400 billion</b></div>
+              <div><span>Centre</span><b>Sgr A* · 4.3 M Suns</b></div>
+              <div><span>Our arm</span><b>Orion · 26,000 ly out</b></div>
+              <div><span>Galactic year</span><b>230 million yr</b></div>
+            </dl>
+            <p>A thin disc 1,000 ly thick at the Sun. Two Magellanic Clouds orbit us. We see it edge-on as the pale band of the Milky Way. Most of its mass is dark.</p>
+          </article>
+          <article>
+            <p class="font-num">01 · SA(s)b</p>
+            <h3>Andromeda</h3>
+            <p class="ly font-num">2.47 million ly</p>
+            <dl>
+              <div><span>Type</span><b>Spiral, tilted 77°</b></div>
+              <div><span>Diameter</span><b>~220,000 ly</b></div>
+              <div><span>Stars</span><b>~1 trillion</b></div>
+              <div><span>Speed</span><b>110 km/s toward us</b></div>
+              <div><span>Sky</span><b>3° · six full moons</b></div>
+              <div><span>Merge</span><b>~4.5 billion yr</b></div>
+            </dl>
+            <p>M31. Larger than we are. Two main dust lanes. Visible as a faint oval on autumn nights under a dark sky. Its halo already touches ours.</p>
+          </article>
+          <article>
+            <p class="font-num">02 · SA(s)cd</p>
+            <h3>Triangulum</h3>
+            <p class="ly font-num">2.73 million ly</p>
+            <dl>
+              <div><span>Type</span><b>Face-on spiral</b></div>
+              <div><span>Diameter</span><b>60,000 ly</b></div>
+              <div><span>Stars</span><b>~40 billion</b></div>
+              <div><span>Also</span><b>M33 · NGC 598</b></div>
+              <div><span>Tie</span><b>Bound to Andromeda</b></div>
+              <div><span>H II</span><b>NGC 604, huge nebula</b></div>
+            </dl>
+            <p>The third spiral of the Local Group. Looser arms, lots of star-forming gas. Likely coming with Andromeda when the two discs meet.</p>
+          </article>
+          <article>
+            <p class="font-num">03 · SBm</p>
+            <h3>Large Magellanic Cloud</h3>
+            <p class="ly font-num">163,000 ly</p>
+            <dl>
+              <div><span>Type</span><b>Barred dwarf</b></div>
+              <div><span>Diameter</span><b>14,000 ly</b></div>
+              <div><span>Stars</span><b>~20 billion</b></div>
+              <div><span>Sky</span><b>South · naked eye</b></div>
+              <div><span>Tarantula</span><b>30 Doradus</b></div>
+              <div><span>SN 1987A</span><b>Closest modern supernova</b></div>
+            </dl>
+            <p>A satellite of the Milky Way. Full of young stars and gas. You can see it as a detached piece of the Milky Way from the southern hemisphere.</p>
+          </article>
+          <article>
+            <p class="font-num">04 · SB(s)m</p>
+            <h3>Small Magellanic Cloud</h3>
+            <p class="ly font-num">200,000 ly</p>
+            <dl>
+              <div><span>Type</span><b>Irregular dwarf</b></div>
+              <div><span>Diameter</span><b>7,000 ly</b></div>
+              <div><span>Stars</span><b>~3 billion</b></div>
+              <div><span>Tie</span><b>Paired with the LMC</b></div>
+              <div><span>Bridge</span><b>Gas stream to LMC</b></div>
+              <div><span>Orbit</span><b>~1.5 billion yr around us</b></div>
+            </dl>
+            <p>Smaller, older, being stripped. Together the Clouds are the nearest galaxies you can see without a telescope — if you are south of the equator.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <header class="sec">
+        <p class="eyebrow">GTA Online · Enhanced</p>
+        <h2>Account work</h2>
+      </header>
+      <p class="worlds-lead">PC Enhanced only. PayPal in euro — fees already in the price. No Legacy. Galaxy is the one: €9 more than Star for 1000 rank, heists, a modded run, and twice the cars.</p>
+
+      <div class="shop-contact">
+        <p class="tag">Order</p>
+        <p>Discord <b>kybertop</b> · <a href="https://discord.gg/Gb5EkacmkJ" target="_blank" rel="noopener noreferrer">discord.gg/Gb5EkacmkJ</a></p>
+        <p>PayPal opens the payment. The order is posted to Discord with the note below.</p>
+        <label class="order-note">
+          <span>Note for the order</span>
+          <textarea data-order-note rows="3" maxlength="280" placeholder="Discord name, Rockstar email if login, rank you want, heist name…"></textarea>
+        </label>
+      </div>
+
+      <div class="pack-grid">
+        <article class="pack pack-star">
+          <div class="pack-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.6 14.4 8.4 21.6 9.1 16.2 14 17.8 21.2 12 17.6 6.2 21.2 7.8 14 2.4 9.1 9.6 8.4Z"/></svg>
+          </div>
+          <p class="tag">Star · −61%</p>
+          <h3>Star</h3>
+          <p class="price font-num"><b>€19</b><s>€49</s></p>
+          <div class="hud">
+            <div><span>Cash</span><b class="font-num" data-count="15000000" data-kind="cash">$0</b></div>
+            <div><span>RP</span><b class="font-num" data-count="120" data-kind="rp">0</b></div>
+            <div><span>Crew</span><b class="font-num" data-count="120" data-kind="rp">0</b></div>
+          </div>
+          <i class="hud-bar" data-bar="120"></i>
+          <p class="pack-bits">Unlock all · Max stats · 5 cars · 1 buy</p>
+          <a class="cta" data-pay="Star package — GTA Online Enhanced" data-eur="19">PayPal · €19</a>
+        </article>
+        <article class="pack pack-galaxy is-best">
+          <div class="pack-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 3.2a8.8 8.8 0 1 1-7.4 4.1" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M4.8 14.5c2.2 4.2 8.4 5.4 12.2 2.4" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+          </div>
+          <p class="tag">Galaxy · best value</p>
+          <h3>Galaxy</h3>
+          <p class="price font-num"><b>€28</b><s>€79</s></p>
+          <div class="hud">
+            <div><span>Cash</span><b class="font-num" data-count="15000000" data-kind="cash">$0</b></div>
+            <div><span>RP</span><b class="font-num" data-count="1000" data-kind="rp">0</b></div>
+            <div><span>Crew</span><b class="font-num" data-count="1000" data-kind="rp">0</b></div>
+          </div>
+          <i class="hud-bar" data-bar="1000"></i>
+          <p class="pack-bits">Unlock all · Max stats · Modded run · 10 cars · Heists · 2 buys</p>
+          <a class="cta" data-pay="Galaxy package — GTA Online Enhanced" data-eur="28">PayPal · €28</a>
+        </article>
+        <article class="pack pack-mw">
+          <div class="pack-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M2 16c3-5 6-8 10-8s7 3 10 8" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 12c3-3.4 6-5 9-5s6 1.6 9 5" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="12" cy="11" r="1.4" fill="currentColor"/></svg>
+          </div>
+          <p class="tag">Milky Way · −68%</p>
+          <h3>Milky Way</h3>
+          <p class="price font-num"><b>€48</b><s>€149</s></p>
+          <div class="hud">
+            <div><span>Cash</span><b class="font-num" data-count="15000000" data-kind="cash">$0</b></div>
+            <div><span>RP</span><b class="font-num" data-count="8000" data-kind="rp">0</b></div>
+            <div><span>Hangar</span><b class="font-num" data-count="1" data-kind="hangar">$1B</b></div>
+          </div>
+          <i class="hud-bar" data-bar="8000"></i>
+          <p class="pack-bits">Any crew · Unlock all · Max stats · All businesses · 20 cars</p>
+          <a class="cta" data-pay="Milkyway package — GTA Online Enhanced" data-eur="48">PayPal · €48</a>
+        </article>
+      </div>
+
+      <h3 class="sky-sub">Build a single</h3>
+      <p class="worlds-lead">Drag rank and crew. Stack cars and purchases — more is cheaper per piece. Two of these still usually lose to Galaxy.</p>
+      <div class="build-grid">
+        <article data-build="rank">
+          <p class="tag">Rank</p>
+          <h3>RP level</h3>
+          <p class="price font-num"><b data-out-price>€3</b><s>€12</s></p>
+          <p class="build-val font-num" data-out-val>120 RP</p>
+          <input type="range" min="120" max="8000" step="10" value="120" aria-label="RP level">
+          <p class="build-hint">120 is €3. 8000 is €10. The higher you go, the less you pay per level.</p>
+          <a class="cta" data-pay="Rank 120 RP — GTA Online Enhanced" data-eur="3">PayPal · €3</a>
+        </article>
+        <article data-build="crew">
+          <p class="tag">Crew</p>
+          <h3>Crew level</h3>
+          <p class="price font-num"><b data-out-price>€3</b><s>€12</s></p>
+          <p class="build-val font-num" data-out-val>120 crew</p>
+          <input type="range" min="120" max="8000" step="10" value="120" aria-label="Crew level">
+          <p class="build-hint">Same scale as rank. 120 €3 · 8000 €10.</p>
+          <a class="cta" data-pay="Crew 120 — GTA Online Enhanced" data-eur="3">PayPal · €3</a>
+        </article>
+        <article data-build="cars">
+          <p class="tag">Cars</p>
+          <h3>How many cars</h3>
+          <p class="price font-num"><b data-out-price>€3</b><s>€8</s></p>
+          <p class="build-val font-num" data-out-val>1 car</p>
+          <input type="range" min="1" max="40" step="1" value="1" aria-label="Car count">
+          <p class="build-hint">1 is €3. 5 is €6. 20 is €14. 40 is €20.</p>
+          <a class="cta" data-pay="1 car — GTA Online Enhanced" data-eur="3">PayPal · €3</a>
+        </article>
+        <article data-build="buy">
+          <p class="tag">Purchases</p>
+          <h3>In-game purchases on us</h3>
+          <p class="price font-num"><b data-out-price>€3</b><s>€8</s></p>
+          <p class="build-val font-num" data-out-val>1 purchase</p>
+          <input type="range" min="1" max="20" step="1" value="1" aria-label="Purchase count">
+          <p class="build-hint">1 is €3. 10 is €15. 20 is €24. More is cheaper each.</p>
+          <a class="cta" data-pay="1 in-game purchase — GTA Online Enhanced" data-eur="3">PayPal · €3</a>
+        </article>
+      </div>
+
+      <h3 class="sky-sub">Other singles</h3>
+      <ul class="solo-list">
+        <li><span>Money only · 15M$</span><b class="font-num">€5</b><a data-pay="Money only 15M$ — GTA Online Enhanced" data-eur="5">PayPal</a></li>
+        <li><span>Unlock all</span><b class="font-num">€6</b><a data-pay="Unlock all — GTA Online Enhanced" data-eur="6">PayPal</a></li>
+        <li><span>Max stats</span><b class="font-num">€3</b><a data-pay="Max stats — GTA Online Enhanced" data-eur="3">PayPal</a></li>
+        <li><span>Modded run</span><b class="font-num">€4</b><a data-pay="Modded run — GTA Online Enhanced" data-eur="4">PayPal</a></li>
+        <li><span>Heists set up</span><b class="font-num">€5</b><a data-pay="Heists setup — GTA Online Enhanced" data-eur="5">PayPal</a></li>
+        <li><span>All businesses</span><b class="font-num">€8</b><a data-pay="All businesses setup — GTA Online Enhanced" data-eur="8">PayPal</a></li>
+        <li><span>Hangar cargo · $1B</span><b class="font-num">€18</b><a data-pay="Hangar cargo 1B — GTA Online Enhanced" data-eur="18">PayPal</a></li>
+      </ul>
+
+      <h3 class="sky-sub">Heists — with login</h3>
+      <p class="worlds-lead">Any heist. You send the account. Cheaper because I run it myself. Want 15M$ on the same login? Add Money only (€5) on Discord.</p>
+      <div class="heist-grid">
+        <article>
+          <h3>1 heist</h3>
+          <p class="price font-num"><b>€5</b><s>€12</s></p>
+          <a class="cta" data-pay="1 heist with login — GTA Online Enhanced" data-eur="5">PayPal · €5</a>
+        </article>
+        <article>
+          <h3>2 heists</h3>
+          <p class="price font-num"><b>€9</b><s>€24</s></p>
+          <a class="cta" data-pay="2 heists with login — GTA Online Enhanced" data-eur="9">PayPal · €9</a>
+        </article>
+        <article>
+          <h3>3 heists</h3>
+          <p class="price font-num"><b>€12</b><s>€36</s></p>
+          <a class="cta" data-pay="3 heists with login — GTA Online Enhanced" data-eur="12">PayPal · €12</a>
+        </article>
+        <article>
+          <h3>4 heists</h3>
+          <p class="price font-num"><b>€14</b><s>€48</s></p>
+          <p class="tag">€3.50 each</p>
+          <a class="cta" data-pay="4 heists with login — GTA Online Enhanced" data-eur="14">PayPal · €14</a>
+        </article>
+      </div>
+
+      <h3 class="sky-sub">Heists — play with me</h3>
+      <p class="worlds-lead">Any heist. No login. I sit in the session with you — a bit more than login, still a sale. Four is the cheap finale rate.</p>
+      <div class="heist-grid">
+        <article>
+          <h3>1 heist</h3>
+          <p class="price font-num"><b>€7</b><s>€14</s></p>
+          <a class="cta" data-pay="1 heist play with me — GTA Online Enhanced" data-eur="7">PayPal · €7</a>
+        </article>
+        <article>
+          <h3>2 heists</h3>
+          <p class="price font-num"><b>€12</b><s>€28</s></p>
+          <a class="cta" data-pay="2 heists play with me — GTA Online Enhanced" data-eur="12">PayPal · €12</a>
+        </article>
+        <article>
+          <h3>3 heists</h3>
+          <p class="price font-num"><b>€16</b><s>€42</s></p>
+          <a class="cta" data-pay="3 heists play with me — GTA Online Enhanced" data-eur="16">PayPal · €16</a>
+        </article>
+        <article>
+          <h3>4 heists</h3>
+          <p class="price font-num"><b>€19</b><s>€56</s></p>
+          <p class="tag">€4.75 each</p>
+          <a class="cta" data-pay="4 heists play with me — GTA Online Enhanced" data-eur="19">PayPal · €19</a>
+        </article>
+      </div>
+
+      <aside class="shop-notes">
+        <p><b>Caps.</b> Drops are paced at about 30M$ a day and 200M$ a week. That is the ceiling I use so the account stays quiet.</p>
+        <p><b>Bans.</b> I am not responsible for bans, kicks, or wipes. Money amounts and timing are set so you should not get flagged — still Rockstar’s game, not a guarantee.</p>
+        <p><b>PayPal.</b> Listed prices already cover PayPal’s cut. PayPal and the note above are sent to Discord as the order.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="mark" href="#top">kbrtp</a>
+    <p>kbrtp.top · Discord kybertop</p>
+    <p>Maps: NASA / Solar System Scope · Galaxies: ESO / Wikimedia</p>
+  </footer>
+
+  <div class="toast" data-toast hidden>Craft logged · 12.4 km/s</div>
+  <iframe name="discord-order" title="Discord order" hidden></iframe>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
