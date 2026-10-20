@@ -3,56 +3,36 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - "web/**"
-      - ".github/workflows/pages.yml"
-  schedule:
-    - cron: "17 5 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: web/package-lock.json
-      - run: npm ci
-        working-directory: web
-      - run: npm test
-        working-directory: web
-      - run: npm run build
-        working-directory: web
-        env:
-          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
-      - name: Commit the branch publish
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html 404.html CNAME favicon.svg giscus.css og.svg assets data
-          git diff --staged --quiet || git commit -m "Publish GitHub Pages build [skip ci]"
-          git push
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: web/dist
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5
