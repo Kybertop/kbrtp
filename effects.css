@@ -1,0 +1,11 @@
+#aero-background{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden;opacity:.62;background:#07080b}
+.aero-shards-canvas{display:block;position:absolute;inset:0;width:100%;height:100%}
+.scene{z-index:-2}.scene .ring{display:none}
+#name{position:relative;touch-action:pan-y;isolation:isolate}
+.tech-text-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+#name.tech-enhanced>.glass-type,#name.tech-enhanced>.top{opacity:0;pointer-events:none}
+@media(max-width:600px){#aero-background{opacity:.5}}
+@media(prefers-reduced-motion:reduce){#name{cursor:default!important}}
+
+.crosshair-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:10000}.crosshair-cursor-hidden,.crosshair-cursor-hidden *{cursor:none!important}
+@media(hover:none),(pointer:coarse){.crosshair-canvas{display:none}.crosshair-cursor-hidden,.crosshair-cursor-hidden *{cursor:auto!important}}
