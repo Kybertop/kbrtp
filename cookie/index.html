@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07080b"><meta name="description" content="Find and copy only your cf_clearance cookie value on Android or PC. A step-by-step guide by kbrtp.top.">
+<title>Cookie guide · kbrtp.top</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/cookie/guide.css">
+</head>
+<body id="top">
+<div class="scene" aria-hidden="true"><div class="orb violet"></div><div class="orb blue"></div><div class="ring"></div></div>
+<header><a class="brand" href="/">kbrtp<span>.top</span></a><a class="back" href="/">↖ Back home</a></header>
+<main>
+<div class="intro"><p class="eyebrow">Discord / Cookie guide</p><h1>Cookie <span>Tutorial</span></h1><p class="lede">How to find your <code>cf_clearance</code> value on phone or PC, one step at a time.</p><nav class="device-nav" aria-label="Choose your device"><a href="#phone"><span aria-hidden="true">▯</span> Phone <span class="hint">Android</span> ↓</a><a href="#pc"><span aria-hidden="true">▱</span> PC <span class="hint">Desktop</span> ↓</a></nav></div>
+<aside class="glass important"><span class="label">Before you start</span><p>You only need the raw value after <code>cf_clearance=</code>. Stop at the next <code>;</code> or the end of the string. Keep your full cookie string private.</p></aside>
+<section class="glass guide" id="phone" aria-labelledby="phone-title"><div class="section-heading"><span class="number">01 / PHONE</span><span class="badge">Easiest · No ZIP needed</span></div><h2 id="phone-title">Firefox for Android</h2><p class="sub">Option A · Use the Cookie-Editor add-on.</p>
+<ol>
+<li>Open <strong>Firefox</strong> on your phone.</li>
+<li>Go to <a href="https://discord.com/app" target="_blank" rel="noopener noreferrer">discord.com/app ↗</a> and <strong>log in</strong>.</li>
+<li>Tap the <strong>⋮ menu</strong> (top-right), then <strong>Add-ons</strong> (called <strong>Extensions</strong> in some versions).</li>
+<li>Search for <strong>Cookie-Editor</strong>.</li>
+<li>Select <strong>Cookie-Editor by cgagnier</strong>, then tap <strong>Add to Firefox</strong>.</li>
+<li>Go back to <strong>discord.com</strong>.</li>
+<li>Open the <strong>Cookie-Editor</strong> add-on from Firefox’s menu.</li>
+<li>Tap <strong>Export</strong> at the top of the popup.</li>
+<li>Choose <strong>Header String</strong> to copy the full cookie string to your clipboard.</li>
+<li>Paste it into a <strong>private local note</strong> so you can inspect it.</li>
+<li>Find <code>cf_clearance=</code> in the string.</li>
+<li>Select <strong>only the value after <code>cf_clearance=</code></strong>. Stop before the next <code>;</code> or the end of the string.</li>
+<li>Copy <strong>just that value</strong>.</li>
+</ol><p class="footnote">This phone method is for Android. Firefox on iPhone does not support this add-on; use a PC instead.</p></section>
+<section class="glass guide" id="pc" aria-labelledby="pc-title"><div class="section-heading"><span class="number">02 / PC</span></div><h2 id="pc-title">PC</h2><p class="sub">Chrome / Edge / Firefox / Brave / Vivaldi</p>
+<ol>
+<li>Go to <a href="https://discord.com/app" target="_blank" rel="noopener noreferrer">discord.com/app ↗</a> and <strong>log in</strong>.</li>
+<li>Press <kbd>F12</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd> to open developer tools.</li>
+<li>Click the <strong>Network</strong> tab.</li>
+<li>In the filter box, type <code>/api</code>.</li>
+<li><strong>Refresh</strong> with <kbd>F5</kbd>, or open and close a channel.</li>
+<li>Click a <strong>discord.com API request</strong> in the list.</li>
+<li>In the right panel, open <strong>Headers → Request Headers</strong>.</li>
+<li>Find the <code>Cookie:</code> line.</li>
+<li>Find <code>cf_clearance=</code> in that line. Select <strong>only the part after the <code>=</code></strong>, up to the next <code>;</code> or the end of the string.</li>
+<li><strong>Copy the value.</strong></li>
+</ol></section>
+<section class="glass examples" aria-labelledby="examples-title"><span class="number">THE FINAL CHECK</span><h2 id="examples-title">What to paste</h2><div class="example good"><h3><span aria-hidden="true">✓</span> Just the raw value</h3><code>3XIxX5zt0hqeBFvNTld2HZUi9J1AkvfKZaf26B4XwIg-1792663267-1.2.1.1-DDjfXVa...</code></div><div class="example bad"><h3><span aria-hidden="true">×</span> Not the full cookie string</h3><code>cf_clearance=3XIxX5zt...; _cfuvid=abc123; __dcfduid=xyz</code></div><p class="footnote">Illustrative examples only. Do not include <code>cf_clearance=</code>, other cookies, or <code>;</code> separators.</p></section>
+<aside class="trouble"><h2>Can’t find it?</h2><p>The cookie may not be present in every browser session. If it is missing, there is no value to copy. Check that you’re inspecting a request to <strong>discord.com</strong>.</p></aside>
+<footer><a href="/token">Token Tutorial ↗</a><a href="#top" aria-label="Back to top">Back to top ↑</a></footer>
+</main>
+</body></html>
