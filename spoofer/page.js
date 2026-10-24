@@ -29,6 +29,7 @@
  games.addEventListener('input',update);hours.addEventListener('input',update);
  document.querySelectorAll('[data-calc-preset]').forEach(button=>button.addEventListener('click',()=>{const [g,h]=button.dataset.calcPreset.split(',');games.value=g;hours.value=h;update();}));update();
 })();
+(()=>{const toggle=document.querySelector('.scam-popup-toggle'),content=document.getElementById('scam-popup-content');toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));content.hidden=!open;toggle.querySelector('.scam-popup-indicator').textContent=open?'−':'+';});})();
 (()=>{
  document.querySelectorAll('.badge-preview-item').forEach(item=>{
   const button=item.querySelector('button');
